@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Extensibility Explorer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="home">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Extensibility Explorer home">
+        <span class="sap-logo" aria-label="SAP">SAP</span>
+        <span class="brand-text">Extensibility Explorer</span>
+      </a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="assets.html">Assets</a>
+        <a href="accelerators.html">Accelerators</a>
+        <a href="checklist.html">Checklist</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="flow-hero" aria-label="Extensibility map">
+        <div class="hero-brand">
+          <span class="sap-logo sap-logo-large" aria-label="SAP">SAP</span>
+          <span>Extensibility Explorer</span>
+        </div>
+
+        <div class="home-intro">
+          <h1>SAP S/4HANA Cloud</h1>
+          <p>Choose the right extensibility path, then drill down into samples, assets, and implementation guidance.</p>
+        </div>
+
+        <div class="root-node">
+          <h2>SAP S/4HANA&reg; Cloud</h2>
+        </div>
+
+        <div class="flow-lines" aria-hidden="true">
+          <span class="line vertical"></span>
+          <span class="line horizontal"></span>
+          <span class="line branch branch-left"></span>
+          <span class="line branch branch-mid"></span>
+          <span class="line branch branch-right"></span>
+        </div>
+
+        <div class="choice-grid" aria-label="Extensibility choices">
+          <a class="choice-card" href="samples.html?lane=inapp">
+            <span class="choice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z" /><path d="M8 21h8" /><path d="M10 17v4" /><path d="M8 9h3" /><path d="M13 9h3" /><path d="M8 13h8" /></svg>
+            </span>
+            <h2>In-App / Key User Extensibility</h2>
+            <p>Extend and adapt the core of SAP S/4HANA with built-in key-user capabilities.</p>
+            <span class="card-action">View accelerators</span>
+          </a>
+
+          <a class="choice-card" href="samples.html?lane=developer">
+            <span class="choice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3" /><path d="m16 9 4 3-4 3" /><path d="m14 5-4 14" /></svg>
+            </span>
+            <h2>Developer Extensibility</h2>
+            <p>Develop cloud-ready, upgrade-stable custom ABAP code on SAP S/4HANA Cloud.</p>
+            <span class="card-action">View accelerators</span>
+          </a>
+
+          <a class="choice-card" href="samples.html?lane=side">
+            <span class="choice-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1 0-8 6 6 0 0 1 11.3 2.4A3.8 3.8 0 0 1 18 20H8" /><path d="M8 15h8" /><path d="M12 11v8" /></svg>
+            </span>
+            <h2>Side-by-Side Extensibility</h2>
+            <p>Build extensions on SAP BTP, consuming SAP S/4HANA Cloud SDKs or APIs.</p>
+            <span class="card-action">View accelerators</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="library-panel" aria-label="Explorer libraries">
+        <div class="library-heading">
+          <h2>Choose a library</h2>
+          <p>Use assets for knowledge and decision guidance. Use accelerators for in-app, dev, and BTP implementation cards.</p>
+        </div>
+        <div class="library-grid">
+          <a class="library-card featured" href="assets.html">
+            <span class="library-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4z" /><path d="M13 4h7v7h-7z" /><path d="M4 13h7v7H4z" /><path d="M13 13h7v7h-7z" /></svg>
+            </span>
+            <div>
+              <h3>Assets</h3>
+              <p>Open the knowledge and decision assets selected from your checklist.</p>
+            </div>
+          </a>
+          <a class="library-card" href="accelerators.html">
+            <span class="library-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3" /><path d="m16 9 4 3-4 3" /><path d="m14 5-4 14" /></svg>
+            </span>
+            <div>
+              <h3>Accelerators</h3>
+              <p>See all in-app, dev, and BTP implementation cards in one combined gallery.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Local guide built from SAP sample repositories.</span>
+      <a href="https://www.sap.com/extends4" target="_blank" rel="noreferrer">Original explorer notice</a>
+    </footer>
+  </body>
+</html>
