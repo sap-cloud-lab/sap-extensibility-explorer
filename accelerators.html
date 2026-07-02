@@ -74,7 +74,37 @@
             <h2 id="sampleSectionTitle">All Accelerators</h2>
             <p id="sampleCount"></p>
           </div>
-          <div class="sample-grid" id="sampleGrid"></div>
+          <div class="accelerator-groups" id="acceleratorGroups">
+            <section class="accelerator-source-section" data-source-section="sap">
+              <button class="source-section-toggle" type="button" data-accelerator-section="sap" aria-expanded="true">
+                <span>
+                  <strong>SAP Accelerators</strong>
+                  <small>SAP-referenced GitHub, setup, and sample cards.</small>
+                </span>
+                <span class="source-section-count" id="sapAcceleratorCount">0 cards</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              </button>
+              <div class="accelerator-section-body" id="sapAcceleratorBody">
+                <div class="sample-grid" id="sapSampleGrid"></div>
+                <p class="empty-state section-empty" id="sapEmptyState" hidden>No matching SAP accelerators found.</p>
+              </div>
+            </section>
+
+            <section class="accelerator-source-section" data-source-section="customer">
+              <button class="source-section-toggle" type="button" data-accelerator-section="customer" aria-expanded="true">
+                <span>
+                  <strong>Customer Accelerators</strong>
+                  <small>Your in-app, developer, and BTP implementation cards.</small>
+                </span>
+                <span class="source-section-count" id="customerAcceleratorCount">0 cards</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6" /></svg>
+              </button>
+              <div class="accelerator-section-body" id="customerAcceleratorBody">
+                <div class="sample-grid" id="customerSampleGrid"></div>
+                <p class="empty-state section-empty" id="customerEmptyState" hidden>No matching customer accelerators found.</p>
+              </div>
+            </section>
+          </div>
           <p class="empty-state" id="emptyState" hidden>No matching accelerators found.</p>
         </div>
       </section>

@@ -60,7 +60,7 @@ function findSampleDetail(params) {
   const lane = lanes[laneKey];
   if (!lane) return null;
 
-  const sample = lane.samples.find((candidate) => detailSlugify(candidate.title) === sampleId);
+  const sample = lane.samples.find((candidate) => candidate.id === sampleId || detailSlugify(candidate.title) === sampleId);
   if (!sample) return null;
 
   return {
@@ -80,6 +80,7 @@ function findSampleDetail(params) {
           ? "Choose this when the extension needs ABAP Cloud, RAP, released APIs, released CDS views, or released BAdIs on the S/4HANA stack."
           : "Choose this when the solution should run separately on SAP BTP or another side runtime while consuming S/4HANA Cloud APIs or events."),
     implementation: sample.implementation || sampleImplementation(laneKey, sample),
+    technicalNotes: sample.technicalNotes || null,
     sources: sample.sources || [
       {
         label: sample.linkLabel || "Open GitHub source",
@@ -106,6 +107,7 @@ function findAssetDetail(params) {
     useCase: asset.useCase,
     whenToUse: asset.whenToUse,
     implementation: asset.implementation,
+    technicalNotes: asset.technicalNotes || null,
     sources: asset.sources,
     backUrl: "assets.html",
     backLabel: "Back to assets",
@@ -200,6 +202,28 @@ function renderDetailPage() {
   document.getElementById("implementationSteps").innerHTML = item.implementation
     .map((step) => `<li>${detailEscapeHtml(step)}</li>`)
     .join("");
+
+  const technicalPanel = document.getElementById("technicalPanel");
+  const technicalNotes = item.technicalNotes;
+  if (technicalPanel && technicalNotes) {
+    technicalPanel.hidden = false;
+    document.getElementById("technicalTitle").textContent = technicalNotes.title || "Technical Notes";
+    document.getElementById("technicalBullets").innerHTML = (technicalNotes.bullets || [])
+      .map((bullet) => `<li>${detailEscapeHtml(bullet)}</li>`)
+      .join("");
+
+    const codeWrap = document.getElementById("technicalCodeWrap");
+    if (technicalNotes.code) {
+      codeWrap.hidden = false;
+      document.getElementById("technicalCodeTitle").textContent = technicalNotes.codeTitle || "Code";
+      document.getElementById("technicalCode").textContent = technicalNotes.code;
+    } else {
+      codeWrap.hidden = true;
+      document.getElementById("technicalCode").textContent = "";
+    }
+  } else if (technicalPanel) {
+    technicalPanel.hidden = true;
+  }
 
   renderSourceLinks(item);
 

@@ -695,24 +695,54 @@ const assetItems = [
   },
   {
     id: "customer-copy-po-text-to-gr-text",
-    laneKey: "developer",
-    lane: "Developer",
+    laneKey: "inapp",
+    lane: "In-App",
     sourceType: "Customer Asset",
     category: "Procurement Posting",
     title: "Copy PO Short Text to Goods Receipt Text",
-    shortDescription: "Copies PO item text into goods receipt text.",
-    useCase: "Derive goods receipt text from the purchase order short text.",
+    shortDescription: "Copies the purchase order item short text into the goods receipt item text.",
+    useCase: "Derive the goods receipt item text and accounting item text from the purchase order short text.",
     whenToUse:
       "Use when warehouse, procurement, or finance teams need the PO description carried into goods receipt text for easier review and downstream reporting.",
     summary:
-      "This asset copies meaningful purchase order text into the goods receipt context so the receiving document is easier to understand.",
+      "This in-app custom logic copies meaningful purchase order short text into the goods receipt context so the receiving document and accounting entry carry the same business description.",
     implementation: [
-      "Confirm which PO short text field should be copied and which goods receipt text field should receive it.",
-      "Find the released extension point in the goods movement or material document creation process.",
-      "Read the purchase order item short text through a released API/CDS view and populate the goods receipt text when it is blank or when overwrite is allowed.",
-      "Test partial receipts, multiple PO items, changed PO text, manual GR text entry, and reversals.",
+      "Create custom logic YY1_GRDATACHANGE for the goods receipt data-change extension point.",
+      "Use extension point MMIM_GR4XY_PROVIDE_DATA, Change Header and Item Data in Goods Receipts, in business context MMIM_GR4XY.",
+      "Loop through the goods receipt change items and align each change row with the source goods receipt item row.",
+      "Only apply the logic when the goods receipt source is a purchase order and the purchase order item text is available.",
+      "Populate DOCUMENTITEMTEXT with PURCHASEORDERITEMTEXT, then test the goods receipt item text and journal entry item text.",
     ],
+    technicalNotes: {
+      title: "BAdI and Custom Logic Details",
+      bullets: [
+        "Custom Logic: YY1_GRDATACHANGE, described as GR Data Change.",
+        "Extension Point: MMIM_GR4XY_PROVIDE_DATA - Change Header and Item Data in Goods Receipts.",
+        "Affected Business Context: MMIM_GR4XY.",
+        "Observed result: PO short text test enh is copied to the Goods Receipt Item short text and the accounting entry Item Text.",
+      ],
+      codeTitle: "Published ABAP logic",
+      code: `FIELD-SYMBOLS:
+  <ls_gr_item>     LIKE LINE OF gr4xy_item,
+  <ls_change_item> LIKE LINE OF change_item.
+
+LOOP AT change_item ASSIGNING <ls_change_item>.
+  READ TABLE gr4xy_item ASSIGNING <ls_gr_item> INDEX sy-tabix.
+  IF sy-subrc <> 0.
+    CONTINUE.
+  ENDIF.
+
+  CHECK <ls_gr_item>-sourceofgr = 'PURORD'.
+  CHECK <ls_gr_item>-purchaseorderitemtext IS NOT INITIAL.
+
+  <ls_change_item>-documentitemtext = <ls_gr_item>-purchaseorderitemtext.
+ENDLOOP.`,
+    },
     sources: [
+      {
+        label: "Customer implementation notes: Copy PO short text to goods receipt text",
+        url: "docs/customer-accelerators/copy-po-short-text-to-gr-text.md",
+      },
       {
         label: "SAP KBA preview: PO short text in Goods Receipt not transferred to FI",
         url: "https://userapps.support.sap.com/sap/support/knowledge/en/2921484",

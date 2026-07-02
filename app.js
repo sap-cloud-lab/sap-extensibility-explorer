@@ -411,6 +411,7 @@ function assetToAcceleratorSample(asset) {
   const isSapReference = asset.sourceType === "Online Example";
 
   return {
+    id: asset.id,
     title: asset.title,
     laneKey,
     status: isSapReference ? "SAP reference" : "Customer accelerator",
@@ -421,6 +422,7 @@ function assetToAcceleratorSample(asset) {
     useCase: asset.useCase || asset.shortDescription,
     whenToUse: asset.whenToUse,
     implementation: asset.implementation,
+    technicalNotes: asset.technicalNotes,
     sources: asset.sources,
     source: isSapReference ? "SAP" : "Customer",
     sourceType: isSapReference ? "SAP Reference" : "Customer Accelerator",
@@ -487,7 +489,8 @@ function slugify(value) {
 
 function getSampleDetailUrl(laneKey, sample, from = "") {
   const fromParam = from ? `&from=${encodeURIComponent(from)}` : "";
-  return `detail.html?type=sample&lane=${encodeURIComponent(laneKey)}&id=${encodeURIComponent(slugify(sample.title))}${fromParam}`;
+  const sampleId = sample.id || slugify(sample.title);
+  return `detail.html?type=sample&lane=${encodeURIComponent(laneKey)}&id=${encodeURIComponent(sampleId)}${fromParam}`;
 }
 
 function uniqueValues(samples, key) {
@@ -717,6 +720,8 @@ function renderAcceleratorLibraryFilterOptions(samples) {
 function renderAcceleratorLibraryCards() {
   const samples = getAllAcceleratorSamples();
   const filteredSamples = samples.filter(acceleratorMatches);
+  const sapSamples = filteredSamples.filter((sample) => sample.source !== "Customer");
+  const customerSamples = filteredSamples.filter((sample) => sample.source === "Customer");
   const countText =
     filteredSamples.length === samples.length
       ? `${samples.length} accelerators`
@@ -728,7 +733,17 @@ function renderAcceleratorLibraryCards() {
   emptyState.textContent = "No matching accelerators found.";
   emptyState.hidden = filteredSamples.length > 0;
 
-  document.getElementById("sampleGrid").innerHTML = filteredSamples
+  document.getElementById("sapAcceleratorCount").textContent = `${sapSamples.length} ${sapSamples.length === 1 ? "card" : "cards"}`;
+  document.getElementById("customerAcceleratorCount").textContent = `${customerSamples.length} ${
+    customerSamples.length === 1 ? "card" : "cards"
+  }`;
+  document.getElementById("sapEmptyState").hidden = sapSamples.length > 0 || filteredSamples.length === 0;
+  document.getElementById("customerEmptyState").hidden = customerSamples.length > 0 || filteredSamples.length === 0;
+
+  document.getElementById("sapSampleGrid").innerHTML = sapSamples
+    .map((sample) => renderSampleCard(sample, sample.laneKey, { from: "accelerators" }))
+    .join("");
+  document.getElementById("customerSampleGrid").innerHTML = customerSamples
     .map((sample) => renderSampleCard(sample, sample.laneKey, { from: "accelerators" }))
     .join("");
 }
@@ -760,6 +775,15 @@ function bindAcceleratorLibraryControls() {
       const expanded = button.getAttribute("aria-expanded") === "true";
       button.setAttribute("aria-expanded", String(!expanded));
       target.hidden = expanded;
+    });
+  });
+
+  document.querySelectorAll("[data-accelerator-section]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.getElementById(`${button.dataset.acceleratorSection}AcceleratorBody`);
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      if (target) target.hidden = expanded;
     });
   });
 }

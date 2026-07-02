@@ -766,9 +766,99 @@ window.customerSampleItems = [
                             "label":  "Additional scenario requested for the accelerator library",
                             "url":  ""
                         }
-                    ],
+        ],
         "url":  "",
         "linkLabel":  "Source code pending"
+    },
+    {
+        "id":  "customer-aging-report-key-date-inapp",
+        "laneKey":  "inapp",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "Aging Report with Specific Key Date",
+        "status":  "Customer accelerator",
+        "pattern":  "Finance Reporting",
+        "description":  "Custom AP aging app that allows users to select a specific key date where the standard app flow did not meet the requirement.",
+        "function":  "Provides a controlled key-date parameter for accounts payable aging so finance users can run the report for the exact date they need.",
+        "summary":  "A custom in-app reporting accelerator for AP aging where the original SAP app and linked analysis options did not provide the required key-date behavior.",
+        "useCase":  "Use this when Accounts Payable aging must be reviewed for a specific historical or business key date and the standard app flow does not give users enough control.",
+        "whenToUse":  "Choose this when the requirement is reporting-focused, can be solved with released analytical content/custom app configuration, and should stay inside SAP S/4HANA Cloud.",
+        "implementation":  [
+                               "Confirm the reporting gap against SAP app F4401, Aging Report for Accounts Payable, and document the missing key-date behavior.",
+                               "Review linked analysis options such as C_F5240 Analyze KPI Details and F1733 Aging Analysis with CDS C_APFLEXIBLEAGING to confirm they do not solve the required key-date selection.",
+                               "Create a custom analytical app or report variant that exposes a clear key-date parameter for the AP aging logic.",
+                               "Validate the output against the standard report for current-date scenarios, then test historical key dates, currency display, interval buckets, and exchange-rate type.",
+                               "Publish the custom app tile with role access, final filter defaults, and implementation notes for finance users."
+                           ],
+        "technicalNotes":  {
+                               "title":  "App References and Design Notes",
+                               "bullets":  [
+                                               "Standard app reviewed: F4401 - Aging Report for Accounts Payable.",
+                                               "Linked app reviewed: C_F5240 - Analyze KPI Details.",
+                                               "Related SAP app/CDS reviewed: F1733 - Aging Analysis (S/4HANA), CDS C_APFLEXIBLEAGING.",
+                                               "Design decision: create a new custom app because the standard/linked app path did not provide the required specific key-date selection."
+                                           ]
+                           },
+        "sources":  [
+                        {
+                            "label":  "Customer implementation notes: Aging report key date custom app",
+                            "url":  "docs/customer-accelerators/aging-report-key-date-custom-app.md"
+                        },
+                        {
+                            "label":  "SAP Fiori Apps Library: F4401 Aging Report for Accounts Payable",
+                            "url":  "https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F4401')"
+                        },
+                        {
+                            "label":  "SAP Fiori Apps Library: F1733 Aging Analysis",
+                            "url":  "https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F1733')"
+                        }
+                    ],
+        "url":  "docs/customer-accelerators/aging-report-key-date-custom-app.md",
+        "linkLabel":  "Open implementation notes"
+    },
+    {
+        "id":  "customer-inventory-consumption-sto-inapp",
+        "laneKey":  "inapp",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "Inventory vs Consumption Indicator for STO",
+        "status":  "Customer accelerator",
+        "pattern":  "Procurement Control",
+        "description":  "Plant-level material master custom field used to control whether STO processing should allow cost object entry for consumption.",
+        "function":  "Introduces a consumption indicator on the material master so the STO flow can distinguish inventory and consumable materials after the system is already live.",
+        "summary":  "An in-app extensibility workaround for a live customer system where material group design could no longer be used cleanly to identify consumption materials.",
+        "useCase":  "Use this when material master data needs an explicit inventory/consumption indicator by plant or district, and STO account assignment behavior should follow that indicator.",
+        "whenToUse":  "Choose this when the customer has already implemented the system and a clean master-data redesign, such as material group classification, is no longer practical.",
+        "implementation":  [
+                               "Create a material master custom field for Consumption Indicator and enable it for the relevant CDS/API usage so custom logic can read it.",
+                               "Maintain the indicator as Yes/No at material plant level for the relevant district plants, excluding SLC or plant 2000 where the logic does not apply.",
+                               "Confirm configuration for item category U and allowed Cost Centre/WBS combinations for Stock Transport Orders.",
+                               "Implement the check through BAdI MM_PUR_S4_PO_MODIFY_ACCOUNT because it allows the logic to read material information and control the account-assignment fields.",
+                               "Document the caveat that the logic triggers after users enter all required screen parameters, including account assignment values.",
+                               "Test inventory materials, consumable materials, cost centre entry, WBS entry, excluded plants, mass maintenance, and transport movement."
+                           ],
+        "technicalNotes":  {
+                               "title":  "BAdI Selection Notes",
+                               "bullets":  [
+                                               "Chosen BAdI: MM_PUR_S4_PO_MODIFY_ACCOUNT - Modify Purchase Order Account Assignment Data.",
+                                               "Rejected option: MM_PUR_S4_PO_MODIFY_ITEM exposes Account Assignment Indicator but does not allow messages and could not access I_PRODUCTPLANT in this scenario.",
+                                               "Rejected option: MM_PUR_S4_PO_CHECK_ALL_ITEMS did not expose the fields required for the validation.",
+                                               "Transport reference from the working notes: N2OK901863 - Inventory vs Consumption.",
+                                               "Related configuration references from the notes: 101655 Allow Cost Centre/WBS combination with Item Category U for STO, and 102909 Purchase Order Types."
+                                           ]
+                           },
+        "sources":  [
+                        {
+                            "label":  "Customer implementation notes: Inventory vs consumption STO control",
+                            "url":  "docs/customer-accelerators/inventory-vs-consumption-sto.md"
+                        },
+                        {
+                            "label":  "Source document: invenotry vs consumtption.docx",
+                            "url":  ""
+                        }
+                    ],
+        "url":  "docs/customer-accelerators/inventory-vs-consumption-sto.md",
+        "linkLabel":  "Open implementation notes"
     }
 ];
 
