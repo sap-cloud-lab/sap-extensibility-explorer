@@ -72,10 +72,10 @@ svg {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 14px;
   min-height: 64px;
   padding: 10px 36px;
   background: rgba(255, 255, 255, 0.94);
@@ -103,7 +103,7 @@ body[data-page="samples"] .brand {
   color: #ffffff;
 }
 
-body[data-page="samples"] .brand-text {
+body[data-page="samples"] .brand-title {
   color: #ffffff;
   font-size: 28px;
   font-weight: 800;
@@ -144,14 +144,23 @@ body[data-page="samples"] .top-nav a.active {
 .brand {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   gap: 12px;
   color: #111827;
   font-size: 18px;
   font-weight: 800;
 }
 
-.brand-text {
-  padding-top: 1px;
+.brand-title {
+  position: static;
+  transform: none;
+  justify-self: start;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .sap-logo {
@@ -179,6 +188,7 @@ body[data-page="samples"] .top-nav a.active {
 .top-nav {
   display: flex;
   align-items: center;
+  justify-self: end;
   gap: 8px;
   flex-wrap: wrap;
 }
@@ -1190,7 +1200,7 @@ body[data-page="samples"] .back-link {
     padding-inline: 20px;
   }
 
-  body[data-page="samples"] .brand-text,
+  body[data-page="samples"] .brand-title,
   body[data-page="samples"] .sap-logo {
     font-size: 20px;
   }
@@ -1387,15 +1397,17 @@ body[data-page="samples"] .site-header {
 }
 
 .brand,
-body[data-page="samples"] .brand {
+.brand-title,
+body[data-page="samples"] .brand,
+body[data-page="samples"] .brand-title {
   color: var(--text);
 }
 
-.brand-text,
-body[data-page="samples"] .brand-text {
+.brand-title,
+body[data-page="samples"] .brand-title {
   color: var(--text);
   font-size: 19px;
-  font-weight: 850;
+  font-weight: 780;
 }
 
 .sap-logo,
@@ -1470,7 +1482,7 @@ main.accelerator-library-page {
 }
 
 .hero-brand {
-  justify-content: flex-start;
+  justify-content: center;
   width: min(860px, 100%);
   margin: 0 auto 22px;
   color: #33445a;
@@ -1710,8 +1722,10 @@ main.accelerator-library-page {
 
 .scenario-hero h1 {
   margin-bottom: 14px;
-  font-size: clamp(38px, 5vw, 62px);
-  font-weight: 850;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 740;
+  line-height: 1.08;
 }
 
 .scenario-hero p {
@@ -2256,10 +2270,10 @@ body[data-page="samples"] .back-link {
 
 .detail-hero h1 {
   margin-bottom: 14px;
-  color: #10233a;
-  font-size: clamp(34px, 4.5vw, 58px);
-  font-weight: 850;
-  line-height: 1.04;
+  color: rgba(16, 35, 58, 0.9);
+  font-size: clamp(30px, 3.7vw, 48px);
+  font-weight: 720;
+  line-height: 1.1;
 }
 
 .detail-hero p {
@@ -2793,12 +2807,17 @@ body[data-page="samples"] .back-link {
     padding-inline: 18px;
   }
 
-  .brand-text,
-  body[data-page="samples"] .brand-text {
+  .brand-title,
+  body[data-page="samples"] .brand-title {
+    position: static;
+    transform: none;
+    justify-self: start;
     font-size: 17px;
   }
 
   .top-nav {
+    grid-column: 1 / -1;
+    justify-self: start;
     gap: 6px;
     flex-wrap: nowrap;
     overflow-x: auto;

@@ -7,13 +7,17 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "Scoping",
-        "title":  "Documentation of all missing scope item required for initial activation",
-        "shortDescription":  "Develop a centralized document mapping all required scope items to their respective business processes to ensure completeness and prevent gaps during...",
-        "useCase":  "Develop a centralized document mapping all required scope items to their respective business processes to ensure completeness and prevent gaps during initial activation.",
+        "title":  "Public Cloud Pre-requisites",
+        "shortDescription":  "Capture the public-cloud decisions that must be locked before activation, including scope items, ledgers, group valuation, and profit center valuation.",
+        "useCase":  "Develop a centralized pre-requisites checklist mapping required scope items, ledger decisions, valuation choices, and business processes before initial activation.",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
         "summary":  "If we have parallel ledgers, the Scope items are to be finalised in the DDA stage itself. Once scope items are deployed and the config is moved to DEV, there is no chance of adding new scope items.",
         "implementation":  [
                                "Confirm the decision point with the process owner during discovery or fit-to-standard workshops.",
+                               "Parallel Ledgers in Public Cloud: decide IFRS, Local GAAP, US GAAP, and non-leading ledger requirements before the scope and provisioning path is locked.",
+                               "Group Valuation in Public Cloud: confirm whether additional parallel ledger or Universal Parallel Accounting choices are required before activation.",
+                               "Profit Center Valuation in Public Cloud: confirm whether profit center valuation is required and record the dependency before scope items and configuration are frozen.",
+                               "Additional Depreciation Area in AA using 5HG \u0026 6KF: confirm the additional depreciation area requirement before initial scoping, because the related scope decision cannot be added later without re-provisioning.",
                                "Document the scope item, configuration, migration, or reporting dependency and the consequence of choosing incorrectly.",
                                "Validate the decision in the customer tenant before activation, provisioning, or transport movement makes it difficult to change.",
                                "Store the final recommendation, screenshots, and sign-off notes with the implementation evidence."
@@ -22,53 +26,17 @@ window.customerAssetItems = [
                         {
                             "label":  "Internal accelerator notes from checklist row acc-001",
                             "url":  ""
-                        }
-                    ]
-    },
-    {
-        "id":  "checklist-acc-003",
-        "laneKey":  "asset",
-        "lane":  "Asset",
-        "sourceType":  "Customer Asset",
-        "category":  "Org Structure",
-        "title":  "Documentation to help customers choose the Parallel Ledger concept in Cloud \u0026 how not selecting the right option can either limit solution or lead to re-provision",
-        "shortDescription":  "Create a document on IFRS, Local GAAP, and US GAAP to guide customers in selecting the appropriate Parallel Ledger concept in the Cloud, highlighting...",
-        "useCase":  "Create a document on IFRS, Local GAAP, and US GAAP to guide customers in selecting the appropriate Parallel Ledger concept in the Cloud, highlighting how incorrect choices can limit functionality or necessitate reprovisioning.",
-        "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
-        "summary":  "IFRS vs LOCAL GAAP vs US GAAP",
-        "implementation":  [
-                               "Confirm the decision point with the process owner during discovery or fit-to-standard workshops.",
-                               "Document the scope item, configuration, migration, or reporting dependency and the consequence of choosing incorrectly.",
-                               "Validate the decision in the customer tenant before activation, provisioning, or transport movement makes it difficult to change.",
-                               "Store the final recommendation, screenshots, and sign-off notes with the implementation evidence."
-                           ],
-        "sources":  [
+                        },
                         {
-                            "label":  "Internal accelerator notes from checklist row acc-003",
+                            "label":  "Merged notes from checklist row acc-003: Parallel Ledgers in Public Cloud",
                             "url":  ""
-                        }
-                    ]
-    },
-    {
-        "id":  "checklist-acc-004",
-        "laneKey":  "asset",
-        "lane":  "Asset",
-        "sourceType":  "Customer Asset",
-        "category":  "Org Structure",
-        "title":  "Documentation on using additional Parallel ledger to implement group valuation using the Universal Parallel Accounting \u0026  how not selecting the right option can either limit solution or lead to re-provision",
-        "shortDescription":  "I hope we can include it with Row # 2",
-        "useCase":  "I hope we can include it  with Row # 2",
-        "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
-        "summary":  "I hope we can include it  with Row # 2",
-        "implementation":  [
-                               "Confirm the decision point with the process owner during discovery or fit-to-standard workshops.",
-                               "Document the scope item, configuration, migration, or reporting dependency and the consequence of choosing incorrectly.",
-                               "Validate the decision in the customer tenant before activation, provisioning, or transport movement makes it difficult to change.",
-                               "Store the final recommendation, screenshots, and sign-off notes with the implementation evidence."
-                           ],
-        "sources":  [
+                        },
                         {
-                            "label":  "Internal accelerator notes from checklist row acc-004",
+                            "label":  "Merged notes from checklist row acc-004: Group Valuation in Public Cloud",
+                            "url":  ""
+                        },
+                        {
+                            "label":  "Merged notes from checklist row acc-027: Additional Depreciation Area in AA using 5HG \u0026 6KF",
                             "url":  ""
                         }
                     ]
@@ -79,7 +47,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "Data Migration using Staging Tables approach",
-        "title":  "Comprehensive General Data Migration design to help customers accelerate:\n\nGL Balances \u0026 Open Item  \nHistorical Balances \u0026 Movements \nAsset Master \u0026 Transactions\nMaterial Inventory Balances\nTax GL Balances\nForex Balances\nAUC Assets \u0026 Transactions\nCash Balances at Liquidity \u0026 Forecasting Level",
+        "title":  "Data Migration",
         "shortDescription":  "Leverage knowledge gained from recent data migration and create a comprehensive document \"General Data Migration Design\" helps accelerating future im...",
         "useCase":  "Leverage knowledge gained from recent data migration and  create a comprehensive document \"General Data Migration Design\" helps accelerating future implementations across different data  migrations. \nEx..\nGL Balances \u0026 Open Item  \nHistorical Balances \u0026 Movements \nAsset Master \u0026 Transactions\nMaterial Inventory Balances\nTax GL Balances\nForex Balances\nAUC Assets \u0026 Transactions\nCash Balances at Liquidity \u0026 Forecasting Level",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -103,7 +71,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "Data Migration using Staging Tables approach",
-        "title":  "Comprehensive REFX Data Migration solution along with Product Bug Fixes",
+        "title":  "Data Migration - REFX",
         "shortDescription":  "A Document with comprehensive REFX Data Migration approach, including product bug fixes \u0026 best practices which ensure accurate, efficient lease data...",
         "useCase":  "A Document with comprehensive REFX Data Migration approach, including product bug fixes \u0026 best practices which ensure accurate, efficient lease data transfer in future implementations",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -127,7 +95,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "FI-GL",
-        "title":  "Detailed documentation of Global Hierarchies \u0026 Standard hierarchy setup options for cloud environment, utilising Global Hierarchies to support the reporting options on cloud",
+        "title":  "Standard Hierarchies vs Global Hierarchies",
         "shortDescription":  "Create detailed documentation on Global Hierarchies and Standard Hierarchy setup options in the Cloud, highlighting how to leverage Global Hierarchie...",
         "useCase":  "Create detailed documentation on Global Hierarchies and Standard Hierarchy setup options in the Cloud, highlighting how to leverage Global Hierarchies to support reporting requirements effectively",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -151,7 +119,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "FI-GL",
-        "title":  "Detailed documentation on how to Reset Transaction Data in cloud \u0026 overcome the Bugs for subsequent system use",
+        "title":  "Reset Transaction Data",
         "shortDescription":  "Detailed documentation on how to Reset Transaction Data in cloud \u0026 overcome the Bugs for subsequent system use",
         "useCase":  "Detailed documentation on how to Reset Transaction Data in cloud \u0026 overcome the Bugs for subsequent system use",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -175,7 +143,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "Taxation",
-        "title":  "Implementing Scope Item 43D -Brazil \u0026 Canada - https://rapid.sap.com/bp/#/browse/scopeitemversions/43D/S4CLD/2302/BR \u0026 Customising the Tax Engine to meet Customer Requirements",
+        "title":  "Tax Engine setup for Brazil using 43D",
         "shortDescription":  "S/4HANA Cloud’s native tax engine has limited capabilities for complex, multi-jurisdiction tax scenarios, creating a gap for automated calculation, e...",
         "useCase":  "S/4HANA Cloud’s native tax engine has limited capabilities for complex, multi-jurisdiction tax scenarios, creating a gap for automated calculation, e‑invoicing, and real-time compliance.",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -194,36 +162,12 @@ window.customerAssetItems = [
                     ]
     },
     {
-        "id":  "checklist-acc-014",
-        "laneKey":  "asset",
-        "lane":  "Asset",
-        "sourceType":  "Customer Asset",
-        "category":  "Taxation",
-        "title":  "Implementation of following Scenarios for Brazil TE Implementation (Domestic \u0026 Interstate):\n\nProcurement of Material\nProcurement of Materials for Industrialisation\nProcurement of Materials for Consumption\n\nProcurement of Assets for Capitalisation\nProcurement of Electricity \n\nProcurement of Services\nProcurement of Imported Services\nProcurement scenarios for Leasing Contracts",
-        "shortDescription":  "Product GAP on Implementation of Tax Engine",
-        "useCase":  "Product GAP on Implementation of Tax Engine",
-        "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
-        "summary":  "Product GAP on Implementation of Tax Engine",
-        "implementation":  [
-                               "Confirm the decision point with the process owner during discovery or fit-to-standard workshops.",
-                               "Document the scope item, configuration, migration, or reporting dependency and the consequence of choosing incorrectly.",
-                               "Validate the decision in the customer tenant before activation, provisioning, or transport movement makes it difficult to change.",
-                               "Store the final recommendation, screenshots, and sign-off notes with the implementation evidence."
-                           ],
-        "sources":  [
-                        {
-                            "label":  "Internal accelerator notes from checklist row acc-014",
-                            "url":  ""
-                        }
-                    ]
-    },
-    {
         "id":  "checklist-acc-019",
         "laneKey":  "asset",
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "Taxation",
-        "title":  "Implementing Scope Item 4Q2 - USA - https://rapid.sap.com/bp/#/scopeitems/4Q2 \u0026 Customising the Tax Engine to meet Customer Requirements",
+        "title":  "Tax Engine setup for USA using 4Q2",
         "shortDescription":  "Product GAP on Implementation of Tax Engine",
         "useCase":  "Product GAP on Implementation of Tax Engine",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -242,12 +186,36 @@ window.customerAssetItems = [
                     ]
     },
     {
+        "id":  "checklist-acc-014",
+        "laneKey":  "asset",
+        "lane":  "Asset",
+        "sourceType":  "Customer Asset",
+        "category":  "Taxation",
+        "title":  "Tax Localisation - Brazil",
+        "shortDescription":  "Product GAP on Implementation of Tax Engine",
+        "useCase":  "Product GAP on Implementation of Tax Engine",
+        "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
+        "summary":  "Product GAP on Implementation of Tax Engine",
+        "implementation":  [
+                               "Confirm the decision point with the process owner during discovery or fit-to-standard workshops.",
+                               "Document the scope item, configuration, migration, or reporting dependency and the consequence of choosing incorrectly.",
+                               "Validate the decision in the customer tenant before activation, provisioning, or transport movement makes it difficult to change.",
+                               "Store the final recommendation, screenshots, and sign-off notes with the implementation evidence."
+                           ],
+        "sources":  [
+                        {
+                            "label":  "Internal accelerator notes from checklist row acc-014",
+                            "url":  ""
+                        }
+                    ]
+    },
+    {
         "id":  "checklist-acc-020",
         "laneKey":  "asset",
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "Taxation",
-        "title":  "Detailed documentation on implementing in Sales Tax \u0026 Use Tax for Procurement \u0026 Sales scenarios",
+        "title":  "Tax Localisation USA",
         "shortDescription":  "Product GAP on Implementation of Tax Engine",
         "useCase":  "Product GAP on Implementation of Tax Engine",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -266,36 +234,12 @@ window.customerAssetItems = [
                     ]
     },
     {
-        "id":  "checklist-acc-027",
-        "laneKey":  "asset",
-        "lane":  "Asset",
-        "sourceType":  "Customer Asset",
-        "category":  "FI-AA",
-        "title":  "Documentation of 5HG \u0026 5KF which leads to re-provisioning",
-        "shortDescription":  "Scope Items 5KF (Addl depr area for AUC) and 5HG (Addl depr area for all asset classes) cannot be added after the initial scoping.",
-        "useCase":  "Scope Items 5KF (Addl depr area for AUC) and 5HG (Addl depr area for all asset classes) cannot be added after the initial scoping.",
-        "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
-        "summary":  "Scope Items 5KF (Addl depr area for AUC) and 5HG (Addl depr area for all asset classes) cannot be added after the initial scoping.",
-        "implementation":  [
-                               "Confirm the decision point with the process owner during discovery or fit-to-standard workshops.",
-                               "Document the scope item, configuration, migration, or reporting dependency and the consequence of choosing incorrectly.",
-                               "Validate the decision in the customer tenant before activation, provisioning, or transport movement makes it difficult to change.",
-                               "Store the final recommendation, screenshots, and sign-off notes with the implementation evidence."
-                           ],
-        "sources":  [
-                        {
-                            "label":  "Internal accelerator notes from checklist row acc-027",
-                            "url":  ""
-                        }
-                    ]
-    },
-    {
         "id":  "checklist-acc-030",
         "laneKey":  "asset",
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "FI-BAM",
-        "title":  "Migration approach on how to translate Posting rules \u0026 Search strings with External Transaction types to create new Procssing rules. \nOvercoming SAP\u0027s limitation of preocessing rules",
+        "title":  "Posting Rules vs Processing Rules",
         "shortDescription":  "Incoming Bank Statements (OT83) is replaced by new Processing rules in SAP which includes deprecation of Posting rules (restricted) \u0026 unavailable fun...",
         "useCase":  "Incoming Bank Statements (OT83) is replaced by new Processing rules in SAP which includes deprecation of Posting rules (restricted) \u0026 unavailable functionality - Search Strings",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -319,7 +263,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "FI-BAM",
-        "title":  "Developed a standard solution that allows us to automate the payment reversals for the affected transactions automatically using PAIN files \u0026 BCM",
+        "title":  "Automate Payment Reversal using Pain Files \u0026 BCM Rejections",
         "shortDescription":  "SAP has disabled the option to auto reverse the payment files up on BCM rejection of Bank Rejections (PAIN.002 files).",
         "useCase":  "SAP has disabled the option to auto reverse the payment files up on BCM rejection of Bank Rejections (PAIN.002 files).",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
@@ -343,7 +287,7 @@ window.customerAssetItems = [
         "lane":  "Asset",
         "sourceType":  "Customer Asset",
         "category":  "GR",
-        "title":  "Comprehensive implementtaion documenttaion in Technical, Integration \u0026 Functional areas required to Implement GRDC.",
+        "title":  "GRDC Implementation",
         "shortDescription":  "Missing Documentation required for Implementation",
         "useCase":  "Missing Documentation required for Implementation",
         "whenToUse":  "Use this as a design and readiness checkpoint before SAP S/4HANA Cloud scope, configuration, migration, or activation decisions are locked in.",
