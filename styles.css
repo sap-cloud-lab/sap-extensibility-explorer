@@ -2355,6 +2355,36 @@ body[data-page="samples"] .back-link {
   font-size: 16px;
 }
 
+.detail-rich {
+  display: grid;
+  gap: 14px;
+}
+
+.detail-rich p {
+  margin: 0;
+}
+
+.detail-rich h3 {
+  margin: 4px 0 -4px;
+  color: #12273f;
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.detail-rich ul,
+.implementation-panel ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 20px;
+  color: #596b7c;
+}
+
+.detail-rich li,
+.implementation-panel ul li {
+  padding-left: 2px;
+}
+
 .implementation-panel ol {
   display: grid;
   gap: 12px;
@@ -2364,22 +2394,48 @@ body[data-page="samples"] .back-link {
   counter-reset: step;
 }
 
-.implementation-panel li {
-  position: relative;
+.implementation-panel ol > li {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  column-gap: 12px;
+  align-items: start;
   min-height: 56px;
-  padding: 14px 14px 14px 58px;
+  padding: 12px 14px;
   border: 1px solid #dbe9f5;
   border-radius: 16px;
   background: #f8fbff;
   color: #32475b;
 }
 
-.implementation-panel li::before {
+.implementation-panel ol > li > span {
+  display: flex;
+  align-items: center;
+  grid-column: 2;
+  min-height: 30px;
+  line-height: 1.4;
+}
+
+.implementation-panel ol > li > ul {
+  grid-column: 2;
+  margin-top: 10px;
+}
+
+.implementation-panel ol > li > ul > li {
+  display: list-item;
+  min-height: auto;
+  padding: 0 0 0 2px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.implementation-panel ol > li > ul > li::before {
+  content: none;
+}
+
+.implementation-panel ol > li::before {
   counter-increment: step;
   content: counter(step);
-  position: absolute;
-  left: 14px;
-  top: 14px;
   display: grid;
   place-items: center;
   width: 30px;
@@ -2389,6 +2445,209 @@ body[data-page="samples"] .back-link {
   color: #ffffff;
   font-size: 13px;
   font-weight: 900;
+}
+
+.collapsible-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.detail-accordion-list {
+  display: grid;
+  gap: 12px;
+}
+
+.detail-accordion {
+  overflow: hidden;
+  border: 1px solid #d7e5f1;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.detail-accordion summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 54px;
+  padding: 14px 16px;
+  color: #173a63;
+  font-size: 15px;
+  font-weight: 850;
+  cursor: pointer;
+  list-style: none;
+}
+
+.detail-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.detail-accordion summary > .accordion-chevron {
+  width: 22px;
+  height: 22px;
+  color: var(--blue);
+  transition: transform 160ms ease;
+}
+
+.detail-accordion[open] summary {
+  border-bottom: 1px solid #dbe9f5;
+  background: #f7fbff;
+}
+
+.detail-accordion[open] summary > .accordion-chevron {
+  transform: rotate(90deg);
+}
+
+.detail-accordion-body {
+  display: grid;
+  gap: 14px;
+  padding: 16px;
+  color: #43586d;
+}
+
+.accordion-export-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.excel-download-button {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 38px;
+  border: 1px solid #b8dfc8;
+  border-radius: 10px;
+  background: #eefaf2;
+  color: #0f6b3d;
+  cursor: pointer;
+}
+
+.excel-download-badge {
+  position: absolute;
+  right: 3px;
+  bottom: 2px;
+  min-width: 18px;
+  padding: 0 3px;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #075a31;
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.excel-download-button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.excel-download-button:hover {
+  border-color: #78bd92;
+  background: #ddf5e6;
+  color: #075a31;
+}
+
+.excel-download-button:focus-visible {
+  outline: 3px solid rgba(30, 129, 73, 0.28);
+  outline-offset: 3px;
+}
+
+.detail-accordion-body h3,
+.detail-accordion-body h4 {
+  margin: 0;
+  color: #12273f;
+}
+
+.detail-accordion-body h3 {
+  font-size: 18px;
+}
+
+.detail-accordion-body h4 {
+  font-size: 15px;
+}
+
+.detail-accordion-body p,
+.detail-accordion-body ul {
+  margin: 0;
+}
+
+.detail-accordion-body ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.field-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.field-list div {
+  display: grid;
+  grid-template-columns: minmax(160px, 230px) minmax(0, 1fr);
+  gap: 10px;
+}
+
+.field-list dt {
+  color: #12273f;
+  font-weight: 850;
+}
+
+.field-list dd {
+  margin: 0;
+}
+
+.detail-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #dbe9f5;
+  border-radius: 14px;
+}
+
+.detail-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.detail-table th,
+.detail-table td {
+  padding: 11px 12px;
+  border-bottom: 1px solid #e3edf7;
+  text-align: left;
+  vertical-align: top;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.detail-table th {
+  background: #eef7ff;
+  color: #174066;
+  font-weight: 900;
+}
+
+.detail-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.detail-code {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: #eef6ff;
+  color: #0c477c;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
 }
 
 .source-link {
@@ -2410,6 +2669,23 @@ body[data-page="samples"] .back-link {
 .source-link:hover {
   border-color: var(--blue);
   background: #eef7ff;
+}
+
+.source-link strong,
+.source-link small {
+  display: block;
+}
+
+.source-link strong {
+  color: #173a63;
+}
+
+.source-link span small {
+  margin-top: 4px;
+  color: #6b7d90;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.35;
 }
 
 .source-placeholder {
@@ -2905,12 +3181,76 @@ body[data-page="samples"] .back-link {
   .library-panel,
   .detail-hero,
   .detail-panel {
-    padding: 22px;
+    padding: 18px;
     border-radius: 18px;
   }
 
   .detail-hero h1 {
-    font-size: 32px;
+    font-size: 26px;
+    overflow-wrap: anywhere;
+  }
+
+  body[data-page="detail"] {
+    overflow-x: hidden;
+  }
+
+  .detail-page,
+  .detail-grid,
+  .detail-hero,
+  .detail-hero > div,
+  .detail-panel,
+  .detail-rich,
+  .detail-accordion,
+  .detail-accordion-body,
+  .source-link {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .detail-page {
+    width: calc(100% - 20px);
+  }
+
+  .detail-hero {
+    gap: 18px;
+  }
+
+  .detail-hero p,
+  .detail-panel p,
+  .detail-rich li,
+  .detail-accordion-body li,
+  .field-list dd,
+  .source-link,
+  .implementation-panel ol > li > span,
+  .implementation-panel ol > li > ul > li {
+    overflow-wrap: anywhere;
+  }
+
+  .field-list div {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .detail-actions {
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .primary-action,
+  .secondary-action {
+    max-width: 100%;
+    white-space: normal;
+  }
+
+  .implementation-panel ol > li {
+    grid-template-columns: 28px minmax(0, 1fr);
+    column-gap: 10px;
+    padding: 10px;
+  }
+
+  .implementation-panel ol > li::before {
+    width: 28px;
+    height: 28px;
   }
 
   .asset-stat-panel {

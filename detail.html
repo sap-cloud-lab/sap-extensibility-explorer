@@ -40,18 +40,20 @@
       <section class="detail-grid" aria-label="Implementation details">
         <article class="detail-panel">
           <h2>What This Helps With</h2>
-          <p id="detailUseCase"></p>
+          <div class="detail-rich" id="detailUseCase"></div>
         </article>
 
         <article class="detail-panel">
           <h2>When To Choose It</h2>
-          <p id="detailWhenToUse"></p>
+          <div class="detail-rich" id="detailWhenToUse"></div>
         </article>
 
         <article class="detail-panel implementation-panel">
           <h2>Implementation Draft</h2>
           <ol id="implementationSteps"></ol>
         </article>
+
+        <article class="detail-panel collapsible-panel" id="detailCollapsiblePanel" hidden></article>
 
         <aside class="detail-panel source-panel">
           <h2>Sources And Next Steps</h2>
@@ -71,6 +73,7 @@
 
     <script src="assets-data.js"></script>
     <script src="selected-content.js"></script>
+    <script src="cloud-alm-export.js"></script>
     <script src="app.js"></script>
     <script src="detail.js"></script>
   </body>

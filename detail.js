@@ -15,6 +15,156 @@ function detailSlugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function detailIdsForSample(sample) {
+  return [
+    sample.id,
+    sample.slug,
+    detailSlugify(sample.title),
+    ...(sample.detailAliases || []),
+  ].filter(Boolean);
+}
+
+function sampleMatchesDetailId(sample, sampleId) {
+  return detailIdsForSample(sample).includes(sampleId);
+}
+
+function renderDetailBlock(block) {
+  if (typeof block === "string") return `<p>${detailEscapeHtml(block)}</p>`;
+
+  const heading = block.heading ? `<h3>${detailEscapeHtml(block.heading)}</h3>` : "";
+  const text = block.text ? `<p>${detailEscapeHtml(block.text)}</p>` : "";
+  const items = Array.isArray(block.items)
+    ? `<ul>${block.items.map((item) => `<li>${detailEscapeHtml(item)}</li>`).join("")}</ul>`
+    : "";
+
+  return `${heading}${text}${items}`;
+}
+
+function renderDetailContent(elementId, content) {
+  const target = document.getElementById(elementId);
+  if (!target) return;
+
+  target.innerHTML = Array.isArray(content)
+    ? content.map(renderDetailBlock).join("")
+    : `<p>${detailEscapeHtml(content || "")}</p>`;
+}
+
+function renderImplementationStep(step) {
+  if (typeof step === "string") return `<li><span>${detailEscapeHtml(step)}</span></li>`;
+
+  const substeps = Array.isArray(step.items)
+    ? `<ul>${step.items.map((item) => `<li>${detailEscapeHtml(item)}</li>`).join("")}</ul>`
+    : "";
+
+  return `<li><span>${detailEscapeHtml(step.text || "")}</span>${substeps}</li>`;
+}
+
+function sourceLooksLikeCode(source) {
+  return /source|github|repository/i.test(source.label || "");
+}
+
+function renderPrimaryAction(source, label, className) {
+  return source.url
+    ? `
+        <a class="${className}" href="${detailEscapeHtml(source.url)}" target="_blank" rel="noreferrer">
+          ${detailEscapeHtml(label)}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17 17 7" />
+            <path d="M8 7h9v9" />
+          </svg>
+        </a>
+      `
+    : `
+        <span class="${className} disabled-action">
+          ${detailEscapeHtml(label)}
+        </span>
+      `;
+}
+
+function renderExcelIcon() {
+  return `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 3h9l5 5v13H5z" />
+      <path d="M14 3v5h5" />
+      <path d="m8.5 11 4 6" />
+      <path d="m12.5 11-4 6" />
+    </svg>
+  `;
+}
+
+function renderSectionExportButtons(section, item) {
+  if (!window.cloudAlmExport || !Array.isArray(section.exports) || !section.exports.length) return "";
+
+  const exportOptions = new Map(
+    window.cloudAlmExport.getExportOptions(item).map((option) => [option.kind, option]),
+  );
+  const buttons = section.exports
+    .map((kind) => exportOptions.get(kind))
+    .filter(Boolean)
+    .map(
+      (download) => `
+        <button
+          class="excel-download-button"
+          type="button"
+          data-cloud-alm-export="${detailEscapeHtml(download.kind)}"
+          title="${detailEscapeHtml(`${download.label} - ${download.filename}`)}"
+          aria-label="${detailEscapeHtml(`${download.label} - ${download.filename}`)}"
+        >
+          ${renderExcelIcon()}
+          <span class="excel-download-badge" aria-hidden="true">${detailEscapeHtml(download.shortLabel || download.kind)}</span>
+          <span class="sr-only">${detailEscapeHtml(download.label)}</span>
+        </button>
+      `,
+    )
+    .join("");
+
+  return buttons ? `<div class="accordion-export-bar">${buttons}</div>` : "";
+}
+
+function bindCloudAlmExportButtons(container, item) {
+  container.querySelectorAll("[data-cloud-alm-export]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const kind = button.getAttribute("data-cloud-alm-export");
+      window.cloudAlmExport.downloadExport(item, kind);
+    });
+  });
+}
+
+function renderCollapsibleSections(sections, item) {
+  const panel = document.getElementById("detailCollapsiblePanel");
+  if (!panel) return;
+
+  if (!Array.isArray(sections) || !sections.length) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+    return;
+  }
+
+  panel.hidden = false;
+  panel.innerHTML = `
+    <h2>Accelerator Pack</h2>
+    <div class="detail-accordion-list">
+      ${sections
+        .map(
+          (section, index) => `
+            <details class="detail-accordion" ${index === 0 ? "open" : ""}>
+              <summary>
+                <span>${detailEscapeHtml(section.title)}</span>
+                ${renderSectionExportButtons(section, item)}
+                <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </summary>
+              <div class="detail-accordion-body">${section.html || ""}</div>
+            </details>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+  bindCloudAlmExportButtons(panel, item);
+}
+
 function inferInAppTool(sample) {
   const text = `${sample.title} ${sample.description} ${sample.pattern}`.toLowerCase();
   if (text.includes("email")) return "Maintain Email Templates and the relevant output management configuration";
@@ -60,7 +210,7 @@ function findSampleDetail(params) {
   const lane = lanes[laneKey];
   if (!lane) return null;
 
-  const sample = lane.samples.find((candidate) => detailSlugify(candidate.title) === sampleId);
+  const sample = lane.samples.find((candidate) => sampleMatchesDetailId(candidate, sampleId));
   if (!sample) return null;
 
   return {
@@ -80,12 +230,17 @@ function findSampleDetail(params) {
           ? "Choose this when the extension needs ABAP Cloud, RAP, released APIs, released CDS views, or released BAdIs on the S/4HANA stack."
           : "Choose this when the solution should run separately on SAP BTP or another side runtime while consuming S/4HANA Cloud APIs or events."),
     implementation: sample.implementation || sampleImplementation(laneKey, sample),
+    collapsibleSections: sample.collapsibleSections || [],
+    cloudAlm: sample.cloudAlm || null,
+    pattern: sample.pattern,
+    status: sample.status,
     sources: sample.sources || [
       {
         label: sample.linkLabel || "Open GitHub source",
         url: sample.url,
       },
     ],
+    nextStep: sample.nextStep,
     backUrl: from === "accelerators" ? "accelerators.html" : `samples.html?lane=${encodeURIComponent(laneKey)}`,
     backLabel: from === "accelerators" ? "Back to accelerators" : `Back to ${lane.label} samples`,
   };
@@ -106,7 +261,12 @@ function findAssetDetail(params) {
     useCase: asset.useCase,
     whenToUse: asset.whenToUse,
     implementation: asset.implementation,
+    collapsibleSections: asset.collapsibleSections || [],
+    cloudAlm: asset.cloudAlm || null,
+    pattern: asset.pattern,
+    status: asset.status,
     sources: asset.sources,
+    nextStep: asset.nextStep,
     backUrl: "assets.html",
     backLabel: "Back to assets",
   };
@@ -122,11 +282,18 @@ function renderSourceLinks(item) {
   const sourceList = document.getElementById("sourceList");
   sourceList.innerHTML = item.sources
     .map(
-      (source) =>
-        source.url
+      (source) => {
+        const sourceContent = `
+              <span>
+                <strong>${detailEscapeHtml(source.label)}</strong>
+                ${source.note ? `<small>${detailEscapeHtml(source.note)}</small>` : ""}
+              </span>
+            `;
+
+        return source.url
           ? `
             <a class="source-link" href="${detailEscapeHtml(source.url)}" target="_blank" rel="noreferrer">
-              <span>${detailEscapeHtml(source.label)}</span>
+              ${sourceContent}
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 17 17 7" />
                 <path d="M8 7h9v9" />
@@ -135,34 +302,43 @@ function renderSourceLinks(item) {
           `
           : `
             <div class="source-link source-placeholder">
-              <span>${detailEscapeHtml(source.label)}</span>
-              <small>To be linked later</small>
+              ${sourceContent}
+              ${source.note ? "" : "<small>To be linked later</small>"}
             </div>
-          `,
+          `;
+      },
     )
     .join("");
 
-  const linkedSources = item.sources.filter((source) => source.url);
-  document.getElementById("detailPrimaryActions").innerHTML = linkedSources.length
-    ? linkedSources
-        .slice(0, 2)
-    .map(
-      (source, index) => `
-        <a class="${index === 0 ? "primary-action" : "secondary-action"}" href="${detailEscapeHtml(source.url)}" target="_blank" rel="noreferrer">
-          ${index === 0 ? "Open source" : "Open reference"}
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 17 17 7" />
-            <path d="M8 7h9v9" />
-          </svg>
-        </a>
-      `,
-    )
-        .join("")
+  const sourceAction = item.sources.find(sourceLooksLikeCode);
+  const referenceAction = item.sources.find((source) => source.url && source !== sourceAction);
+  const fallbackSource = item.sources.find((source) => source.url);
+  const primaryActions = [];
+
+  if (sourceAction) {
+    primaryActions.push(
+      renderPrimaryAction(sourceAction, sourceAction.url ? "Open source" : "Source pending", sourceAction.url ? "primary-action" : "secondary-action"),
+    );
+  } else if (fallbackSource) {
+    primaryActions.push(renderPrimaryAction(fallbackSource, "Open source", "primary-action"));
+  }
+
+  if (referenceAction) {
+    primaryActions.push(
+      renderPrimaryAction(referenceAction, referenceAction.actionLabel || "Open reference", sourceAction?.url ? "secondary-action" : "primary-action"),
+    );
+  }
+
+  document.getElementById("detailPrimaryActions").innerHTML = primaryActions.length
+    ? primaryActions.join("")
     : `
         <span class="secondary-action disabled-action">
           Source code pending
         </span>
       `;
+
+  const detailNote = document.querySelector(".detail-note span");
+  if (detailNote && item.nextStep) detailNote.textContent = item.nextStep;
 }
 
 function renderDetailPage() {
@@ -195,11 +371,12 @@ function renderDetailPage() {
   document.getElementById("detailSourceType").textContent = item.sourceType;
   document.getElementById("detailTitle").textContent = item.title;
   document.getElementById("detailSummary").textContent = item.summary;
-  document.getElementById("detailUseCase").textContent = item.useCase;
-  document.getElementById("detailWhenToUse").textContent = item.whenToUse;
+  renderDetailContent("detailUseCase", item.useCase);
+  renderDetailContent("detailWhenToUse", item.whenToUse);
   document.getElementById("implementationSteps").innerHTML = item.implementation
-    .map((step) => `<li>${detailEscapeHtml(step)}</li>`)
+    .map(renderImplementationStep)
     .join("");
+  renderCollapsibleSections(item.collapsibleSections, item);
 
   renderSourceLinks(item);
 
