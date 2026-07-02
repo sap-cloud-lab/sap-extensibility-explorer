@@ -802,7 +802,7 @@ window.customerSampleItems = [
         "sources":  [
                         {
                             "label":  "Customer implementation notes: Aging report key date custom app",
-                            "url":  "docs/customer-accelerators/aging-report-key-date-custom-app.md"
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/aging-report-key-date-custom-app.md"
                         },
                         {
                             "label":  "SAP Fiori Apps Library: F4401 Aging Report for Accounts Payable",
@@ -813,7 +813,7 @@ window.customerSampleItems = [
                             "url":  "https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F1733')"
                         }
                     ],
-        "url":  "docs/customer-accelerators/aging-report-key-date-custom-app.md",
+        "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/aging-report-key-date-custom-app.md",
         "linkLabel":  "Open implementation notes"
     },
     {
@@ -850,14 +850,14 @@ window.customerSampleItems = [
         "sources":  [
                         {
                             "label":  "Customer implementation notes: Inventory vs consumption STO control",
-                            "url":  "docs/customer-accelerators/inventory-vs-consumption-sto.md"
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/inventory-vs-consumption-sto.md"
                         },
                         {
                             "label":  "Source document: invenotry vs consumtption.docx",
                             "url":  ""
                         }
                     ],
-        "url":  "docs/customer-accelerators/inventory-vs-consumption-sto.md",
+        "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/inventory-vs-consumption-sto.md",
         "linkLabel":  "Open implementation notes"
     }
 ];

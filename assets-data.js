@@ -741,7 +741,7 @@ ENDLOOP.`,
     sources: [
       {
         label: "Customer implementation notes: Copy PO short text to goods receipt text",
-        url: "docs/customer-accelerators/copy-po-short-text-to-gr-text.md",
+        url: "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/copy-po-short-text-to-gr-text.md",
       },
       {
         label: "SAP KBA preview: PO short text in Goods Receipt not transferred to FI",
