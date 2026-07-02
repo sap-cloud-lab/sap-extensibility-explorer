@@ -918,6 +918,96 @@ ENDIF.`
                     ],
         "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/inventory-vs-consumption-sto.md",
         "linkLabel":  "Open implementation notes"
+    },
+    {
+        "id":  "customer-ip19-maintenance-report-inapp",
+        "laneKey":  "inapp",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "IP19 Maintenance Report Requirement",
+        "status":  "Customer accelerator",
+        "pattern":  "EAM Reporting",
+        "description":  "IP19-equivalent maintenance planning report built with Custom CDS, Custom Analytical Query, and Manage KPIs and Reports.",
+        "function":  "Creates a planner-friendly maintenance schedule report for SAP S/4HANA Cloud Public Edition and documents the remaining Due Packages release blocker for SAP escalation.",
+        "summary":  "A clean-core in-app reporting accelerator that replaces the ECC IP19 planning view with an embedded analytics report and a documented escalation path for Due Packages.",
+        "useCase":  "Use this when maintenance planners need a single operational report combining maintenance plan, item, equipment, functional location, work center, planned dates, completion dates, orders, call status, planner group, operation text, and due package context.",
+        "whenToUse":  "Choose this when the reporting requirement is read-only, planner-facing, and can be delivered through embedded analytics before moving to developer extensibility for any unreleased SAP data gaps.",
+        "implementation":  [
+                               "Start from the SAP-delivered Maintenance Plan Scheduling Overview analytical content and confirm the mandatory IP19-equivalent fields with maintenance planners.",
+                               "Create analytical cube YY1_IP19_MAINTPLAN_CUBE using I_MaintPlanSchedgOverviewCube as the primary datasource.",
+                               "Add associations for equipment text, functional location text, and maintenance order operation text so the report contains planner-friendly descriptions, not only IDs.",
+                               "Add NumberOfMaintenancePlanCalls as a measure with SUM aggregation because an analytical cube requires at least one measure.",
+                               "Use analytical association cardinalities that can publish in Custom CDS Views; validate the operation text result because I_MaintOrderOperationBasic can have multiple operations.",
+                               "Create Custom Analytical Query YY1_Q_IP19_MAINT_SCHED after the cube is fully published, then configure filters for maintenance plan, equipment, functional location, work center, planner group, call status, planned date, maintenance order, and completion date.",
+                               "Publish the query through Manage KPIs and Reports as a Web Dynpro Grid Application because it gives planners a cleaner operational report than raw multidimensional analysis.",
+                               "Document the Due Packages gap separately: the required package data is visible in Customer Data Browser through I_MAINTTSKLISTSTRGYPACKAGETP, but the CDS object is not available for Custom CDS Views and returned HTTP 403 in ADT.",
+                               "Use C_MAINTENANCEITEMDEX_2 to map maintenance item to task list type, task list group, and group counter, then use I_MAINTTSKLISTSTRGYPACKAGETP as the requested released source for Maintenance Package Number and Cycle Text.",
+                               "Raise the SAP escalation requesting release of I_MAINTTSKLISTSTRGYPACKAGETP, an equivalent released CDS/API, or direct exposure of Due Packages in I_MaintPlanSchedgOverviewCube."
+                           ],
+        "technicalNotes":  {
+                               "title":  "Technical Design And Escalation Notes",
+                               "bullets":  [
+                                               "Primary delivered objects: YY1_IP19_MAINTPLAN_CUBE and YY1_Q_IP19_MAINT_SCHED.",
+                                               "Delivery surface: Manage KPIs and Reports, Web Dynpro Grid Application artifact.",
+                                               "Base analytical provider: I_MaintPlanSchedgOverviewCube.",
+                                               "Mandatory delivered fields include maintenance plan, maintenance item, item description, equipment, equipment description, functional location, functional location description, main work center, planned date, completion date, maintenance order, call status, planner group, and operation short text.",
+                                               "Business-critical remaining gap: Due Packages. Business confirmed go-live cannot proceed without a supported solution for this field.",
+                                               "Due Packages derivation path identified: report maintenance item -> C_MAINTENANCEITEMDEX_2 -> task list type/group/group counter -> I_MAINTTSKLISTSTRGYPACKAGETP -> Maintenance Package Number / Cycle Text / Operation Short Text.",
+                                               "Customer Data Browser evidence confirms I_MAINTTSKLISTSTRGYPACKAGETP contains the package data required for the derivation.",
+                                               "Extensibility blocker: I_MAINTTSKLISTSTRGYPACKAGETP is visible in Customer Data Browser and searchable in ADT, but unavailable in Custom CDS Views and blocked by HTTP 403 when opened as ADT DDL source.",
+                                               "SAP request: release I_MAINTTSKLISTSTRGYPACKAGETP, provide an equivalent released CDS/API, or add Due Packages to I_MaintPlanSchedgOverviewCube / standard maintenance scheduling analytics."
+                                           ],
+                               "codeTitle":  "Due Packages derivation blueprint",
+                               "code":  `Delivered report layer:
+- YY1_IP19_MAINTPLAN_CUBE
+- YY1_Q_IP19_MAINT_SCHED
+- Manage KPIs and Reports Web Dynpro Grid Application
+
+Base cube:
+- I_MaintPlanSchedgOverviewCube
+
+Due Packages target derivation:
+1. Start with Maintenance Plan and Maintenance Item from the custom report.
+2. Use C_MAINTENANCEITEMDEX_2 to obtain:
+   - Task List Type
+   - Task List Group
+   - Group Counter
+3. Use I_MAINTTSKLISTSTRGYPACKAGETP to obtain:
+   - Maintenance Package Number
+   - Cycle Text
+   - Operation Short Text
+4. Use Cycle Text / package data as the supported basis for Due Packages.
+
+Current blocker:
+- I_MAINTTSKLISTSTRGYPACKAGETP is visible in Customer Data Browser.
+- It is not available in Custom CDS Views.
+- ADT DDL source access returned HTTP 403 Forbidden.
+
+SAP escalation request:
+- Release I_MAINTTSKLISTSTRGYPACKAGETP for customer extensibility, or
+- provide an equivalent released CDS/API, or
+- expose Due Packages directly in I_MaintPlanSchedgOverviewCube.`
+                           },
+        "sources":  [
+                        {
+                            "label":  "Customer implementation notes: IP19 maintenance report requirement",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/ip19-maintenance-report-requirement.md"
+                        },
+                        {
+                            "label":  "Architecture evidence: delivered IP19 report flow",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/ip19_tdd_assets/architecture_flow.png"
+                        },
+                        {
+                            "label":  "Due package derivation evidence",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/ip19_tdd_assets/due_package_derivation_flow.png"
+                        },
+                        {
+                            "label":  "Source attachments: IP19 markdown pack and technical design Word document",
+                            "url":  ""
+                        }
+                    ],
+        "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/ip19-maintenance-report-requirement.md",
+        "linkLabel":  "Open implementation notes"
     }
 ];
 
