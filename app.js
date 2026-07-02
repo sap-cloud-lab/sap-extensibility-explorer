@@ -610,9 +610,9 @@ function renderSampleCards(lane, laneKey) {
     : "No Developer sample cards are available yet. Mark accelerators in the checklist and they can be added here.";
   emptyState.hidden = filteredSamples.length > 0;
 
-  document.getElementById("sampleGrid").innerHTML = filteredSamples
-    .map((sample) => renderSampleCard(sample, laneKey))
-    .join("");
+  renderSourceGroupedCards(filteredSamples, {
+    laneKeyForCard: () => laneKey,
+  });
 }
 
 function bindSampleControls(lane, laneKey) {
@@ -644,6 +644,8 @@ function bindSampleControls(lane, laneKey) {
       target.hidden = expanded;
     });
   });
+
+  bindSourceSectionToggles();
 }
 
 function getAllAcceleratorSamples() {
@@ -717,11 +719,47 @@ function renderAcceleratorLibraryFilterOptions(samples) {
     .join("");
 }
 
+function renderSourceGroupedCards(samples, options = {}) {
+  const sapGrid = document.getElementById("sapSampleGrid");
+  const customerGrid = document.getElementById("customerSampleGrid");
+  const fallbackGrid = document.getElementById("sampleGrid");
+  const sapSamples = samples.filter((sample) => sample.source !== "Customer");
+  const customerSamples = samples.filter((sample) => sample.source === "Customer");
+  const laneKeyForCard = options.laneKeyForCard || ((sample) => sample.laneKey);
+  const renderOptions = options.from ? { from: options.from } : {};
+
+  if (!sapGrid || !customerGrid) {
+    if (fallbackGrid) {
+      fallbackGrid.innerHTML = samples
+        .map((sample) => renderSampleCard(sample, laneKeyForCard(sample), renderOptions))
+        .join("");
+    }
+    return;
+  }
+
+  const sapCount = document.getElementById("sapAcceleratorCount");
+  const customerCount = document.getElementById("customerAcceleratorCount");
+  const sapEmptyState = document.getElementById("sapEmptyState");
+  const customerEmptyState = document.getElementById("customerEmptyState");
+
+  if (sapCount) sapCount.textContent = `${sapSamples.length} ${sapSamples.length === 1 ? "card" : "cards"}`;
+  if (customerCount) {
+    customerCount.textContent = `${customerSamples.length} ${customerSamples.length === 1 ? "card" : "cards"}`;
+  }
+  if (sapEmptyState) sapEmptyState.hidden = sapSamples.length > 0 || samples.length === 0;
+  if (customerEmptyState) customerEmptyState.hidden = customerSamples.length > 0 || samples.length === 0;
+
+  sapGrid.innerHTML = sapSamples
+    .map((sample) => renderSampleCard(sample, laneKeyForCard(sample), renderOptions))
+    .join("");
+  customerGrid.innerHTML = customerSamples
+    .map((sample) => renderSampleCard(sample, laneKeyForCard(sample), renderOptions))
+    .join("");
+}
+
 function renderAcceleratorLibraryCards() {
   const samples = getAllAcceleratorSamples();
   const filteredSamples = samples.filter(acceleratorMatches);
-  const sapSamples = filteredSamples.filter((sample) => sample.source !== "Customer");
-  const customerSamples = filteredSamples.filter((sample) => sample.source === "Customer");
   const countText =
     filteredSamples.length === samples.length
       ? `${samples.length} accelerators`
@@ -733,19 +771,23 @@ function renderAcceleratorLibraryCards() {
   emptyState.textContent = "No matching accelerators found.";
   emptyState.hidden = filteredSamples.length > 0;
 
-  document.getElementById("sapAcceleratorCount").textContent = `${sapSamples.length} ${sapSamples.length === 1 ? "card" : "cards"}`;
-  document.getElementById("customerAcceleratorCount").textContent = `${customerSamples.length} ${
-    customerSamples.length === 1 ? "card" : "cards"
-  }`;
-  document.getElementById("sapEmptyState").hidden = sapSamples.length > 0 || filteredSamples.length === 0;
-  document.getElementById("customerEmptyState").hidden = customerSamples.length > 0 || filteredSamples.length === 0;
+  renderSourceGroupedCards(filteredSamples, {
+    from: "accelerators",
+    laneKeyForCard: (sample) => sample.laneKey,
+  });
+}
 
-  document.getElementById("sapSampleGrid").innerHTML = sapSamples
-    .map((sample) => renderSampleCard(sample, sample.laneKey, { from: "accelerators" }))
-    .join("");
-  document.getElementById("customerSampleGrid").innerHTML = customerSamples
-    .map((sample) => renderSampleCard(sample, sample.laneKey, { from: "accelerators" }))
-    .join("");
+function bindSourceSectionToggles() {
+  document.querySelectorAll("[data-accelerator-section]").forEach((button) => {
+    if (button.dataset.boundSectionToggle === "true") return;
+    button.dataset.boundSectionToggle = "true";
+    button.addEventListener("click", () => {
+      const target = document.getElementById(`${button.dataset.acceleratorSection}AcceleratorBody`);
+      const expanded = button.getAttribute("aria-expanded") === "true";
+      button.setAttribute("aria-expanded", String(!expanded));
+      if (target) target.hidden = expanded;
+    });
+  });
 }
 
 function bindAcceleratorLibraryControls() {
@@ -778,14 +820,7 @@ function bindAcceleratorLibraryControls() {
     });
   });
 
-  document.querySelectorAll("[data-accelerator-section]").forEach((button) => {
-    button.addEventListener("click", () => {
-      const target = document.getElementById(`${button.dataset.acceleratorSection}AcceleratorBody`);
-      const expanded = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!expanded));
-      if (target) target.hidden = expanded;
-    });
-  });
+  bindSourceSectionToggles();
 }
 
 function renderAcceleratorLibraryPage() {
