@@ -744,6 +744,10 @@ ENDLOOP.`,
         url: "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/copy-po-short-text-to-gr-text.md",
       },
       {
+        label: "Reusable public-cloud accelerator playbook",
+        url: "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/reusable-public-cloud-accelerator-playbook.md",
+      },
+      {
         label: "SAP KBA preview: PO short text in Goods Receipt not transferred to FI",
         url: "https://userapps.support.sap.com/sap/support/knowledge/en/2921484",
       },

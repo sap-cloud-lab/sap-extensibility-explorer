@@ -805,6 +805,10 @@ window.customerSampleItems = [
                             "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/aging-report-key-date-custom-app.md"
                         },
                         {
+                            "label":  "Reusable public-cloud accelerator playbook",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/reusable-public-cloud-accelerator-playbook.md"
+                        },
+                        {
                             "label":  "SAP Fiori Apps Library: F4401 Aging Report for Accounts Payable",
                             "url":  "https://fioriappslibrary.hana.ondemand.com/sap/fix/externalViewer/#/detail/Apps('F4401')"
                         },
@@ -832,6 +836,7 @@ window.customerSampleItems = [
         "implementation":  [
                                "Create a material master custom field for Consumption Indicator and enable it for the relevant CDS/API usage so custom logic can read it.",
                                "Maintain the indicator as Yes/No at material plant level for the relevant district plants, excluding SLC or plant 2000 where the logic does not apply.",
+                               "Enable the field for API_PRODUCT_SRV, A_ProductPlantType, and I_PRODUCTPLANT so the BAdI can read the product plant value.",
                                "Confirm configuration for item category U and allowed Cost Centre/WBS combinations for Stock Transport Orders.",
                                "Implement the check through BAdI MM_PUR_S4_PO_MODIFY_ACCOUNT because it allows the logic to read material information and control the account-assignment fields.",
                                "Document the caveat that the logic triggers after users enter all required screen parameters, including account assignment values.",
@@ -841,11 +846,61 @@ window.customerSampleItems = [
                                "title":  "BAdI Selection Notes",
                                "bullets":  [
                                                "Chosen BAdI: MM_PUR_S4_PO_MODIFY_ACCOUNT - Modify Purchase Order Account Assignment Data.",
+                                               "Implementation name from source PDF: YY1_MM_PUR_S4_PO_MODIFY_ACC.",
+                                               "Custom field: Consumption Indicator, checkbox, Product Plant business context, generated field YY1_CONSUMPTIONINDICAT_PLT.",
+                                               "Enabled access shown in the source PDF: API_PRODUCT_SRV / A_ProductPlantType and CDS view I_PRODUCTPLANT.",
                                                "Rejected option: MM_PUR_S4_PO_MODIFY_ITEM exposes Account Assignment Indicator but does not allow messages and could not access I_PRODUCTPLANT in this scenario.",
                                                "Rejected option: MM_PUR_S4_PO_CHECK_ALL_ITEMS did not expose the fields required for the validation.",
                                                "Transport reference from the working notes: N2OK901863 - Inventory vs Consumption.",
-                                               "Related configuration references from the notes: 101655 Allow Cost Centre/WBS combination with Item Category U for STO, and 102909 Purchase Order Types."
-                                           ]
+                                               "Related configuration references from the notes: 101655 Allow Cost Centre/WBS combination with Item Category U for STO, and 102909 Purchase Order Types.",
+                                               "Runtime rule from the PDF: for PO types UB, UD, or ZUD, plant not equal to 2000, and account assignment K or P, read I_PRODUCTPLANT and block if the consumption indicator is initial."
+                                           ],
+                               "codeTitle":  "Published customer logic from source PDF",
+                               "code":  `* This enhancement is to check if the Material is Consumption or Inventory
+* & throw an error if Account Assignment K or P is selected for Material Marked as
+* Inventory at the districts
+
+DATA ls_message     LIKE LINE OF messages.
+DATA lv_consumption TYPE abap_boolean.
+
+READ TABLE purchaseorderitem_table
+  WITH KEY purchaseorder     = purchaseordaccountchange-purchaseorder
+           purchaseorderitem = purchaseordaccountchange-purchaseorderitem
+  ASSIGNING FIELD-SYMBOL(<ls_pur_item>).
+
+IF <ls_pur_item> IS ASSIGNED.
+
+  IF ( purchaseorder-purchaseordertype = 'UB'
+    OR purchaseorder-purchaseordertype = 'UD'
+    OR purchaseorder-purchaseordertype = 'ZUD' )
+  AND <ls_pur_item>-plant <> '2000'
+  AND ( <ls_pur_item>-accountassignmentcategory = 'K'
+     OR <ls_pur_item>-accountassignmentcategory = 'P' ).
+
+    CLEAR lv_consumption.
+
+    SELECT SINGLE yy1_consumptionindicat_plt
+      FROM i_productplant
+      WHERE product = @<ls_pur_item>-material
+        AND plant   = @<ls_pur_item>-plant
+      INTO @lv_consumption.
+
+    IF lv_consumption IS INITIAL.
+
+      CLEAR ls_message.
+      ls_message-messagetype = 'E'.
+      ls_message-messageid = '00'.
+      ls_message-messagenumber = '001'.
+      ls_message-messagevariable1 =
+        'K/P Acc Asgmt not allowed for Inv. Mat at District'.
+
+      APPEND ls_message TO messages.
+
+    ENDIF.
+
+  ENDIF.
+
+ENDIF.`
                            },
         "sources":  [
                         {
@@ -853,7 +908,11 @@ window.customerSampleItems = [
                             "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/inventory-vs-consumption-sto.md"
                         },
                         {
-                            "label":  "Source document: invenotry vs consumtption.docx",
+                            "label":  "Reusable public-cloud accelerator playbook",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/reusable-public-cloud-accelerator-playbook.md"
+                        },
+                        {
+                            "label":  "Source document: inv vs consumption.pdf",
                             "url":  ""
                         }
                     ],
