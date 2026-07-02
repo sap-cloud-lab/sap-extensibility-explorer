@@ -438,16 +438,16 @@ const manualAcceleratorSamples =
         .filter((asset) => manualAcceleratorAssetLanes[asset.id])
         .map(assetToAcceleratorSample);
 
-manualAcceleratorSamples.forEach((sample) => {
-  if (lanes[sample.laneKey]) {
-    lanes[sample.laneKey].samples.push(sample);
-  }
-});
-
 const customerSampleItems = window.customerSampleItems || [];
-customerSampleItems.forEach((sample) => {
-  if (lanes[sample.laneKey]) {
-    lanes[sample.laneKey].samples.push(sample);
+
+[...manualAcceleratorSamples, ...customerSampleItems].forEach((sample) => {
+  const lane = lanes[sample.laneKey];
+  if (!lane) return;
+
+  if (sample.source === "Customer") {
+    lane.samples.unshift(sample);
+  } else {
+    lane.samples.push(sample);
   }
 });
 
