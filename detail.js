@@ -44,9 +44,13 @@ function renderDetailBlock(block) {
 function handleMissingExampleImage(image) {
   const gallery = image.closest(".working-example-gallery");
   const figure = image.closest("figure");
+  const roadmapPanel = image.closest(".implementation-roadmap-section");
 
   if (figure) figure.remove();
-  if (gallery && !gallery.querySelector("figure")) gallery.hidden = true;
+  if (gallery && !gallery.querySelector("figure")) {
+    gallery.hidden = true;
+    if (roadmapPanel) roadmapPanel.hidden = true;
+  }
 }
 
 window.handleMissingExampleImage = handleMissingExampleImage;
@@ -77,6 +81,27 @@ function renderImplementationStep(step) {
     : "";
 
   return `<li><span>${detailEscapeHtml(step.text || "")}</span>${substeps}</li>`;
+}
+
+function renderImplementationRoadmap(image) {
+  const panel = document.getElementById("implementationRoadmapPanel");
+  const target = document.getElementById("implementationRoadmap");
+  if (!panel || !target) return;
+
+  panel.hidden = !image;
+  if (!image) {
+    target.innerHTML = "";
+    return;
+  }
+
+  target.innerHTML = `
+    <div class="working-example-gallery implementation-roadmap-gallery" aria-label="${detailEscapeHtml(image.ariaLabel || image.alt || "Implementation roadmap")}">
+      <figure>
+        <img src="${detailEscapeHtml(image.src)}" alt="${detailEscapeHtml(image.alt || "Implementation roadmap")}" onerror="handleMissingExampleImage(this)" />
+        ${image.caption ? `<figcaption>${detailEscapeHtml(image.caption)}</figcaption>` : ""}
+      </figure>
+    </div>
+  `;
 }
 
 function sourceLooksLikeCode(source) {
@@ -244,6 +269,7 @@ function findSampleDetail(params) {
     summary: sample.summary || sample.function || sample.description,
     useCase: sample.useCase || sample.description,
     workingExample: sample.workingExample || null,
+    roadmapImage: sample.roadmapImage || null,
     whenToUse:
       sample.whenToUse ||
       (laneKey === "inapp"
@@ -282,6 +308,7 @@ function findAssetDetail(params) {
     summary: asset.summary,
     useCase: asset.useCase,
     workingExample: asset.workingExample || null,
+    roadmapImage: asset.roadmapImage || null,
     whenToUse: asset.whenToUse,
     implementation: asset.implementation,
     collapsibleSections: asset.collapsibleSections || [],
@@ -400,6 +427,7 @@ function renderDetailPage() {
   document.getElementById("implementationSteps").innerHTML = item.implementation
     .map(renderImplementationStep)
     .join("");
+  renderImplementationRoadmap(item.roadmapImage);
   renderCollapsibleSections(item.collapsibleSections, item);
 
   renderSourceLinks(item);

@@ -2390,6 +2390,23 @@ body[data-page="detail"] .detail-page {
   padding-left: 2px;
 }
 
+.implementation-plan-section,
+.implementation-roadmap-section {
+  display: grid;
+  gap: 12px;
+}
+
+.implementation-roadmap-section {
+  margin-top: 24px;
+}
+
+.implementation-panel h3 {
+  margin: 0;
+  color: #12273f;
+  font-size: 16px;
+  font-weight: 850;
+}
+
 .implementation-panel ol {
   display: grid;
   gap: 12px;
@@ -2621,6 +2638,15 @@ body[data-page="detail"] .detail-page {
   color: #5b7084;
   font-size: 13px;
   line-height: 1.45;
+}
+
+.implementation-roadmap-gallery {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.implementation-roadmap-gallery img {
+  object-fit: contain;
+  background: #ffffff;
 }
 
 .working-example-steps {
