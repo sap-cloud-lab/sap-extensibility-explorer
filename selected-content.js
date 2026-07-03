@@ -973,188 +973,118 @@ window.customerSampleItems = [
         "pattern":  "AI",
         "category":  "AI",
         "tagLabel":  "AI",
-        "description":  "Tickets enter support with inconsistent quality and often bounce across teams, increasing cost-to-serve and delaying resolution.",
-        "function":  "Deliver AI-Powered AMS Control Tower on SAP Cloud ALM or enterprise ITSM, SAP BTP, SAP AI Foundation / generative AI hub, SAP Joule, KB platform, analytics store, optional SAP Build Process Automation. AI capabilities: Classification, duplicate detection, semantic retrieval, response drafting, resolver recommendation, SLA-risk prediction, pattern mining.",
-        "summary":  "A premium AMS layer that triages, deduplicates, routes, and enriches SAP incidents using SAP-module-aware AI and a governed resolution knowledge system.",
+        "description":  "SAP support flow is slowed by fragmented ticket quality, inconsistent triage, and limited reuse of historical resolution knowledge.",
+        "function":  "Deliver AI-Powered AMS Control Tower using this customer-ready approach: Connect ITSM tickets, SAP operations context, knowledge articles, runbooks, and historical resolutions into one AMS decision layer while keeping governance human-led where required.",
+        "summary":  "Use SAP-module-aware AI to triage, deduplicate, route, and enrich SAP support incidents.",
         "useCase":  [
                         {
-                            "text":  "A premium AMS layer that triages, deduplicates, routes, and enriches SAP incidents using SAP-module-aware AI and a governed resolution knowledge system."
+                            "text":  "Use SAP-module-aware AI to triage, deduplicate, route, and enrich SAP support incidents."
                         },
                         {
-                            "heading":  "Solution Provides",
+                            "heading":  "Customer-ready outcome",
                             "items":  [
-                                          "A service-desk cockpit that summarizes incoming tickets and identifies missing information.",
-                                          "SAP module, process, urgency, impact, and resolver-group classification.",
-                                          "Duplicate and related-ticket detection across current and historical incidents.",
-                                          "Similar-resolution retrieval from ticket history, KB articles, and runbooks.",
-                                          "Draft resolver notes and first responses with confidence thresholds and human review."
-                                          ]
+                                          "Faster first response, fewer misroutes, reduced backlog aging, stronger knowledge reuse, and clearer service-manager visibility.",
+                                          "Connect ITSM tickets, SAP operations context, knowledge articles, runbooks, and historical resolutions into one AMS decision layer.",
+                                          "AI remains assistive. Resolver assignment, customer communication, major incidents, and knowledge publication stay under human review.",
+                                          "One or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources."
+                                      ]
                         }
                     ],
         "workingExample":  [
-                              {
-                                  "html":  `
-<p>The updated design pack positions this as a customer-ready service offering with a practical MVP path and a productized expansion path.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Delivery lens</th><th>Design-pack view</th></tr></thead>
-    <tbody>
-      <tr><td>MVP target</td><td>One or two support towers with historical tickets, routing recommendations, enrichment, and duplicate detection.</td></tr>
-      <tr><td>Productized version</td><td>Reusable AMS accelerator with packaged service metrics, managed support analytics, and semi-autonomous L1/L1.5 operating mode.</td></tr>
-    </tbody>
-  </table>
-</div>
-                                  `
-                              }
-                          ],
+                               {
+                                   "html":  "\n\u003cp\u003eThe customer starts with One or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eOne or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI remains assistive. Resolver assignment, customer communication, major incidents, and knowledge publication stay under human review.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
+                               }
+                           ],
         "whenToUse":  [
-                         "Ticket volume is high enough for repeat patterns, misroutes, SLA aging, and knowledge reuse to matter.",
-                         "Resolved-ticket history, KB articles, worklogs, and resolver group taxonomy are available for analysis.",
-                         "The AMS organization uses SAP Cloud ALM, ServiceNow, Jira Service Management, or a comparable ITSM backbone.",
-                         "The operating model allows AI to recommend and enrich while humans retain control of closure, escalation, and customer communication."
-                         ],
+                          "One or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources.",
+                          "Ticket history; work notes; resolution codes; resolver groups; SLA rules; knowledge articles; runbooks; module and landscape metadata.",
+                          "SAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Build Process Automation; optional Joule; ITSM and knowledge platforms.",
+                          "AI remains assistive. Resolver assignment, customer communication, major incidents, and knowledge publication stay under human review."
+                      ],
         "implementation":  [
-                              "Define AMS service taxonomy and canonical ticket schema aligned to SAP modules, processes, towers, priorities, and SLAs.",
-                              "Build ticket ingestion and enrichment connectors from ITSM, email/chat intake, monitoring alerts, KB sources, and SAP landscape inventory.",
-                              "Configure classifiers and duplicate detection using resolved tickets and known resolver-group outcomes.",
-                              "Implement routing rules and human-in-the-loop review for low-confidence or high-risk recommendations.",
-                              "Enable recommended resolution drafts, missing-information prompts, and service manager reporting.",
-                              "Measure and tune using misroute rate, first-response quality, backlog aging, duplicate clusters, and SLA-risk prediction accuracy."
-                              ],
+                               "Confirm pilot support towers, user groups, and service decision owners.",
+                               "Assess ticket history, SLA rules, resolver taxonomy, and knowledge maturity.",
+                               "Define canonical ticket and support taxonomy.",
+                               "Stand up SAP BTP application shell and security model.",
+                               "Configure ITSM, SAP Cloud ALM, KB, and runbook connectors.",
+                               "Implement deterministic severity, SLA, and routing rules first.",
+                               "Add AI classification, duplicate detection, retrieval, and draft-response logic.",
+                               "Build agent workbench and AMS control tower dashboard.",
+                               "Validate recommendations against historical resolved tickets.",
+                               "Run live pilot with human review and feedback capture."
+                           ],
         "roadmapImage":  {
                              "src":  "assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI-Powered%20AMS%20Control%20Tower.png",
                              "alt":  "AI-Powered AMS Control Tower implementation roadmap",
-                             "caption":  "AI-Powered AMS Control Tower implementation roadmap from the updated design pack."
+                             "caption":  "AI-Powered AMS Control Tower implementation roadmap from the customer-ready solution design pack."
                          },
         "collapsibleSections":  [
-                {
-                    "title":  "Design Dimensions",
-                    "html":  `
-<p>A premium AMS layer that triages, deduplicates, routes, and enriches SAP incidents using SAP-module-aware AI and a governed resolution knowledge system.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Design dimension</th><th>Solution detail</th></tr></thead>
-    <tbody>
-      <tr><td>Benefits</td><td>Improves first response; reduces misrouting and backlog aging; raises consultant productivity and SLA attainment; builds reusable resolution IP.</td></tr>
-      <tr><td>Target customers</td><td>AMS leaders, service delivery managers, CIO operations teams, shared service centers, managed service buyers with multi-module SAP estates.</td></tr>
-      <tr><td>Problem solved</td><td>Tickets enter support with inconsistent quality and often bounce across teams, increasing cost-to-serve and delaying resolution.</td></tr>
-      <tr><td>Required SAP / technology tools</td><td>SAP Cloud ALM or enterprise ITSM, SAP BTP, SAP AI Foundation / generative AI hub, SAP Joule, KB platform, analytics store, optional SAP Build Process Automation.</td></tr>
-      <tr><td>Data required</td><td>Ticket history, worklogs, resolver taxonomy, SLA rules, KB articles, runbooks, module/landscape metadata, impact fields.</td></tr>
-      <tr><td>AI capability used</td><td>Classification, duplicate detection, semantic retrieval, response drafting, resolver recommendation, SLA-risk prediction, pattern mining.</td></tr>
-      <tr><td>MVP target</td><td>One or two support towers with historical tickets, routing recommendations, enrichment, and duplicate detection.</td></tr>
-      <tr><td>Productized version</td><td>Reusable AMS accelerator with packaged service metrics, managed support analytics, and semi-autonomous L1/L1.5 operating mode.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Solution Provides And Applicability",
-                    "html":  `
-<h3>Solution Provides</h3>
-<ul><li>A service-desk cockpit that summarizes incoming tickets and identifies missing information.</li><li>SAP module, process, urgency, impact, and resolver-group classification.</li><li>Duplicate and related-ticket detection across current and historical incidents.</li><li>Similar-resolution retrieval from ticket history, KB articles, and runbooks.</li><li>Draft resolver notes and first responses with confidence thresholds and human review.</li></ul>
-<h3>Applicability</h3>
-<ul><li>Ticket volume is high enough for repeat patterns, misroutes, SLA aging, and knowledge reuse to matter.</li><li>Resolved-ticket history, KB articles, worklogs, and resolver group taxonomy are available for analysis.</li><li>The AMS organization uses SAP Cloud ALM, ServiceNow, Jira Service Management, or a comparable ITSM backbone.</li><li>The operating model allows AI to recommend and enrich while humans retain control of closure, escalation, and customer communication.</li></ul>
-                    `
-                },
-                {
-                    "title":  "Readiness Conditions",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Readiness condition observed</th><th>Recommended action before activation</th></tr></thead>
-    <tbody>
-      <tr><td>No stable resolver-group taxonomy exists.</td><td>Define towers, queues, ownership, escalation paths, and module/process labels before routing automation.</td></tr>
-      <tr><td>Ticket descriptions and closure notes are weak.</td><td>Start with summarization, missing-information prompts, and KB cleanup before relying on resolution recommendation.</td></tr>
-      <tr><td>SLA rules differ by customer, tower, and priority.</td><td>Normalize SLA policy, clock rules, escalation thresholds, and exception handling into the ticket schema.</td></tr>
-      <tr><td>Knowledge content is unapproved or stale.</td><td>Add a knowledge approval workflow and mark draft recommendations as assistive until approved by the knowledge owner.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Architecture And Component Design",
-                    "html":  `
-<h3>Architecture Summary</h3>
-<ul><li>Capture incidents from ITSM channels and normalize ticket payloads.</li><li>Classify module, process, urgency, and probable resolver team.</li><li>Retrieve similar historical resolutions and draft structured responses.</li><li>Route tickets through workflow with confidence thresholds and human review.</li></ul>
-<div class="working-example-gallery" aria-label="AI-Powered AMS Control Tower reference architecture">
-  <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Powered_AMS_Control_Tower.png" alt="AI-Powered AMS Control Tower reference architecture" onerror="handleMissingExampleImage(this)" />
-    <figcaption>AI-Powered AMS Control Tower reference architecture from the updated design pack.</figcaption>
-  </figure>
-</div>
-<h3>Logical Component Design</h3>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Layer</th><th>Key design decisions</th></tr></thead>
-    <tbody>
-      <tr><td>Experience layer</td><td>Service desk cockpit, resolver workspace, service manager insights, executive SLA dashboard.</td></tr>
-      <tr><td>Application layer</td><td>Ticket ingestion API, taxonomy engine, deduplication service, routing orchestrator, resolution recommendation service.</td></tr>
-      <tr><td>AI layer</td><td>Intent classifier, similarity search, LLM drafting service, breach-risk model, continuous learning feedback loop.</td></tr>
-      <tr><td>Data layer</td><td>Ticket lakehouse, vector index for prior cases, KB store, resolver performance mart.</td></tr>
-      <tr><td>Integration layer</td><td>Cloud ALM/ServiceNow/JSM, email/chat channels, monitoring alerts, SAP landscape inventory.</td></tr>
-      <tr><td>Security &amp; governance</td><td>PII filtering, RBAC, prompt/response logging, knowledge approval workflow, confidence-based human override.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Non-Functional Requirements",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Requirement</th><th>Customer-ready control</th></tr></thead>
-    <tbody>
-      <tr><td>Security</td><td>Role-based access control, least-privilege access, and masking for sensitive operational data.</td></tr>
-      <tr><td>Auditability</td><td>Recommendation, prompt, override, approval, and user-action logging for governed decisions.</td></tr>
-      <tr><td>Performance</td><td>Near-real-time ingestion for operational use cases; scheduled refresh is acceptable for governance analytics.</td></tr>
-      <tr><td>Resilience</td><td>Retry logic, queue-based integration, monitoring for connector failures, and fallback paths when AI services are unavailable.</td></tr>
-      <tr><td>Model governance</td><td>Human-review thresholds, prompt templates, model version control, and periodic accuracy review.</td></tr>
-      <tr><td>Extensibility</td><td>Modular connectors for SAP and non-SAP ALM, ITSM, CI/CD, observability, and collaboration platforms.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Suggested Build Stack",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Domain</th><th>Preferred choice</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>App/orchestration</td><td>SAP BTP (CAP / Build Code / Build Process Automation)</td><td>Core APIs, workflows, orchestration, and extension services.</td></tr>
-      <tr><td>AI runtime</td><td>SAP AI Foundation / generative AI hub</td><td>Governed model access, prompt management, and AI lifecycle control.</td></tr>
-      <tr><td>SAP process context</td><td>SAP Cloud ALM / relevant SAP line-of-business apps</td><td>Keep SAP-native process and lifecycle context where available.</td></tr>
-      <tr><td>Analytics</td><td>SAP HANA Cloud / Datasphere or BTP persistence</td><td>Operational mart, scorecards, trend views, and audit-friendly reporting.</td></tr>
-      <tr><td>Experience</td><td>Fiori-style web UI / Joule integration where justified</td><td>Use Joule as an assisted experience, not as the only operating surface.</td></tr>
-      <tr><td>ITSM/Ops integration</td><td>ServiceNow / Jira / monitoring tools / Integration Suite</td><td>Integrate into the customer ecosystem rather than replacing it.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Cloud ALM Export Package",
-                    "exports":  [
-                                    "requirement",
-                                    "user-stories",
-                                    "test-cases"
+                                    {
+                                        "title":  "Business Problem",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eChallenge\u003c/th\u003e\u003cth\u003eWhat is happening\u003c/th\u003e\u003cth\u003eBusiness impact\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eUnstructured ticket intake\u003c/td\u003e\u003ctd\u003eIncident text, screenshots, business impact, and module details are captured inconsistently.\u003c/td\u003e\u003ctd\u003eSupport teams spend time clarifying basics before work can begin.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMisrouting and ticket bouncing\u003c/td\u003e\u003ctd\u003eTickets move between towers because resolver ownership is unclear or classification is weak.\u003c/td\u003e\u003ctd\u003eFirst response slows down and SLA risk increases.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDuplicate incidents\u003c/td\u003e\u003ctd\u003eRepeated symptoms are raised by multiple users or channels during the same issue window.\u003c/td\u003e\u003ctd\u003eBacklog appears larger than the real problem set.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge is hard to reuse\u003c/td\u003e\u003ctd\u003eUseful resolution details remain in old tickets, work notes, chat, or runbooks.\u003c/td\u003e\u003ctd\u003eSupport depends too heavily on experienced individuals.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSLA risk is reactive\u003c/td\u003e\u003ctd\u003eService managers see aging tickets, but not always which tickets are likely to breach.\u003c/td\u003e\u003ctd\u003eEscalation happens late.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eLimited pattern visibility\u003c/td\u003e\u003ctd\u003eRecurring defects, process hotspots, and automation candidates are not consistently surfaced.\u003c/td\u003e\u003ctd\u003eAMS improvements are harder to prioritize.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Solution Overview",
+                                        "html":  "\u003ch3\u003eSolution Capabilities\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eCapability\u003c/th\u003e\u003cth\u003eWhat it does\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident intake normalizer\u003c/td\u003e\u003ctd\u003eConverts incoming tickets into a consistent SAP support schema.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eClassification and routing engine\u003c/td\u003e\u003ctd\u003eIdentifies module, process, urgency, impact, and likely resolver team.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDuplicate and pattern detector\u003c/td\u003e\u003ctd\u003eGroups similar incidents and highlights repeat issue clusters.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge retrieval layer\u003c/td\u003e\u003ctd\u003eFinds similar historical resolutions, runbooks, and approved knowledge articles.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI-assisted response drafting\u003c/td\u003e\u003ctd\u003eDrafts structured internal notes, customer updates, and next-step recommendations.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAMS control tower\u003c/td\u003e\u003ctd\u003eGives service managers a view of backlog health, SLA risk, misroutes, and recurring themes.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eCustomer message: The control tower improves triage, knowledge reuse, and SLA visibility without replacing resolver accountability.\u003c/p\u003e\n\u003ch3\u003eWhat The Solution Delivers\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDeliverable\u003c/th\u003e\u003cth\u003eCustomer value\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP support triage view\u003c/td\u003e\u003ctd\u003eModule, process, urgency, impact, resolver, and confidence shown for each ticket.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDuplicate incident clusters\u003c/td\u003e\u003ctd\u003eSimilar tickets grouped so teams can work the underlying issue rather than each symptom separately.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended resolver routing\u003c/td\u003e\u003ctd\u003eSuggested support tower or resolver group with reason and confidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolution knowledge suggestions\u003c/td\u003e\u003ctd\u003eSimilar historical tickets, approved KB articles, and runbooks presented to the resolver.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDraft response and work notes\u003c/td\u003e\u003ctd\u003eStructured internal and customer-facing draft text for human review.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eService manager dashboard\u003c/td\u003e\u003ctd\u003eSLA risk, backlog aging, misroute rate, repeat issue themes, and productivity indicators.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Design Dimensions",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDesign dimension\u003c/th\u003e\u003cth\u003eSolution detail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eBenefits\u003c/td\u003e\u003ctd\u003eImprove first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget customers\u003c/td\u003e\u003ctd\u003eCIO; AMS Lead; Service Delivery Manager; Support Tower Lead; Application Owner; Shared Services Leader.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProblem solved\u003c/td\u003e\u003ctd\u003eSAP support flow is slowed by fragmented ticket quality, inconsistent triage, and limited reuse of historical resolution knowledge.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP / technology tools\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Build Process Automation; optional Joule; ITSM and knowledge platforms.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData required\u003c/td\u003e\u003ctd\u003eTicket history; work notes; resolution codes; resolver groups; SLA rules; knowledge articles; runbooks; module and landscape metadata.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI capability used\u003c/td\u003e\u003ctd\u003eTicket classification; duplicate detection; similarity retrieval; resolver recommendation; SLA-risk scoring; response summarization.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eInitial deployment focus\u003c/td\u003e\u003ctd\u003eOne or two support towers with clean historical ticket data and agreed resolver taxonomy.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget operating model\u003c/td\u003e\u003ctd\u003eReusable AMS intelligence layer with triage governance, knowledge feedback, service analytics, and continuous improvement backlog.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Architecture And Component Design",
+                                        "html":  "\u003ch3\u003eArchitecture Summary\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eArchitecture logic\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Capture\u003c/td\u003e\u003ctd\u003eIngest incidents, work notes, operational alerts, KB articles, runbooks, and resolver metadata.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Normalize\u003c/td\u003e\u003ctd\u003eConvert ticket payloads into a common SAP support schema with module, process, impact, and ownership fields.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Classify\u003c/td\u003e\u003ctd\u003eApply deterministic rules and AI models to identify category, priority, duplicates, and probable resolver group.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Recommend\u003c/td\u003e\u003ctd\u003eRetrieve similar resolutions and propose next actions, draft notes, and routing decisions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Govern\u003c/td\u003e\u003ctd\u003eRoute low-confidence predictions, major incidents, and customer communication through human review.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cdiv class=\"working-example-gallery\" aria-label=\"AI-Powered AMS Control Tower reference architecture\"\u003e\n  \u003cfigure\u003e\n    \u003cimg src=\"assets/working-examples/ai-release-assurance/AI_Powered_AMS_Control_Tower.png\" alt=\"AI-Powered AMS Control Tower reference architecture\" onerror=\"handleMissingExampleImage(this)\" /\u003e\n    \u003cfigcaption\u003eAI-Powered AMS Control Tower reference architecture from the customer-ready solution design pack.\u003c/figcaption\u003e\n  \u003c/figure\u003e\n\u003c/div\u003e\n\u003ch3\u003eReference Architecture Alignment\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArchitecture area\u003c/th\u003e\u003cth\u003eWhat the image should represent\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSource / Inputs\u003c/td\u003e\u003ctd\u003eITSM tickets; SAP Cloud ALM alerts and operations context; knowledge articles; runbooks; historical resolutions; SLA rules.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI \u0026amp; Orchestration\u003c/td\u003e\u003ctd\u003eAMS Triage and Knowledge Engine using SAP BTP app services, AI models, rules, and workflow controls.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOutputs / Actions\u003c/td\u003e\u003ctd\u003eRouted tickets; duplicate clusters; resolution suggestions; draft responses; SLA-risk dashboard; improvement backlog.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePlatform / tool context\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Build Process Automation; optional Joule; customer ITSM.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003ch3\u003eLogical Component Design\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eLayer\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eKey components\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eExperience Layer\u003c/td\u003e\u003ctd\u003eDecision view for service agents, tower leads, and service managers.\u003c/td\u003e\u003ctd\u003eTriage cockpit\u003cbr\u003e- Agent workbench\u003cbr\u003e- SLA-risk dashboard\u003cbr\u003e- Knowledge suggestions\u003cbr\u003e- Service manager reporting\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eApplication Layer\u003c/td\u003e\u003ctd\u003eCoordinates ticket enrichment, routing, and workflow.\u003c/td\u003e\u003ctd\u003eTicket intake service\u003cbr\u003e- Classification service\u003cbr\u003e- Duplicate detection\u003cbr\u003e- Resolver routing\u003cbr\u003e- Feedback capture\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI Layer\u003c/td\u003e\u003ctd\u003eSupports classification, retrieval, summarization, and pattern discovery.\u003c/td\u003e\u003ctd\u003eModule classifier\u003cbr\u003e- Similar-ticket retrieval\u003cbr\u003e- Resolution draft generator\u003cbr\u003e- SLA-risk scoring\u003cbr\u003e- Pattern mining\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData Layer\u003c/td\u003e\u003ctd\u003eMaintains connected support evidence and knowledge context.\u003c/td\u003e\u003ctd\u003eTicket history\u003cbr\u003e- Work notes\u003cbr\u003e- Resolver taxonomy\u003cbr\u003e- Knowledge index\u003cbr\u003e- SLA rules\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIntegration Layer\u003c/td\u003e\u003ctd\u003eConnects support, operations, and knowledge sources.\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003cbr\u003e- ITSM platform\u003cbr\u003e- Knowledge base\u003cbr\u003e- Monitoring tools\u003cbr\u003e- Collaboration feeds\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance Layer\u003c/td\u003e\u003ctd\u003eControls routing trust, communication quality, and auditability.\u003c/td\u003e\u003ctd\u003eRBAC\u003cbr\u003e- Masking\u003cbr\u003e- Confidence thresholds\u003cbr\u003e- Approval workflow\u003cbr\u003e- Audit trail\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "SAP Capability Alignment",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eSAP capability\u003c/th\u003e\u003cth\u003eRole in solution\u003c/th\u003e\u003cth\u003eCustomer validation needed\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003eOperations and lifecycle context for SAP services, monitoring, alerts, and service reporting.\u003c/td\u003e\u003ctd\u003eConfirm tenant scope, operations usage, data availability, API access, and linkage to ITSM.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP BTP / CAP\u003c/td\u003e\u003ctd\u003eApplication foundation for the AMS control tower, APIs, persistence, and extension services.\u003c/td\u003e\u003ctd\u003eConfirm BTP runtime, identity model, destinations, network path, and persistence choice.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eGoverned AI access for ticket classification, summarization, retrieval support, and explanation.\u003c/td\u003e\u003ctd\u003eConfirm AI entitlement, model policy, data residency, prompt logging, and approved use cases.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP AI Core Prompt Registry\u003c/td\u003e\u003ctd\u003eGoverned prompt lifecycle for response drafting, resolution summarization, and service-manager reporting.\u003c/td\u003e\u003ctd\u003eConfirm ownership, versioning, review cadence, and promotion path for prompts.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Build Process Automation\u003c/td\u003e\u003ctd\u003eOptional workflow for low-confidence routing, major-incident review, and knowledge-article approval.\u003c/td\u003e\u003ctd\u003eConfirm whether routing and approvals sit in workflow, ITSM, or existing AMS process.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Joule\u003c/td\u003e\u003ctd\u003eOptional conversational entry point for service managers and support agents.\u003c/td\u003e\u003ctd\u003eConfirm availability, target personas, and whether dashboard remains the primary operating view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCustomer ITSM platform\u003c/td\u003e\u003ctd\u003eSystem of record for tickets, assignments, work notes, SLA status, and closure outcomes.\u003c/td\u003e\u003ctd\u003eConfirm API access, data quality, field mapping, and write-back rules.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "AI Capability Design",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eAI capability\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eGuardrail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eTicket classification\u003c/td\u003e\u003ctd\u003eIdentify SAP module, business process, symptom type, impact, and urgency.\u003c/td\u003e\u003ctd\u003eShow confidence and allow correction by support agent.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDuplicate detection\u003c/td\u003e\u003ctd\u003eGroup similar incidents across users, channels, and time windows.\u003c/td\u003e\u003ctd\u003eAvoid automatic closure; route clusters for resolver validation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge retrieval\u003c/td\u003e\u003ctd\u003eFind similar past incidents, KB articles, and runbook steps.\u003c/td\u003e\u003ctd\u003eUse approved sources and display evidence behind suggestions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver recommendation\u003c/td\u003e\u003ctd\u003eSuggest support tower or resolver group.\u003c/td\u003e\u003ctd\u003eLow-confidence suggestions route to triage lead.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSLA-risk scoring\u003c/td\u003e\u003ctd\u003eHighlight tickets likely to breach based on age, category, impact, and historical patterns.\u003c/td\u003e\u003ctd\u003eService manager reviews escalation action.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResponse drafting\u003c/td\u003e\u003ctd\u003eDraft customer updates and internal notes.\u003c/td\u003e\u003ctd\u003eHuman review required before customer communication.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePattern mining\u003c/td\u003e\u003ctd\u003eIdentify recurring themes, knowledge gaps, automation candidates, and training needs.\u003c/td\u003e\u003ctd\u003eReview trends in service governance cadence.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Governance And Human Review Model",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eGovernance area\u003c/th\u003e\u003cth\u003eOwner\u003c/th\u003e\u003cth\u003eDecision / control\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eTriage quality\u003c/td\u003e\u003ctd\u003eAMS Triage Lead\u003c/td\u003e\u003ctd\u003eReviews low-confidence classification and routing.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCustomer communication\u003c/td\u003e\u003ctd\u003eResolver / Service Manager\u003c/td\u003e\u003ctd\u003eApproves AI-drafted updates before sending.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMajor incidents\u003c/td\u003e\u003ctd\u003eMajor Incident Manager\u003c/td\u003e\u003ctd\u003eControls escalation, communication cadence, and closure.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge approval\u003c/td\u003e\u003ctd\u003eKnowledge Owner\u003c/td\u003e\u003ctd\u003eApproves new or changed knowledge articles.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSLA governance\u003c/td\u003e\u003ctd\u003eService Delivery Manager\u003c/td\u003e\u003ctd\u003eReviews breach-risk recommendations and escalations.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI controls\u003c/td\u003e\u003ctd\u003eAI / Platform Owner\u003c/td\u003e\u003ctd\u003eManages prompt versions, model versions, thresholds, and audit evidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eFeedback loop\u003c/td\u003e\u003ctd\u003eTower Leads\u003c/td\u003e\u003ctd\u003eCorrect classification, resolver, and resolution suggestions to improve future recommendations.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Implementation Roadmap Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStage\u003c/th\u003e\u003cth\u003eFocus\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Discovery and Support Baseline\u003c/td\u003e\u003ctd\u003eConfirm towers, SLA model, ticket sources, knowledge quality, and resolver ownership.\u003c/td\u003e\u003ctd\u003ePilot scope and service-readiness view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Foundation Build\u003c/td\u003e\u003ctd\u003eCreate BTP shell, ticket model, access controls, and source connectors.\u003c/td\u003e\u003ctd\u003eWorking support-data foundation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Triage Intelligence\u003c/td\u003e\u003ctd\u003eConfigure rules, classifiers, duplicate detection, retrieval, and SLA-risk scoring.\u003c/td\u003e\u003ctd\u003eExplainable AMS recommendation engine.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Live Support Pilot\u003c/td\u003e\u003ctd\u003eRun in one support flow with agent and service-manager review.\u003c/td\u003e\u003ctd\u003eValidated triage and knowledge-assist outcomes.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Service Maturity\u003c/td\u003e\u003ctd\u003eExpand towers, improve knowledge governance, and institutionalize service analytics.\u003c/td\u003e\u003ctd\u003eRepeatable AMS control tower operating model.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eValidation principle: Use historical or rehearsal data first to calibrate scoring and recommendations before relying on the solution in a live operating window.\u003c/p\u003e"
+                                    },
+                                    {
+                                        "title":  "Data Foundation Required",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData area\u003c/th\u003e\u003cth\u003eWhy it matters\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eTicket history\u003c/td\u003e\u003ctd\u003eTrains and validates classification, duplicate, and resolver recommendations.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWork notes and resolutions\u003c/td\u003e\u003ctd\u003eFeeds similar-case retrieval and draft resolution guidance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver taxonomy\u003c/td\u003e\u003ctd\u003eDefines support towers, queues, owners, and escalation paths.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSLA rules\u003c/td\u003e\u003ctd\u003eSupports breach-risk scoring and service manager visibility.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge base and runbooks\u003c/td\u003e\u003ctd\u003eProvides governed sources for recommended actions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOperations signals\u003c/td\u003e\u003ctd\u003eAdds system health and alert context for incident triage.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Non-Functional Requirements",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArea\u003c/th\u003e\u003cth\u003eRequirement\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSecurity\u003c/td\u003e\u003ctd\u003eRBAC; least privilege; secure destinations; masking for personal and sensitive ticket content.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAuditability\u003c/td\u003e\u003ctd\u003eLog classification, routing suggestion, draft response, source evidence, override, and approver.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePerformance\u003c/td\u003e\u003ctd\u003eNear-real-time ingestion for active incident queues; batch analytics for trend reporting.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResilience\u003c/td\u003e\u003ctd\u003eRetry logic, connector monitoring, and fallback to normal ITSM process if AI service is unavailable.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eModel governance\u003c/td\u003e\u003ctd\u003eConfidence thresholds, prompt templates, versioning, sampling, and periodic quality review.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge governance\u003c/td\u003e\u003ctd\u003eOnly approved knowledge sources should be used for customer-facing recommendations.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExplainability\u003c/td\u003e\u003ctd\u003eEvery routing and response suggestion should show reason, evidence, and confidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtensibility\u003c/td\u003e\u003ctd\u003eModular connectors for ITSM, SAP Cloud ALM, KB platforms, monitoring tools, and collaboration feeds.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Suggested Build Stack",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDomain\u003c/th\u003e\u003cth\u003ePreferred choice\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eApp / orchestration\u003c/td\u003e\u003ctd\u003eSAP BTP with CAP\u003c/td\u003e\u003ctd\u003eAPIs, orchestration, persistence, and control tower services.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI runtime\u003c/td\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eGoverned classification, summarization, retrieval support, and prompt lifecycle.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP operations context\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003ePreferred SAP-native operations and service context where available.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWorkflow\u003c/td\u003e\u003ctd\u003eSAP Build Process Automation or existing ITSM workflow\u003c/td\u003e\u003ctd\u003eRouting review, knowledge approval, and major-incident controls.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExperience\u003c/td\u003e\u003ctd\u003eFiori-style web UI; optional Joule interaction\u003c/td\u003e\u003ctd\u003eDashboard and agent workbench remain primary; Joule can support Q\u0026amp;A.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge layer\u003c/td\u003e\u003ctd\u003eApproved KB, runbooks, and historical tickets\u003c/td\u003e\u003ctd\u003eUsed for retrieval and recommendation evidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAnalytics\u003c/td\u003e\u003ctd\u003eSAP HANA Cloud, Datasphere, or BTP persistence\u003c/td\u003e\u003ctd\u003eSupport trend reporting, SLA risk, and service improvement.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExternal integration\u003c/td\u003e\u003ctd\u003eServiceNow, Jira Service Management, email/chat, monitoring tools\u003c/td\u003e\u003ctd\u003eIntegrate to the customer support ecosystem.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Cloud ALM Export Package",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories",
+                                                        "test-cases"
+                                                    ],
+                                        "html":  "\u003cp\u003eUse these exports to seed the implementation backlog, user stories, and validation scripts for this offering.\u003c/p\u003e\u003cdiv class=\"detail-table-wrap\"\u003e\u003ctable class=\"detail-table\"\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eExport\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eRequirement\u003c/td\u003e\u003ctd\u003eCreates the parent Cloud ALM requirement for the service offering.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eUser stories\u003c/td\u003e\u003ctd\u003eCreates delivery-ready stories based on customer-ready deliverables.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eTest cases\u003c/td\u003e\u003ctd\u003eCreates validation scripts aligned to the ten-step implementation plan.\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Customer Readiness Checks",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eReadiness area\u003c/th\u003e\u003cth\u003eWhat should be confirmed\u003c/th\u003e\u003cth\u003eAction before pilot\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eTicket taxonomy\u003c/td\u003e\u003ctd\u003eSupport towers, queues, categories, and resolver groups are agreed.\u003c/td\u003e\u003ctd\u003eDefine a minimum resolver taxonomy for the pilot.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eHistorical ticket quality\u003c/td\u003e\u003ctd\u003eResolved tickets include usable descriptions, categories, work notes, and closure codes.\u003c/td\u003e\u003ctd\u003eClean a representative sample before model calibration.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge maturity\u003c/td\u003e\u003ctd\u003eKB articles and runbooks are approved, current, and owned.\u003c/td\u003e\u003ctd\u003eAssign knowledge owners and approval process.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSLA model\u003c/td\u003e\u003ctd\u003eSLA targets, priority rules, and escalation paths are explicit.\u003c/td\u003e\u003ctd\u003eNormalize SLA rules for scoring and reporting.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData protection\u003c/td\u003e\u003ctd\u003ePersonal data and sensitive incident text can be masked.\u003c/td\u003e\u003ctd\u003eDefine masking and retention rules before AI processing.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eITSM integration\u003c/td\u003e\u003ctd\u003eRead/write access and workflow boundaries are clear.\u003c/td\u003e\u003ctd\u003eConfirm which actions are recommendations versus automated updates.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eHuman review path\u003c/td\u003e\u003ctd\u003eLow-confidence routing and customer communication have owners.\u003c/td\u003e\u003ctd\u003eAgree review rules before live pilot.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Data And Integration Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData object\u003c/th\u003e\u003cth\u003eSuggested minimum fields\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eTicket\u003c/td\u003e\u003ctd\u003eTicket ID; title; description; priority; status; channel; requester; assignment group.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWork note\u003c/td\u003e\u003ctd\u003eTicket ID; note type; timestamp; author role; action taken; customer-visible flag.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolution\u003c/td\u003e\u003ctd\u003eClosure code; root cause; fix applied; related KB; time to resolve.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKnowledge article\u003c/td\u003e\u003ctd\u003eArticle ID; title; product/module; owner; approval status; last reviewed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver group\u003c/td\u003e\u003ctd\u003eQueue; module; support level; owner; escalation path.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSLA record\u003c/td\u003e\u003ctd\u003ePriority; target; elapsed time; breach flag; escalation status.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommendation\u003c/td\u003e\u003ctd\u003eClassification; route; confidence; reason; evidence; override.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Next Steps And Sources",
+                                        "html":  "\u003ch3\u003eRecommended Next Steps\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eAction\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eSelect one or two AMS towers for the first pilot.\u003c/td\u003e\u003ctd\u003ePilot scope agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eExtract representative ticket, knowledge, and SLA data.\u003c/td\u003e\u003ctd\u003eBaseline data pack.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eConfirm resolver taxonomy and routing rules.\u003c/td\u003e\u003ctd\u003eExplainable triage baseline.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eValidate duplicate, resolver, and response recommendations on historical tickets.\u003c/td\u003e\u003ctd\u003eCalibrated recommendation quality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5\u003c/td\u003e\u003ctd\u003eRun a live pilot with agent and service-manager review.\u003c/td\u003e\u003ctd\u003eMeasured improvement and scale decision.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    }
                                 ],
-                    "html":  `
-<p>Use these exports to seed the implementation backlog, user stories, and validation scripts for this offering.</p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Export</th><th>Purpose</th></tr></thead><tbody><tr><td>Requirement</td><td>Creates the parent Cloud ALM requirement for the service offering.</td></tr><tr><td>User stories</td><td>Creates delivery-ready stories based on the updated design pack capabilities.</td></tr><tr><td>Test cases</td><td>Creates validation scripts aligned to the build approach and controls.</td></tr></tbody></table></div>
-                    `
-                },
-                {
-                    "title":  "Next Steps And Sources",
-                    "html":  `
-<h3>Next Steps</h3>
-<ul><li>Confirm ticket-source access, ticket fields, worklog availability, and closure-code reliability.</li><li>Validate the resolver group taxonomy and clarify ownership for cross-module issues.</li><li>Define which ticket categories can be auto-routed, which need human review, and which must always escalate.</li><li>Review PII, HR, payroll, security, and executive-impact tickets for stricter handling rules.</li></ul>
-                    `
-                }
-                            ],
         "cloudAlm":  {
                          "tags":  [
                                       "AI",
@@ -1167,7 +1097,7 @@ window.customerSampleItems = [
                          "requirement":  {
                                              "externalId":  "REQ-AMS-001",
                                              "title":  "AI-Powered AMS Control Tower",
-                                             "description":  "<p>A premium AMS layer that triages, deduplicates, routes, and enriches SAP incidents using SAP-module-aware AI and a governed resolution knowledge system.</p><h2>Problem Solved</h2><p>Tickets enter support with inconsistent quality and often bounce across teams, increasing cost-to-serve and delaying resolution.</p><h2>Data Required</h2><p>Ticket history, worklogs, resolver taxonomy, SLA rules, KB articles, runbooks, module/landscape metadata, impact fields.</p>",
+                                             "description":  "\u003cp\u003eUse SAP-module-aware AI to triage, deduplicate, route, and enrich SAP support incidents.\u003c/p\u003e\u003ch2\u003eProblem Solved\u003c/h2\u003e\u003cp\u003eSAP support flow is slowed by fragmented ticket quality, inconsistent triage, and limited reuse of historical resolution knowledge.\u003c/p\u003e\u003ch2\u003eData Required\u003c/h2\u003e\u003cp\u003eTicket history; work notes; resolution codes; resolver groups; SLA rules; knowledge articles; runbooks; module and landscape metadata.\u003c/p\u003e",
                                              "status":  "Not Started",
                                              "priority":  "High",
                                              "owner":  "",
@@ -1177,178 +1107,222 @@ window.customerSampleItems = [
                                              "businessProcess":  "AMS / IT Service Management / Application Operations"
                                          },
                          "userStories":  [
-                            {
-                                "externalId":  "US-AMS-001",
-                                "title":  "US-AMS-001 - A service-desk cockpit that summarizes incoming tickets and identifies missing information",
-                                "persona":  "an implementation owner",
-                                "want":  "A service-desk cockpit that summarizes incoming tickets and identifies missing information",
-                                "soThat":  "Improves first response; reduces misrouting and backlog aging; raises consultant productivity and SLA attainment; builds reusable resolution IP",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-AMS-002",
-                                "title":  "US-AMS-002 - SAP module, process, urgency, impact, and resolver-group classification",
-                                "persona":  "an implementation owner",
-                                "want":  "SAP module, process, urgency, impact, and resolver-group classification",
-                                "soThat":  "Improves first response; reduces misrouting and backlog aging; raises consultant productivity and SLA attainment; builds reusable resolution IP",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-AMS-003",
-                                "title":  "US-AMS-003 - Duplicate and related-ticket detection across current and historical incidents",
-                                "persona":  "an implementation owner",
-                                "want":  "Duplicate and related-ticket detection across current and historical incidents",
-                                "soThat":  "Improves first response; reduces misrouting and backlog aging; raises consultant productivity and SLA attainment; builds reusable resolution IP",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-AMS-004",
-                                "title":  "US-AMS-004 - Similar-resolution retrieval from ticket history, KB articles, and runbooks",
-                                "persona":  "an implementation owner",
-                                "want":  "Similar-resolution retrieval from ticket history, KB articles, and runbooks",
-                                "soThat":  "Improves first response; reduces misrouting and backlog aging; raises consultant productivity and SLA attainment; builds reusable resolution IP",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-AMS-005",
-                                "title":  "US-AMS-005 - Draft resolver notes and first responses with confidence thresholds and human review",
-                                "persona":  "an implementation owner",
-                                "want":  "Draft resolver notes and first responses with confidence thresholds and human review",
-                                "soThat":  "Improves first response; reduces misrouting and backlog aging; raises consultant productivity and SLA attainment; builds reusable resolution IP",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            }
+                                             {
+                                                 "externalId":  "US-AMS-001",
+                                                 "title":  "US-AMS-001 - SAP support triage view",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "SAP support triage view",
+                                                 "soThat":  "Improve first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Module, process, urgency, impact, resolver, and confidence shown for each ticket.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-AMS-002",
+                                                 "title":  "US-AMS-002 - Duplicate incident clusters",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Duplicate incident clusters",
+                                                 "soThat":  "Improve first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Similar tickets grouped so teams can work the underlying issue rather than each symptom separately.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-AMS-003",
+                                                 "title":  "US-AMS-003 - Recommended resolver routing",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Recommended resolver routing",
+                                                 "soThat":  "Improve first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Suggested support tower or resolver group with reason and confidence.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-AMS-004",
+                                                 "title":  "US-AMS-004 - Resolution knowledge suggestions",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Resolution knowledge suggestions",
+                                                 "soThat":  "Improve first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Similar historical tickets, approved KB articles, and runbooks presented to the resolver.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-AMS-005",
+                                                 "title":  "US-AMS-005 - Draft response and work notes",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Draft response and work notes",
+                                                 "soThat":  "Improve first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Structured internal and customer-facing draft text for human review.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-AMS-006",
+                                                 "title":  "US-AMS-006 - Service manager dashboard",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Service manager dashboard",
+                                                 "soThat":  "Improve first response; reduce misrouting; lower backlog aging; increase knowledge reuse; strengthen SLA governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "SLA risk, backlog aging, misroute rate, repeat issue themes, and productivity indicators.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             }
                                          ],
                          "testCases":  [
-                            {
-                                "externalId":  "TC-AMS-001",
-                                "testCaseName":  "TC-AMS-001 - Validate Build Step 1",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI-Powered AMS Control Tower",
-                                "actionTitle":  "Define AMS service taxonomy and canonical ticket schema aligned to SAP modules, processes, towers, priorities, and SLAs",
-                                "instructions":  [
-                                                     "Define AMS service taxonomy and canonical ticket schema aligned to SAP modules, processes, towers, priorities, and SLAs.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI-Powered AMS Control Tower with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-AMS-002",
-                                "testCaseName":  "TC-AMS-002 - Validate Build Step 2",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI-Powered AMS Control Tower",
-                                "actionTitle":  "Build ticket ingestion and enrichment connectors from ITSM, email/chat intake, monitoring alerts, KB sources, and SAP landscape inventory",
-                                "instructions":  [
-                                                     "Build ticket ingestion and enrichment connectors from ITSM, email/chat intake, monitoring alerts, KB sources, and SAP landscape inventory.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI-Powered AMS Control Tower with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-AMS-003",
-                                "testCaseName":  "TC-AMS-003 - Validate Build Step 3",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI-Powered AMS Control Tower",
-                                "actionTitle":  "Configure classifiers and duplicate detection using resolved tickets and known resolver-group outcomes",
-                                "instructions":  [
-                                                     "Configure classifiers and duplicate detection using resolved tickets and known resolver-group outcomes.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI-Powered AMS Control Tower with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-AMS-004",
-                                "testCaseName":  "TC-AMS-004 - Validate Build Step 4",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI-Powered AMS Control Tower",
-                                "actionTitle":  "Implement routing rules and human-in-the-loop review for low-confidence or high-risk recommendations",
-                                "instructions":  [
-                                                     "Implement routing rules and human-in-the-loop review for low-confidence or high-risk recommendations.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI-Powered AMS Control Tower with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-AMS-005",
-                                "testCaseName":  "TC-AMS-005 - Validate Build Step 5",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI-Powered AMS Control Tower",
-                                "actionTitle":  "Enable recommended resolution drafts, missing-information prompts, and service manager reporting",
-                                "instructions":  [
-                                                     "Enable recommended resolution drafts, missing-information prompts, and service manager reporting.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI-Powered AMS Control Tower with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-AMS-006",
-                                "testCaseName":  "TC-AMS-006 - Validate Build Step 6",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI-Powered AMS Control Tower",
-                                "actionTitle":  "Measure and tune using misroute rate, first-response quality, backlog aging, duplicate clusters, and SLA-risk prediction accuracy",
-                                "instructions":  [
-                                                     "Measure and tune using misroute rate, first-response quality, backlog aging, duplicate clusters, and SLA-risk prediction accuracy.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI-Powered AMS Control Tower with traceable evidence."
-                            }
-                                      ]
+                                           {
+                                               "externalId":  "TC-AMS-001",
+                                               "testCaseName":  "TC-AMS-001 - Validate Build Step 1",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Confirm pilot support towers, user groups, and service decision owners.",
+                                               "instructions":  [
+                                                                    "Confirm pilot support towers, user groups, and service decision owners.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Clear AMS pilot boundary. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-002",
+                                               "testCaseName":  "TC-AMS-002 - Validate Build Step 2",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Assess ticket history, SLA rules, resolver taxonomy, and knowledge maturity.",
+                                               "instructions":  [
+                                                                    "Assess ticket history, SLA rules, resolver taxonomy, and knowledge maturity.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Known readiness gaps. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-003",
+                                               "testCaseName":  "TC-AMS-003 - Validate Build Step 3",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Define canonical ticket and support taxonomy.",
+                                               "instructions":  [
+                                                                    "Define canonical ticket and support taxonomy.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Common support data structure. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-004",
+                                               "testCaseName":  "TC-AMS-004 - Validate Build Step 4",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Stand up SAP BTP application shell and security model.",
+                                               "instructions":  [
+                                                                    "Stand up SAP BTP application shell and security model.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Secure solution foundation. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-005",
+                                               "testCaseName":  "TC-AMS-005 - Validate Build Step 5",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Configure ITSM, SAP Cloud ALM, KB, and runbook connectors.",
+                                               "instructions":  [
+                                                                    "Configure ITSM, SAP Cloud ALM, KB, and runbook connectors.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Connected support evidence. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-006",
+                                               "testCaseName":  "TC-AMS-006 - Validate Build Step 6",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Implement deterministic severity, SLA, and routing rules first.",
+                                               "instructions":  [
+                                                                    "Implement deterministic severity, SLA, and routing rules first.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Explainable triage baseline. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-007",
+                                               "testCaseName":  "TC-AMS-007 - Validate Build Step 7",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Add AI classification, duplicate detection, retrieval, and draft-response logic.",
+                                               "instructions":  [
+                                                                    "Add AI classification, duplicate detection, retrieval, and draft-response logic.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Smarter support recommendations. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-008",
+                                               "testCaseName":  "TC-AMS-008 - Validate Build Step 8",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Build agent workbench and AMS control tower dashboard.",
+                                               "instructions":  [
+                                                                    "Build agent workbench and AMS control tower dashboard.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Operational view for service teams. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-009",
+                                               "testCaseName":  "TC-AMS-009 - Validate Build Step 9",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Validate recommendations against historical resolved tickets.",
+                                               "instructions":  [
+                                                                    "Validate recommendations against historical resolved tickets.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Calibrated routing and knowledge suggestions. Evidence is captured for AI-Powered AMS Control Tower."
+                                           },
+                                           {
+                                               "externalId":  "TC-AMS-010",
+                                               "testCaseName":  "TC-AMS-010 - Validate Build Step 10",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI-Powered AMS Control Tower",
+                                               "actionTitle":  "Run live pilot with human review and feedback capture.",
+                                               "instructions":  [
+                                                                    "Run live pilot with human review and feedback capture.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Controlled adoption before scale. Evidence is captured for AI-Powered AMS Control Tower."
+                                           }
+                                       ]
                      },
         "sources":  [
-                    {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
-                        "note":  "AI-Powered AMS Control Tower design pack from the updated Downloads design pack.",
-                        "url":  ""
-                    },
-                    {
-                        "label":  "SAP Cloud ALM API Guide",
-                        "url":  "https://help.sap.com/docs/cloud-alm/apis/about"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Service Level Reporting",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/service-level-reporting"
-                    },
-                    {
-                        "label":  "SAP Build Process Automation",
-                        "url":  "https://help.sap.com/docs/build-process-automation/sap-build-process-automation/using-sap-build-process-automation"
-                    },
-                    {
-                        "label":  "SAP AI Core / generative AI hub",
-                        "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
-                    },
-                    {
-                        "label":  "SAP AI Core Prompt Registry",
-                        "url":  "https://help.sap.com/docs/sap-ai-core/generative-ai/prompt-registry"
-                    }
+                        {
+                            "label":  "Internal source document: AI_Powered_AMS_Control_Tower_Customer_Ready_Solution_Design_No_Images.md",
+                            "note":  "Customer-ready AI-Powered AMS Control Tower solution design pack from the Downloads folder.",
+                            "url":  ""
+                        }
                     ],
         "url":  "",
         "linkLabel":  "Documentation repository pending",
-        "nextStep":  "Confirm ticket-source access, ticket fields, worklog availability, and closure-code reliability. Validate the resolver group taxonomy and clarify ownership for cross-module issues. Define which ticket categories can be auto-routed, which need human review, and which must always escalate. Review PII, HR, payroll, security, and executive-impact tickets for stricter handling rules."
+        "nextStep":  "Select one or two AMS towers for the first pilot. Extract representative ticket, knowledge, and SLA data. Confirm resolver taxonomy and routing rules. Validate duplicate, resolver, and response recommendations on historical tickets. Run a live pilot with agent and service-manager review."
     },
     {
         "id":  "ai-hypercare-stabilization-command-center",
@@ -1364,188 +1338,118 @@ window.customerSampleItems = [
         "pattern":  "AI",
         "category":  "AI",
         "tagLabel":  "AI",
-        "description":  "Hypercare generates incident volume, fragmented communication, and competing narratives; teams struggle to separate training, data, configuration, integration, and performance causes.",
-        "function":  "Deliver AI Hypercare Stabilization Command Center on SAP Cloud ALM, SAP BTP, SAP AI Foundation / generative AI hub, SAP Joule, monitoring/observability tools, ITSM, collaboration tools, optional Signavio context. AI capabilities: Incident clustering, thematic root-cause analysis, sentiment/theme extraction, action prioritization, narrative summarization.",
-        "summary":  "A structured hypercare command center that uses AI to cluster incidents, separate symptoms from systemic causes, and drive daily stabilization decisions after go-live.",
+        "description":  "Post-go-live teams struggle to convert scattered incidents, alerts, and meeting actions into a reliable stabilization plan.",
+        "function":  "Deliver AI Hypercare Stabilization Command Center using this customer-ready approach: Connect incidents, alerts, meeting actions, process context, and ownership into a command-center operating view while keeping governance human-led where required.",
+        "summary":  "Use AI-assisted clustering and daily operating intelligence to stabilize SAP programs after go-live.",
         "useCase":  [
                         {
-                            "text":  "A structured hypercare command center that uses AI to cluster incidents, separate symptoms from systemic causes, and drive daily stabilization decisions after go-live."
+                            "text":  "Use AI-assisted clustering and daily operating intelligence to stabilize SAP programs after go-live."
                         },
                         {
-                            "heading":  "Solution Provides",
+                            "heading":  "Customer-ready outcome",
                             "items":  [
-                                          "A single hypercare dashboard combining incidents, alerts, notes, and process impact.",
-                                          "AI clustering that groups symptoms into actionable root-cause themes.",
-                                          "Daily stabilization packs for war-room, sponsor, and executive consumption.",
-                                          "A process heatmap showing impacted business areas, owners, and severity trends.",
-                                          "A structured transition-to-AMS backlog with priority, owner, root cause, and recommended action."
-                                          ]
+                                          "Faster issue triage, clearer systemic root causes, stronger sponsor reporting, and cleaner handover into AMS.",
+                                          "Connect incidents, alerts, meeting actions, process context, and ownership into a command-center operating view.",
+                                          "AI supports clustering, summaries, and action suggestions. Incident ownership, escalation, and exit decisions remain human-led.",
+                                          "One go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence."
+                                      ]
                         }
                     ],
         "workingExample":  [
-                              {
-                                  "html":  `
-<p>The updated design pack positions this as a customer-ready service offering with a practical MVP path and a productized expansion path.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Delivery lens</th><th>Design-pack view</th></tr></thead>
-    <tbody>
-      <tr><td>MVP target</td><td>One go-live wave or dress rehearsal focused on dashboarding, clustering, and daily stabilization packs.</td></tr>
-      <tr><td>Productized version</td><td>Premium hypercare managed service bundle with command-center methods, standardized metrics, and handover automation.</td></tr>
-    </tbody>
-  </table>
-</div>
-                                  `
-                              }
-                          ],
+                               {
+                                   "html":  "\n\u003cp\u003eThe customer starts with One go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence.. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eOne go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI supports clustering, summaries, and action suggestions. Incident ownership, escalation, and exit decisions remain human-led.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
+                               }
+                           ],
         "whenToUse":  [
-                         "The customer is preparing for, executing, or exiting a major SAP go-live or rollout wave.",
-                         "Incident, alert, feedback, and meeting-note sources can be consolidated for daily stabilization review.",
-                         "Leadership needs a trusted narrative that separates volume noise from systemic blockers.",
-                         "The program wants to hand over a clean backlog to AMS rather than a fragmented issue list."
-                         ],
+                          "One go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence.",
+                          "Incidents; alerts; monitoring signals; war-room actions; meeting notes; process catalog; ownership matrix; KPI baseline; exit criteria.",
+                          "SAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Build Process Automation; optional Signavio; ITSM and collaboration tools.",
+                          "AI supports clustering, summaries, and action suggestions. Incident ownership, escalation, and exit decisions remain human-led."
+                      ],
         "implementation":  [
-                              "Create a common hypercare taxonomy covering training, master data, configuration, integration, security, performance, and defect causes.",
-                              "Integrate incident, alert, log, collaboration-note, and user-feedback feeds into a BTP-based stabilization mart.",
-                              "Implement clustering and theme extraction logic with daily dashboard refresh and manual correction controls.",
-                              "Define stabilization KPIs such as volume burn-down, repeat incident rate, critical-process impact, and owner accountability.",
-                              "Generate structured daily packs for war-room and sponsor consumption with human review before distribution.",
-                              "Close hypercare with an AI-assisted transition report and prioritized AMS backlog."
-                              ],
+                               "Confirm go-live scope, hypercare window, roles, and daily governance cadence.",
+                               "Define hypercare taxonomy for training, data, config, integration, security, performance, and defects.",
+                               "Assess incidents, alerts, war-room notes, KPI baseline, and ownership data.",
+                               "Stand up SAP BTP stabilization mart and access model.",
+                               "Configure SAP Cloud ALM, ITSM, monitoring, and action-log connectors.",
+                               "Implement deterministic severity, process, owner, and escalation rules first.",
+                               "Add AI clustering, theme extraction, summary, and action-suggestion logic.",
+                               "Build daily dashboard, sponsor pack, heatmap, and action tracker.",
+                               "Validate using dress rehearsal, mock cutover, or recent historical issue data.",
+                               "Run live hypercare with daily human review and AMS handover tracking."
+                           ],
         "roadmapImage":  {
                              "src":  "assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI%20Hypercare%20Stabilization%20Command%20Center.png",
                              "alt":  "AI Hypercare Stabilization Command Center implementation roadmap",
-                             "caption":  "AI Hypercare Stabilization Command Center implementation roadmap from the updated design pack."
+                             "caption":  "AI Hypercare Stabilization Command Center implementation roadmap from the customer-ready solution design pack."
                          },
         "collapsibleSections":  [
-                {
-                    "title":  "Design Dimensions",
-                    "html":  `
-<p>A structured hypercare command center that uses AI to cluster incidents, separate symptoms from systemic causes, and drive daily stabilization decisions after go-live.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Design dimension</th><th>Solution detail</th></tr></thead>
-    <tbody>
-      <tr><td>Benefits</td><td>Speeds stabilization; reduces war-room noise; improves executive transparency; creates a clean transition backlog for AMS handover.</td></tr>
-      <tr><td>Target customers</td><td>Program sponsors, PMOs, hypercare leads, transformation directors, CIOs managing S/4HANA or major rollout go-lives.</td></tr>
-      <tr><td>Problem solved</td><td>Hypercare generates incident volume, fragmented communication, and competing narratives; teams struggle to separate training, data, configuration, integration, and performance causes.</td></tr>
-      <tr><td>Required SAP / technology tools</td><td>SAP Cloud ALM, SAP BTP, SAP AI Foundation / generative AI hub, SAP Joule, monitoring/observability tools, ITSM, collaboration tools, optional Signavio context.</td></tr>
-      <tr><td>Data required</td><td>Incidents, monitoring alerts, logs, system health metrics, war-room notes, user feedback, cutover plan, defect backlog, ownership model.</td></tr>
-      <tr><td>AI capability used</td><td>Incident clustering, thematic root-cause analysis, sentiment/theme extraction, action prioritization, narrative summarization.</td></tr>
-      <tr><td>MVP target</td><td>One go-live wave or dress rehearsal focused on dashboarding, clustering, and daily stabilization packs.</td></tr>
-      <tr><td>Productized version</td><td>Premium hypercare managed service bundle with command-center methods, standardized metrics, and handover automation.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Solution Provides And Applicability",
-                    "html":  `
-<h3>Solution Provides</h3>
-<ul><li>A single hypercare dashboard combining incidents, alerts, notes, and process impact.</li><li>AI clustering that groups symptoms into actionable root-cause themes.</li><li>Daily stabilization packs for war-room, sponsor, and executive consumption.</li><li>A process heatmap showing impacted business areas, owners, and severity trends.</li><li>A structured transition-to-AMS backlog with priority, owner, root cause, and recommended action.</li></ul>
-<h3>Applicability</h3>
-<ul><li>The customer is preparing for, executing, or exiting a major SAP go-live or rollout wave.</li><li>Incident, alert, feedback, and meeting-note sources can be consolidated for daily stabilization review.</li><li>Leadership needs a trusted narrative that separates volume noise from systemic blockers.</li><li>The program wants to hand over a clean backlog to AMS rather than a fragmented issue list.</li></ul>
-                    `
-                },
-                {
-                    "title":  "Readiness Conditions",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Readiness condition observed</th><th>Recommended action before activation</th></tr></thead>
-    <tbody>
-      <tr><td>Hypercare taxonomy is not agreed.</td><td>Create common categories for training, master data, configuration, integration, security, performance, and defect causes.</td></tr>
-      <tr><td>War-room notes are inconsistent.</td><td>Standardize capture fields for owner, process, blocker, decision, due date, and escalation path.</td></tr>
-      <tr><td>Monitoring and incident data are disconnected.</td><td>Build a daily stabilization mart that connects incident records, monitoring alerts, and process ownership.</td></tr>
-      <tr><td>Executive packs are manually created with conflicting views.</td><td>Use AI summarization with human approval to produce a single governed stabilization narrative.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Architecture And Component Design",
-                    "html":  `
-<h3>Architecture Summary</h3>
-<ul><li>Ingest incidents and operating signals every hour or day depending on hypercare criticality.</li><li>Cluster issues by process, role, root-cause theme, and severity.</li><li>Generate daily stabilization packs with trends, blockers, and suggested actions.</li><li>Track exit criteria and handover backlog into AMS.</li></ul>
-<div class="working-example-gallery" aria-label="AI Hypercare Stabilization Command Center reference architecture">
-  <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Hypercare_Stabilization_Command_Center.png" alt="AI Hypercare Stabilization Command Center reference architecture" onerror="handleMissingExampleImage(this)" />
-    <figcaption>AI Hypercare Stabilization Command Center reference architecture from the updated design pack.</figcaption>
-  </figure>
-</div>
-<h3>Logical Component Design</h3>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Layer</th><th>Key design decisions</th></tr></thead>
-    <tbody>
-      <tr><td>Experience layer</td><td>Hypercare dashboard, daily war-room pack, process heatmap, executive stabilization summary.</td></tr>
-      <tr><td>Application layer</td><td>Incident clustering service, issue-theme tracker, stabilization backlog manager, handover pack generator.</td></tr>
-      <tr><td>AI layer</td><td>Theme extraction, anomaly detection, root-cause suggestion, summarization and prioritization models.</td></tr>
-      <tr><td>Data layer</td><td>Incident history mart, telemetry store, handover backlog database, role/process mapping tables.</td></tr>
-      <tr><td>Integration layer</td><td>Cloud ALM, monitoring tools, collaboration notes, email/chat, AMS onboarding repository.</td></tr>
-      <tr><td>Security &amp; governance</td><td>Controlled access for project vs operations teams, issue tagging standards, audit history, approval for executive packs.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Non-Functional Requirements",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Requirement</th><th>Customer-ready control</th></tr></thead>
-    <tbody>
-      <tr><td>Security</td><td>Role-based access control, least-privilege access, and masking for sensitive operational data.</td></tr>
-      <tr><td>Auditability</td><td>Recommendation, prompt, override, approval, and user-action logging for governed decisions.</td></tr>
-      <tr><td>Performance</td><td>Near-real-time ingestion for operational use cases; scheduled refresh is acceptable for governance analytics.</td></tr>
-      <tr><td>Resilience</td><td>Retry logic, queue-based integration, monitoring for connector failures, and fallback paths when AI services are unavailable.</td></tr>
-      <tr><td>Model governance</td><td>Human-review thresholds, prompt templates, model version control, and periodic accuracy review.</td></tr>
-      <tr><td>Extensibility</td><td>Modular connectors for SAP and non-SAP ALM, ITSM, CI/CD, observability, and collaboration platforms.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Suggested Build Stack",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Domain</th><th>Preferred choice</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>App/orchestration</td><td>SAP BTP (CAP / Build Code / Build Process Automation)</td><td>Core APIs, workflows, orchestration, and extension services.</td></tr>
-      <tr><td>AI runtime</td><td>SAP AI Foundation / generative AI hub</td><td>Governed model access, prompt management, and AI lifecycle control.</td></tr>
-      <tr><td>SAP process context</td><td>SAP Cloud ALM / relevant SAP line-of-business apps</td><td>Keep SAP-native process and lifecycle context where available.</td></tr>
-      <tr><td>Analytics</td><td>SAP HANA Cloud / Datasphere or BTP persistence</td><td>Operational mart, scorecards, trend views, and audit-friendly reporting.</td></tr>
-      <tr><td>Experience</td><td>Fiori-style web UI / Joule integration where justified</td><td>Use Joule as an assisted experience, not as the only operating surface.</td></tr>
-      <tr><td>ITSM/Ops integration</td><td>ServiceNow / Jira / monitoring tools / Integration Suite</td><td>Integrate into the customer ecosystem rather than replacing it.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Cloud ALM Export Package",
-                    "exports":  [
-                                    "requirement",
-                                    "user-stories",
-                                    "test-cases"
+                                    {
+                                        "title":  "Business Problem",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eChallenge\u003c/th\u003e\u003cth\u003eWhat is happening\u003c/th\u003e\u003cth\u003eBusiness impact\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eHigh issue volume after go-live\u003c/td\u003e\u003ctd\u003eUsers, super users, and support teams raise issues across multiple channels.\u003c/td\u003e\u003ctd\u003eThe team struggles to separate genuine defects from training, data, and process adoption issues.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSymptoms hide systemic causes\u003c/td\u003e\u003ctd\u003eMany tickets describe symptoms rather than the underlying pattern.\u003c/td\u003e\u003ctd\u003eRoot-cause actions are delayed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWar-room reporting is manual\u003c/td\u003e\u003ctd\u003eDaily packs are assembled from tickets, spreadsheets, chat, and meeting notes.\u003c/td\u003e\u003ctd\u003eSponsors receive inconsistent status views.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOwnership is fragmented\u003c/td\u003e\u003ctd\u003eBusiness, SI, AMS, technical, data, and security owners may all be involved.\u003c/td\u003e\u003ctd\u003eActions age without clear accountability.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExit criteria are unclear\u003c/td\u003e\u003ctd\u003eTeams may continue hypercare because volume exists, not because risk is understood.\u003c/td\u003e\u003ctd\u003eTransition to AMS becomes subjective.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eHandover backlog is weak\u003c/td\u003e\u003ctd\u003eRecurring fixes and knowledge gaps are not packaged cleanly for AMS.\u003c/td\u003e\u003ctd\u003eStabilization learning is lost.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Solution Overview",
+                                        "html":  "\u003ch3\u003eSolution Capabilities\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eCapability\u003c/th\u003e\u003cth\u003eWhat it does\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eHypercare data hub\u003c/td\u003e\u003ctd\u003eCollects incidents, alerts, actions, notes, KPI snapshots, and process ownership into one stabilization view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIssue clustering engine\u003c/td\u003e\u003ctd\u003eGroups related issues by process, role, location, module, root-cause theme, and severity.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDaily stabilization pack\u003c/td\u003e\u003ctd\u003eProduces daily view of critical issues, themes, actions, owners, blockers, and exit indicators.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess impact heatmap\u003c/td\u003e\u003ctd\u003eShows which processes, sites, roles, and user groups are most affected.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAction and ownership control\u003c/td\u003e\u003ctd\u003eTracks accountable owners, due dates, aging, and unresolved blockers.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAMS transition pack\u003c/td\u003e\u003ctd\u003eConverts remaining themes into knowledge updates, backlog items, and support handover actions.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eCustomer message: The command center helps focus daily stabilization decisions without replacing business process ownership or hypercare governance.\u003c/p\u003e\n\u003ch3\u003eWhat The Solution Delivers\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDeliverable\u003c/th\u003e\u003cth\u003eCustomer value\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eDaily stabilization dashboard\u003c/td\u003e\u003ctd\u003eOpen issues, new volume, resolved volume, critical blockers, aging, and process impact.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI-assisted issue clusters\u003c/td\u003e\u003ctd\u003eRelated tickets and symptoms grouped into themes for faster root-cause action.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess and role heatmap\u003c/td\u003e\u003ctd\u003eAffected business processes, roles, sites, and teams shown in one view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWar-room action tracker\u003c/td\u003e\u003ctd\u003eActions, owners, due dates, blockers, and aging visible for daily governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSponsor-ready daily pack\u003c/td\u003e\u003ctd\u003eClear summary of progress, risk, decisions required, and next-day focus.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAMS transition backlog\u003c/td\u003e\u003ctd\u003eUnresolved recurring themes, runbook needs, knowledge gaps, and support handover items.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Design Dimensions",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDesign dimension\u003c/th\u003e\u003cth\u003eSolution detail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eBenefits\u003c/td\u003e\u003ctd\u003eAccelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget customers\u003c/td\u003e\u003ctd\u003eProgram Sponsor; CIO; PMO Lead; Hypercare Lead; Business Process Owner; AMS Transition Lead; SI Delivery Lead.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProblem solved\u003c/td\u003e\u003ctd\u003ePost-go-live teams struggle to convert scattered incidents, alerts, and meeting actions into a reliable stabilization plan.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP / technology tools\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Build Process Automation; optional Signavio; ITSM and collaboration tools.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData required\u003c/td\u003e\u003ctd\u003eIncidents; alerts; monitoring signals; war-room actions; meeting notes; process catalog; ownership matrix; KPI baseline; exit criteria.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI capability used\u003c/td\u003e\u003ctd\u003eIssue clustering; theme extraction; probable root-cause grouping; daily summarization; action prioritization; transition-report generation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eInitial deployment focus\u003c/td\u003e\u003ctd\u003eOne go-live wave with daily operating cadence and agreed stabilization KPIs.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget operating model\u003c/td\u003e\u003ctd\u003eReusable hypercare command-center playbook with dashboards, daily packs, issue taxonomy, and AMS transition artefacts.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Architecture And Component Design",
+                                        "html":  "\u003ch3\u003eArchitecture Summary\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eArchitecture logic\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Capture\u003c/td\u003e\u003ctd\u003eCollect incidents, alerts, operations metrics, meeting notes, actions, and process ownership.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Normalize\u003c/td\u003e\u003ctd\u003eClassify each item by process, module, role, site, severity, owner, and root-cause category.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Cluster\u003c/td\u003e\u003ctd\u003eUse rules and AI to group related symptoms and identify systemic themes.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Operate\u003c/td\u003e\u003ctd\u003eGenerate daily dashboard, sponsor pack, action list, and risk/exit view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Transition\u003c/td\u003e\u003ctd\u003eMove remaining issues, knowledge gaps, and recurring patterns into AMS backlog.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cdiv class=\"working-example-gallery\" aria-label=\"AI Hypercare Stabilization Command Center reference architecture\"\u003e\n  \u003cfigure\u003e\n    \u003cimg src=\"assets/working-examples/ai-release-assurance/AI_Hypercare_Stabilization_Command_Center.png\" alt=\"AI Hypercare Stabilization Command Center reference architecture\" onerror=\"handleMissingExampleImage(this)\" /\u003e\n    \u003cfigcaption\u003eAI Hypercare Stabilization Command Center reference architecture from the customer-ready solution design pack.\u003c/figcaption\u003e\n  \u003c/figure\u003e\n\u003c/div\u003e\n\u003ch3\u003eReference Architecture Alignment\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArchitecture area\u003c/th\u003e\u003cth\u003eWhat the image should represent\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSource / Inputs\u003c/td\u003e\u003ctd\u003eIncidents; alerts; monitoring signals; war-room notes; action logs; process catalog; ownership matrix; go-live KPIs.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI \u0026amp; Orchestration\u003c/td\u003e\u003ctd\u003eStabilization Intelligence Engine using SAP BTP app services, AI clustering, rules, and daily workflow.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOutputs / Actions\u003c/td\u003e\u003ctd\u003eDaily stabilization pack; process heatmap; root-cause themes; action tracker; AMS transition backlog.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePlatform / tool context\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Build Process Automation; optional Signavio and ITSM.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003ch3\u003eLogical Component Design\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eLayer\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eKey components\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eExperience Layer\u003c/td\u003e\u003ctd\u003eCommand-center views for hypercare, sponsors, and process owners.\u003c/td\u003e\u003ctd\u003eDaily dashboard\u003cbr\u003e- Sponsor pack\u003cbr\u003e- Process heatmap\u003cbr\u003e- Action tracker\u003cbr\u003e- Exit-readiness view\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eApplication Layer\u003c/td\u003e\u003ctd\u003eRuns stabilization workflow and issue/action lifecycle.\u003c/td\u003e\u003ctd\u003eIncident intake\u003cbr\u003e- Alert ingestion\u003cbr\u003e- Taxonomy mapping\u003cbr\u003e- Action management\u003cbr\u003e- Handover backlog\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI Layer\u003c/td\u003e\u003ctd\u003eSupports clustering, theme extraction, summarization, and action prioritization.\u003c/td\u003e\u003ctd\u003eIssue clustering\u003cbr\u003e- Root-cause theme extraction\u003cbr\u003e- Daily summary generation\u003cbr\u003e- Priority ranking\u003cbr\u003e- Transition report\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData Layer\u003c/td\u003e\u003ctd\u003eMaintains the hypercare stabilization mart.\u003c/td\u003e\u003ctd\u003eIncidents\u003cbr\u003e- Alerts\u003cbr\u003e- Actions\u003cbr\u003e- KPI baseline\u003cbr\u003e- Process ownership\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIntegration Layer\u003c/td\u003e\u003ctd\u003eConnects lifecycle, operations, ITSM, and collaboration inputs.\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003cbr\u003e- ITSM platform\u003cbr\u003e- Monitoring tools\u003cbr\u003e- Collaboration notes\u003cbr\u003e- Optional Signavio\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance Layer\u003c/td\u003e\u003ctd\u003eControls issue ownership, escalation, and exit readiness.\u003c/td\u003e\u003ctd\u003eRBAC\u003cbr\u003e- Escalation rules\u003cbr\u003e- Owner accountability\u003cbr\u003e- Action approvals\u003cbr\u003e- Audit trail\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "SAP Capability Alignment",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eSAP capability\u003c/th\u003e\u003cth\u003eRole in solution\u003c/th\u003e\u003cth\u003eCustomer validation needed\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003eSAP-native lifecycle and operations context for implementation, monitoring, and stabilization views.\u003c/td\u003e\u003ctd\u003eConfirm project scope, operations setup, monitoring usage, task/action model, and integration access.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Cloud ALM Monitoring\u003c/td\u003e\u003ctd\u003eOperations signal source for health, performance, integration, and user-experience indicators where configured.\u003c/td\u003e\u003ctd\u003eConfirm which monitoring scenarios are active and which signals are reliable for hypercare.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP BTP / CAP\u003c/td\u003e\u003ctd\u003eApplication foundation for the stabilization mart, APIs, dashboards, and integration services.\u003c/td\u003e\u003ctd\u003eConfirm runtime, identity model, destinations, and persistence approach.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eGoverned AI runtime for clustering support, summarization, and daily pack generation.\u003c/td\u003e\u003ctd\u003eConfirm approved models, privacy controls, prompt logging, and data-residency requirements.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Build Process Automation\u003c/td\u003e\u003ctd\u003eOptional workflow for action routing, owner confirmation, and escalation approvals.\u003c/td\u003e\u003ctd\u003eConfirm whether hypercare actions remain in existing PMO tooling or are orchestrated through workflow.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Signavio\u003c/td\u003e\u003ctd\u003eOptional business-process context for process impact heatmaps and process owner alignment.\u003c/td\u003e\u003ctd\u003eConfirm process model availability and whether it is current enough for stabilization use.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCustomer ITSM / collaboration tools\u003c/td\u003e\u003ctd\u003eOperational sources for incidents, war-room notes, actions, and handover backlog.\u003c/td\u003e\u003ctd\u003eConfirm API access, ownership, and what should be read-only versus written back.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "AI Capability Design",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eAI capability\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eGuardrail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eIssue clustering\u003c/td\u003e\u003ctd\u003eGroup similar incidents and symptoms into actionable stabilization themes.\u003c/td\u003e\u003ctd\u003eHuman review for critical clusters and systemic root-cause conclusions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTheme extraction\u003c/td\u003e\u003ctd\u003eIdentify root-cause categories such as training, master data, configuration, integration, security, performance, or defect.\u003c/td\u003e\u003ctd\u003eShow sample evidence and allow reclassification.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePriority ranking\u003c/td\u003e\u003ctd\u003eRank issues by business process criticality, severity, volume, owner, and SLA impact.\u003c/td\u003e\u003ctd\u003eCritical process escalation remains owner-approved.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDaily summarization\u003c/td\u003e\u003ctd\u003eGenerate sponsor-ready summary of status, risks, blockers, and decisions.\u003c/td\u003e\u003ctd\u003eHypercare lead approves before circulation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAction recommendation\u003c/td\u003e\u003ctd\u003eSuggest next actions, owners, and follow-up items from patterns and runbooks.\u003c/td\u003e\u003ctd\u003eActions are proposed, not automatically assigned unless agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExit-readiness signal\u003c/td\u003e\u003ctd\u003eSummarize trend, open criticals, repeat rate, and AMS handover status.\u003c/td\u003e\u003ctd\u003eExit remains governance-board decision.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Governance And Human Review Model",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eGovernance area\u003c/th\u003e\u003cth\u003eOwner\u003c/th\u003e\u003cth\u003eDecision / control\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eDaily command-center cadence\u003c/td\u003e\u003ctd\u003eHypercare Lead\u003c/td\u003e\u003ctd\u003eOwns daily issue review and sponsor pack.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess impact\u003c/td\u003e\u003ctd\u003eBusiness Process Owner\u003c/td\u003e\u003ctd\u003eValidates severity and business impact.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTechnical fixes\u003c/td\u003e\u003ctd\u003eApplication / Technical Owner\u003c/td\u003e\u003ctd\u003eOwns defect, integration, security, or performance resolution.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eEscalation\u003c/td\u003e\u003ctd\u003eProgram Sponsor / PMO\u003c/td\u003e\u003ctd\u003eReviews blockers, critical issues, and decisions required.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAMS transition\u003c/td\u003e\u003ctd\u003eAMS Lead\u003c/td\u003e\u003ctd\u003eAccepts remaining backlog, runbooks, and knowledge gaps.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI controls\u003c/td\u003e\u003ctd\u003eAI / Platform Owner\u003c/td\u003e\u003ctd\u003eManages prompts, thresholds, clustering evaluation, and audit evidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExit decision\u003c/td\u003e\u003ctd\u003eSteering Committee or Hypercare Governance Board\u003c/td\u003e\u003ctd\u003eApproves hypercare exit based on agreed criteria.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Implementation Roadmap Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStage\u003c/th\u003e\u003cth\u003eFocus\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Go-Live Readiness Baseline\u003c/td\u003e\u003ctd\u003eConfirm hypercare scope, issue taxonomy, data sources, owners, and exit criteria.\u003c/td\u003e\u003ctd\u003eCommand-center scope and readiness view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Command-Center Foundation\u003c/td\u003e\u003ctd\u003eCreate BTP mart, connectors, access controls, dashboard shell, and action model.\u003c/td\u003e\u003ctd\u003eWorking stabilization data foundation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. AI Clustering and Daily Packs\u003c/td\u003e\u003ctd\u003eConfigure clustering, theme extraction, priority ranking, and sponsor summary generation.\u003c/td\u003e\u003ctd\u003eExplainable stabilization insights.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Live Hypercare Operation\u003c/td\u003e\u003ctd\u003eRun daily command-center cadence with human review and owner accountability.\u003c/td\u003e\u003ctd\u003eValidated issue governance and trend visibility.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. AMS Transition Maturity\u003c/td\u003e\u003ctd\u003eConvert unresolved themes into AMS backlog, runbooks, and knowledge updates.\u003c/td\u003e\u003ctd\u003eClean handover and reusable hypercare playbook.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eValidation principle: Use historical or rehearsal data first to calibrate scoring and recommendations before relying on the solution in a live operating window.\u003c/p\u003e"
+                                    },
+                                    {
+                                        "title":  "Data Foundation Required",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData area\u003c/th\u003e\u003cth\u003eWhy it matters\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eIncidents and service requests\u003c/td\u003e\u003ctd\u003eCore symptom and user-impact signal.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMonitoring and alerts\u003c/td\u003e\u003ctd\u003eOperational context for system health, performance, and integration issues.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWar-room actions and notes\u003c/td\u003e\u003ctd\u003eTracks decisions, owners, blockers, and follow-up actions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess and role context\u003c/td\u003e\u003ctd\u003eSupports process heatmap and owner alignment.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKPI baseline and exit criteria\u003c/td\u003e\u003ctd\u003eMeasures stabilization progress and exit readiness.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAMS handover backlog\u003c/td\u003e\u003ctd\u003eCaptures recurring issues, runbook needs, and knowledge gaps.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Non-Functional Requirements",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArea\u003c/th\u003e\u003cth\u003eRequirement\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSecurity\u003c/td\u003e\u003ctd\u003eRBAC; least privilege; secure destinations; masking for user and incident details.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAuditability\u003c/td\u003e\u003ctd\u003eLog generated summaries, issue clusters, owner changes, escalations, and approvals.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePerformance\u003c/td\u003e\u003ctd\u003eFrequent refresh during active hypercare windows; batch reporting for daily sponsor packs.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResilience\u003c/td\u003e\u003ctd\u003eFallback to manual war-room process if connectors or AI services are unavailable.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eModel governance\u003c/td\u003e\u003ctd\u003eClustering review, prompt versioning, confidence thresholds, and periodic quality sampling.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOperational continuity\u003c/td\u003e\u003ctd\u003eClear handover path from hypercare command center to AMS operations.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExplainability\u003c/td\u003e\u003ctd\u003eEach cluster should show representative issues, common signals, and reason for grouping.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtensibility\u003c/td\u003e\u003ctd\u003eConnectors should support ITSM, SAP Cloud ALM, observability, collaboration, and process-context tools.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Suggested Build Stack",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDomain\u003c/th\u003e\u003cth\u003ePreferred choice\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eApp / orchestration\u003c/td\u003e\u003ctd\u003eSAP BTP with CAP\u003c/td\u003e\u003ctd\u003eStabilization mart, APIs, dashboards, and command-center services.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI runtime\u003c/td\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eClustering support, summarization, action suggestions, and prompt governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP operations context\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003ePreferred SAP-native lifecycle and monitoring context where available.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWorkflow\u003c/td\u003e\u003ctd\u003eSAP Build Process Automation or PMO tooling\u003c/td\u003e\u003ctd\u003eAction routing, escalations, and owner confirmation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess context\u003c/td\u003e\u003ctd\u003eSAP Signavio or Cloud ALM process structures\u003c/td\u003e\u003ctd\u003eProcess heatmap and owner alignment.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExperience\u003c/td\u003e\u003ctd\u003eFiori-style web UI; optional Joule interaction\u003c/td\u003e\u003ctd\u003eDashboard and sponsor pack remain primary; Joule can support Q\u0026amp;A.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAnalytics\u003c/td\u003e\u003ctd\u003eSAP HANA Cloud, Datasphere, or BTP persistence\u003c/td\u003e\u003ctd\u003eHypercare trends, process impact, and exit readiness.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExternal integration\u003c/td\u003e\u003ctd\u003eITSM, observability, collaboration, PMO tools\u003c/td\u003e\u003ctd\u003eRetain customer operating cadence and source systems.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Cloud ALM Export Package",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories",
+                                                        "test-cases"
+                                                    ],
+                                        "html":  "\u003cp\u003eUse these exports to seed the implementation backlog, user stories, and validation scripts for this offering.\u003c/p\u003e\u003cdiv class=\"detail-table-wrap\"\u003e\u003ctable class=\"detail-table\"\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eExport\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eRequirement\u003c/td\u003e\u003ctd\u003eCreates the parent Cloud ALM requirement for the service offering.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eUser stories\u003c/td\u003e\u003ctd\u003eCreates delivery-ready stories based on customer-ready deliverables.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eTest cases\u003c/td\u003e\u003ctd\u003eCreates validation scripts aligned to the ten-step implementation plan.\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Customer Readiness Checks",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eReadiness area\u003c/th\u003e\u003cth\u003eWhat should be confirmed\u003c/th\u003e\u003cth\u003eAction before pilot\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eHypercare taxonomy\u003c/td\u003e\u003ctd\u003eIssue categories and root-cause themes are agreed.\u003c/td\u003e\u003ctd\u003eDefine taxonomy before clustering.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident and alert access\u003c/td\u003e\u003ctd\u003eSources are available and can be refreshed during hypercare.\u003c/td\u003e\u003ctd\u003eConfirm connectors and data owners.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess ownership\u003c/td\u003e\u003ctd\u003eBusiness process owners and technical owners are named.\u003c/td\u003e\u003ctd\u003eCreate ownership matrix for pilot scope.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDaily cadence\u003c/td\u003e\u003ctd\u003eWar-room schedule, sponsor reporting, and action review are agreed.\u003c/td\u003e\u003ctd\u003eLock operating rhythm before go-live.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExit criteria\u003c/td\u003e\u003ctd\u003eVolume, severity, repeat rate, and handover thresholds are explicit.\u003c/td\u003e\u003ctd\u003eDefine exit criteria upfront.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData protection\u003c/td\u003e\u003ctd\u003eMeeting notes, incident details, and user data can be masked as required.\u003c/td\u003e\u003ctd\u003eAgree masking and retention rules.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAMS handover\u003c/td\u003e\u003ctd\u003eRemaining backlog, knowledge gaps, and runbooks have an owner.\u003c/td\u003e\u003ctd\u003eDefine transition acceptance checklist.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Data And Integration Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData object\u003c/th\u003e\u003cth\u003eSuggested minimum fields\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident\u003c/td\u003e\u003ctd\u003eIncident ID; title; description; priority; status; process; site; owner.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAlert\u003c/td\u003e\u003ctd\u003eAlert ID; source; severity; affected service; timestamp; correlation key.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAction\u003c/td\u003e\u003ctd\u003eAction ID; owner; due date; status; blocker; linked issue cluster.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMeeting note\u003c/td\u003e\u003ctd\u003eDate; topic; decision; action; risk; owner; customer-visible flag.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess\u003c/td\u003e\u003ctd\u003eProcess ID; name; owner; criticality; affected role or location.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eKPI snapshot\u003c/td\u003e\u003ctd\u003eIssue volume; new/resolved; repeat rate; aging; critical count; exit threshold.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCluster\u003c/td\u003e\u003ctd\u003eCluster ID; theme; sample issues; root-cause category; confidence; owner.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Next Steps And Sources",
+                                        "html":  "\u003ch3\u003eRecommended Next Steps\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eAction\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eConfirm go-live wave and hypercare window.\u003c/td\u003e\u003ctd\u003eScope agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eDefine issue taxonomy, process ownership, and exit criteria.\u003c/td\u003e\u003ctd\u003eGovernance baseline.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eConnect sample incident, alert, action, and KPI data.\u003c/td\u003e\u003ctd\u003eData-readiness view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eValidate clusters and daily pack against dress rehearsal or prior wave data.\u003c/td\u003e\u003ctd\u003eCalibrated reporting and themes.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5\u003c/td\u003e\u003ctd\u003eRun live hypercare with daily command-center review.\u003c/td\u003e\u003ctd\u003eMeasured stabilization and AMS transition decision.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    }
                                 ],
-                    "html":  `
-<p>Use these exports to seed the implementation backlog, user stories, and validation scripts for this offering.</p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Export</th><th>Purpose</th></tr></thead><tbody><tr><td>Requirement</td><td>Creates the parent Cloud ALM requirement for the service offering.</td></tr><tr><td>User stories</td><td>Creates delivery-ready stories based on the updated design pack capabilities.</td></tr><tr><td>Test cases</td><td>Creates validation scripts aligned to the build approach and controls.</td></tr></tbody></table></div>
-                    `
-                },
-                {
-                    "title":  "Next Steps And Sources",
-                    "html":  `
-<h3>Next Steps</h3>
-<ul><li>Confirm hypercare period, go-live wave scope, critical process list, and owner matrix.</li><li>Validate availability of incident, monitoring, notes, and feedback data sources.</li><li>Agree executive pack approval flow and stakeholder distribution list.</li><li>Define exit criteria, unresolved issue handover rules, and AMS onboarding format.</li></ul>
-                    `
-                }
-                            ],
         "cloudAlm":  {
                          "tags":  [
                                       "AI",
@@ -1558,7 +1462,7 @@ window.customerSampleItems = [
                          "requirement":  {
                                              "externalId":  "REQ-HYP-001",
                                              "title":  "AI Hypercare Stabilization Command Center",
-                                             "description":  "<p>A structured hypercare command center that uses AI to cluster incidents, separate symptoms from systemic causes, and drive daily stabilization decisions after go-live.</p><h2>Problem Solved</h2><p>Hypercare generates incident volume, fragmented communication, and competing narratives; teams struggle to separate training, data, configuration, integration, and performance causes.</p><h2>Data Required</h2><p>Incidents, monitoring alerts, logs, system health metrics, war-room notes, user feedback, cutover plan, defect backlog, ownership model.</p>",
+                                             "description":  "\u003cp\u003eUse AI-assisted clustering and daily operating intelligence to stabilize SAP programs after go-live.\u003c/p\u003e\u003ch2\u003eProblem Solved\u003c/h2\u003e\u003cp\u003ePost-go-live teams struggle to convert scattered incidents, alerts, and meeting actions into a reliable stabilization plan.\u003c/p\u003e\u003ch2\u003eData Required\u003c/h2\u003e\u003cp\u003eIncidents; alerts; monitoring signals; war-room actions; meeting notes; process catalog; ownership matrix; KPI baseline; exit criteria.\u003c/p\u003e",
                                              "status":  "Not Started",
                                              "priority":  "High",
                                              "owner":  "",
@@ -1568,178 +1472,222 @@ window.customerSampleItems = [
                                              "businessProcess":  "Hypercare / Operations / Stabilization"
                                          },
                          "userStories":  [
-                            {
-                                "externalId":  "US-HYP-001",
-                                "title":  "US-HYP-001 - A single hypercare dashboard combining incidents, alerts, notes, and process impact",
-                                "persona":  "an implementation owner",
-                                "want":  "A single hypercare dashboard combining incidents, alerts, notes, and process impact",
-                                "soThat":  "Speeds stabilization; reduces war-room noise; improves executive transparency; creates a clean transition backlog for AMS handover",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-HYP-002",
-                                "title":  "US-HYP-002 - AI clustering that groups symptoms into actionable root-cause themes",
-                                "persona":  "an implementation owner",
-                                "want":  "AI clustering that groups symptoms into actionable root-cause themes",
-                                "soThat":  "Speeds stabilization; reduces war-room noise; improves executive transparency; creates a clean transition backlog for AMS handover",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-HYP-003",
-                                "title":  "US-HYP-003 - Daily stabilization packs for war-room, sponsor, and executive consumption",
-                                "persona":  "an implementation owner",
-                                "want":  "Daily stabilization packs for war-room, sponsor, and executive consumption",
-                                "soThat":  "Speeds stabilization; reduces war-room noise; improves executive transparency; creates a clean transition backlog for AMS handover",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-HYP-004",
-                                "title":  "US-HYP-004 - A process heatmap showing impacted business areas, owners, and severity trends",
-                                "persona":  "an implementation owner",
-                                "want":  "A process heatmap showing impacted business areas, owners, and severity trends",
-                                "soThat":  "Speeds stabilization; reduces war-room noise; improves executive transparency; creates a clean transition backlog for AMS handover",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-HYP-005",
-                                "title":  "US-HYP-005 - A structured transition-to-AMS backlog with priority, owner, root cause, and recommended action",
-                                "persona":  "an implementation owner",
-                                "want":  "A structured transition-to-AMS backlog with priority, owner, root cause, and recommended action",
-                                "soThat":  "Speeds stabilization; reduces war-room noise; improves executive transparency; creates a clean transition backlog for AMS handover",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            }
+                                             {
+                                                 "externalId":  "US-HYP-001",
+                                                 "title":  "US-HYP-001 - Daily stabilization dashboard",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Daily stabilization dashboard",
+                                                 "soThat":  "Accelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Open issues, new volume, resolved volume, critical blockers, aging, and process impact.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-HYP-002",
+                                                 "title":  "US-HYP-002 - AI-assisted issue clusters",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "AI-assisted issue clusters",
+                                                 "soThat":  "Accelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Related tickets and symptoms grouped into themes for faster root-cause action.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-HYP-003",
+                                                 "title":  "US-HYP-003 - Process and role heatmap",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Process and role heatmap",
+                                                 "soThat":  "Accelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Affected business processes, roles, sites, and teams shown in one view.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-HYP-004",
+                                                 "title":  "US-HYP-004 - War-room action tracker",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "War-room action tracker",
+                                                 "soThat":  "Accelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Actions, owners, due dates, blockers, and aging visible for daily governance.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-HYP-005",
+                                                 "title":  "US-HYP-005 - Sponsor-ready daily pack",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Sponsor-ready daily pack",
+                                                 "soThat":  "Accelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Clear summary of progress, risk, decisions required, and next-day focus.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-HYP-006",
+                                                 "title":  "US-HYP-006 - AMS transition backlog",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "AMS transition backlog",
+                                                 "soThat":  "Accelerate stabilization; reduce war-room noise; improve sponsor transparency; strengthen AMS handover; surface systemic causes earlier.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Unresolved recurring themes, runbook needs, knowledge gaps, and support handover items.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             }
                                          ],
                          "testCases":  [
-                            {
-                                "externalId":  "TC-HYP-001",
-                                "testCaseName":  "TC-HYP-001 - Validate Build Step 1",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
-                                "actionTitle":  "Create a common hypercare taxonomy covering training, master data, configuration, integration, security, performance, and defect causes",
-                                "instructions":  [
-                                                     "Create a common hypercare taxonomy covering training, master data, configuration, integration, security, performance, and defect causes.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Hypercare Stabilization Command Center with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-HYP-002",
-                                "testCaseName":  "TC-HYP-002 - Validate Build Step 2",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
-                                "actionTitle":  "Integrate incident, alert, log, collaboration-note, and user-feedback feeds into a BTP-based stabilization mart",
-                                "instructions":  [
-                                                     "Integrate incident, alert, log, collaboration-note, and user-feedback feeds into a BTP-based stabilization mart.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Hypercare Stabilization Command Center with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-HYP-003",
-                                "testCaseName":  "TC-HYP-003 - Validate Build Step 3",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
-                                "actionTitle":  "Implement clustering and theme extraction logic with daily dashboard refresh and manual correction controls",
-                                "instructions":  [
-                                                     "Implement clustering and theme extraction logic with daily dashboard refresh and manual correction controls.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Hypercare Stabilization Command Center with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-HYP-004",
-                                "testCaseName":  "TC-HYP-004 - Validate Build Step 4",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
-                                "actionTitle":  "Define stabilization KPIs such as volume burn-down, repeat incident rate, critical-process impact, and owner accountability",
-                                "instructions":  [
-                                                     "Define stabilization KPIs such as volume burn-down, repeat incident rate, critical-process impact, and owner accountability.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Hypercare Stabilization Command Center with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-HYP-005",
-                                "testCaseName":  "TC-HYP-005 - Validate Build Step 5",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
-                                "actionTitle":  "Generate structured daily packs for war-room and sponsor consumption with human review before distribution",
-                                "instructions":  [
-                                                     "Generate structured daily packs for war-room and sponsor consumption with human review before distribution.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Hypercare Stabilization Command Center with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-HYP-006",
-                                "testCaseName":  "TC-HYP-006 - Validate Build Step 6",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
-                                "actionTitle":  "Close hypercare with an AI-assisted transition report and prioritized AMS backlog",
-                                "instructions":  [
-                                                     "Close hypercare with an AI-assisted transition report and prioritized AMS backlog.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Hypercare Stabilization Command Center with traceable evidence."
-                            }
-                                      ]
+                                           {
+                                               "externalId":  "TC-HYP-001",
+                                               "testCaseName":  "TC-HYP-001 - Validate Build Step 1",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Confirm go-live scope, hypercare window, roles, and daily governance cadence.",
+                                               "instructions":  [
+                                                                    "Confirm go-live scope, hypercare window, roles, and daily governance cadence.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Clear stabilization operating model. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-002",
+                                               "testCaseName":  "TC-HYP-002 - Validate Build Step 2",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Define hypercare taxonomy for training, data, config, integration, security, performance, and defects.",
+                                               "instructions":  [
+                                                                    "Define hypercare taxonomy for training, data, config, integration, security, performance, and defects.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Common issue language. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-003",
+                                               "testCaseName":  "TC-HYP-003 - Validate Build Step 3",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Assess incidents, alerts, war-room notes, KPI baseline, and ownership data.",
+                                               "instructions":  [
+                                                                    "Assess incidents, alerts, war-room notes, KPI baseline, and ownership data.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Known data-readiness gaps. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-004",
+                                               "testCaseName":  "TC-HYP-004 - Validate Build Step 4",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Stand up SAP BTP stabilization mart and access model.",
+                                               "instructions":  [
+                                                                    "Stand up SAP BTP stabilization mart and access model.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Secure solution foundation. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-005",
+                                               "testCaseName":  "TC-HYP-005 - Validate Build Step 5",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Configure SAP Cloud ALM, ITSM, monitoring, and action-log connectors.",
+                                               "instructions":  [
+                                                                    "Configure SAP Cloud ALM, ITSM, monitoring, and action-log connectors.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Connected stabilization evidence. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-006",
+                                               "testCaseName":  "TC-HYP-006 - Validate Build Step 6",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Implement deterministic severity, process, owner, and escalation rules first.",
+                                               "instructions":  [
+                                                                    "Implement deterministic severity, process, owner, and escalation rules first.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Explainable governance baseline. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-007",
+                                               "testCaseName":  "TC-HYP-007 - Validate Build Step 7",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Add AI clustering, theme extraction, summary, and action-suggestion logic.",
+                                               "instructions":  [
+                                                                    "Add AI clustering, theme extraction, summary, and action-suggestion logic.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Smarter stabilization insights. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-008",
+                                               "testCaseName":  "TC-HYP-008 - Validate Build Step 8",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Build daily dashboard, sponsor pack, heatmap, and action tracker.",
+                                               "instructions":  [
+                                                                    "Build daily dashboard, sponsor pack, heatmap, and action tracker.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Operational command-center view. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-009",
+                                               "testCaseName":  "TC-HYP-009 - Validate Build Step 9",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Validate using dress rehearsal, mock cutover, or recent historical issue data.",
+                                               "instructions":  [
+                                                                    "Validate using dress rehearsal, mock cutover, or recent historical issue data.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Calibrated clusters and reporting. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           },
+                                           {
+                                               "externalId":  "TC-HYP-010",
+                                               "testCaseName":  "TC-HYP-010 - Validate Build Step 10",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Hypercare Stabilization Command Center",
+                                               "actionTitle":  "Run live hypercare with daily human review and AMS handover tracking.",
+                                               "instructions":  [
+                                                                    "Run live hypercare with daily human review and AMS handover tracking.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Controlled stabilization and transition. Evidence is captured for AI Hypercare Stabilization Command Center."
+                                           }
+                                       ]
                      },
         "sources":  [
-                    {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
-                        "note":  "AI Hypercare Stabilization Command Center design pack from the updated Downloads design pack.",
-                        "url":  ""
-                    },
-                    {
-                        "label":  "SAP Cloud ALM API Guide",
-                        "url":  "https://help.sap.com/docs/cloud-alm/apis/about"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Monitoring and Alerting",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/alert-event-management"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Service Level Reporting",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/service-level-reporting"
-                    },
-                    {
-                        "label":  "SAP AI Core / generative AI hub",
-                        "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
-                    },
-                    {
-                        "label":  "SAP Build Process Automation",
-                        "url":  "https://help.sap.com/docs/build-process-automation/sap-build-process-automation/using-sap-build-process-automation"
-                    }
+                        {
+                            "label":  "Internal source document: AI_Hypercare_Stabilization_Command_Center_Customer_Ready_Solution_Design_No_Images.md",
+                            "note":  "Customer-ready AI Hypercare Stabilization Command Center solution design pack from the Downloads folder.",
+                            "url":  ""
+                        }
                     ],
         "url":  "",
         "linkLabel":  "Documentation repository pending",
-        "nextStep":  "Confirm hypercare period, go-live wave scope, critical process list, and owner matrix. Validate availability of incident, monitoring, notes, and feedback data sources. Agree executive pack approval flow and stakeholder distribution list. Define exit criteria, unresolved issue handover rules, and AMS onboarding format."
+        "nextStep":  "Confirm go-live wave and hypercare window. Define issue taxonomy, process ownership, and exit criteria. Connect sample incident, alert, action, and KPI data. Validate clusters and daily pack against dress rehearsal or prior wave data. Run live hypercare with daily command-center review."
     },
     {
         "id":  "clean-core-ai-governance-service",
@@ -1749,194 +1697,124 @@ window.customerSampleItems = [
         "title":  "Clean Core AI Governance Service",
         "detailAliases":  [
                               "clean-core-ai-governance-service-side",
-                              "ai-clean-core-governance-service"
+                              "ai-clean-core-governance"
                           ],
         "status":  "Customer accelerator",
         "pattern":  "AI",
         "category":  "AI",
         "tagLabel":  "AI",
-        "description":  "Organizations accumulate custom code and non-standard extensions that increase upgrade cost, operational fragility, and AMS complexity.",
-        "function":  "Deliver Clean Core AI Governance Service on SAP BTP, ABAP Cloud, SAP AI Foundation / generative AI hub, SAP Joule, SAP LeanIX, SAP Cloud ALM, code analysis utilities, transport metadata, architecture repository. AI capabilities: Pattern classification, code/extension categorization, policy reasoning, remediation recommendation, executive summarization.",
-        "summary":  "An architecture governance service that identifies high-risk customizations and extensions, scores clean-core deviations, and prioritizes remediation pathways aligned with SAP's extensibility model.",
+        "description":  "Customizations and extensions are difficult to assess, govern, and modernize without a consistent policy and evidence-based backlog.",
+        "function":  "Deliver Clean Core AI Governance Service using this customer-ready approach: Inventory custom objects and extension patterns, classify them against policy, enrich with usage and business criticality, then recommend remediation paths while keeping governance human-led where required.",
+        "summary":  "Use AI-assisted governance to identify risky customizations and extensions, score clean-core deviations, and prioritize remediation.",
         "useCase":  [
                         {
-                            "text":  "An architecture governance service that identifies high-risk customizations and extensions, scores clean-core deviations, and prioritizes remediation pathways aligned with SAP's extensibility model."
+                            "text":  "Use AI-assisted governance to identify risky customizations and extensions, score clean-core deviations, and prioritize remediation."
                         },
                         {
-                            "heading":  "Solution Provides",
+                            "heading":  "Customer-ready outcome",
                             "items":  [
-                                          "A clean-core governance cockpit showing custom-code and extension risk by domain, system, owner, and usage criticality.",
-                                          "A policy-based deviation score for extensions, custom code, interfaces, and architecture decisions.",
-                                          "AI-assisted categorization of artifacts against clean-core patterns and allowed extensibility options.",
-                                          "A prioritized remediation backlog with target patterns such as retire, redesign, side-by-side extension, or retain with waiver.",
-                                          "Architecture-board packs that convert technical inventory into modernization decisions."
-                                          ]
+                                          "Clearer upgrade readiness, cleaner extension strategy, prioritized modernization backlog, and stronger architecture-board control.",
+                                          "Inventory custom objects and extension patterns, classify them against policy, enrich with usage and business criticality, then recommend remediation paths.",
+                                          "AI supports classification and recommendation. Architecture decisions, waivers, and remediation approvals remain board-owned.",
+                                          "One SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed."
+                                      ]
                         }
                     ],
         "workingExample":  [
-                              {
-                                  "html":  `
-<p>The updated design pack positions this as a customer-ready service offering with a practical MVP path and a productized expansion path.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Delivery lens</th><th>Design-pack view</th></tr></thead>
-    <tbody>
-      <tr><td>MVP target</td><td>One landscape or business domain with artifact inventory, risk scoring, and remediation backlog.</td></tr>
-      <tr><td>Productized version</td><td>Reusable governance service with policy templates, benchmark reporting, and recurring clean-core review cycles.</td></tr>
-    </tbody>
-  </table>
-</div>
-                                  `
-                              }
-                          ],
+                               {
+                                   "html":  "\n\u003cp\u003eThe customer starts with One SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed.. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eOne SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI supports classification and recommendation. Architecture decisions, waivers, and remediation approvals remain board-owned.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
+                               }
+                           ],
         "whenToUse":  [
-                         "The customer is moving toward RISE, GROW, S/4HANA modernization, or cloud-aligned extension governance.",
-                         "Custom objects, enhancements, transports, usage data, and architecture decisions can be inventoried.",
-                         "A design authority or enterprise architecture function is accountable for clean-core policy enforcement.",
-                         "The customer needs a recurring governance process, not a one-time custom-code report."
-                         ],
+                          "One SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed.",
+                          "Custom object inventory; extension registry; usage evidence; transport history; architecture decisions; interface catalog; process criticality.",
+                          "SAP BTP; SAP AI Core / generative AI hub; SAP Cloud ALM; SAP LeanIX; SAP Signavio; ABAP / custom-code analysis sources.",
+                          "AI supports classification and recommendation. Architecture decisions, waivers, and remediation approvals remain board-owned."
+                      ],
         "implementation":  [
-                              "Define clean-core policy taxonomy based on target architecture principles and allowed extensibility patterns.",
-                              "Build collectors or importers for custom code, enhancements, transports, usage data, and architecture metadata.",
-                              "Configure deterministic rules and AI classification to score artifacts by policy deviation, business criticality, usage, and support burden.",
-                              "Develop remediation workflow with suggested target pattern, ownership, waiver path, and effort band.",
-                              "Produce architecture board packs and remediation roadmaps by risk band, value, dependency, and release window.",
-                              "Run periodic review cycles to refresh inventory, re-score artifacts, close waivers, and track modernization progress."
-                              ],
+                               "Confirm clean-core policy scope, target architecture principles, and governance owners.",
+                               "Assess landscape, custom asset inventory, usage evidence, and architecture metadata.",
+                               "Define policy taxonomy for allowed, restricted, exception, and remediation patterns.",
+                               "Stand up SAP BTP governance catalog and security model.",
+                               "Configure collectors for custom code, extensions, interfaces, usage, and architecture sources.",
+                               "Implement deterministic policy and risk rules first.",
+                               "Add AI-assisted pattern classification and remediation recommendation.",
+                               "Build clean-core dashboard, waiver register, and architecture-board pack.",
+                               "Pilot on one domain or system with architect review.",
+                               "Run recurring governance cycles with roadmap and waiver review."
+                           ],
         "roadmapImage":  {
                              "src":  "assets/working-examples/ai-release-assurance/Implementation%20Roadmap_Clean%20Core%20AI%20Governance%20Service.png",
                              "alt":  "Clean Core AI Governance Service implementation roadmap",
-                             "caption":  "Clean Core AI Governance Service implementation roadmap from the updated design pack."
+                             "caption":  "Clean Core AI Governance Service implementation roadmap from the customer-ready solution design pack."
                          },
         "collapsibleSections":  [
-                {
-                    "title":  "Design Dimensions",
-                    "html":  `
-<p>An architecture governance service that identifies high-risk customizations and extensions, scores clean-core deviations, and prioritizes remediation pathways aligned with SAP's extensibility model.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Design dimension</th><th>Solution detail</th></tr></thead>
-    <tbody>
-      <tr><td>Benefits</td><td>Protects upgradeability and cloud fit; quantifies custom and extension risk; creates remediation backlog; strengthens architecture governance.</td></tr>
-      <tr><td>Target customers</td><td>CIOs, enterprise architects, SAP platform owners, transformation architects, design authorities, RISE/GROW program leaders.</td></tr>
-      <tr><td>Problem solved</td><td>Organizations accumulate custom code and non-standard extensions that increase upgrade cost, operational fragility, and AMS complexity.</td></tr>
-      <tr><td>Required SAP / technology tools</td><td>SAP BTP, ABAP Cloud, SAP AI Foundation / generative AI hub, SAP Joule, SAP LeanIX, SAP Cloud ALM, code analysis utilities, transport metadata, architecture repository.</td></tr>
-      <tr><td>Data required</td><td>Custom code inventory, enhancements, transport history, usage metadata, architecture decisions, standards, interface dependencies, incident correlation.</td></tr>
-      <tr><td>AI capability used</td><td>Pattern classification, code/extension categorization, policy reasoning, remediation recommendation, executive summarization.</td></tr>
-      <tr><td>MVP target</td><td>One landscape or business domain with artifact inventory, risk scoring, and remediation backlog.</td></tr>
-      <tr><td>Productized version</td><td>Reusable governance service with policy templates, benchmark reporting, and recurring clean-core review cycles.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Solution Provides And Applicability",
-                    "html":  `
-<h3>Solution Provides</h3>
-<ul><li>A clean-core governance cockpit showing custom-code and extension risk by domain, system, owner, and usage criticality.</li><li>A policy-based deviation score for extensions, custom code, interfaces, and architecture decisions.</li><li>AI-assisted categorization of artifacts against clean-core patterns and allowed extensibility options.</li><li>A prioritized remediation backlog with target patterns such as retire, redesign, side-by-side extension, or retain with waiver.</li><li>Architecture-board packs that convert technical inventory into modernization decisions.</li></ul>
-<h3>Applicability</h3>
-<ul><li>The customer is moving toward RISE, GROW, S/4HANA modernization, or cloud-aligned extension governance.</li><li>Custom objects, enhancements, transports, usage data, and architecture decisions can be inventoried.</li><li>A design authority or enterprise architecture function is accountable for clean-core policy enforcement.</li><li>The customer needs a recurring governance process, not a one-time custom-code report.</li></ul>
-                    `
-                },
-                {
-                    "title":  "Readiness Conditions",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Readiness condition observed</th><th>Recommended action before activation</th></tr></thead>
-    <tbody>
-      <tr><td>Clean-core policy is not documented.</td><td>Define allowed and restricted patterns across in-app extension, developer extensibility, BTP side-by-side extension, integration, and classic custom code.</td></tr>
-      <tr><td>Custom code inventory is incomplete.</td><td>Collect object, usage, transport, dependency, owner, and incident-correlation data before scoring remediation priority.</td></tr>
-      <tr><td>Architecture waivers are informal.</td><td>Create waiver workflow, expiry dates, accountable owners, and review cadence.</td></tr>
-      <tr><td>No modernization decision forum exists.</td><td>Establish design authority review, decision records, and remediation wave planning.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Architecture And Component Design",
-                    "html":  `
-<h3>Architecture Summary</h3>
-<ul><li>Inventory custom objects and extension patterns from the SAP estate.</li><li>Classify each artifact against clean-core policy and usage criticality.</li><li>Generate remediation options such as retire, redesign on BTP, convert to side-by-side extension, or retain with waiver.</li><li>Feed outcomes into architecture board and modernization roadmap.</li></ul>
-<div class="working-example-gallery" aria-label="Clean Core AI Governance Service reference architecture">
-  <figure>
-    <img src="assets/working-examples/ai-release-assurance/Clean_Core_AI_Governance_Service.png" alt="Clean Core AI Governance Service reference architecture" onerror="handleMissingExampleImage(this)" />
-    <figcaption>Clean Core AI Governance Service reference architecture from the updated design pack.</figcaption>
-  </figure>
-</div>
-<h3>Logical Component Design</h3>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Layer</th><th>Key design decisions</th></tr></thead>
-    <tbody>
-      <tr><td>Experience layer</td><td>Architecture governance cockpit, risk heatmap, remediation wave planner, design authority pack.</td></tr>
-      <tr><td>Application layer</td><td>Artifact inventory service, policy rules engine, remediation planner, waiver workflow.</td></tr>
-      <tr><td>AI layer</td><td>Pattern classifier, code explanation service, remediation recommendation and narrative generator.</td></tr>
-      <tr><td>Data layer</td><td>Artifact inventory mart, policy library, waiver repository, cost/risk benchmark tables.</td></tr>
-      <tr><td>Integration layer</td><td>Source/code repositories, Cloud ALM, LeanIX, transport systems, BTP services.</td></tr>
-      <tr><td>Security &amp; governance</td><td>Segregated architect/developer views, audit logs, waiver approvals, secure code metadata handling.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Non-Functional Requirements",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Requirement</th><th>Customer-ready control</th></tr></thead>
-    <tbody>
-      <tr><td>Security</td><td>Role-based access control, least-privilege access, and masking for sensitive operational data.</td></tr>
-      <tr><td>Auditability</td><td>Recommendation, prompt, override, approval, and user-action logging for governed decisions.</td></tr>
-      <tr><td>Performance</td><td>Near-real-time ingestion for operational use cases; scheduled refresh is acceptable for governance analytics.</td></tr>
-      <tr><td>Resilience</td><td>Retry logic, queue-based integration, monitoring for connector failures, and fallback paths when AI services are unavailable.</td></tr>
-      <tr><td>Model governance</td><td>Human-review thresholds, prompt templates, model version control, and periodic accuracy review.</td></tr>
-      <tr><td>Extensibility</td><td>Modular connectors for SAP and non-SAP ALM, ITSM, CI/CD, observability, and collaboration platforms.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Suggested Build Stack",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Domain</th><th>Preferred choice</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>App/orchestration</td><td>SAP BTP (CAP / Build Code / Build Process Automation)</td><td>Core APIs, workflows, orchestration, and extension services.</td></tr>
-      <tr><td>AI runtime</td><td>SAP AI Foundation / generative AI hub</td><td>Governed model access, prompt management, and AI lifecycle control.</td></tr>
-      <tr><td>SAP process context</td><td>SAP Cloud ALM / relevant SAP line-of-business apps</td><td>Keep SAP-native process and lifecycle context where available.</td></tr>
-      <tr><td>Analytics</td><td>SAP HANA Cloud / Datasphere or BTP persistence</td><td>Operational mart, scorecards, trend views, and audit-friendly reporting.</td></tr>
-      <tr><td>Experience</td><td>Fiori-style web UI / Joule integration where justified</td><td>Use Joule as an assisted experience, not as the only operating surface.</td></tr>
-      <tr><td>ITSM/Ops integration</td><td>ServiceNow / Jira / monitoring tools / Integration Suite</td><td>Integrate into the customer ecosystem rather than replacing it.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Cloud ALM Export Package",
-                    "exports":  [
-                                    "requirement",
-                                    "user-stories",
-                                    "test-cases"
+                                    {
+                                        "title":  "Business Problem",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eChallenge\u003c/th\u003e\u003cth\u003eWhat is happening\u003c/th\u003e\u003cth\u003eBusiness impact\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eCustom extensions are hard to govern\u003c/td\u003e\u003ctd\u003eCustom code, enhancements, interfaces, reports, and side-by-side extensions are distributed across systems and teams.\u003c/td\u003e\u003ctd\u003eUpgrade and transformation risk is difficult to quantify.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eUsage and business value are unclear\u003c/td\u003e\u003ctd\u003eSome custom assets remain unused or low-value, while others are critical but undocumented.\u003c/td\u003e\u003ctd\u003eRemediation effort is not prioritized by business value.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eClean-core policy is inconsistent\u003c/td\u003e\u003ctd\u003eTeams may interpret allowed and restricted extension patterns differently.\u003c/td\u003e\u003ctd\u003eDesign quality varies across projects.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture waivers are informal\u003c/td\u003e\u003ctd\u003eExceptions are approved in meetings or documents without lifecycle visibility.\u003c/td\u003e\u003ctd\u003eTechnical debt accumulates.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eModernization backlog is too broad\u003c/td\u003e\u003ctd\u003eA large list of custom objects does not tell the board what to fix first.\u003c/td\u003e\u003ctd\u003eDecision-making becomes slow and subjective.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRISE / S/4HANA programs need evidence\u003c/td\u003e\u003ctd\u003eTransformation teams need a practical view of what to retire, refactor, rebuild, or retain.\u003c/td\u003e\u003ctd\u003eClean-core progress is hard to measure.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Solution Overview",
+                                        "html":  "\u003ch3\u003eSolution Capabilities\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eCapability\u003c/th\u003e\u003cth\u003eWhat it does\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eExtension inventory layer\u003c/td\u003e\u003ctd\u003eCollects custom code, enhancements, interfaces, extensions, transports, usage, and architecture metadata.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eClean-core policy model\u003c/td\u003e\u003ctd\u003eDefines allowed, restricted, exception, and remediation patterns for the customer landscape.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI-assisted classification\u003c/td\u003e\u003ctd\u003eClassifies artifacts by extension pattern, risk, usage, support burden, and likely target architecture.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRemediation recommendation engine\u003c/td\u003e\u003ctd\u003eProposes retire, retain with waiver, refactor, move to BTP, or convert to approved pattern.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture governance workflow\u003c/td\u003e\u003ctd\u003eRoutes decisions, waivers, and remediation actions through accountable architecture owners.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eClean-core dashboard\u003c/td\u003e\u003ctd\u003eShows risk profile, remediation backlog, waiver aging, and progress by domain or system.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eCustomer message: The governance layer turns custom assets into evidence-based architecture decisions without automating waiver or remediation approval.\u003c/p\u003e\n\u003ch3\u003eWhat The Solution Delivers\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDeliverable\u003c/th\u003e\u003cth\u003eCustomer value\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eClean-core risk view\u003c/td\u003e\u003ctd\u003eCustom assets grouped by policy deviation, support risk, usage, criticality, and remediation priority.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtension pattern classification\u003c/td\u003e\u003ctd\u003eArtifacts categorized by classic customization, enhancement, interface, report, workflow, side-by-side extension, or approved pattern.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRemediation backlog\u003c/td\u003e\u003ctd\u003ePrioritized actions to retire, retain, refactor, rebuild on BTP, convert to ABAP Cloud pattern, or approve with waiver.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture-board pack\u003c/td\u003e\u003ctd\u003eDecision-ready view of risks, proposed actions, waivers, dependencies, and progress.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWaiver governance\u003c/td\u003e\u003ctd\u003eException decisions tracked with owner, reason, expiry, and review cadence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eClean-core maturity trend\u003c/td\u003e\u003ctd\u003eQuarterly view of deviation reduction, remediation progress, and remaining risk.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Design Dimensions",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDesign dimension\u003c/th\u003e\u003cth\u003eSolution detail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eBenefits\u003c/td\u003e\u003ctd\u003eImprove upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget customers\u003c/td\u003e\u003ctd\u003eCIO; Enterprise Architect; SAP Platform Owner; S/4HANA Program Lead; Clean-Core Lead; RISE/GROW Transformation Lead.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProblem solved\u003c/td\u003e\u003ctd\u003eCustomizations and extensions are difficult to assess, govern, and modernize without a consistent policy and evidence-based backlog.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP / technology tools\u003c/td\u003e\u003ctd\u003eSAP BTP; SAP AI Core / generative AI hub; SAP Cloud ALM; SAP LeanIX; SAP Signavio; ABAP / custom-code analysis sources.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData required\u003c/td\u003e\u003ctd\u003eCustom object inventory; extension registry; usage evidence; transport history; architecture decisions; interface catalog; process criticality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI capability used\u003c/td\u003e\u003ctd\u003ePattern classification; policy reasoning; risk scoring; remediation suggestion; duplicate/custom asset clustering; board-pack summarization.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eInitial deployment focus\u003c/td\u003e\u003ctd\u003eOne landscape, one business domain, or one extension category with available inventory and architecture ownership.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget operating model\u003c/td\u003e\u003ctd\u003eRecurring clean-core governance cycle with policy library, decision workflow, remediation roadmap, and board reporting.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Architecture And Component Design",
+                                        "html":  "\u003ch3\u003eArchitecture Summary\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eArchitecture logic\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Inventory\u003c/td\u003e\u003ctd\u003eCollect custom objects, extensions, interfaces, transports, usage, and architecture metadata.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Classify\u003c/td\u003e\u003ctd\u003eApply clean-core policy rules and AI-assisted pattern recognition.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Score\u003c/td\u003e\u003ctd\u003eRank assets by deviation, business criticality, usage, support burden, and transformation risk.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Recommend\u003c/td\u003e\u003ctd\u003ePropose remediation path, target architecture pattern, and decision rationale.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Govern\u003c/td\u003e\u003ctd\u003eRoute decisions, waivers, and remediation roadmap through the architecture board.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cdiv class=\"working-example-gallery\" aria-label=\"Clean Core AI Governance Service reference architecture\"\u003e\n  \u003cfigure\u003e\n    \u003cimg src=\"assets/working-examples/ai-release-assurance/Clean_Core_AI_Governance_Service.png\" alt=\"Clean Core AI Governance Service reference architecture\" onerror=\"handleMissingExampleImage(this)\" /\u003e\n    \u003cfigcaption\u003eClean Core AI Governance Service reference architecture from the customer-ready solution design pack.\u003c/figcaption\u003e\n  \u003c/figure\u003e\n\u003c/div\u003e\n\u003ch3\u003eReference Architecture Alignment\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArchitecture area\u003c/th\u003e\u003cth\u003eWhat the image should represent\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSource / Inputs\u003c/td\u003e\u003ctd\u003eCustom code inventory; extension registry; transport history; interface catalog; usage evidence; process criticality; architecture decisions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI \u0026amp; Orchestration\u003c/td\u003e\u003ctd\u003eClean-Core Governance Engine using policy rules, AI pattern classification, scoring, and remediation workflow.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOutputs / Actions\u003c/td\u003e\u003ctd\u003eRisk dashboard; remediation backlog; architecture-board pack; waiver register; quarterly clean-core roadmap.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePlatform / tool context\u003c/td\u003e\u003ctd\u003eSAP BTP; SAP AI Core / generative AI hub; SAP Cloud ALM; SAP LeanIX; SAP Signavio; ABAP/custom-code sources.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003ch3\u003eLogical Component Design\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eLayer\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eKey components\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eExperience Layer\u003c/td\u003e\u003ctd\u003eDecision view for enterprise architects and governance boards.\u003c/td\u003e\u003ctd\u003eClean-core dashboard\u003cbr\u003e- Remediation backlog\u003cbr\u003e- Waiver register\u003cbr\u003e- Board pack\u003cbr\u003e- Maturity trend\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eApplication Layer\u003c/td\u003e\u003ctd\u003eCoordinates inventory, scoring, remediation workflow, and governance lifecycle.\u003c/td\u003e\u003ctd\u003eCollector orchestration\u003cbr\u003e- Policy rules\u003cbr\u003e- Risk scoring\u003cbr\u003e- Remediation workflow\u003cbr\u003e- Decision history\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI Layer\u003c/td\u003e\u003ctd\u003eSupports extension pattern classification and remediation reasoning.\u003c/td\u003e\u003ctd\u003ePattern classifier\u003cbr\u003e- Similar artifact matching\u003cbr\u003e- Remediation suggestion\u003cbr\u003e- Board summary generator\u003cbr\u003e- Confidence scoring\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData Layer\u003c/td\u003e\u003ctd\u003eStores clean-core evidence and governance records.\u003c/td\u003e\u003ctd\u003eCustom object inventory\u003cbr\u003e- Extension catalog\u003cbr\u003e- Usage evidence\u003cbr\u003e- Waiver register\u003cbr\u003e- Remediation history\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIntegration Layer\u003c/td\u003e\u003ctd\u003eConnects SAP architecture, lifecycle, usage, and code-analysis sources.\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003cbr\u003e- SAP LeanIX\u003cbr\u003e- SAP Signavio\u003cbr\u003e- ABAP/code analysis\u003cbr\u003e- Transport history\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance Layer\u003c/td\u003e\u003ctd\u003eControls policies, waivers, approvals, and auditability.\u003c/td\u003e\u003ctd\u003ePolicy taxonomy\u003cbr\u003e- Architecture approvals\u003cbr\u003e- Waiver expiry\u003cbr\u003e- Audit trail\u003cbr\u003e- Remediation ownership\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "SAP Capability Alignment",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eSAP capability\u003c/th\u003e\u003cth\u003eRole in solution\u003c/th\u003e\u003cth\u003eCustomer validation needed\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP BTP / CAP\u003c/td\u003e\u003ctd\u003eFoundation for the governance application, APIs, persistence, and side-by-side extension patterns.\u003c/td\u003e\u003ctd\u003eConfirm BTP entitlements, runtime, security model, and whether BTP is the target extension platform.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eGoverned AI runtime for pattern classification, remediation explanation, and board-summary generation.\u003c/td\u003e\u003ctd\u003eConfirm approved models, privacy controls, prompt logging, and model evaluation approach.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003eLifecycle and system context for transformation work, clean-core visibility, and roadmap linkage where configured.\u003c/td\u003e\u003ctd\u003eConfirm system scope, API access, project/task usage, and ability to link remediation actions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Cloud ALM System View\u003c/td\u003e\u003ctd\u003ePotential source for system and cloud-readiness context.\u003c/td\u003e\u003ctd\u003eConfirm data availability and whether it aligns to customer clean-core reporting needs.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP LeanIX\u003c/td\u003e\u003ctd\u003eEnterprise architecture context for application, interface, technology, and transformation roadmap alignment.\u003c/td\u003e\u003ctd\u003eConfirm LeanIX scope, fact sheet quality, landscape ownership, and integration needs.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Signavio\u003c/td\u003e\u003ctd\u003eOptional process context for business criticality and process ownership.\u003c/td\u003e\u003ctd\u003eConfirm process model availability and link to affected custom assets.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eABAP / custom-code analysis sources\u003c/td\u003e\u003ctd\u003eSource for custom objects, enhancements, usage, and technical characteristics.\u003c/td\u003e\u003ctd\u003eConfirm extraction method, analysis scope, and privacy/security approvals.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "AI Capability Design",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eAI capability\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eGuardrail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eExtension pattern classification\u003c/td\u003e\u003ctd\u003eClassify each artifact by custom code, enhancement, interface, report, workflow, side-by-side extension, or approved pattern.\u003c/td\u003e\u003ctd\u003eShow evidence and confidence; route uncertain cases to architects.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePolicy reasoning\u003c/td\u003e\u003ctd\u003eCompare artifact characteristics against clean-core policy taxonomy.\u003c/td\u003e\u003ctd\u003ePolicy rules remain deterministic and board-owned.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRisk scoring\u003c/td\u003e\u003ctd\u003eScore by deviation, usage, criticality, support burden, upgrade impact, and security sensitivity.\u003c/td\u003e\u003ctd\u003eScores must be explainable and recalculable.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRemediation suggestion\u003c/td\u003e\u003ctd\u003eRecommend retire, retain with waiver, refactor, move to BTP, or convert to approved extension pattern.\u003c/td\u003e\u003ctd\u003eArchitecture board approves final decision.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDuplicate and overlap detection\u003c/td\u003e\u003ctd\u003eFind similar custom reports, interfaces, or extensions with overlapping purpose.\u003c/td\u003e\u003ctd\u003eBusiness owners validate consolidation decisions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eBoard-pack summarization\u003c/td\u003e\u003ctd\u003eGenerate concise governance summary for decision meetings.\u003c/td\u003e\u003ctd\u003eArchitect reviews before publication.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Governance And Human Review Model",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eGovernance area\u003c/th\u003e\u003cth\u003eOwner\u003c/th\u003e\u003cth\u003eDecision / control\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003ePolicy ownership\u003c/td\u003e\u003ctd\u003eEnterprise Architecture\u003c/td\u003e\u003ctd\u003eDefines allowed, restricted, and exception patterns.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArtifact ownership\u003c/td\u003e\u003ctd\u003eApplication Owner\u003c/td\u003e\u003ctd\u003eConfirms business usage and criticality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRemediation decision\u003c/td\u003e\u003ctd\u003eArchitecture Board\u003c/td\u003e\u003ctd\u003eApproves target pattern, waiver, or modernization action.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWaiver control\u003c/td\u003e\u003ctd\u003eClean-Core Lead\u003c/td\u003e\u003ctd\u003eTracks owner, reason, expiry, and review cadence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTechnical validation\u003c/td\u003e\u003ctd\u003eSAP Platform / Development Lead\u003c/td\u003e\u003ctd\u003eConfirms feasibility and effort band.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRoadmap ownership\u003c/td\u003e\u003ctd\u003eTransformation / PMO Lead\u003c/td\u003e\u003ctd\u003eAligns remediation with release and migration roadmap.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI controls\u003c/td\u003e\u003ctd\u003eAI / Platform Owner\u003c/td\u003e\u003ctd\u003eManages prompt versions, thresholds, model evaluation, and audit evidence.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Implementation Roadmap Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStage\u003c/th\u003e\u003cth\u003eFocus\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Policy and Scope Baseline\u003c/td\u003e\u003ctd\u003eConfirm clean-core principles, landscape scope, owners, and decision process.\u003c/td\u003e\u003ctd\u003eGovernance scope and policy baseline agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Inventory Foundation\u003c/td\u003e\u003ctd\u003eCollect custom assets, usage evidence, interface context, and architecture metadata.\u003c/td\u003e\u003ctd\u003eWorking clean-core evidence catalog.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Rules and AI Classification\u003c/td\u003e\u003ctd\u003eConfigure policy rules, pattern classification, risk scoring, and remediation suggestions.\u003c/td\u003e\u003ctd\u003eExplainable clean-core risk model.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Governance Pilot\u003c/td\u003e\u003ctd\u003eReview one domain or system through architecture board and remediation planning.\u003c/td\u003e\u003ctd\u003eValidated backlog, waiver model, and board pack.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Operating Model Maturity\u003c/td\u003e\u003ctd\u003eRun quarterly cycles, track waivers, and align remediation with transformation roadmap.\u003c/td\u003e\u003ctd\u003eRepeatable clean-core governance service.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eValidation principle: Use historical or rehearsal data first to calibrate scoring and recommendations before relying on the solution in a live operating window.\u003c/p\u003e"
+                                    },
+                                    {
+                                        "title":  "Data Foundation Required",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData area\u003c/th\u003e\u003cth\u003eWhy it matters\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eCustom asset inventory\u003c/td\u003e\u003ctd\u003eCore list of objects, enhancements, reports, interfaces, and extensions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eUsage evidence\u003c/td\u003e\u003ctd\u003eSeparates actively used critical assets from unused or low-value customizations.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture policy taxonomy\u003c/td\u003e\u003ctd\u003eDefines allowed patterns and exception criteria.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eBusiness and process criticality\u003c/td\u003e\u003ctd\u003eHelps prioritize remediation by impact.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTransport and change history\u003c/td\u003e\u003ctd\u003eShows volatility and maintenance burden.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWaiver and decision history\u003c/td\u003e\u003ctd\u003eMaintains governance traceability.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Non-Functional Requirements",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArea\u003c/th\u003e\u003cth\u003eRequirement\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSecurity\u003c/td\u003e\u003ctd\u003eRBAC; least privilege; restricted access to code, usage, and architecture decision data.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAuditability\u003c/td\u003e\u003ctd\u003eLog classifications, scores, decisions, waivers, approvers, and remediation status.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePerformance\u003c/td\u003e\u003ctd\u003eBatch inventory refresh is usually sufficient; dashboard should support architecture-board cadence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResilience\u003c/td\u003e\u003ctd\u003eCollector failures should not block governance; missing data should be flagged clearly.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eModel governance\u003c/td\u003e\u003ctd\u003eDeterministic policy rules, confidence thresholds, prompt versioning, and architect review.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExplainability\u003c/td\u003e\u003ctd\u003eEvery risk score and remediation suggestion must show drivers and evidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData privacy\u003c/td\u003e\u003ctd\u003eMask or restrict sensitive usage, user, or code metadata where required.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtensibility\u003c/td\u003e\u003ctd\u003eCollector design should support ABAP, BTP, Integration Suite, architecture, and process sources.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Suggested Build Stack",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDomain\u003c/th\u003e\u003cth\u003ePreferred choice\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eApp / orchestration\u003c/td\u003e\u003ctd\u003eSAP BTP with CAP\u003c/td\u003e\u003ctd\u003eGovernance catalog, APIs, workflows, and dashboard services.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI runtime\u003c/td\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003ePattern classification, remediation explanation, board summaries, and prompt governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture context\u003c/td\u003e\u003ctd\u003eSAP LeanIX\u003c/td\u003e\u003ctd\u003eApplication, interface, and transformation roadmap alignment.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProcess context\u003c/td\u003e\u003ctd\u003eSAP Signavio\u003c/td\u003e\u003ctd\u003eBusiness process criticality and process ownership where available.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eLifecycle context\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003eSystem, project, task, and governance linkage where configured.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWorkflow\u003c/td\u003e\u003ctd\u003eSAP Build Process Automation or architecture-board workflow\u003c/td\u003e\u003ctd\u003eWaiver review, remediation approval, and decision tracking.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData / persistence\u003c/td\u003e\u003ctd\u003eSAP HANA Cloud or BTP persistence\u003c/td\u003e\u003ctd\u003eClean-core catalog, scoring history, and waiver register.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtraction sources\u003c/td\u003e\u003ctd\u003eABAP analysis, transport history, usage data, extension registry\u003c/td\u003e\u003ctd\u003eEvidence for classification and remediation planning.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Cloud ALM Export Package",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories",
+                                                        "test-cases"
+                                                    ],
+                                        "html":  "\u003cp\u003eUse these exports to seed the implementation backlog, user stories, and validation scripts for this offering.\u003c/p\u003e\u003cdiv class=\"detail-table-wrap\"\u003e\u003ctable class=\"detail-table\"\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eExport\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eRequirement\u003c/td\u003e\u003ctd\u003eCreates the parent Cloud ALM requirement for the service offering.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eUser stories\u003c/td\u003e\u003ctd\u003eCreates delivery-ready stories based on customer-ready deliverables.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eTest cases\u003c/td\u003e\u003ctd\u003eCreates validation scripts aligned to the ten-step implementation plan.\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Customer Readiness Checks",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eReadiness area\u003c/th\u003e\u003cth\u003eWhat should be confirmed\u003c/th\u003e\u003cth\u003eAction before pilot\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eClean-core policy\u003c/td\u003e\u003ctd\u003eAllowed, restricted, exception, and target extension patterns are agreed.\u003c/td\u003e\u003ctd\u003eDefine policy before scoring.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCustom asset inventory\u003c/td\u003e\u003ctd\u003eInitial inventory can be extracted or imported.\u003c/td\u003e\u003ctd\u003eConfirm extraction path and scope.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eUsage evidence\u003c/td\u003e\u003ctd\u003eUsage and business value data is available or can be approximated.\u003c/td\u003e\u003ctd\u003eCollect usage signals before prioritization.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture ownership\u003c/td\u003e\u003ctd\u003eBoard, domain architects, and application owners are named.\u003c/td\u003e\u003ctd\u003eConfirm decision rights.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWaiver process\u003c/td\u003e\u003ctd\u003eException approval, expiry, and review cadence are defined.\u003c/td\u003e\u003ctd\u003eCreate waiver register before pilot decisions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget architecture\u003c/td\u003e\u003ctd\u003eBTP, ABAP Cloud, and side-by-side patterns are understood.\u003c/td\u003e\u003ctd\u003eAlign remediation options with target architecture.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSecurity approvals\u003c/td\u003e\u003ctd\u003eAccess to code, transports, and usage data is approved.\u003c/td\u003e\u003ctd\u003eConfirm privacy and access rules.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Data And Integration Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData object\u003c/th\u003e\u003cth\u003eSuggested minimum fields\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eCustom asset\u003c/td\u003e\u003ctd\u003eObject ID; type; package; system; owner; last change; usage signal.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtension record\u003c/td\u003e\u003ctd\u003ePattern; technology; target process; integration points; security sensitivity.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eUsage evidence\u003c/td\u003e\u003ctd\u003eExecution count; active users; business owner; last used date; criticality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eInterface\u003c/td\u003e\u003ctd\u003eInterface ID; source; target; protocol; business process; owner.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eArchitecture decision\u003c/td\u003e\u003ctd\u003eDecision ID; principle; waiver status; approver; expiry; rationale.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRemediation item\u003c/td\u003e\u003ctd\u003eArtifact; proposed action; effort band; dependency; target date; owner.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRisk score\u003c/td\u003e\u003ctd\u003eDeviation; usage; criticality; support burden; upgrade impact; confidence.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Next Steps And Sources",
+                                        "html":  "\u003ch3\u003eRecommended Next Steps\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eAction\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eConfirm clean-core policy scope and first landscape/domain.\u003c/td\u003e\u003ctd\u003eScope agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eExtract or import custom asset inventory and usage evidence.\u003c/td\u003e\u003ctd\u003eBaseline evidence pack.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eDefine scoring rules and remediation decision categories.\u003c/td\u003e\u003ctd\u003eExplainable governance model.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eReview AI-assisted classifications with architects.\u003c/td\u003e\u003ctd\u003eValidated scoring and recommendation quality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5\u003c/td\u003e\u003ctd\u003eRun architecture-board pilot and publish remediation roadmap.\u003c/td\u003e\u003ctd\u003eBoard-approved clean-core backlog.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    }
                                 ],
-                    "html":  `
-<p>Use these exports to seed the implementation backlog, user stories, and validation scripts for this offering.</p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Export</th><th>Purpose</th></tr></thead><tbody><tr><td>Requirement</td><td>Creates the parent Cloud ALM requirement for the service offering.</td></tr><tr><td>User stories</td><td>Creates delivery-ready stories based on the updated design pack capabilities.</td></tr><tr><td>Test cases</td><td>Creates validation scripts aligned to the build approach and controls.</td></tr></tbody></table></div>
-                    `
-                },
-                {
-                    "title":  "Next Steps And Sources",
-                    "html":  `
-<h3>Next Steps</h3>
-<ul><li>Confirm scope: system, landscape, business domain, and transformation objective.</li><li>Validate availability of code inventory, transport history, usage metrics, and architecture standards.</li><li>Agree deviation scoring rules and waiver authority before presenting risk heatmaps.</li><li>Define output format for design authority decisions, modernization backlog, and owner accountability.</li></ul>
-                    `
-                }
-                            ],
         "cloudAlm":  {
                          "tags":  [
                                       "AI",
@@ -1949,7 +1827,7 @@ window.customerSampleItems = [
                          "requirement":  {
                                              "externalId":  "REQ-CCG-001",
                                              "title":  "Clean Core AI Governance Service",
-                                             "description":  "<p>An architecture governance service that identifies high-risk customizations and extensions, scores clean-core deviations, and prioritizes remediation pathways aligned with SAP's extensibility model.</p><h2>Problem Solved</h2><p>Organizations accumulate custom code and non-standard extensions that increase upgrade cost, operational fragility, and AMS complexity.</p><h2>Data Required</h2><p>Custom code inventory, enhancements, transport history, usage metadata, architecture decisions, standards, interface dependencies, incident correlation.</p>",
+                                             "description":  "\u003cp\u003eUse AI-assisted governance to identify risky customizations and extensions, score clean-core deviations, and prioritize remediation.\u003c/p\u003e\u003ch2\u003eProblem Solved\u003c/h2\u003e\u003cp\u003eCustomizations and extensions are difficult to assess, govern, and modernize without a consistent policy and evidence-based backlog.\u003c/p\u003e\u003ch2\u003eData Required\u003c/h2\u003e\u003cp\u003eCustom object inventory; extension registry; usage evidence; transport history; architecture decisions; interface catalog; process criticality.\u003c/p\u003e",
                                              "status":  "Not Started",
                                              "priority":  "High",
                                              "owner":  "",
@@ -1959,178 +1837,222 @@ window.customerSampleItems = [
                                              "businessProcess":  "Architecture Governance / Clean Core / Transformation"
                                          },
                          "userStories":  [
-                            {
-                                "externalId":  "US-CCG-001",
-                                "title":  "US-CCG-001 - A clean-core governance cockpit showing custom-code and extension risk by domain, system, owner, and usage criticality",
-                                "persona":  "an implementation owner",
-                                "want":  "A clean-core governance cockpit showing custom-code and extension risk by domain, system, owner, and usage criticality",
-                                "soThat":  "Protects upgradeability and cloud fit; quantifies custom and extension risk; creates remediation backlog; strengthens architecture governance",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-CCG-002",
-                                "title":  "US-CCG-002 - A policy-based deviation score for extensions, custom code, interfaces, and architecture decisions",
-                                "persona":  "an implementation owner",
-                                "want":  "A policy-based deviation score for extensions, custom code, interfaces, and architecture decisions",
-                                "soThat":  "Protects upgradeability and cloud fit; quantifies custom and extension risk; creates remediation backlog; strengthens architecture governance",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-CCG-003",
-                                "title":  "US-CCG-003 - AI-assisted categorization of artifacts against clean-core patterns and allowed extensibility options",
-                                "persona":  "an implementation owner",
-                                "want":  "AI-assisted categorization of artifacts against clean-core patterns and allowed extensibility options",
-                                "soThat":  "Protects upgradeability and cloud fit; quantifies custom and extension risk; creates remediation backlog; strengthens architecture governance",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-CCG-004",
-                                "title":  "US-CCG-004 - A prioritized remediation backlog with target patterns such as retire, redesign, side-by-side extension, or retain with waiver",
-                                "persona":  "an implementation owner",
-                                "want":  "A prioritized remediation backlog with target patterns such as retire, redesign, side-by-side extension, or retain with waiver",
-                                "soThat":  "Protects upgradeability and cloud fit; quantifies custom and extension risk; creates remediation backlog; strengthens architecture governance",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-CCG-005",
-                                "title":  "US-CCG-005 - Architecture-board packs that convert technical inventory into modernization decisions",
-                                "persona":  "an implementation owner",
-                                "want":  "Architecture-board packs that convert technical inventory into modernization decisions",
-                                "soThat":  "Protects upgradeability and cloud fit; quantifies custom and extension risk; creates remediation backlog; strengthens architecture governance",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            }
+                                             {
+                                                 "externalId":  "US-CCG-001",
+                                                 "title":  "US-CCG-001 - Clean-core risk view",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Clean-core risk view",
+                                                 "soThat":  "Improve upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Custom assets grouped by policy deviation, support risk, usage, criticality, and remediation priority.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-002",
+                                                 "title":  "US-CCG-002 - Extension pattern classification",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Extension pattern classification",
+                                                 "soThat":  "Improve upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Artifacts categorized by classic customization, enhancement, interface, report, workflow, side-by-side extension, or approved pattern.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-003",
+                                                 "title":  "US-CCG-003 - Remediation backlog",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Remediation backlog",
+                                                 "soThat":  "Improve upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Prioritized actions to retire, retain, refactor, rebuild on BTP, convert to ABAP Cloud pattern, or approve with waiver.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-004",
+                                                 "title":  "US-CCG-004 - Architecture-board pack",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Architecture-board pack",
+                                                 "soThat":  "Improve upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Decision-ready view of risks, proposed actions, waivers, dependencies, and progress.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-005",
+                                                 "title":  "US-CCG-005 - Waiver governance",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Waiver governance",
+                                                 "soThat":  "Improve upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Exception decisions tracked with owner, reason, expiry, and review cadence.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-006",
+                                                 "title":  "US-CCG-006 - Clean-core maturity trend",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Clean-core maturity trend",
+                                                 "soThat":  "Improve upgrade readiness; reduce technical debt; prioritize remediation; standardize extension decisions; strengthen architecture governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Quarterly view of deviation reduction, remediation progress, and remaining risk.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             }
                                          ],
                          "testCases":  [
-                            {
-                                "externalId":  "TC-CCG-001",
-                                "testCaseName":  "TC-CCG-001 - Validate Build Step 1",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate Clean Core AI Governance Service",
-                                "actionTitle":  "Define clean-core policy taxonomy based on target architecture principles and allowed extensibility patterns",
-                                "instructions":  [
-                                                     "Define clean-core policy taxonomy based on target architecture principles and allowed extensibility patterns.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for Clean Core AI Governance Service with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-CCG-002",
-                                "testCaseName":  "TC-CCG-002 - Validate Build Step 2",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate Clean Core AI Governance Service",
-                                "actionTitle":  "Build collectors or importers for custom code, enhancements, transports, usage data, and architecture metadata",
-                                "instructions":  [
-                                                     "Build collectors or importers for custom code, enhancements, transports, usage data, and architecture metadata.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for Clean Core AI Governance Service with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-CCG-003",
-                                "testCaseName":  "TC-CCG-003 - Validate Build Step 3",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate Clean Core AI Governance Service",
-                                "actionTitle":  "Configure deterministic rules and AI classification to score artifacts by policy deviation, business criticality, usage, and support burden",
-                                "instructions":  [
-                                                     "Configure deterministic rules and AI classification to score artifacts by policy deviation, business criticality, usage, and support burden.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for Clean Core AI Governance Service with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-CCG-004",
-                                "testCaseName":  "TC-CCG-004 - Validate Build Step 4",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate Clean Core AI Governance Service",
-                                "actionTitle":  "Develop remediation workflow with suggested target pattern, ownership, waiver path, and effort band",
-                                "instructions":  [
-                                                     "Develop remediation workflow with suggested target pattern, ownership, waiver path, and effort band.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for Clean Core AI Governance Service with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-CCG-005",
-                                "testCaseName":  "TC-CCG-005 - Validate Build Step 5",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate Clean Core AI Governance Service",
-                                "actionTitle":  "Produce architecture board packs and remediation roadmaps by risk band, value, dependency, and release window",
-                                "instructions":  [
-                                                     "Produce architecture board packs and remediation roadmaps by risk band, value, dependency, and release window.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for Clean Core AI Governance Service with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-CCG-006",
-                                "testCaseName":  "TC-CCG-006 - Validate Build Step 6",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate Clean Core AI Governance Service",
-                                "actionTitle":  "Run periodic review cycles to refresh inventory, re-score artifacts, close waivers, and track modernization progress",
-                                "instructions":  [
-                                                     "Run periodic review cycles to refresh inventory, re-score artifacts, close waivers, and track modernization progress.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for Clean Core AI Governance Service with traceable evidence."
-                            }
-                                      ]
+                                           {
+                                               "externalId":  "TC-CCG-001",
+                                               "testCaseName":  "TC-CCG-001 - Validate Build Step 1",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Confirm clean-core policy scope, target architecture principles, and governance owners.",
+                                               "instructions":  [
+                                                                    "Confirm clean-core policy scope, target architecture principles, and governance owners.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Clear governance baseline. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-002",
+                                               "testCaseName":  "TC-CCG-002 - Validate Build Step 2",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Assess landscape, custom asset inventory, usage evidence, and architecture metadata.",
+                                               "instructions":  [
+                                                                    "Assess landscape, custom asset inventory, usage evidence, and architecture metadata.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Known data-readiness gaps. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-003",
+                                               "testCaseName":  "TC-CCG-003 - Validate Build Step 3",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Define policy taxonomy for allowed, restricted, exception, and remediation patterns.",
+                                               "instructions":  [
+                                                                    "Define policy taxonomy for allowed, restricted, exception, and remediation patterns.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Common decision language. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-004",
+                                               "testCaseName":  "TC-CCG-004 - Validate Build Step 4",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Stand up SAP BTP governance catalog and security model.",
+                                               "instructions":  [
+                                                                    "Stand up SAP BTP governance catalog and security model.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Secure solution foundation. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-005",
+                                               "testCaseName":  "TC-CCG-005 - Validate Build Step 5",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Configure collectors for custom code, extensions, interfaces, usage, and architecture sources.",
+                                               "instructions":  [
+                                                                    "Configure collectors for custom code, extensions, interfaces, usage, and architecture sources.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Connected clean-core evidence. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-006",
+                                               "testCaseName":  "TC-CCG-006 - Validate Build Step 6",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Implement deterministic policy and risk rules first.",
+                                               "instructions":  [
+                                                                    "Implement deterministic policy and risk rules first.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Explainable scoring baseline. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-007",
+                                               "testCaseName":  "TC-CCG-007 - Validate Build Step 7",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Add AI-assisted pattern classification and remediation recommendation.",
+                                               "instructions":  [
+                                                                    "Add AI-assisted pattern classification and remediation recommendation.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Smarter architecture decision support. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-008",
+                                               "testCaseName":  "TC-CCG-008 - Validate Build Step 8",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Build clean-core dashboard, waiver register, and architecture-board pack.",
+                                               "instructions":  [
+                                                                    "Build clean-core dashboard, waiver register, and architecture-board pack.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Operational governance view. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-009",
+                                               "testCaseName":  "TC-CCG-009 - Validate Build Step 9",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Pilot on one domain or system with architect review.",
+                                               "instructions":  [
+                                                                    "Pilot on one domain or system with architect review.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Validated scoring and remediation logic. Evidence is captured for Clean Core AI Governance Service."
+                                           },
+                                           {
+                                               "externalId":  "TC-CCG-010",
+                                               "testCaseName":  "TC-CCG-010 - Validate Build Step 10",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate Clean Core AI Governance Service",
+                                               "actionTitle":  "Run recurring governance cycles with roadmap and waiver review.",
+                                               "instructions":  [
+                                                                    "Run recurring governance cycles with roadmap and waiver review.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Sustainable clean-core operating model. Evidence is captured for Clean Core AI Governance Service."
+                                           }
+                                       ]
                      },
         "sources":  [
-                    {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
-                        "note":  "Clean Core AI Governance Service design pack from the updated Downloads design pack.",
-                        "url":  ""
-                    },
-                    {
-                        "label":  "SAP Clean Core Extensibility and ABAP-Based Extensions",
-                        "url":  "https://help.sap.com/docs/abap-cloud/developer-guide-from-classic-abap-to-abap-cloud/clean-core-extensibility-and-abap-based-extensions"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Extensibility / Clean Core Level",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/extensibility"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM System View",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/system-view"
-                    },
-                    {
-                        "label":  "SAP LeanIX and SAP Cloud ALM Integration",
-                        "url":  "https://help.sap.com/docs/cloud-alm/setup-administration/integrating-sap-leanix"
-                    },
-                    {
-                        "label":  "SAP AI Core / generative AI hub",
-                        "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
-                    }
+                        {
+                            "label":  "Internal source document: Clean_Core_AI_Governance_Service_Customer_Ready_Solution_Design_No_Images.md",
+                            "note":  "Customer-ready Clean Core AI Governance Service solution design pack from the Downloads folder.",
+                            "url":  ""
+                        }
                     ],
         "url":  "",
         "linkLabel":  "Documentation repository pending",
-        "nextStep":  "Confirm scope: system, landscape, business domain, and transformation objective. Validate availability of code inventory, transport history, usage metrics, and architecture standards. Agree deviation scoring rules and waiver authority before presenting risk heatmaps. Define output format for design authority decisions, modernization backlog, and owner accountability."
+        "nextStep":  "Confirm clean-core policy scope and first landscape/domain. Extract or import custom asset inventory and usage evidence. Define scoring rules and remediation decision categories. Review AI-assisted classifications with architects. Run architecture-board pilot and publish remediation roadmap."
     },
     {
         "id":  "ai-integration-operations-shield",
@@ -2140,194 +2062,124 @@ window.customerSampleItems = [
         "title":  "AI Integration Operations Shield",
         "detailAliases":  [
                               "ai-integration-operations-shield-side",
-                              "integration-operations-shield"
+                              "ai-integration-shield"
                           ],
         "status":  "Customer accelerator",
         "pattern":  "AI",
         "category":  "AI",
         "tagLabel":  "AI",
-        "description":  "Integration failures are noisy, cross-system, and hard to triage; logs are distributed and recurring errors lack pattern intelligence.",
-        "function":  "Deliver AI Integration Operations Shield on SAP Integration Suite, Advanced Event Mesh where applicable, SAP BTP, SAP AI Foundation / generative AI hub, SAP Cloud ALM or ITSM, observability/log tools, optional API telemetry. AI capabilities: Error clustering, probable-cause ranking, runbook retrieval, anomaly detection, summarization, structural improvement recommendation.",
-        "summary":  "An AI-enabled operations layer for SAP integrations that correlates message failures, probable causes, dependency context, and runbooks to accelerate recovery and reduce repeat incidents.",
+        "description":  "Integration operations teams lack a unified, business-aware view of failures, probable cause, runbooks, and recurring patterns.",
+        "function":  "Deliver AI Integration Operations Shield using this customer-ready approach: Connect Integration Suite logs, Cloud ALM monitoring, ITSM incidents, interface catalog, runbooks, and dependency context into one operations shield while keeping governance human-led where required.",
+        "summary":  "Use AI-assisted operations intelligence to correlate SAP integration failures, dependencies, runbooks, and recurring patterns.",
         "useCase":  [
                         {
-                            "text":  "An AI-enabled operations layer for SAP integrations that correlates message failures, probable causes, dependency context, and runbooks to accelerate recovery and reduce repeat incidents."
+                            "text":  "Use AI-assisted operations intelligence to correlate SAP integration failures, dependencies, runbooks, and recurring patterns."
                         },
                         {
-                            "heading":  "Solution Provides",
+                            "heading":  "Customer-ready outcome",
                             "items":  [
-                                          "An integration operations cockpit for message failures, interface health, critical-flow impact, and recurring patterns.",
-                                          "Correlation of failure symptoms across SAP Integration Suite, monitoring tools, ITSM, and surrounding systems.",
-                                          "Probable-cause ranking enriched by interface catalog, dependency graph, prior incidents, and runbooks.",
-                                          "Recovery guidance and resolver recommendation for faster triage and restoration.",
-                                          "A structural-fix backlog that converts repeat operational failures into engineering improvements."
-                                          ]
+                                          "Lower MTTR, clearer probable cause, fewer repeat incidents, better resolver routing, and stronger integration service reliability.",
+                                          "Connect Integration Suite logs, Cloud ALM monitoring, ITSM incidents, interface catalog, runbooks, and dependency context into one operations shield.",
+                                          "AI proposes probable cause and recovery guidance. Production recovery actions, retries, and communication remain human-controlled unless explicitly approved.",
+                                          "Top business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history."
+                                      ]
                         }
                     ],
         "workingExample":  [
-                              {
-                                  "html":  `
-<p>The updated design pack positions this as a customer-ready service offering with a practical MVP path and a productized expansion path.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Delivery lens</th><th>Design-pack view</th></tr></thead>
-    <tbody>
-      <tr><td>MVP target</td><td>Critical interface set with failure classification, runbook retrieval, and health dashboard.</td></tr>
-      <tr><td>Productized version</td><td>Managed integration operations accelerator with reusable connectors, service packs, and recurring optimization reporting.</td></tr>
-    </tbody>
-  </table>
-</div>
-                                  `
-                              }
-                          ],
+                               {
+                                   "html":  "\n\u003cp\u003eThe customer starts with Top business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history.. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eTop business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI proposes probable cause and recovery guidance. Production recovery actions, retries, and communication remain human-controlled unless explicitly approved.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
+                               }
+                           ],
         "whenToUse":  [
-                         "The customer runs critical SAP and non-SAP interfaces where failures impact order, finance, supply chain, HR, or customer operations.",
-                         "Message logs, error codes, interface catalogs, runbooks, and incident records can be consolidated.",
-                         "Operations teams need a business-impact view, not only technical error logs.",
-                         "Recurring failures need to be converted into backlog items for durable fixes."
-                         ],
+                          "Top business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history.",
+                          "Message logs; error codes; interface catalog; payload metadata; dependencies; runbooks; incident history; SLA/criticality; recent changes.",
+                          "SAP Integration Suite; SAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; optional Advanced Event Mesh; ITSM and observability tools.",
+                          "AI proposes probable cause and recovery guidance. Production recovery actions, retries, and communication remain human-controlled unless explicitly approved."
+                      ],
         "implementation":  [
-                              "Define canonical interface and error ontology aligned to operations teams, business processes, and support groups.",
-                              "Build log ingestion, masking, and enrichment pipeline on BTP.",
-                              "Configure retrieval over runbooks and past incidents for likely fixes and recovery steps.",
-                              "Implement cockpit for interface health, probable cause, critical flow impact, owner assignment, and action tracking.",
-                              "Enable recurring-pattern reporting and engineering backlog generation.",
-                              "Start with the top business-critical interfaces, then scale to the wider estate once taxonomy and runbooks are stable."
-                              ],
+                               "Confirm critical interfaces, owners, SLAs, and business-process impact.",
+                               "Assess logs, monitoring, runbooks, incident history, and payload-sensitivity rules.",
+                               "Define canonical interface and error ontology.",
+                               "Stand up SAP BTP application shell, masking layer, and access model.",
+                               "Configure Integration Suite, SAP Cloud ALM, ITSM, and observability connectors.",
+                               "Implement deterministic severity, SLA, criticality, and routing rules first.",
+                               "Add AI clustering, probable-cause ranking, runbook retrieval, and summarization.",
+                               "Build interface cockpit, failure detail view, and recurring-pattern board.",
+                               "Validate against historical failures and known major incidents.",
+                               "Pilot on top critical interfaces with human-controlled recovery actions."
+                           ],
         "roadmapImage":  {
                              "src":  "assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI%20Integration%20Operations%20Shield.png",
                              "alt":  "AI Integration Operations Shield implementation roadmap",
-                             "caption":  "AI Integration Operations Shield implementation roadmap from the updated design pack."
+                             "caption":  "AI Integration Operations Shield implementation roadmap from the customer-ready solution design pack."
                          },
         "collapsibleSections":  [
-                {
-                    "title":  "Design Dimensions",
-                    "html":  `
-<p>An AI-enabled operations layer for SAP integrations that correlates message failures, probable causes, dependency context, and runbooks to accelerate recovery and reduce repeat incidents.</p>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Design dimension</th><th>Solution detail</th></tr></thead>
-    <tbody>
-      <tr><td>Benefits</td><td>Lowers interface MTTR; improves continuity for critical flows; reduces expert dependency; creates structural improvement backlog.</td></tr>
-      <tr><td>Target customers</td><td>Integration operations heads, AMS leaders, enterprise architects, CIOs with large SAP/non-SAP landscapes, B2B/API program owners.</td></tr>
-      <tr><td>Problem solved</td><td>Integration failures are noisy, cross-system, and hard to triage; logs are distributed and recurring errors lack pattern intelligence.</td></tr>
-      <tr><td>Required SAP / technology tools</td><td>SAP Integration Suite, Advanced Event Mesh where applicable, SAP BTP, SAP AI Foundation / generative AI hub, SAP Cloud ALM or ITSM, observability/log tools, optional API telemetry.</td></tr>
-      <tr><td>Data required</td><td>Message logs, error codes, payload metadata, interface catalog, dependencies, SLA tiers, runbooks, incidents, retry outcomes, process criticality.</td></tr>
-      <tr><td>AI capability used</td><td>Error clustering, probable-cause ranking, runbook retrieval, anomaly detection, summarization, structural improvement recommendation.</td></tr>
-      <tr><td>MVP target</td><td>Critical interface set with failure classification, runbook retrieval, and health dashboard.</td></tr>
-      <tr><td>Productized version</td><td>Managed integration operations accelerator with reusable connectors, service packs, and recurring optimization reporting.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Solution Provides And Applicability",
-                    "html":  `
-<h3>Solution Provides</h3>
-<ul><li>An integration operations cockpit for message failures, interface health, critical-flow impact, and recurring patterns.</li><li>Correlation of failure symptoms across SAP Integration Suite, monitoring tools, ITSM, and surrounding systems.</li><li>Probable-cause ranking enriched by interface catalog, dependency graph, prior incidents, and runbooks.</li><li>Recovery guidance and resolver recommendation for faster triage and restoration.</li><li>A structural-fix backlog that converts repeat operational failures into engineering improvements.</li></ul>
-<h3>Applicability</h3>
-<ul><li>The customer runs critical SAP and non-SAP interfaces where failures impact order, finance, supply chain, HR, or customer operations.</li><li>Message logs, error codes, interface catalogs, runbooks, and incident records can be consolidated.</li><li>Operations teams need a business-impact view, not only technical error logs.</li><li>Recurring failures need to be converted into backlog items for durable fixes.</li></ul>
-                    `
-                },
-                {
-                    "title":  "Readiness Conditions",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Readiness condition observed</th><th>Recommended action before activation</th></tr></thead>
-    <tbody>
-      <tr><td>Interface catalog is incomplete.</td><td>Create a minimum catalog with interface ID, source, target, process, owner, criticality, SLA, and support group.</td></tr>
-      <tr><td>Payloads contain sensitive business data.</td><td>Mask payload fields and process only error metadata or approved excerpts for AI use.</td></tr>
-      <tr><td>Runbooks are missing or outdated.</td><td>Start with retrieval over known incidents and build reviewed runbooks for high-frequency failure classes.</td></tr>
-      <tr><td>Monitoring data is fragmented.</td><td>Normalize logs, ITSM records, and alert metadata into a common interface/error ontology.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Architecture And Component Design",
-                    "html":  `
-<h3>Architecture Summary</h3>
-<ul><li>Collect integration failures and operational metadata from Integration Suite and surrounding tools.</li><li>Normalize error classes and enrich with interface, dependency, and business-process context.</li><li>Generate probable cause, recovery steps, and best resolver group recommendation.</li><li>Track recurring failure patterns and feed structural fixes into the engineering backlog.</li></ul>
-<div class="working-example-gallery" aria-label="AI Integration Operations Shield reference architecture">
-  <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Integration_Operations_Shield.png" alt="AI Integration Operations Shield reference architecture" onerror="handleMissingExampleImage(this)" />
-    <figcaption>AI Integration Operations Shield reference architecture from the updated design pack.</figcaption>
-  </figure>
-</div>
-<h3>Logical Component Design</h3>
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Layer</th><th>Key design decisions</th></tr></thead>
-    <tbody>
-      <tr><td>Experience layer</td><td>Integration operations cockpit, interface health dashboard, critical-flow alerting, structural fix tracker.</td></tr>
-      <tr><td>Application layer</td><td>Log ingestion and normalization service, correlation engine, resolver assignment workflow, recurring failure tracker.</td></tr>
-      <tr><td>AI layer</td><td>Error classifier, similarity search over historical incidents/runbooks, summarization and action recommendation service.</td></tr>
-      <tr><td>Data layer</td><td>Operational log mart, interface inventory, dependency graph, runbook knowledge store, SLA and criticality tables.</td></tr>
-      <tr><td>Integration layer</td><td>Integration Suite APIs/logs, Event Mesh telemetry, Cloud ALM/ITSM, observability platform, notification channels.</td></tr>
-      <tr><td>Security &amp; governance</td><td>Payload masking, role-based access, audit trail, approval workflow for automated retries/actions.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Non-Functional Requirements",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Requirement</th><th>Customer-ready control</th></tr></thead>
-    <tbody>
-      <tr><td>Security</td><td>Role-based access control, least-privilege access, and masking for sensitive operational data.</td></tr>
-      <tr><td>Auditability</td><td>Recommendation, prompt, override, approval, and user-action logging for governed decisions.</td></tr>
-      <tr><td>Performance</td><td>Near-real-time ingestion for operational use cases; scheduled refresh is acceptable for governance analytics.</td></tr>
-      <tr><td>Resilience</td><td>Retry logic, queue-based integration, monitoring for connector failures, and fallback paths when AI services are unavailable.</td></tr>
-      <tr><td>Model governance</td><td>Human-review thresholds, prompt templates, model version control, and periodic accuracy review.</td></tr>
-      <tr><td>Extensibility</td><td>Modular connectors for SAP and non-SAP ALM, ITSM, CI/CD, observability, and collaboration platforms.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Suggested Build Stack",
-                    "html":  `
-<div class="detail-table-wrap">
-  <table class="detail-table">
-    <thead><tr><th>Domain</th><th>Preferred choice</th><th>Notes</th></tr></thead>
-    <tbody>
-      <tr><td>App/orchestration</td><td>SAP BTP (CAP / Build Code / Build Process Automation)</td><td>Core APIs, workflows, orchestration, and extension services.</td></tr>
-      <tr><td>AI runtime</td><td>SAP AI Foundation / generative AI hub</td><td>Governed model access, prompt management, and AI lifecycle control.</td></tr>
-      <tr><td>SAP process context</td><td>SAP Cloud ALM / relevant SAP line-of-business apps</td><td>Keep SAP-native process and lifecycle context where available.</td></tr>
-      <tr><td>Analytics</td><td>SAP HANA Cloud / Datasphere or BTP persistence</td><td>Operational mart, scorecards, trend views, and audit-friendly reporting.</td></tr>
-      <tr><td>Experience</td><td>Fiori-style web UI / Joule integration where justified</td><td>Use Joule as an assisted experience, not as the only operating surface.</td></tr>
-      <tr><td>ITSM/Ops integration</td><td>ServiceNow / Jira / monitoring tools / Integration Suite</td><td>Integrate into the customer ecosystem rather than replacing it.</td></tr>
-    </tbody>
-  </table>
-</div>
-                    `
-                },
-                {
-                    "title":  "Cloud ALM Export Package",
-                    "exports":  [
-                                    "requirement",
-                                    "user-stories",
-                                    "test-cases"
+                                    {
+                                        "title":  "Business Problem",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eChallenge\u003c/th\u003e\u003cth\u003eWhat is happening\u003c/th\u003e\u003cth\u003eBusiness impact\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eIntegration failures are distributed\u003c/td\u003e\u003ctd\u003eErrors appear across Integration Suite, Cloud ALM, middleware, APIs, event flows, and ITSM.\u003c/td\u003e\u003ctd\u003eOperators lose time switching tools.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eLogs are technical, not business-friendly\u003c/td\u003e\u003ctd\u003eError messages do not always show process impact, customer impact, or resolver ownership.\u003c/td\u003e\u003ctd\u003eEscalation is slower.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRepeat failures are not fixed structurally\u003c/td\u003e\u003ctd\u003eSimilar failures are resolved repeatedly without identifying recurring root cause.\u003c/td\u003e\u003ctd\u003eMTTR improves slowly and backlog grows.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbooks are inconsistent\u003c/td\u003e\u003ctd\u003eSome interfaces have good recovery steps; others rely on expert memory.\u003c/td\u003e\u003ctd\u003eSupport risk rises when key people are unavailable.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePayload sensitivity limits AI use\u003c/td\u003e\u003ctd\u003eMessage payloads may contain sensitive commercial or personal data.\u003c/td\u003e\u003ctd\u003eMasking and safe context design are required.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eInterface criticality is unclear\u003c/td\u003e\u003ctd\u003eAll failures may look urgent unless business process criticality and SLA are connected.\u003c/td\u003e\u003ctd\u003eTeams may prioritize noisy interfaces over critical ones.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Solution Overview",
+                                        "html":  "\u003ch3\u003eSolution Capabilities\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eCapability\u003c/th\u003e\u003cth\u003eWhat it does\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eInterface health cockpit\u003c/td\u003e\u003ctd\u003eShows failure rate, affected flows, business impact, SLA risk, and recovery status.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCanonical error ontology\u003c/td\u003e\u003ctd\u003eNormalizes error classes, interface types, systems, dependencies, and resolver ownership.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI-assisted probable cause\u003c/td\u003e\u003ctd\u003eRanks likely cause using error history, interface context, recent changes, and similar incidents.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbook retrieval and guidance\u003c/td\u003e\u003ctd\u003eFinds approved recovery steps and highlights gaps where runbooks are missing.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver recommendation\u003c/td\u003e\u003ctd\u003eSuggests the right operations, integration, application, or external partner resolver.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecurring-pattern backlog\u003c/td\u003e\u003ctd\u003eIdentifies structural fixes, monitoring improvements, and engineering backlog items.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eCustomer message: The shield accelerates diagnosis and recovery guidance without automatically executing production actions.\u003c/p\u003e\n\u003ch3\u003eWhat The Solution Delivers\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDeliverable\u003c/th\u003e\u003cth\u003eCustomer value\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eInterface health dashboard\u003c/td\u003e\u003ctd\u003eFailure count, impact, trend, SLA risk, affected processes, and ownership in one view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eFailure correlation\u003c/td\u003e\u003ctd\u003eRelated errors grouped across interface, system, dependency, and time window.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProbable-cause ranking\u003c/td\u003e\u003ctd\u003eLikely cause displayed with evidence, similar incidents, and confidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecovery guidance\u003c/td\u003e\u003ctd\u003eApproved runbooks and next-best actions shown for human execution.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver routing\u003c/td\u003e\u003ctd\u003eRecommended owner or resolver group based on interface, error pattern, and dependency.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eStructural improvement backlog\u003c/td\u003e\u003ctd\u003eRecurring patterns converted into engineering fixes, monitoring improvements, and runbook gaps.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Design Dimensions",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDesign dimension\u003c/th\u003e\u003cth\u003eSolution detail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eBenefits\u003c/td\u003e\u003ctd\u003eReduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget customers\u003c/td\u003e\u003ctd\u003eCIO; Integration Operations Lead; AMS Lead; Enterprise Architect; Integration Architect; API/B2B Operations Lead.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProblem solved\u003c/td\u003e\u003ctd\u003eIntegration operations teams lack a unified, business-aware view of failures, probable cause, runbooks, and recurring patterns.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP / technology tools\u003c/td\u003e\u003ctd\u003eSAP Integration Suite; SAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; optional Advanced Event Mesh; ITSM and observability tools.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData required\u003c/td\u003e\u003ctd\u003eMessage logs; error codes; interface catalog; payload metadata; dependencies; runbooks; incident history; SLA/criticality; recent changes.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI capability used\u003c/td\u003e\u003ctd\u003eError clustering; probable-cause ranking; runbook retrieval; anomaly detection; resolver recommendation; incident summarization.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eInitial deployment focus\u003c/td\u003e\u003ctd\u003eTop 20 business-critical interfaces or one critical integration domain.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eTarget operating model\u003c/td\u003e\u003ctd\u003eReusable integration operations shield with interface ontology, recovery guidance, recurring-pattern backlog, and service dashboards.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Architecture And Component Design",
+                                        "html":  "\u003ch3\u003eArchitecture Summary\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eArchitecture logic\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Capture\u003c/td\u003e\u003ctd\u003eCollect message failures, monitoring signals, incident data, interface metadata, runbooks, and recent changes.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Normalize\u003c/td\u003e\u003ctd\u003eMap errors into a common interface and error ontology with ownership and business criticality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Correlate\u003c/td\u003e\u003ctd\u003eGroup related failures across system, flow, dependency, time window, and business process.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Recommend\u003c/td\u003e\u003ctd\u003eRank probable cause, retrieve recovery steps, and suggest resolver path.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Improve\u003c/td\u003e\u003ctd\u003eTrack recurring patterns and feed structural fixes into engineering backlog.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cdiv class=\"working-example-gallery\" aria-label=\"AI Integration Operations Shield reference architecture\"\u003e\n  \u003cfigure\u003e\n    \u003cimg src=\"assets/working-examples/ai-release-assurance/AI_Integration_Operations_Shield.png\" alt=\"AI Integration Operations Shield reference architecture\" onerror=\"handleMissingExampleImage(this)\" /\u003e\n    \u003cfigcaption\u003eAI Integration Operations Shield reference architecture from the customer-ready solution design pack.\u003c/figcaption\u003e\n  \u003c/figure\u003e\n\u003c/div\u003e\n\u003ch3\u003eReference Architecture Alignment\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArchitecture area\u003c/th\u003e\u003cth\u003eWhat the image should represent\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSource / Inputs\u003c/td\u003e\u003ctd\u003eIntegration Suite logs; Cloud ALM monitoring; interface catalog; ITSM incidents; runbooks; dependency context; recent changes.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI \u0026amp; Orchestration\u003c/td\u003e\u003ctd\u003eIntegration Operations Shield using SAP BTP app services, AI retrieval/ranking, rules, and workflow controls.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOutputs / Actions\u003c/td\u003e\u003ctd\u003eProbable cause; recovery guidance; resolver routing; health cockpit; recurring-pattern backlog.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePlatform / tool context\u003c/td\u003e\u003ctd\u003eSAP Integration Suite; SAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; optional Advanced Event Mesh; ITSM.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003ch3\u003eLogical Component Design\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eLayer\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eKey components\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eExperience Layer\u003c/td\u003e\u003ctd\u003eDecision view for integration operations and service managers.\u003c/td\u003e\u003ctd\u003eInterface cockpit\u003cbr\u003e- Failure detail view\u003cbr\u003e- Recovery guidance\u003cbr\u003e- Resolver routing\u003cbr\u003e- Recurring-pattern board\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eApplication Layer\u003c/td\u003e\u003ctd\u003eCoordinates log ingestion, enrichment, correlation, and action tracking.\u003c/td\u003e\u003ctd\u003eLog ingestion\u003cbr\u003e- Error ontology\u003cbr\u003e- Dependency enrichment\u003cbr\u003e- Probable-cause service\u003cbr\u003e- Backlog generator\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI Layer\u003c/td\u003e\u003ctd\u003eSupports clustering, retrieval, probable-cause ranking, and summarization.\u003c/td\u003e\u003ctd\u003eError clustering\u003cbr\u003e- Runbook retrieval\u003cbr\u003e- Cause ranking\u003cbr\u003e- Anomaly detection\u003cbr\u003e- Incident summary\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData Layer\u003c/td\u003e\u003ctd\u003eMaintains integration operations evidence and interface context.\u003c/td\u003e\u003ctd\u003eInterface catalog\u003cbr\u003e- Error history\u003cbr\u003e- Runbook index\u003cbr\u003e- Incident history\u003cbr\u003e- SLA/criticality model\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIntegration Layer\u003c/td\u003e\u003ctd\u003eConnects SAP integration, monitoring, ITSM, and observability sources.\u003c/td\u003e\u003ctd\u003eIntegration Suite\u003cbr\u003e- SAP Cloud ALM\u003cbr\u003e- ITSM\u003cbr\u003e- Observability tools\u003cbr\u003e- Event/message sources\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance Layer\u003c/td\u003e\u003ctd\u003eControls production safety, sensitive data, and recovery approvals.\u003c/td\u003e\u003ctd\u003eRBAC\u003cbr\u003e- Payload masking\u003cbr\u003e- Action approvals\u003cbr\u003e- Audit trail\u003cbr\u003e- Safe automation rules\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "SAP Capability Alignment",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eSAP capability\u003c/th\u003e\u003cth\u003eRole in solution\u003c/th\u003e\u003cth\u003eCustomer validation needed\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Integration Suite\u003c/td\u003e\u003ctd\u003ePrimary integration platform context for integration flows, APIs, message processing, monitoring, and event-driven integration.\u003c/td\u003e\u003ctd\u003eConfirm tenant scope, message monitoring access, retention, adapter coverage, and operations ownership.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003eSAP-native operations and integration monitoring context where configured.\u003c/td\u003e\u003ctd\u003eConfirm monitoring scenarios, API access, alert data quality, and linkage to ITSM.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP BTP / CAP\u003c/td\u003e\u003ctd\u003eApplication foundation for the operations shield, APIs, persistence, and dashboards.\u003c/td\u003e\u003ctd\u003eConfirm runtime, identity model, destinations, and secure access to integration sources.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eGoverned AI runtime for error clustering, probable-cause explanation, retrieval support, and summarization.\u003c/td\u003e\u003ctd\u003eConfirm AI entitlement, approved models, payload safety, prompt logging, and data residency.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eSAP Build Process Automation\u003c/td\u003e\u003ctd\u003eOptional workflow for approvals, recovery action routing, and recurring-pattern backlog.\u003c/td\u003e\u003ctd\u003eConfirm which recovery steps require approval and which remain manual.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAdvanced Event Mesh\u003c/td\u003e\u003ctd\u003eOptional event-driven signal source and event-distribution context for high-volume integration landscapes.\u003c/td\u003e\u003ctd\u003eConfirm event landscape, monitoring requirements, and critical event streams.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eCustomer ITSM / observability tools\u003c/td\u003e\u003ctd\u003eOperational systems for incidents, resolver ownership, escalation, and technical telemetry.\u003c/td\u003e\u003ctd\u003eConfirm APIs, field mapping, and rules for write-back.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "AI Capability Design",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eAI capability\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003cth\u003eGuardrail\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eError clustering\u003c/td\u003e\u003ctd\u003eGroup similar failures across interfaces, systems, time windows, and dependency paths.\u003c/td\u003e\u003ctd\u003eShow representative errors and allow operator correction.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProbable-cause ranking\u003c/td\u003e\u003ctd\u003eRank likely causes using error text, history, recent changes, dependency context, and runbooks.\u003c/td\u003e\u003ctd\u003eOperators validate before recovery action.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbook retrieval\u003c/td\u003e\u003ctd\u003eFind approved recovery steps and known fixes for similar issues.\u003c/td\u003e\u003ctd\u003eUse only approved sources for production guidance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAnomaly detection\u003c/td\u003e\u003ctd\u003eHighlight unusual spikes or new error patterns.\u003c/td\u003e\u003ctd\u003eEscalate anomalies for operations review.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver recommendation\u003c/td\u003e\u003ctd\u003eSuggest integration, application, basis, network, security, or partner resolver group.\u003c/td\u003e\u003ctd\u003eLow-confidence recommendations route to triage lead.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident summarization\u003c/td\u003e\u003ctd\u003eCreate business-readable summary of impact, probable cause, and next action.\u003c/td\u003e\u003ctd\u003eHuman review before customer or executive communication.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecurring-pattern analysis\u003c/td\u003e\u003ctd\u003eIdentify structural fixes, missing runbooks, unstable dependencies, and monitoring gaps.\u003c/td\u003e\u003ctd\u003eReviewed in integration governance cadence.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Governance And Human Review Model",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eGovernance area\u003c/th\u003e\u003cth\u003eOwner\u003c/th\u003e\u003cth\u003eDecision / control\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eProduction recovery\u003c/td\u003e\u003ctd\u003eIntegration Operations Lead\u003c/td\u003e\u003ctd\u003eApproves recovery actions, retries, and escalation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eBusiness impact\u003c/td\u003e\u003ctd\u003eProcess Owner / Service Manager\u003c/td\u003e\u003ctd\u003eConfirms business severity and communication priority.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbook ownership\u003c/td\u003e\u003ctd\u003eIntegration Owner\u003c/td\u003e\u003ctd\u003eApproves runbook content and recovery steps.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResolver routing\u003c/td\u003e\u003ctd\u003eOperations Triage Lead\u003c/td\u003e\u003ctd\u003eReviews low-confidence ownership suggestions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eStructural backlog\u003c/td\u003e\u003ctd\u003eIntegration Architect\u003c/td\u003e\u003ctd\u003ePrioritizes recurring-pattern fixes and monitoring improvements.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePayload safety\u003c/td\u003e\u003ctd\u003eSecurity / Data Owner\u003c/td\u003e\u003ctd\u003eApproves masking, retention, and AI-safe data design.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI controls\u003c/td\u003e\u003ctd\u003eAI / Platform Owner\u003c/td\u003e\u003ctd\u003eManages model, prompt, threshold, and evaluation controls.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Implementation Roadmap Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStage\u003c/th\u003e\u003cth\u003eFocus\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1. Critical Interface Discovery\u003c/td\u003e\u003ctd\u003eConfirm interface scope, owners, business impact, SLAs, and data sources.\u003c/td\u003e\u003ctd\u003ePilot interface set and readiness view.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2. Operations Foundation\u003c/td\u003e\u003ctd\u003eCreate BTP shell, interface ontology, masking, access controls, and connectors.\u003c/td\u003e\u003ctd\u003eWorking integration-operations data foundation.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3. Intelligence and Recovery Guidance\u003c/td\u003e\u003ctd\u003eConfigure rules, clustering, probable-cause ranking, and runbook retrieval.\u003c/td\u003e\u003ctd\u003eExplainable recovery recommendation engine.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4. Interface Shield Pilot\u003c/td\u003e\u003ctd\u003eRun on critical interfaces with operator review and action tracking.\u003c/td\u003e\u003ctd\u003eValidated MTTR and recurrence insights.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5. Scale and Continuous Improvement\u003c/td\u003e\u003ctd\u003eExpand interface scope, mature runbooks, and convert recurring patterns into engineering backlog.\u003c/td\u003e\u003ctd\u003eRepeatable integration operations shield.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n\u003cp\u003eValidation principle: Use historical or rehearsal data first to calibrate scoring and recommendations before relying on the solution in a live operating window.\u003c/p\u003e"
+                                    },
+                                    {
+                                        "title":  "Data Foundation Required",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData area\u003c/th\u003e\u003cth\u003eWhy it matters\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eInterface catalog\u003c/td\u003e\u003ctd\u003eDefines systems, flows, owners, criticality, SLA, and dependencies.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMessage logs and error codes\u003c/td\u003e\u003ctd\u003eCore evidence for failure clustering and probable-cause ranking.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePayload metadata\u003c/td\u003e\u003ctd\u003eSupports correlation without exposing sensitive payload content.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbooks and known fixes\u003c/td\u003e\u003ctd\u003eProvides approved recovery guidance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident history\u003c/td\u003e\u003ctd\u003eConnects operational failures to resolution and business impact.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecent change context\u003c/td\u003e\u003ctd\u003eHelps identify failure patterns linked to deployments or configuration changes.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Non-Functional Requirements",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eArea\u003c/th\u003e\u003cth\u003eRequirement\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eSecurity\u003c/td\u003e\u003ctd\u003eRBAC; least privilege; secure destinations; strict masking of payloads and sensitive integration metadata.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAuditability\u003c/td\u003e\u003ctd\u003eLog probable-cause recommendation, retrieved runbook, operator action, approval, and outcome.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePerformance\u003c/td\u003e\u003ctd\u003eNear-real-time refresh for critical interfaces; batch analytics for recurring-pattern reporting.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eResilience\u003c/td\u003e\u003ctd\u003eQueue-based ingestion, retry handling, connector health checks, and manual fallback.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eModel governance\u003c/td\u003e\u003ctd\u003ePrompt versioning, confidence thresholds, output review, and periodic accuracy sampling.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eProduction safety\u003c/td\u003e\u003ctd\u003eAI should not execute recovery actions unless explicitly approved and controlled.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExplainability\u003c/td\u003e\u003ctd\u003eEach cause ranking must show evidence, matched history, and confidence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExtensibility\u003c/td\u003e\u003ctd\u003eSupport additional middleware, API platforms, event streams, and observability sources.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Suggested Build Stack",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDomain\u003c/th\u003e\u003cth\u003ePreferred choice\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eApp / orchestration\u003c/td\u003e\u003ctd\u003eSAP BTP with CAP\u003c/td\u003e\u003ctd\u003eOperations shield APIs, data model, dashboard, and orchestration services.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eAI runtime\u003c/td\u003e\u003ctd\u003eSAP AI Core / generative AI hub\u003c/td\u003e\u003ctd\u003eError clustering, runbook retrieval, probable-cause explanation, and prompt governance.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIntegration platform\u003c/td\u003e\u003ctd\u003eSAP Integration Suite\u003c/td\u003e\u003ctd\u003eSource for integration flows, message monitoring, logs, and event/API context.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eOperations monitoring\u003c/td\u003e\u003ctd\u003eSAP Cloud ALM\u003c/td\u003e\u003ctd\u003eSAP-native operations and integration monitoring context where configured.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eWorkflow\u003c/td\u003e\u003ctd\u003eSAP Build Process Automation or ITSM workflow\u003c/td\u003e\u003ctd\u003eRecovery approvals, resolver routing, and recurring-pattern backlog.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eEvent context\u003c/td\u003e\u003ctd\u003eAdvanced Event Mesh where used\u003c/td\u003e\u003ctd\u003eEvent-stream operations and event-driven critical signals.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eData / persistence\u003c/td\u003e\u003ctd\u003eSAP HANA Cloud or BTP persistence\u003c/td\u003e\u003ctd\u003eInterface catalog, error history, runbook index, and recommendation log.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eExternal integration\u003c/td\u003e\u003ctd\u003eITSM, observability, partner/B2B tools\u003c/td\u003e\u003ctd\u003eRetain the customer operations ecosystem.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Cloud ALM Export Package",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories",
+                                                        "test-cases"
+                                                    ],
+                                        "html":  "\u003cp\u003eUse these exports to seed the implementation backlog, user stories, and validation scripts for this offering.\u003c/p\u003e\u003cdiv class=\"detail-table-wrap\"\u003e\u003ctable class=\"detail-table\"\u003e\u003cthead\u003e\u003ctr\u003e\u003cth\u003eExport\u003c/th\u003e\u003cth\u003ePurpose\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\u003ctbody\u003e\u003ctr\u003e\u003ctd\u003eRequirement\u003c/td\u003e\u003ctd\u003eCreates the parent Cloud ALM requirement for the service offering.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eUser stories\u003c/td\u003e\u003ctd\u003eCreates delivery-ready stories based on customer-ready deliverables.\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003eTest cases\u003c/td\u003e\u003ctd\u003eCreates validation scripts aligned to the ten-step implementation plan.\u003c/td\u003e\u003c/tr\u003e\u003c/tbody\u003e\u003c/table\u003e\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Customer Readiness Checks",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eReadiness area\u003c/th\u003e\u003cth\u003eWhat should be confirmed\u003c/th\u003e\u003cth\u003eAction before pilot\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eCritical interface catalog\u003c/td\u003e\u003ctd\u003eTop interfaces, owners, business impact, and SLAs are defined.\u003c/td\u003e\u003ctd\u003eBuild minimum viable catalog before pilot.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMessage log access\u003c/td\u003e\u003ctd\u003eLogs and error metadata can be extracted safely.\u003c/td\u003e\u003ctd\u003eConfirm retention, API/export path, and access approvals.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003ePayload masking\u003c/td\u003e\u003ctd\u003eSensitive fields and payload rules are known.\u003c/td\u003e\u003ctd\u003eImplement masking before AI processing.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbook quality\u003c/td\u003e\u003ctd\u003eKnown fixes and recovery steps exist for pilot interfaces.\u003c/td\u003e\u003ctd\u003eCreate or clean runbooks for critical flows.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident linkage\u003c/td\u003e\u003ctd\u003eFailures can be linked to incidents and outcomes.\u003c/td\u003e\u003ctd\u003eMap ITSM fields and resolver ownership.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecovery governance\u003c/td\u003e\u003ctd\u003eActions, retries, and customer communication have owners.\u003c/td\u003e\u003ctd\u003eDefine human approval gates before go-live.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMonitoring maturity\u003c/td\u003e\u003ctd\u003eCloud ALM, Integration Suite, or observability signals are reliable enough for operations.\u003c/td\u003e\u003ctd\u003eNormalize monitoring data before AI scoring.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Data And Integration Detail",
+                                        "html":  "\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eData object\u003c/th\u003e\u003cth\u003eSuggested minimum fields\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eInterface\u003c/td\u003e\u003ctd\u003eInterface ID; source; target; protocol; owner; criticality; SLA; business process.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eMessage failure\u003c/td\u003e\u003ctd\u003eMessage ID; flow; error code; timestamp; status; retry count; correlation key.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eError class\u003c/td\u003e\u003ctd\u003eClass; description; known causes; resolver group; severity; recovery path.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRunbook\u003c/td\u003e\u003ctd\u003eRunbook ID; interface; approved steps; owner; last reviewed; restrictions.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eIncident\u003c/td\u003e\u003ctd\u003eIncident ID; linked failure; impact; resolver; resolution; closure code.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eDependency\u003c/td\u003e\u003ctd\u003eSystem; API; certificate; network; partner; schedule; recent change.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommendation\u003c/td\u003e\u003ctd\u003eProbable cause; evidence; confidence; runbook; resolver; outcome.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    },
+                                    {
+                                        "title":  "Next Steps And Sources",
+                                        "html":  "\u003ch3\u003eRecommended Next Steps\u003c/h3\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eStep\u003c/th\u003e\u003cth\u003eAction\u003c/th\u003e\u003cth\u003eOutput\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003e1\u003c/td\u003e\u003ctd\u003eSelect top business-critical interfaces for the pilot.\u003c/td\u003e\u003ctd\u003ePilot scope agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e2\u003c/td\u003e\u003ctd\u003eValidate message logs, interface catalog, runbooks, and incident history.\u003c/td\u003e\u003ctd\u003eBaseline evidence pack.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e3\u003c/td\u003e\u003ctd\u003eDefine interface/error ontology and payload-masking rules.\u003c/td\u003e\u003ctd\u003eSafe data and classification model.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e4\u003c/td\u003e\u003ctd\u003eBack-test probable-cause and runbook suggestions on historical failures.\u003c/td\u003e\u003ctd\u003eCalibrated recommendation quality.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003e5\u003c/td\u003e\u003ctd\u003eRun live pilot with human-controlled recovery actions.\u003c/td\u003e\u003ctd\u003eMeasured MTTR and repeat-failure insights.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e"
+                                    }
                                 ],
-                    "html":  `
-<p>Use these exports to seed the implementation backlog, user stories, and validation scripts for this offering.</p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Export</th><th>Purpose</th></tr></thead><tbody><tr><td>Requirement</td><td>Creates the parent Cloud ALM requirement for the service offering.</td></tr><tr><td>User stories</td><td>Creates delivery-ready stories based on the updated design pack capabilities.</td></tr><tr><td>Test cases</td><td>Creates validation scripts aligned to the build approach and controls.</td></tr></tbody></table></div>
-                    `
-                },
-                {
-                    "title":  "Next Steps And Sources",
-                    "html":  `
-<h3>Next Steps</h3>
-<ul><li>Confirm critical interface list, process criticality, SLA tiers, source/target ownership, and escalation matrix.</li><li>Validate availability of message logs, error metadata, retry outcomes, and incident references.</li><li>Agree payload masking rules and automated action approval thresholds.</li><li>Define how recurring failure patterns become backlog items and how ownership is tracked.</li></ul>
-                    `
-                }
-                            ],
         "cloudAlm":  {
                          "tags":  [
                                       "AI",
@@ -2340,7 +2192,7 @@ window.customerSampleItems = [
                          "requirement":  {
                                              "externalId":  "REQ-IOS-001",
                                              "title":  "AI Integration Operations Shield",
-                                             "description":  "<p>An AI-enabled operations layer for SAP integrations that correlates message failures, probable causes, dependency context, and runbooks to accelerate recovery and reduce repeat incidents.</p><h2>Problem Solved</h2><p>Integration failures are noisy, cross-system, and hard to triage; logs are distributed and recurring errors lack pattern intelligence.</p><h2>Data Required</h2><p>Message logs, error codes, payload metadata, interface catalog, dependencies, SLA tiers, runbooks, incidents, retry outcomes, process criticality.</p>",
+                                             "description":  "\u003cp\u003eUse AI-assisted operations intelligence to correlate SAP integration failures, dependencies, runbooks, and recurring patterns.\u003c/p\u003e\u003ch2\u003eProblem Solved\u003c/h2\u003e\u003cp\u003eIntegration operations teams lack a unified, business-aware view of failures, probable cause, runbooks, and recurring patterns.\u003c/p\u003e\u003ch2\u003eData Required\u003c/h2\u003e\u003cp\u003eMessage logs; error codes; interface catalog; payload metadata; dependencies; runbooks; incident history; SLA/criticality; recent changes.\u003c/p\u003e",
                                              "status":  "Not Started",
                                              "priority":  "High",
                                              "owner":  "",
@@ -2350,178 +2202,222 @@ window.customerSampleItems = [
                                              "businessProcess":  "Integration Operations / Application Operations"
                                          },
                          "userStories":  [
-                            {
-                                "externalId":  "US-IOS-001",
-                                "title":  "US-IOS-001 - An integration operations cockpit for message failures, interface health, critical-flow impact, and recurring patterns",
-                                "persona":  "an implementation owner",
-                                "want":  "An integration operations cockpit for message failures, interface health, critical-flow impact, and recurring patterns",
-                                "soThat":  "Lowers interface MTTR; improves continuity for critical flows; reduces expert dependency; creates structural improvement backlog",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-IOS-002",
-                                "title":  "US-IOS-002 - Correlation of failure symptoms across SAP Integration Suite, monitoring tools, ITSM, and surrounding systems",
-                                "persona":  "an implementation owner",
-                                "want":  "Correlation of failure symptoms across SAP Integration Suite, monitoring tools, ITSM, and surrounding systems",
-                                "soThat":  "Lowers interface MTTR; improves continuity for critical flows; reduces expert dependency; creates structural improvement backlog",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-IOS-003",
-                                "title":  "US-IOS-003 - Probable-cause ranking enriched by interface catalog, dependency graph, prior incidents, and runbooks",
-                                "persona":  "an implementation owner",
-                                "want":  "Probable-cause ranking enriched by interface catalog, dependency graph, prior incidents, and runbooks",
-                                "soThat":  "Lowers interface MTTR; improves continuity for critical flows; reduces expert dependency; creates structural improvement backlog",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-IOS-004",
-                                "title":  "US-IOS-004 - Recovery guidance and resolver recommendation for faster triage and restoration",
-                                "persona":  "an implementation owner",
-                                "want":  "Recovery guidance and resolver recommendation for faster triage and restoration",
-                                "soThat":  "Lowers interface MTTR; improves continuity for critical flows; reduces expert dependency; creates structural improvement backlog",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            },
-                            {
-                                "externalId":  "US-IOS-005",
-                                "title":  "US-IOS-005 - A structural-fix backlog that converts repeat operational failures into engineering improvements",
-                                "persona":  "an implementation owner",
-                                "want":  "A structural-fix backlog that converts repeat operational failures into engineering improvements",
-                                "soThat":  "Lowers interface MTTR; improves continuity for critical flows; reduces expert dependency; creates structural improvement backlog",
-                                "acceptanceCriteria":  [
-                                                            "Capability is visible in the operating view.",
-                                                            "Owner, evidence, and status are captured.",
-                                                            "Human review is available for low-confidence or high-risk outcomes."
-                                                        ]
-                            }
+                                             {
+                                                 "externalId":  "US-IOS-001",
+                                                 "title":  "US-IOS-001 - Interface health dashboard",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Interface health dashboard",
+                                                 "soThat":  "Reduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Failure count, impact, trend, SLA risk, affected processes, and ownership in one view.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-002",
+                                                 "title":  "US-IOS-002 - Failure correlation",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Failure correlation",
+                                                 "soThat":  "Reduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Related errors grouped across interface, system, dependency, and time window.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-003",
+                                                 "title":  "US-IOS-003 - Probable-cause ranking",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Probable-cause ranking",
+                                                 "soThat":  "Reduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Likely cause displayed with evidence, similar incidents, and confidence.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-004",
+                                                 "title":  "US-IOS-004 - Recovery guidance",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Recovery guidance",
+                                                 "soThat":  "Reduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Approved runbooks and next-best actions shown for human execution.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-005",
+                                                 "title":  "US-IOS-005 - Resolver routing",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Resolver routing",
+                                                 "soThat":  "Reduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Recommended owner or resolver group based on interface, error pattern, and dependency.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-006",
+                                                 "title":  "US-IOS-006 - Structural improvement backlog",
+                                                 "persona":  "an implementation owner",
+                                                 "want":  "Structural improvement backlog",
+                                                 "soThat":  "Reduce MTTR; improve business continuity; reduce dependency on experts; prevent repeat failures; strengthen integration operations governance.",
+                                                 "acceptanceCriteria":  [
+                                                                            "Recurring patterns converted into engineering fixes, monitoring improvements, and runbook gaps.",
+                                                                            "Owner, evidence, and status are captured.",
+                                                                            "Human review is available for low-confidence or high-risk outcomes."
+                                                                        ]
+                                             }
                                          ],
                          "testCases":  [
-                            {
-                                "externalId":  "TC-IOS-001",
-                                "testCaseName":  "TC-IOS-001 - Validate Build Step 1",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Integration Operations Shield",
-                                "actionTitle":  "Define canonical interface and error ontology aligned to operations teams, business processes, and support groups",
-                                "instructions":  [
-                                                     "Define canonical interface and error ontology aligned to operations teams, business processes, and support groups.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Integration Operations Shield with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-IOS-002",
-                                "testCaseName":  "TC-IOS-002 - Validate Build Step 2",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Integration Operations Shield",
-                                "actionTitle":  "Build log ingestion, masking, and enrichment pipeline on BTP",
-                                "instructions":  [
-                                                     "Build log ingestion, masking, and enrichment pipeline on BTP.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Integration Operations Shield with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-IOS-003",
-                                "testCaseName":  "TC-IOS-003 - Validate Build Step 3",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Integration Operations Shield",
-                                "actionTitle":  "Configure retrieval over runbooks and past incidents for likely fixes and recovery steps",
-                                "instructions":  [
-                                                     "Configure retrieval over runbooks and past incidents for likely fixes and recovery steps.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Integration Operations Shield with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-IOS-004",
-                                "testCaseName":  "TC-IOS-004 - Validate Build Step 4",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Integration Operations Shield",
-                                "actionTitle":  "Implement cockpit for interface health, probable cause, critical flow impact, owner assignment, and action tracking",
-                                "instructions":  [
-                                                     "Implement cockpit for interface health, probable cause, critical flow impact, owner assignment, and action tracking.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Integration Operations Shield with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-IOS-005",
-                                "testCaseName":  "TC-IOS-005 - Validate Build Step 5",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Integration Operations Shield",
-                                "actionTitle":  "Enable recurring-pattern reporting and engineering backlog generation",
-                                "instructions":  [
-                                                     "Enable recurring-pattern reporting and engineering backlog generation.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Integration Operations Shield with traceable evidence."
-                            },
-                            {
-                                "externalId":  "TC-IOS-006",
-                                "testCaseName":  "TC-IOS-006 - Validate Build Step 6",
-                                "priority":  "High",
-                                "status":  "Prepared",
-                                "activityTitle":  "Validate AI Integration Operations Shield",
-                                "actionTitle":  "Start with the top business-critical interfaces, then scale to the wider estate once taxonomy and runbooks are stable",
-                                "instructions":  [
-                                                     "Start with the top business-critical interfaces, then scale to the wider estate once taxonomy and runbooks are stable.",
-                                                     "Capture implementation evidence and note deviations."
-                                                 ],
-                                "expectedResult":  "The build step is completed for AI Integration Operations Shield with traceable evidence."
-                            }
-                                      ]
+                                           {
+                                               "externalId":  "TC-IOS-001",
+                                               "testCaseName":  "TC-IOS-001 - Validate Build Step 1",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Confirm critical interfaces, owners, SLAs, and business-process impact.",
+                                               "instructions":  [
+                                                                    "Confirm critical interfaces, owners, SLAs, and business-process impact.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Clear operations pilot boundary. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-002",
+                                               "testCaseName":  "TC-IOS-002 - Validate Build Step 2",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Assess logs, monitoring, runbooks, incident history, and payload-sensitivity rules.",
+                                               "instructions":  [
+                                                                    "Assess logs, monitoring, runbooks, incident history, and payload-sensitivity rules.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Known readiness gaps. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-003",
+                                               "testCaseName":  "TC-IOS-003 - Validate Build Step 3",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Define canonical interface and error ontology.",
+                                               "instructions":  [
+                                                                    "Define canonical interface and error ontology.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Common operations data structure. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-004",
+                                               "testCaseName":  "TC-IOS-004 - Validate Build Step 4",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Stand up SAP BTP application shell, masking layer, and access model.",
+                                               "instructions":  [
+                                                                    "Stand up SAP BTP application shell, masking layer, and access model.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Secure solution foundation. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-005",
+                                               "testCaseName":  "TC-IOS-005 - Validate Build Step 5",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Configure Integration Suite, SAP Cloud ALM, ITSM, and observability connectors.",
+                                               "instructions":  [
+                                                                    "Configure Integration Suite, SAP Cloud ALM, ITSM, and observability connectors.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Connected operations evidence. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-006",
+                                               "testCaseName":  "TC-IOS-006 - Validate Build Step 6",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Implement deterministic severity, SLA, criticality, and routing rules first.",
+                                               "instructions":  [
+                                                                    "Implement deterministic severity, SLA, criticality, and routing rules first.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Explainable operations baseline. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-007",
+                                               "testCaseName":  "TC-IOS-007 - Validate Build Step 7",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Add AI clustering, probable-cause ranking, runbook retrieval, and summarization.",
+                                               "instructions":  [
+                                                                    "Add AI clustering, probable-cause ranking, runbook retrieval, and summarization.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Smarter recovery support. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-008",
+                                               "testCaseName":  "TC-IOS-008 - Validate Build Step 8",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Build interface cockpit, failure detail view, and recurring-pattern board.",
+                                               "instructions":  [
+                                                                    "Build interface cockpit, failure detail view, and recurring-pattern board.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Operational integration view. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-009",
+                                               "testCaseName":  "TC-IOS-009 - Validate Build Step 9",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Validate against historical failures and known major incidents.",
+                                               "instructions":  [
+                                                                    "Validate against historical failures and known major incidents.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Calibrated recommendations. Evidence is captured for AI Integration Operations Shield."
+                                           },
+                                           {
+                                               "externalId":  "TC-IOS-010",
+                                               "testCaseName":  "TC-IOS-010 - Validate Build Step 10",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate AI Integration Operations Shield",
+                                               "actionTitle":  "Pilot on top critical interfaces with human-controlled recovery actions.",
+                                               "instructions":  [
+                                                                    "Pilot on top critical interfaces with human-controlled recovery actions.",
+                                                                    "Capture implementation evidence and note deviations."
+                                                                ],
+                                               "expectedResult":  "Controlled adoption before scale. Evidence is captured for AI Integration Operations Shield."
+                                           }
+                                       ]
                      },
         "sources":  [
-                    {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
-                        "note":  "AI Integration Operations Shield design pack from the updated Downloads design pack.",
-                        "url":  ""
-                    },
-                    {
-                        "label":  "SAP Integration Suite Message Processing Logs",
-                        "url":  "https://help.sap.com/docs/integration-suite/sap-integration-suite/message-processing-logs"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Integration Monitoring Analytics API",
-                        "url":  "https://help.sap.com/docs/cloud-alm/apis/integration-monitoring-analytics-api"
-                    },
-                    {
-                        "label":  "SAP Integration Suite Advanced Event Mesh",
-                        "url":  "https://help.sap.com/docs/sap-integration-suite/advanced-event-mesh/what-is-sap-integration-suite-advanced-event-mesh"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Alerting",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/alert-event-management"
-                    },
-                    {
-                        "label":  "SAP AI Core / generative AI hub",
-                        "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
-                    }
+                        {
+                            "label":  "Internal source document: AI_Integration_Operations_Shield_Customer_Ready_Solution_Design_No_Images.md",
+                            "note":  "Customer-ready AI Integration Operations Shield solution design pack from the Downloads folder.",
+                            "url":  ""
+                        }
                     ],
         "url":  "",
         "linkLabel":  "Documentation repository pending",
-        "nextStep":  "Confirm critical interface list, process criticality, SLA tiers, source/target ownership, and escalation matrix. Validate availability of message logs, error metadata, retry outcomes, and incident references. Agree payload masking rules and automated action approval thresholds. Define how recurring failure patterns become backlog items and how ownership is tracked."
+        "nextStep":  "Select top business-critical interfaces for the pilot. Validate message logs, interface catalog, runbooks, and incident history. Define interface/error ontology and payload-masking rules. Back-test probable-cause and runbook suggestions on historical failures. Run live pilot with human-controlled recovery actions."
     },
     {
         "id":  "checklist-acc-016-developer",
