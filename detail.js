@@ -237,7 +237,7 @@ function findSampleDetail(params) {
   return {
     kind: "sample",
     title: sample.title,
-    lane: lane.label,
+    lane: sample.tagLabel || lane.label,
     laneKey,
     sourceType:
       sample.sourceType || (sample.status === "Historical scenario" ? "GitHub Drill-down" : "GitHub Repo"),
