@@ -1148,22 +1148,26 @@ window.customerSampleItems = [
                                       ]
                         }
                     ],
-        "workingExample":  `
-          <p>A hypercare command center receives repeated procurement and finance incidents after go-live. AI clusters the noise into themes, links related alerts, separates training and master-data issues from integration failures, and creates the daily action queue.</p>
-          <div class="detail-table-wrap">
-            <table class="detail-table">
-              <thead><tr><th>Area</th><th>Example output</th></tr></thead>
-              <tbody>
-                <tr><td>Observed noise</td><td>Many tickets mention blocked invoices, failed approvals, missing roles, and delayed goods receipts.</td></tr>
-                <tr><td>AI clustering</td><td>Issues group into procurement approval, vendor master data, invoice posting, role access, and integration alert clusters.</td></tr>
-                <tr><td>Theme split</td><td>Training gaps, master-data cleanup, configuration correction, integration fix, and security access follow-up.</td></tr>
-                <tr><td>Daily action</td><td>Owner actions are assigned with priority, target date, blocker status, and evidence source.</td></tr>
-                <tr><td>Executive view</td><td>Daily pack shows trend, top blockers, critical processes affected, recovery actions, and exit-readiness signal.</td></tr>
-                <tr><td>AMS handover</td><td>Unresolved recurring themes become AMS backlog items with owner, evidence, severity, and recommended permanent fix.</td></tr>
-              </tbody>
-            </table>
-          </div>
-        `,
+        "workingExample":  [
+                              {
+                                  "html":  `
+                                    <p>A hypercare command center receives repeated procurement and finance incidents after go-live. AI clusters the noise into themes, links related alerts, separates training and master-data issues from integration failures, and creates the daily action queue.</p>
+                                    <div class="detail-table-wrap">
+                                      <table class="detail-table">
+                                        <thead><tr><th>Area</th><th>Example output</th></tr></thead>
+                                        <tbody>
+                                          <tr><td>Observed noise</td><td>Many tickets mention blocked invoices, failed approvals, missing roles, and delayed goods receipts.</td></tr>
+                                          <tr><td>AI clustering</td><td>Issues group into procurement approval, vendor master data, invoice posting, role access, and integration alert clusters.</td></tr>
+                                          <tr><td>Theme split</td><td>Training gaps, master-data cleanup, configuration correction, integration fix, and security access follow-up.</td></tr>
+                                          <tr><td>Daily action</td><td>Owner actions are assigned with priority, target date, blocker status, and evidence source.</td></tr>
+                                          <tr><td>Executive view</td><td>Daily pack shows trend, top blockers, critical processes affected, recovery actions, and exit-readiness signal.</td></tr>
+                                          <tr><td>AMS handover</td><td>Unresolved recurring themes become AMS backlog items with owner, evidence, severity, and recommended permanent fix.</td></tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  `
+                              }
+                          ],
         "whenToUse":  [
                          "Use during major SAP go-live, rollout, migration, cutover rehearsal, dress rehearsal, or stabilization period.",
                          "Use when daily incidents, alerts, notes, feedback, and escalations need one trusted stabilization narrative.",
@@ -1402,6 +1406,10 @@ window.customerSampleItems = [
                                     },
                                     {
                                         "title":  "Cloud ALM-Ready Backlog And User Stories",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories"
+                                                    ],
                                         "html":  `
                                           <h3>Cloud ALM-Ready Backlog</h3>
                                           <div class="detail-table-wrap">
@@ -1439,6 +1447,9 @@ window.customerSampleItems = [
                                     },
                                     {
                                         "title":  "Executable Test Script",
+                                        "exports":  [
+                                                        "test-cases"
+                                                    ],
                                         "html":  `
                                           <h3>Test Scripts</h3>
                                           <div class="detail-table-wrap">
@@ -1871,26 +1882,30 @@ window.customerSampleItems = [
                                       ]
                         }
                     ],
-        "workingExample":  `
-          <p>A user raises: Payment file failed again. Vendor payments blocked. Need urgent help. The control tower classifies the issue, checks related incidents, retrieves similar fixes, and proposes the next action for human approval.</p>
-          <div class="detail-table-wrap">
-            <table class="detail-table">
-              <thead><tr><th>Control Tower output</th><th>Example</th></tr></thead>
-              <tbody>
-                <tr><td>Summary</td><td>Payment file failure affecting vendor payments</td></tr>
-                <tr><td>Module</td><td>FI/AP payments</td></tr>
-                <tr><td>Process</td><td>Procure-to-pay</td></tr>
-                <tr><td>Impact</td><td>Payment delay risk</td></tr>
-                <tr><td>Duplicate</td><td>Similar bank-file incidents found</td></tr>
-                <tr><td>Resolver</td><td>FI payments plus integration watcher</td></tr>
-                <tr><td>Missing info</td><td>Company code, run ID, error text</td></tr>
-                <tr><td>Similar fix</td><td>Bank format mapping issue</td></tr>
-                <tr><td>SLA risk</td><td>High until assigned</td></tr>
-                <tr><td>Next action</td><td>Request details and route</td></tr>
-              </tbody>
-            </table>
-          </div>
-        `,
+        "workingExample":  [
+                              {
+                                  "html":  `
+                                    <p>A user raises: Payment file failed again. Vendor payments blocked. Need urgent help. The control tower classifies the issue, checks related incidents, retrieves similar fixes, and proposes the next action for human approval.</p>
+                                    <div class="detail-table-wrap">
+                                      <table class="detail-table">
+                                        <thead><tr><th>Control Tower output</th><th>Example</th></tr></thead>
+                                        <tbody>
+                                          <tr><td>Summary</td><td>Payment file failure affecting vendor payments</td></tr>
+                                          <tr><td>Module</td><td>FI/AP payments</td></tr>
+                                          <tr><td>Process</td><td>Procure-to-pay</td></tr>
+                                          <tr><td>Impact</td><td>Payment delay risk</td></tr>
+                                          <tr><td>Duplicate</td><td>Similar bank-file incidents found</td></tr>
+                                          <tr><td>Resolver</td><td>FI payments plus integration watcher</td></tr>
+                                          <tr><td>Missing info</td><td>Company code, run ID, error text</td></tr>
+                                          <tr><td>Similar fix</td><td>Bank format mapping issue</td></tr>
+                                          <tr><td>SLA risk</td><td>High until assigned</td></tr>
+                                          <tr><td>Next action</td><td>Request details and route</td></tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  `
+                              }
+                          ],
         "whenToUse":  [
                          "Use when SAP support operations need cleaner intake, faster routing, stronger SLA visibility, and consistent first responses.",
                          "Use when resolver ownership, SLA rules, ticket history, and knowledge repositories are reliable enough for governed AI assistance.",
@@ -2101,6 +2116,9 @@ window.customerSampleItems = [
                                     },
                                     {
                                         "title":  "Implementation Process And Backlog",
+                                        "exports":  [
+                                                        "requirement"
+                                                    ],
                                         "html":  `
                                           <h3>Step-by-step Implementation Process</h3>
                                           <ol>
@@ -2138,6 +2156,9 @@ window.customerSampleItems = [
                                     },
                                     {
                                         "title":  "User Stories",
+                                        "exports":  [
+                                                        "user-stories"
+                                                    ],
                                         "html":  `
                                           <div class="detail-table-wrap">
                                             <table class="detail-table">
@@ -2158,6 +2179,9 @@ window.customerSampleItems = [
                                     },
                                     {
                                         "title":  "Executable Test Script",
+                                        "exports":  [
+                                                        "test-cases"
+                                                    ],
                                         "html":  `
                                           <h3>Test Scripts</h3>
                                           <div class="detail-table-wrap">
@@ -2569,6 +2593,1480 @@ window.customerSampleItems = [
         "url":  "",
         "linkLabel":  "Documentation repository pending",
         "nextStep":  "Package the customer-ready AMS control tower offer: support taxonomy, source inventory, canonical ticket schema, routing and SLA rules, retrieval index, prompts, dashboards, Cloud ALM backlog, user stories, test scripts, security controls, role matrix, go-live criteria, evidence checklist, and supervised pilot plan."
+    },
+    {
+        "id":  "ai-integration-operations-shield",
+        "laneKey":  "side",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "AI Integration Operations Shield",
+        "detailAliases":  [
+                              "ai-integration-operations-shield-side",
+                              "integration-operations-shield"
+                          ],
+        "status":  "Customer accelerator",
+        "pattern":  "AI",
+        "category":  "AI",
+        "tagLabel":  "AI",
+        "description":  "Customer-ready SAP accelerator for an AI-enabled operations layer that correlates integration failures, ranks probable causes, retrieves runbooks, and reduces recurring failure patterns.",
+        "function":  "Create an integration operations shield using SAP Integration Suite, SAP Cloud ALM, SAP BTP, SAP AI Core, HANA Cloud, and workflow controls to lower MTTR for critical interfaces.",
+        "summary":  "AI Integration Operations Shield accelerates integration recovery by connecting message logs, monitoring alerts, ITSM incidents, interface ownership, dependencies, runbooks, prior cases, and business criticality into one governed operations view. It groups noisy errors, suggests probable cause and recovery steps, highlights SLA risk, and converts recurring failures into structural backlog items.",
+        "useCase":  [
+                        {
+                            "text":  "Use this accelerator when SAP integration failures are distributed across logs, queues, alerts, and ITSM tickets, and support teams need a faster way to correlate failures with ownership, impact, runbooks, and prior recovery evidence."
+                        },
+                        {
+                            "heading":  "It helps operations teams",
+                            "items":  [
+                                          "Surface critical interface failures with business context.",
+                                          "Group noisy errors into actionable patterns.",
+                                          "Suggest probable cause and recovery steps from prior cases and runbooks.",
+                                          "Convert repeat failures into structural improvement backlog items.",
+                                          "Give operations, integration, and business owners one evidence view."
+                                      ]
+                        }
+                    ],
+        "workingExample":  [
+                              {
+                                  "html":  `
+                                    <p>Scenario: A sales-order replication interface from SAP S/4HANA to a warehouse platform starts failing during peak order volume. Multiple ITSM tickets are raised, but the same root cause is visible across several message failures.</p>
+                                    <div class="detail-table-wrap">
+                                      <table class="detail-table">
+                                        <thead><tr><th>Area</th><th>Example output</th></tr></thead>
+                                        <tbody>
+                                          <tr><td>Detected pattern</td><td>Payload validation errors on delivery block field</td></tr>
+                                          <tr><td>Impacted flow</td><td>Order-to-warehouse replication</td></tr>
+                                          <tr><td>Business impact</td><td>Warehouse release delay for priority orders</td></tr>
+                                          <tr><td>Likely cause</td><td>New field mapping not accepted by target API</td></tr>
+                                          <tr><td>Suggested owner</td><td>Integration team plus warehouse API owner</td></tr>
+                                          <tr><td>Runbook guidance</td><td>Pause replay, validate mapping, retry sample batch</td></tr>
+                                          <tr><td>Backlog output</td><td>Add schema validation and alert threshold</td></tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  `
+                              }
+                          ],
+        "whenToUse":  [
+                         "Use when critical SAP interfaces need faster recovery and lower MTTR.",
+                         "Use when SAP Integration Suite or monitoring data is available.",
+                         "Use when interface ownership, SLA tiers, recurring failures, runbooks, or prior fixes can be reused.",
+                         "Stabilize first when there is no reliable interface catalog, message logs cannot be accessed, payload masking rules are missing, ownership is unclear, or automated retry rights are not approved."
+                     ],
+        "implementation":  [
+                              "Set operations scope: critical interfaces, source systems, target systems, SLA tiers, and owner groups.",
+                              "Create the interface catalog with flow name, business process, dependencies, owner, SLA, and runbook link.",
+                              "Connect data sources: message logs, monitoring alerts, ITSM incidents, observability data, and prior recovery notes.",
+                              "Apply masking to remove or suppress sensitive payload fields before AI processing and storage.",
+                              "Normalize platform-specific logs into the canonical error ontology.",
+                              "Correlate events by interface, dependency, time window, payload pattern, and business process.",
+                              "Retrieve guidance from similar incidents, runbooks, and known recovery paths.",
+                              "Generate the action view with probable cause, resolver group, recovery steps, SLA risk, and retry recommendation.",
+                              "Review and act by routing to integration operations, executing approved recovery, or creating engineering backlog items.",
+                              "Learn after closure by updating pattern library, runbook quality, recurring failure tracker, and structural fix backlog."
+                          ],
+        "collapsibleSections":  [
+                                    {
+                                        "title":  "Purpose And Summary",
+                                        "html":  `
+                                          <p>AI-enabled operations layer for SAP integrations, failure correlation, probable-cause guidance, runbook retrieval, and recurring-pattern reduction.</p>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Area</th><th>Customer-ready summary</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Purpose</td><td>Accelerate integration recovery.</td></tr>
+                                                <tr><td>Primary outcome</td><td>Lower MTTR for critical interfaces.</td></tr>
+                                                <tr><td>Operating model</td><td>Ops cockpit, runbook guidance, backlog feed.</td></tr>
+                                                <tr><td>SAP foundation</td><td>Integration Suite, BTP, Cloud ALM, AI Core/genAI hub.</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Business Gap Addressed</h3>
+                                          <p>Integration failures are distributed across logs, queues, alerts, and ITSM tickets. The operations shield correlates failures with interface ownership, dependencies, runbooks, prior incidents, and business criticality so the support team can recover faster and prevent repeat failures.</p>
+                                          <ul>
+                                            <li>Critical interface failures are surfaced with business context.</li>
+                                            <li>Noisy errors are grouped into actionable patterns.</li>
+                                            <li>Probable cause and recovery steps are suggested from prior cases.</li>
+                                            <li>Repeat failures are converted into structural improvement backlog items.</li>
+                                            <li>Operations, integration, and business owners share one evidence view.</li>
+                                          </ul>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Solution Scope And Decision Conditions",
+                                        "html":  `
+                                          <h3>Solution We Are Providing</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Capability</th><th>What it does</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Failure capture</td><td>Logs, alerts, failed messages</td></tr>
+                                                <tr><td>Correlation</td><td>Interface, dependency, process</td></tr>
+                                                <tr><td>Error grouping</td><td>Cluster similar failures</td></tr>
+                                                <tr><td>Runbook retrieval</td><td>Relevant fix steps</td></tr>
+                                                <tr><td>Cause ranking</td><td>Likely cause and owner</td></tr>
+                                                <tr><td>Health cockpit</td><td>Critical flow status</td></tr>
+                                                <tr><td>Backlog feed</td><td>Recurring structural fixes</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>When To Take Forward</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Decision</th><th>Condition</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Proceed</td><td>Critical SAP interfaces need faster recovery.</td></tr>
+                                                <tr><td>Proceed</td><td>SAP Integration Suite or monitoring data is available.</td></tr>
+                                                <tr><td>Proceed</td><td>Interface ownership and SLA tiers are known.</td></tr>
+                                                <tr><td>Proceed</td><td>Recurring failures are visible in tickets or logs.</td></tr>
+                                                <tr><td>Proceed</td><td>Runbooks or prior fixes can be reused.</td></tr>
+                                                <tr><td>Stabilize first</td><td>No reliable interface catalog exists.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Message logs cannot be accessed.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Payload masking rules are not defined.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Resolver ownership is unclear.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Automated retry rights are not approved.</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "SAP-Aligned Component Design",
+                                        "html":  `
+                                          <h3>Component Design</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Component</th><th>Role</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>SAP Integration Suite</td><td>iFlow and message monitoring</td></tr>
+                                                <tr><td>Cloud Integration logs</td><td>Message failure evidence</td></tr>
+                                                <tr><td>Advanced Event Mesh</td><td>Event-driven telemetry</td></tr>
+                                                <tr><td>SAP Cloud ALM</td><td>Monitoring and ITSM context</td></tr>
+                                                <tr><td>SAP BTP / CAP</td><td>Ops APIs and cockpit services</td></tr>
+                                                <tr><td>SAP AI Core / genAI hub</td><td>Classifier and summaries</td></tr>
+                                                <tr><td>SAP HANA Cloud</td><td>Operational mart and trends</td></tr>
+                                                <tr><td>Build Process Automation</td><td>Approval and action workflow</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Functional Architecture</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Layer</th><th>Design decision</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Experience</td><td>Cockpit, health view, alerts, backlog</td></tr>
+                                                <tr><td>Application</td><td>Ingestion, masking, correlation, workflow</td></tr>
+                                                <tr><td>AI</td><td>Classifier, similarity, summary, action advice</td></tr>
+                                                <tr><td>Data</td><td>Log mart, interface catalog, runbook store</td></tr>
+                                                <tr><td>Integration</td><td>Integration Suite, Cloud ALM, ITSM, observability</td></tr>
+                                                <tr><td>Governance</td><td>RBAC, masking, audit, approval gates</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Canonical Model, Ontology, And AI Design",
+                                        "html":  `
+                                          <h3>Canonical Operations Data Model</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Entity</th><th>Purpose</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Interface</td><td>Named flow or API</td></tr>
+                                                <tr><td>Message</td><td>Run, payload metadata, status</td></tr>
+                                                <tr><td>Error event</td><td>Code, text, timestamp</td></tr>
+                                                <tr><td>Dependency</td><td>Source, target, queue, API</td></tr>
+                                                <tr><td>Business process</td><td>Impacted process</td></tr>
+                                                <tr><td>SLA tier</td><td>Criticality and target</td></tr>
+                                                <tr><td>Runbook</td><td>Approved recovery steps</td></tr>
+                                                <tr><td>Incident</td><td>ITSM case and outcome</td></tr>
+                                                <tr><td>Pattern</td><td>Recurring failure cluster</td></tr>
+                                                <tr><td>Action</td><td>Retry, route, fix, backlog</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Interface And Error Ontology</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Error class</th><th>Meaning</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Connectivity</td><td>Timeout, DNS, TLS, endpoint</td></tr>
+                                                <tr><td>Authentication</td><td>Token, certificate, credential</td></tr>
+                                                <tr><td>Authorization</td><td>Permission or role issue</td></tr>
+                                                <tr><td>Payload</td><td>Schema, mapping, mandatory field</td></tr>
+                                                <tr><td>Master data</td><td>Missing customer, vendor, material</td></tr>
+                                                <tr><td>Business rule</td><td>Validation or status conflict</td></tr>
+                                                <tr><td>Throughput</td><td>Queue, volume, throttling</td></tr>
+                                                <tr><td>Downstream</td><td>Target unavailable or rejecting</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>AI Capability Design</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>AI function</th><th>Controlled use</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Error classifier</td><td>Assigns error class</td></tr>
+                                                <tr><td>Similarity search</td><td>Finds prior fixes</td></tr>
+                                                <tr><td>Cause ranking</td><td>Suggests likely cause</td></tr>
+                                                <tr><td>Runbook retrieval</td><td>Returns approved steps</td></tr>
+                                                <tr><td>Anomaly detection</td><td>Flags unusual spikes</td></tr>
+                                                <tr><td>Summary drafting</td><td>Creates ops brief</td></tr>
+                                                <tr><td>Fix recommendation</td><td>Creates backlog item</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Implementation, Controls, And Outputs",
+                                        "html":  `
+                                          <h3>Step-by-Step Reusable Process</h3>
+                                          <ol>
+                                            <li>Set operations scope: critical interfaces, source systems, target systems, SLA tiers, and owner groups.</li>
+                                            <li>Create interface catalog: flow name, business process, dependencies, owner, SLA, and runbook link.</li>
+                                            <li>Connect data sources: message logs, monitoring alerts, ITSM incidents, observability data, and prior recovery notes.</li>
+                                            <li>Apply masking: remove or suppress sensitive payload fields before AI processing and storage.</li>
+                                            <li>Normalize errors: convert platform-specific logs into the canonical error ontology.</li>
+                                            <li>Correlate events: group failures by interface, dependency, time window, payload pattern, and business process.</li>
+                                            <li>Retrieve guidance: link similar incidents, runbooks, and known recovery paths to each failure cluster.</li>
+                                            <li>Generate action view: show probable cause, resolver group, recovery steps, SLA risk, and retry recommendation.</li>
+                                            <li>Review and act: route to integration operations, execute approved recovery, or create engineering backlog item.</li>
+                                            <li>Learn after closure: update pattern library, runbook quality, recurring failure tracker, and structural fix backlog.</li>
+                                          </ol>
+                                          <h3>Decision Rules And Controls</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Signal</th><th>Action</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Critical flow failed</td><td>Escalate immediately</td></tr>
+                                                <tr><td>Known transient error</td><td>Suggest controlled retry</td></tr>
+                                                <tr><td>Payload error</td><td>Route to functional/data owner</td></tr>
+                                                <tr><td>Mapping error</td><td>Route to integration team</td></tr>
+                                                <tr><td>Auth error</td><td>Route to security/Basis owner</td></tr>
+                                                <tr><td>Downstream outage</td><td>Notify dependency owner</td></tr>
+                                                <tr><td>Repeat pattern</td><td>Create structural fix item</td></tr>
+                                                <tr><td>Low confidence</td><td>Human review required</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Dashboards And Outputs</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Output</th><th>Content</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Ops cockpit</td><td>Failures by critical flow</td></tr>
+                                                <tr><td>Health dashboard</td><td>Status, SLA, backlog</td></tr>
+                                                <tr><td>Failure cluster view</td><td>Grouped errors and owners</td></tr>
+                                                <tr><td>Runbook panel</td><td>Suggested recovery steps</td></tr>
+                                                <tr><td>SLA risk view</td><td>At-risk interfaces</td></tr>
+                                                <tr><td>Pattern report</td><td>Recurring failures</td></tr>
+                                                <tr><td>Backlog tracker</td><td>Structural fixes</td></tr>
+                                                <tr><td>Evidence export</td><td>Audit and review pack</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Cloud ALM-Ready Backlog And User Stories",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories"
+                                                    ],
+                                        "html":  `
+                                          <h3>Cloud ALM-Ready Backlog</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>ID</th><th>Requirement</th><th>Outcome</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>REQ-IOS-001</td><td>Interface catalog</td><td>Load critical flows</td></tr>
+                                                <tr><td>REQ-IOS-002</td><td>Log ingestion</td><td>Capture failed messages</td></tr>
+                                                <tr><td>REQ-IOS-003</td><td>Payload masking</td><td>Protect sensitive fields</td></tr>
+                                                <tr><td>REQ-IOS-004</td><td>Error classification</td><td>Assign error class</td></tr>
+                                                <tr><td>REQ-IOS-005</td><td>Runbook retrieval</td><td>Show recovery steps</td></tr>
+                                                <tr><td>REQ-IOS-006</td><td>Cause ranking</td><td>Suggest likely cause</td></tr>
+                                                <tr><td>REQ-IOS-007</td><td>Health cockpit</td><td>Show flow status</td></tr>
+                                                <tr><td>REQ-IOS-008</td><td>Backlog feed</td><td>Create fix items</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>User Stories</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>ID</th><th>Role</th><th>Need</th><th>Value</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>US-IOS-001</td><td>Ops analyst</td><td>See failed interfaces</td><td>Triage faster</td></tr>
+                                                <tr><td>US-IOS-002</td><td>Integration lead</td><td>View error clusters</td><td>Reduce noise</td></tr>
+                                                <tr><td>US-IOS-003</td><td>Resolver</td><td>Get runbook steps</td><td>Recover faster</td></tr>
+                                                <tr><td>US-IOS-004</td><td>Service manager</td><td>See SLA risk</td><td>Act early</td></tr>
+                                                <tr><td>US-IOS-005</td><td>Business owner</td><td>View process impact</td><td>Prioritize fixes</td></tr>
+                                                <tr><td>US-IOS-006</td><td>Architect</td><td>See repeat patterns</td><td>Plan structural fixes</td></tr>
+                                                <tr><td>US-IOS-007</td><td>Security lead</td><td>Confirm masking</td><td>Protect payload data</td></tr>
+                                                <tr><td>US-IOS-008</td><td>Auditor</td><td>Review actions</td><td>Trace decisions</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Executable Test Script",
+                                        "exports":  [
+                                                        "test-cases"
+                                                    ],
+                                        "html":  `
+                                          <h3>Test Scripts</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>ID</th><th>Scenario</th><th>Action</th><th>Expected result</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>TS-IOS-001</td><td>Log ingestion</td><td>Load failed message</td><td>Failure appears</td></tr>
+                                                <tr><td>TS-IOS-002</td><td>Masking</td><td>Load sensitive payload</td><td>Fields masked</td></tr>
+                                                <tr><td>TS-IOS-003</td><td>Classification</td><td>Run classifier</td><td>Error class assigned</td></tr>
+                                                <tr><td>TS-IOS-004</td><td>Correlation</td><td>Load related errors</td><td>Cluster created</td></tr>
+                                                <tr><td>TS-IOS-005</td><td>Runbook</td><td>Open failure</td><td>Relevant steps shown</td></tr>
+                                                <tr><td>TS-IOS-006</td><td>Routing</td><td>Assign resolver</td><td>Correct group suggested</td></tr>
+                                                <tr><td>TS-IOS-007</td><td>Retry control</td><td>Suggest retry</td><td>Approval required</td></tr>
+                                                <tr><td>TS-IOS-008</td><td>SLA risk</td><td>Age critical failure</td><td>Risk alert shown</td></tr>
+                                                <tr><td>TS-IOS-009</td><td>Backlog</td><td>Repeat failure</td><td>Fix item created</td></tr>
+                                                <tr><td>TS-IOS-010</td><td>Audit</td><td>Override action</td><td>Reason logged</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Governance, Readiness, Evidence, And Risks",
+                                        "html":  `
+                                          <h3>Security, Governance And Controls</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Control</th><th>Design</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Access</td><td>Role-based ops and owner views</td></tr>
+                                                <tr><td>Payload safety</td><td>Mask before AI processing</td></tr>
+                                                <tr><td>Action control</td><td>Approval for retries/actions</td></tr>
+                                                <tr><td>Audit</td><td>Prompts, outputs, actions logged</td></tr>
+                                                <tr><td>Model control</td><td>Prompt and model versions tracked</td></tr>
+                                                <tr><td>Fallback</td><td>Rules work without AI service</td></tr>
+                                                <tr><td>Retention</td><td>Logs kept by policy</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Operations Readiness Criteria</h3>
+                                          <ul>
+                                            <li>Critical interface catalog is loaded and owner-validated.</li>
+                                            <li>Message logs and failure events are ingested reliably.</li>
+                                            <li>Sensitive payload fields are masked before AI use.</li>
+                                            <li>Error ontology and resolver mapping are approved.</li>
+                                            <li>Runbooks are linked to priority interfaces and known errors.</li>
+                                            <li>Failure clusters are explainable to integration operations.</li>
+                                            <li>Controlled retry and automated action rules are approved.</li>
+                                            <li>Health dashboard shows status, SLA risk, and open patterns.</li>
+                                            <li>Override and action history is captured for audit.</li>
+                                            <li>Recurring-pattern backlog is reviewed by engineering owners.</li>
+                                          </ul>
+                                          <h3>Evidence To Capture</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Evidence</th><th>Capture method</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Interface catalog</td><td>Flow, owner, SLA, process</td></tr>
+                                                <tr><td>Failure cluster</td><td>Grouped error screenshot</td></tr>
+                                                <tr><td>Masking proof</td><td>Payload safety evidence</td></tr>
+                                                <tr><td>Runbook link</td><td>Recovery guidance shown</td></tr>
+                                                <tr><td>Health view</td><td>Dashboard screenshot/export</td></tr>
+                                                <tr><td>Action log</td><td>Retry or route decision</td></tr>
+                                                <tr><td>Backlog item</td><td>Structural fix created</td></tr>
+                                                <tr><td>Pattern report</td><td>Recurring failure summary</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Known Limitations And Remediation</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Limitation</th><th>Remediation</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Incomplete catalog</td><td>Start with top critical flows</td></tr>
+                                                <tr><td>Noisy logs</td><td>Normalize error classes first</td></tr>
+                                                <tr><td>Sensitive payloads</td><td>Use metadata-only processing</td></tr>
+                                                <tr><td>Weak runbooks</td><td>Approve minimum recovery steps</td></tr>
+                                                <tr><td>False grouping</td><td>Use human confirmation</td></tr>
+                                                <tr><td>Unsafe retries</td><td>Require approval workflow</td></tr>
+                                                <tr><td>Tool fragmentation</td><td>Use canonical model and connectors</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Reusable Deliverables</h3>
+                                          <ul>
+                                            <li>Integration operations shield overview</li>
+                                            <li>Critical interface catalog template</li>
+                                            <li>Canonical operations data model</li>
+                                            <li>Error ontology and resolver map</li>
+                                            <li>Payload masking checklist</li>
+                                            <li>Runbook and knowledge template</li>
+                                            <li>Correlation and routing rules</li>
+                                            <li>SLA risk model</li>
+                                            <li>Operations cockpit wireframe</li>
+                                            <li>Cloud ALM backlog items, user stories, test scripts, security checklist, evidence checklist, and limitations guide</li>
+                                          </ul>
+                                          <h3>Shared Dependencies And Risks</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Risk</th><th>Mitigation</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Data quality</td><td>Clean logs and catalog first</td></tr>
+                                                <tr><td>Over-automation</td><td>Use approval gates</td></tr>
+                                                <tr><td>Fragmented tools</td><td>Normalize into one model</td></tr>
+                                                <tr><td>Payload privacy</td><td>Mask and restrict access</td></tr>
+                                                <tr><td>Runbook gaps</td><td>Start with priority flows</td></tr>
+                                                <tr><td>Ownership gaps</td><td>Confirm resolver matrix</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "SAP Evidence Base",
+                                        "html":  `
+                                          <h3>Reference Links</h3>
+                                          <ul>
+                                            <li><a href="https://help.sap.com/docs/integration-suite/sap-integration-suite/message-processing-logs" target="_blank" rel="noreferrer">SAP Integration Suite - Message Processing Logs</a></li>
+                                            <li><a href="https://help.sap.com/docs/integration-suite/sap-integration-suite/monitor-message-processing" target="_blank" rel="noreferrer">SAP Integration Suite - Monitor Message Processing</a></li>
+                                            <li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/integration-exception-monitoring" target="_blank" rel="noreferrer">SAP Cloud ALM - Integration and Exception Monitoring</a></li>
+                                            <li><a href="https://help.sap.com/docs/cloud-alm/apis/integration-monitoring-analytics-api" target="_blank" rel="noreferrer">SAP Cloud ALM - Integration Monitoring Analytics API</a></li>
+                                            <li><a href="https://help.sap.com/docs/sap-integration-suite/advanced-event-mesh/what-is-sap-integration-suite-advanced-event-mesh" target="_blank" rel="noreferrer">SAP Integration Suite - Advanced Event Mesh Overview</a></li>
+                                            <li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core - Generative AI Hub</a></li>
+                                            <li><a href="https://help.sap.com/docs/sap-ai-core/generative-ai/prompt-registry" target="_blank" rel="noreferrer">SAP AI Core - Prompt Registry</a></li>
+                                            <li><a href="https://help.sap.com/docs/btp/sap-business-technology-platform/developing-with-sap-cloud-application-programming-model" target="_blank" rel="noreferrer">SAP BTP - CAP Development</a></li>
+                                          </ul>
+                                        `
+                                    }
+                                ],
+        "cloudAlm":  {
+                         "tags":  [
+                                      "AI",
+                                      "SAP Integration Suite",
+                                      "SAP Cloud ALM",
+                                      "Operations",
+                                      "Integration"
+                                  ],
+                         "businessProcess":  "Integration Operations / Application Operations",
+                         "workstream":  "AI Integration Operations Shield",
+                         "requirement":  {
+                                             "externalId":  "REQ-IOS-001",
+                                             "title":  "AI Integration Operations Shield",
+                                             "description":  "<p>Implement a customer-ready AI-enabled integration operations shield for SAP interfaces, failure correlation, probable-cause guidance, runbook retrieval, SLA-risk visibility, and recurring-pattern reduction.</p><h2>Business Need</h2><p>Customers need faster recovery and lower MTTR for critical SAP integrations by connecting logs, alerts, ITSM tickets, runbooks, ownership, and business context into one governed operations view.</p>",
+                                             "status":  "Not Started",
+                                             "priority":  "High",
+                                             "owner":  "",
+                                             "source":  "Internal",
+                                             "tags":  "AI; SAP Integration Suite; SAP Cloud ALM; Operations; Integration",
+                                             "plannedRelease":  "",
+                                             "businessProcess":  "Integration Operations / Application Operations"
+                                         },
+                         "userStories":  [
+                                             {
+                                                 "externalId":  "US-IOS-001",
+                                                 "title":  "US-IOS-001 - See Failed Interfaces",
+                                                 "persona":  "an ops analyst",
+                                                 "want":  "to see failed interfaces",
+                                                 "soThat":  "I can triage faster",
+                                                 "acceptanceCriteria":  [
+                                                                            "Failed critical interfaces are visible with timestamp, owner, and SLA tier.",
+                                                                            "Failures link to message evidence.",
+                                                                            "Business impact is visible where mapped."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-002",
+                                                 "title":  "US-IOS-002 - View Error Clusters",
+                                                 "persona":  "an integration lead",
+                                                 "want":  "to view error clusters",
+                                                 "soThat":  "I can reduce noise",
+                                                 "acceptanceCriteria":  [
+                                                                            "Similar failures are grouped by interface, dependency, and error class.",
+                                                                            "Cluster confidence and evidence are shown.",
+                                                                            "Human users can confirm or split a cluster."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-003",
+                                                 "title":  "US-IOS-003 - Get Runbook Steps",
+                                                 "persona":  "a resolver",
+                                                 "want":  "runbook steps",
+                                                 "soThat":  "I can recover faster",
+                                                 "acceptanceCriteria":  [
+                                                                            "Relevant runbooks are shown for a failure cluster.",
+                                                                            "Runbook source and approval status are visible.",
+                                                                            "Recovery steps can be copied into an action."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-004",
+                                                 "title":  "US-IOS-004 - See SLA Risk",
+                                                 "persona":  "a service manager",
+                                                 "want":  "SLA risk visibility",
+                                                 "soThat":  "I can act early",
+                                                 "acceptanceCriteria":  [
+                                                                            "At-risk interfaces are highlighted.",
+                                                                            "Age, SLA tier, and owner are visible.",
+                                                                            "Escalation status is tracked."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-005",
+                                                 "title":  "US-IOS-005 - View Process Impact",
+                                                 "persona":  "a business owner",
+                                                 "want":  "process impact visibility",
+                                                 "soThat":  "I can prioritize fixes",
+                                                 "acceptanceCriteria":  [
+                                                                            "Impacted process is shown for mapped interfaces.",
+                                                                            "Critical process failures are escalated.",
+                                                                            "Evidence links are available."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-006",
+                                                 "title":  "US-IOS-006 - See Repeat Patterns",
+                                                 "persona":  "an architect",
+                                                 "want":  "repeat pattern visibility",
+                                                 "soThat":  "I can plan structural fixes",
+                                                 "acceptanceCriteria":  [
+                                                                            "Recurring failures are tracked over time.",
+                                                                            "Structural fix candidates are created.",
+                                                                            "Backlog items include evidence and owner."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-007",
+                                                 "title":  "US-IOS-007 - Confirm Masking",
+                                                 "persona":  "a security lead",
+                                                 "want":  "to confirm masking",
+                                                 "soThat":  "payload data is protected",
+                                                 "acceptanceCriteria":  [
+                                                                            "Sensitive payload fields are masked before AI processing.",
+                                                                            "Masking proof is captured.",
+                                                                            "Restricted users cannot view protected fields."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-IOS-008",
+                                                 "title":  "US-IOS-008 - Review Actions",
+                                                 "persona":  "an auditor",
+                                                 "want":  "to review actions",
+                                                 "soThat":  "decisions are traceable",
+                                                 "acceptanceCriteria":  [
+                                                                            "Prompts, outputs, actions, approvals, and overrides are logged.",
+                                                                            "Override reasons are mandatory.",
+                                                                            "Evidence export is available."
+                                                                        ]
+                                             }
+                                         ],
+                         "testCases":  [
+                                           {
+                                               "externalId":  "TS-IOS-001",
+                                               "testCaseName":  "TS-IOS-001 - Log Ingestion",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Load failed message",
+                                               "actionTitle":  "Load failed message",
+                                               "instructions":  [
+                                                                    "Load a failed message from the configured source.",
+                                                                    "Open the operations cockpit."
+                                                                ],
+                                               "expectedResult":  "Failure appears."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-002",
+                                               "testCaseName":  "TS-IOS-002 - Payload Masking",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate masking",
+                                               "actionTitle":  "Load sensitive payload",
+                                               "instructions":  [
+                                                                    "Load a failed message with sensitive payload fields.",
+                                                                    "Run ingestion and classification."
+                                                                ],
+                                               "expectedResult":  "Fields are masked."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-003",
+                                               "testCaseName":  "TS-IOS-003 - Error Classification",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Run classifier",
+                                               "actionTitle":  "Run classifier",
+                                               "instructions":  [
+                                                                    "Select a failed message.",
+                                                                    "Run error classification."
+                                                                ],
+                                               "expectedResult":  "Error class is assigned."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-004",
+                                               "testCaseName":  "TS-IOS-004 - Failure Correlation",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Correlate related errors",
+                                               "actionTitle":  "Load related errors",
+                                               "instructions":  [
+                                                                    "Load multiple related errors.",
+                                                                    "Run correlation."
+                                                                ],
+                                               "expectedResult":  "Cluster is created."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-005",
+                                               "testCaseName":  "TS-IOS-005 - Runbook Retrieval",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Open failure runbook",
+                                               "actionTitle":  "Open failure",
+                                               "instructions":  [
+                                                                    "Open a failure cluster with a known runbook.",
+                                                                    "Review suggested guidance."
+                                                                ],
+                                               "expectedResult":  "Relevant steps are shown."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-006",
+                                               "testCaseName":  "TS-IOS-006 - Resolver Routing",
+                                               "priority":  "Medium",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Assign resolver",
+                                               "actionTitle":  "Assign resolver",
+                                               "instructions":  [
+                                                                    "Assign a resolver for a classified failure.",
+                                                                    "Review suggested group."
+                                                                ],
+                                               "expectedResult":  "Correct group is suggested."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-007",
+                                               "testCaseName":  "TS-IOS-007 - Retry Control",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Suggest controlled retry",
+                                               "actionTitle":  "Suggest retry",
+                                               "instructions":  [
+                                                                    "Open a known transient error.",
+                                                                    "Request retry recommendation."
+                                                                ],
+                                               "expectedResult":  "Approval is required."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-008",
+                                               "testCaseName":  "TS-IOS-008 - SLA Risk",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Age critical failure",
+                                               "actionTitle":  "Age critical failure",
+                                               "instructions":  [
+                                                                    "Set a critical failure near SLA threshold.",
+                                                                    "Refresh health cockpit."
+                                                                ],
+                                               "expectedResult":  "Risk alert is shown."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-009",
+                                               "testCaseName":  "TS-IOS-009 - Recurring Backlog",
+                                               "priority":  "Medium",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Create fix item",
+                                               "actionTitle":  "Repeat failure",
+                                               "instructions":  [
+                                                                    "Load repeat failure pattern.",
+                                                                    "Generate backlog recommendation."
+                                                                ],
+                                               "expectedResult":  "Fix item is created."
+                                           },
+                                           {
+                                               "externalId":  "TS-IOS-010",
+                                               "testCaseName":  "TS-IOS-010 - Audit Override",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Override action",
+                                               "actionTitle":  "Override action",
+                                               "instructions":  [
+                                                                    "Override a suggested route or retry.",
+                                                                    "Enter reason."
+                                                                ],
+                                               "expectedResult":  "Reason is logged."
+                                           }
+                                       ]
+                     },
+        "sources":  [
+                        {
+                            "label":  "SAP Integration Suite - Message Processing Logs",
+                            "url":  "https://help.sap.com/docs/integration-suite/sap-integration-suite/message-processing-logs"
+                        },
+                        {
+                            "label":  "SAP Integration Suite - Monitor Message Processing",
+                            "url":  "https://help.sap.com/docs/integration-suite/sap-integration-suite/monitor-message-processing"
+                        },
+                        {
+                            "label":  "SAP Cloud ALM - Integration and Exception Monitoring",
+                            "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/integration-exception-monitoring"
+                        },
+                        {
+                            "label":  "SAP Cloud ALM - Integration Monitoring Analytics API",
+                            "url":  "https://help.sap.com/docs/cloud-alm/apis/integration-monitoring-analytics-api"
+                        },
+                        {
+                            "label":  "SAP Integration Suite - Advanced Event Mesh Overview",
+                            "url":  "https://help.sap.com/docs/sap-integration-suite/advanced-event-mesh/what-is-sap-integration-suite-advanced-event-mesh"
+                        },
+                        {
+                            "label":  "SAP AI Core - Generative AI Hub",
+                            "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
+                        },
+                        {
+                            "label":  "SAP AI Core - Prompt Registry",
+                            "url":  "https://help.sap.com/docs/sap-ai-core/generative-ai/prompt-registry"
+                        },
+                        {
+                            "label":  "SAP BTP - CAP Development",
+                            "url":  "https://help.sap.com/docs/btp/sap-business-technology-platform/developing-with-sap-cloud-application-programming-model"
+                        }
+                    ],
+        "url":  "",
+        "linkLabel":  "Documentation repository pending",
+        "nextStep":  "Package the customer-ready Integration Operations Shield offer: interface catalog, canonical operations model, error ontology, masking checklist, runbook template, correlation rules, routing controls, SLA risk model, operations cockpit, Cloud ALM backlog, user stories, test scripts, evidence checklist, and governance controls."
+    },
+    {
+        "id":  "clean-core-ai-governance-service",
+        "laneKey":  "side",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "Clean Core AI Governance Service",
+        "detailAliases":  [
+                              "clean-core-ai-governance-service-side",
+                              "ai-clean-core-governance-service"
+                          ],
+        "status":  "Customer accelerator",
+        "pattern":  "AI",
+        "category":  "AI",
+        "tagLabel":  "AI",
+        "description":  "Customer-ready SAP accelerator for architecture governance, clean-core risk scoring, extension review, waiver control, and modernization backlog planning.",
+        "function":  "Build a governed clean-core service that inventories custom artifacts, classifies extension patterns, scores deviations, routes waiver decisions, and creates a prioritized remediation roadmap.",
+        "summary":  "Clean Core AI Governance Service creates an evidence-based governance layer for SAP custom code, enhancements, interfaces, and extension patterns. It groups artifacts by type, usage, owner, and risk; classifies clean-core policy fit; scores high-risk deviations; generates board-ready decisions; and keeps modernization backlog visibility for release, upgrade, and transformation planning.",
+        "useCase":  [
+                        {
+                            "text":  "Use this accelerator when SAP landscapes have accumulated custom code, enhancements, interfaces, and extension patterns over many project cycles and architecture teams need a structured clean-core view based on evidence rather than opinion."
+                        },
+                        {
+                            "heading":  "It helps governance teams",
+                            "items":  [
+                                          "Inventory custom artifacts and group them by type, usage, owner, and risk.",
+                                          "Classify extensions against clean-core policy and allowed extensibility patterns.",
+                                          "Score high-risk deviations and route remediation, waiver, or retain decisions.",
+                                          "Generate architecture board packs with business impact, technical risk, and proposed path.",
+                                          "Keep the modernization backlog visible for release, upgrade, and transformation planning."
+                                      ]
+                        }
+                    ],
+        "workingExample":  [
+                              {
+                                  "html":  `
+                                    <p>Scenario: A S/4HANA transformation program reviews finance and sales customizations before the next release cycle. The governance service imports custom objects, usage metrics, transport history, incident links, and architecture standards.</p>
+                                    <div class="detail-table-wrap">
+                                      <table class="detail-table">
+                                        <thead><tr><th>Area</th><th>Example output</th></tr></thead>
+                                        <tbody>
+                                          <tr><td>Inventory finding</td><td>184 artifacts; 37 unused; 22 high deviation</td></tr>
+                                          <tr><td>High-risk theme</td><td>Classic enhancements in pricing and billing</td></tr>
+                                          <tr><td>Usage insight</td><td>Several Z reports have no recent usage</td></tr>
+                                          <tr><td>Support signal</td><td>One interface causes recurring AMS incidents</td></tr>
+                                          <tr><td>Recommendation</td><td>Retire unused reports, redesign pricing extension, stabilize interface</td></tr>
+                                          <tr><td>Board decision</td><td>Approve two waivers, create six remediation work packages</td></tr>
+                                          <tr><td>Roadmap output</td><td>Wave 1: retire/quick fixes; Wave 2: redesign high-risk extensions</td></tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  `
+                              }
+                          ],
+        "whenToUse":  [
+                         "Use when a RISE, GROW, S/4HANA, or clean-core program is active.",
+                         "Use when custom objects, enhancements, transports, interfaces, or extension patterns are in scope.",
+                         "Use when the architecture board needs a ranked remediation view and upgradeability or cloud readiness is a governance priority.",
+                         "Use when LeanIX, Cloud ALM, code analysis, repository data, or usage data can be used.",
+                         "Stabilize first when artifact inventory is unreliable, usage data is unavailable, policy is not approved, waiver ownership is undefined, or code metadata access is not cleared."
+                     ],
+        "implementation":  [
+                              "Set governance scope: landscape, business domain, custom object classes, extension types, and architecture board ownership.",
+                              "Approve clean-core policy: allowed patterns, restricted patterns, waiver rules, and target extensibility model.",
+                              "Collect inventory: custom code, enhancements, interfaces, transports, repositories, usage, incidents, and architecture decisions.",
+                              "Normalize into the canonical model: artifact, object type, owner, usage, criticality, findings, dependencies, and support burden.",
+                              "Classify artifacts by policy class, deviation type, confidence, and source evidence.",
+                              "Score risk using clean-core deviation, usage, business criticality, incidents, complexity, and upgrade sensitivity.",
+                              "Generate remediation paths: retire, replace with standard, convert to key-user extension, redesign with ABAP Cloud, move to BTP, or retain with waiver.",
+                              "Review with architects to validate high-risk items, correct classifications, and approve waiver or remediation decisions.",
+                              "Build roadmap waves by business priority, dependency, effort band, and release window.",
+                              "Operate the governance cycle by refreshing findings, tracking new deviations, reviewing expiring waivers, and updating the architecture board pack."
+                          ],
+        "collapsibleSections":  [
+                                    {
+                                        "title":  "Purpose And Summary",
+                                        "html":  `
+                                          <p>Architecture governance service for clean-core risk scoring, extension review, waiver control, and modernization backlog planning.</p>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Area</th><th>Customer-ready summary</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Purpose</td><td>Identify high-risk SAP customizations and extensions.</td></tr>
+                                                <tr><td>Primary outcome</td><td>Prioritized clean-core remediation backlog.</td></tr>
+                                                <tr><td>Operating model</td><td>Governance cockpit, waiver workflow, architecture board pack.</td></tr>
+                                                <tr><td>SAP foundation</td><td>SAP BTP, ABAP Cloud, SAP Cloud ALM, SAP LeanIX, AI Core/genAI hub.</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Business Gap Addressed</h3>
+                                          <p>SAP landscapes accumulate custom code, enhancements, interfaces, and extension patterns over many project cycles. The governance service creates a structured view of clean-core deviation, usage, business criticality, support burden, and remediation priority so that architecture decisions are based on evidence rather than opinion.</p>
+                                          <ul>
+                                            <li>Custom artifacts are inventoried and grouped by type, usage, owner, and risk.</li>
+                                            <li>Extensions are classified against clean-core policy and allowed extensibility patterns.</li>
+                                            <li>High-risk deviations are scored and routed into remediation, waiver, or retain decisions.</li>
+                                            <li>Architecture board packs show business impact, technical risk, and proposed path.</li>
+                                            <li>Modernization backlog is kept visible for release, upgrade, and transformation planning.</li>
+                                          </ul>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Solution Scope And Decision Conditions",
+                                        "html":  `
+                                          <h3>Solution We Are Providing</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Capability</th><th>What it does</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Inventory</td><td>Custom code, enhancements, interfaces</td></tr>
+                                                <tr><td>Classification</td><td>Clean-core pattern and deviation</td></tr>
+                                                <tr><td>Risk scoring</td><td>Usage, impact, support burden</td></tr>
+                                                <tr><td>Remediation path</td><td>Retire, redesign, migrate, retain</td></tr>
+                                                <tr><td>Waiver workflow</td><td>Approved exceptions with expiry</td></tr>
+                                                <tr><td>Governance cockpit</td><td>Heatmap, backlog, decisions</td></tr>
+                                                <tr><td>Board pack</td><td>Architecture decision summary</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>When To Take Forward</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Decision</th><th>Condition</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Proceed</td><td>RISE, GROW, S/4HANA, or clean-core program is active.</td></tr>
+                                                <tr><td>Proceed</td><td>Custom objects, enhancements, transports, or interfaces are in scope.</td></tr>
+                                                <tr><td>Proceed</td><td>Architecture board needs a ranked remediation view.</td></tr>
+                                                <tr><td>Proceed</td><td>Upgradeability or cloud readiness is a known governance priority.</td></tr>
+                                                <tr><td>Proceed</td><td>LeanIX, Cloud ALM, code analysis, or repository data can be used.</td></tr>
+                                                <tr><td>Stabilize first</td><td>No reliable artifact inventory exists.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Usage data is unavailable or not trusted.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Clean-core policy is not approved.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Waiver ownership is not defined.</td></tr>
+                                                <tr><td>Stabilize first</td><td>Code metadata access is not cleared.</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "SAP-Aligned Component Design",
+                                        "html":  `
+                                          <h3>Component Design</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Component</th><th>Role</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>SAP BTP / CAP</td><td>Governance APIs and cockpit services</td></tr>
+                                                <tr><td>SAP AI Core / genAI hub</td><td>Classification and summaries</td></tr>
+                                                <tr><td>ABAP Cloud</td><td>Target model for upgrade-stable extensions</td></tr>
+                                                <tr><td>SAP Cloud ALM</td><td>Clean-core dashboards and lifecycle context</td></tr>
+                                                <tr><td>SAP LeanIX</td><td>Architecture and application context</td></tr>
+                                                <tr><td>Custom Code Migration</td><td>Usage and migration analysis input</td></tr>
+                                                <tr><td>ABAP Test Cockpit</td><td>Code finding and compliance signals</td></tr>
+                                                <tr><td>SAP Build Process Automation</td><td>Waiver and approval workflow</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Functional Architecture</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Layer</th><th>Design decision</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Experience</td><td>Cockpit, heatmap, backlog, board pack</td></tr>
+                                                <tr><td>Application</td><td>Inventory, policy rules, waiver, planner</td></tr>
+                                                <tr><td>AI</td><td>Pattern classifier, explanation, recommendation</td></tr>
+                                                <tr><td>Data</td><td>Artifact mart, policy library, waiver store</td></tr>
+                                                <tr><td>Integration</td><td>Cloud ALM, LeanIX, code tools, transports</td></tr>
+                                                <tr><td>Governance</td><td>RBAC, audit, approvals, metadata controls</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Canonical Model, Policy, And AI Design",
+                                        "html":  `
+                                          <h3>Canonical Governance Data Model</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Entity</th><th>Purpose</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Artifact</td><td>Custom object or extension</td></tr>
+                                                <tr><td>Object type</td><td>Report, class, BAdI, table, API, interface</td></tr>
+                                                <tr><td>Owner</td><td>Business and technical accountability</td></tr>
+                                                <tr><td>Usage metric</td><td>Frequency, users, last use</td></tr>
+                                                <tr><td>Finding</td><td>ATC, migration, policy, support signal</td></tr>
+                                                <tr><td>Deviation</td><td>Clean-core policy gap</td></tr>
+                                                <tr><td>Criticality</td><td>Business and operational impact</td></tr>
+                                                <tr><td>Recommendation</td><td>Target remediation path</td></tr>
+                                                <tr><td>Waiver</td><td>Approved exception</td></tr>
+                                                <tr><td>Backlog item</td><td>Remediation work package</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Clean-Core Policy Taxonomy</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Policy class</th><th>Meaning</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Standard fit</td><td>Use SAP standard without extension</td></tr>
+                                                <tr><td>Key-user extension</td><td>In-app extension, released surface</td></tr>
+                                                <tr><td>Developer extension</td><td>ABAP Cloud and released APIs</td></tr>
+                                                <tr><td>Side-by-side</td><td>BTP extension, loose coupling</td></tr>
+                                                <tr><td>Integration pattern</td><td>API/event-based integration</td></tr>
+                                                <tr><td>Classic custom ABAP</td><td>Review and modernize path</td></tr>
+                                                <tr><td>Modification/enhancement</td><td>High scrutiny, waiver or redesign</td></tr>
+                                                <tr><td>Unused candidate</td><td>Retire or archive decision</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>AI Capability Design</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>AI function</th><th>Controlled use</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Pattern classification</td><td>Groups artifacts by extension type</td></tr>
+                                                <tr><td>Code explanation</td><td>Summarizes purpose and dependencies</td></tr>
+                                                <tr><td>Policy reasoning</td><td>Maps artifact to rule outcome</td></tr>
+                                                <tr><td>Risk narrative</td><td>Explains deviation and impact</td></tr>
+                                                <tr><td>Remediation suggestion</td><td>Proposes target path</td></tr>
+                                                <tr><td>Board summary</td><td>Creates decision-ready narrative</td></tr>
+                                                <tr><td>Learning loop</td><td>Improves tags after architect feedback</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Implementation, Decision Rules, And Outputs",
+                                        "html":  `
+                                          <h3>Step-by-Step Reusable Process</h3>
+                                          <ol>
+                                            <li>Set governance scope: landscape, business domain, custom object classes, extension types, and architecture board ownership.</li>
+                                            <li>Approve clean-core policy: allowed patterns, restricted patterns, waiver rules, and target extensibility model.</li>
+                                            <li>Collect inventory: custom code, enhancements, interfaces, transports, repositories, usage, incidents, and architecture decisions.</li>
+                                            <li>Normalize into the canonical model: artifact, object type, owner, usage, criticality, findings, dependencies, and support burden.</li>
+                                            <li>Classify artifacts: assign policy class, deviation type, confidence, and source evidence.</li>
+                                            <li>Score risk: combine clean-core deviation, usage, business criticality, incidents, complexity, and upgrade sensitivity.</li>
+                                            <li>Generate remediation path: retire, replace with standard, convert to key-user extension, redesign with ABAP Cloud, move to BTP, or retain with waiver.</li>
+                                            <li>Review with architects: validate high-risk items, correct classifications, and approve waiver or remediation decisions.</li>
+                                            <li>Build roadmap: group backlog into waves by business priority, dependency, effort band, and release window.</li>
+                                            <li>Operate governance cycle: refresh findings, track new deviations, review expiring waivers, and update the architecture board pack.</li>
+                                          </ol>
+                                          <h3>Risk Scoring And Decision Rules</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Signal</th><th>Action</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Unused object</td><td>Retire or archive candidate</td></tr>
+                                                <tr><td>High usage + high deviation</td><td>Priority remediation review</td></tr>
+                                                <tr><td>Critical process object</td><td>Architecture board decision</td></tr>
+                                                <tr><td>Direct standard dependency</td><td>Released API or wrapper review</td></tr>
+                                                <tr><td>Modification/enhancement</td><td>Redesign or controlled waiver</td></tr>
+                                                <tr><td>No owner</td><td>Assign accountability first</td></tr>
+                                                <tr><td>Incident-linked artifact</td><td>Increase support-burden score</td></tr>
+                                                <tr><td>Low confidence result</td><td>Human architect review</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Dashboards And Outputs</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Output</th><th>Content</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Governance cockpit</td><td>Overall clean-core score</td></tr>
+                                                <tr><td>Risk heatmap</td><td>Deviation by domain/object type</td></tr>
+                                                <tr><td>Artifact workbench</td><td>Findings and remediation path</td></tr>
+                                                <tr><td>Waiver queue</td><td>Exceptions, owners, expiry</td></tr>
+                                                <tr><td>Remediation backlog</td><td>Prioritized work packages</td></tr>
+                                                <tr><td>Board pack</td><td>Decision-ready summary</td></tr>
+                                                <tr><td>Trend view</td><td>New, closed, and aged deviations</td></tr>
+                                                <tr><td>Evidence export</td><td>Audit and review evidence</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Cloud ALM-Ready Backlog And User Stories",
+                                        "exports":  [
+                                                        "requirement",
+                                                        "user-stories"
+                                                    ],
+                                        "html":  `
+                                          <h3>Cloud ALM-Ready Backlog</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>ID</th><th>Requirement</th><th>Outcome</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>REQ-CCG-001</td><td>Artifact inventory</td><td>Load custom object data</td></tr>
+                                                <tr><td>REQ-CCG-002</td><td>Policy library</td><td>Maintain clean-core rules</td></tr>
+                                                <tr><td>REQ-CCG-003</td><td>Classification</td><td>Assign pattern and deviation</td></tr>
+                                                <tr><td>REQ-CCG-004</td><td>Risk scoring</td><td>Score artifacts and domains</td></tr>
+                                                <tr><td>REQ-CCG-005</td><td>Remediation planner</td><td>Create prioritized backlog</td></tr>
+                                                <tr><td>REQ-CCG-006</td><td>Waiver workflow</td><td>Approve and track exceptions</td></tr>
+                                                <tr><td>REQ-CCG-007</td><td>Board pack</td><td>Generate decision summary</td></tr>
+                                                <tr><td>REQ-CCG-008</td><td>Governance refresh</td><td>Track new and closed deviations</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>User Stories</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>ID</th><th>Role</th><th>Need</th><th>Value</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>US-CCG-001</td><td>Enterprise architect</td><td>See clean-core heatmap</td><td>Target the biggest risks</td></tr>
+                                                <tr><td>US-CCG-002</td><td>SAP platform owner</td><td>Review custom inventory</td><td>Control upgrade exposure</td></tr>
+                                                <tr><td>US-CCG-003</td><td>Developer lead</td><td>See code findings</td><td>Plan remediation</td></tr>
+                                                <tr><td>US-CCG-004</td><td>Design authority</td><td>Approve waivers</td><td>Govern exceptions</td></tr>
+                                                <tr><td>US-CCG-005</td><td>Transformation lead</td><td>View roadmap waves</td><td>Sequence modernization</td></tr>
+                                                <tr><td>US-CCG-006</td><td>Application owner</td><td>Confirm business usage</td><td>Avoid wrong retirement</td></tr>
+                                                <tr><td>US-CCG-007</td><td>Auditor</td><td>View decisions and evidence</td><td>Trace governance</td></tr>
+                                                <tr><td>US-CCG-008</td><td>AMS lead</td><td>See support-linked artifacts</td><td>Reduce recurring support load</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Executable Test Script",
+                                        "exports":  [
+                                                        "test-cases"
+                                                    ],
+                                        "html":  `
+                                          <h3>Test Scripts</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>ID</th><th>Scenario</th><th>Action</th><th>Expected result</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>TS-CCG-001</td><td>Inventory load</td><td>Import artifact extract</td><td>Artifacts appear in cockpit</td></tr>
+                                                <tr><td>TS-CCG-002</td><td>Classification</td><td>Run policy classification</td><td>Pattern and deviation appear</td></tr>
+                                                <tr><td>TS-CCG-003</td><td>Risk score</td><td>Score high-use artifact</td><td>High-risk band assigned</td></tr>
+                                                <tr><td>TS-CCG-004</td><td>Unused object</td><td>Load no-usage object</td><td>Retire candidate shown</td></tr>
+                                                <tr><td>TS-CCG-005</td><td>Waiver</td><td>Submit exception</td><td>Approval and expiry captured</td></tr>
+                                                <tr><td>TS-CCG-006</td><td>Remediation</td><td>Generate target path</td><td>Backlog item created</td></tr>
+                                                <tr><td>TS-CCG-007</td><td>Low confidence</td><td>Classify ambiguous artifact</td><td>Architect review required</td></tr>
+                                                <tr><td>TS-CCG-008</td><td>Sensitive metadata</td><td>Load restricted code info</td><td>Access is controlled</td></tr>
+                                                <tr><td>TS-CCG-009</td><td>Board pack</td><td>Generate summary</td><td>Risks and decisions appear</td></tr>
+                                                <tr><td>TS-CCG-010</td><td>Refresh cycle</td><td>Load new scan</td><td>Trend view updates</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                        `
+                                    },
+                                    {
+                                        "title":  "Governance, Readiness, And Evidence",
+                                        "html":  `
+                                          <h3>Security, Governance And Controls</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Control</th><th>Design</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Access</td><td>Architect, developer, owner, auditor views</td></tr>
+                                                <tr><td>Metadata control</td><td>Code metadata handled securely</td></tr>
+                                                <tr><td>Approval</td><td>Waivers require named authority</td></tr>
+                                                <tr><td>Audit</td><td>Scores, prompts, decisions logged</td></tr>
+                                                <tr><td>Model control</td><td>Prompt and model versions tracked</td></tr>
+                                                <tr><td>Fallback</td><td>Rules work when AI is unavailable</td></tr>
+                                                <tr><td>Retention</td><td>Evidence retained by governance policy</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Governance Readiness Criteria</h3>
+                                          <ul>
+                                            <li>Artifact inventory is loaded and reconciled with known systems.</li>
+                                            <li>Clean-core policy taxonomy is approved by architecture governance.</li>
+                                            <li>Usage and business criticality are available for priority artifacts.</li>
+                                            <li>Risk scoring is explainable and reviewed by architects.</li>
+                                            <li>High-risk artifacts have remediation, waiver, or retain decisions.</li>
+                                            <li>Waiver workflow captures owner, rationale, expiry, and review date.</li>
+                                            <li>Remediation backlog is grouped into executable waves.</li>
+                                            <li>Architecture board pack is generated from current evidence.</li>
+                                            <li>Security roles are validated for code metadata and governance data.</li>
+                                            <li>Governance refresh cycle is agreed for new customizations and deviations.</li>
+                                          </ul>
+                                          <h3>Evidence To Capture</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Evidence</th><th>Capture method</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Inventory extract</td><td>Custom objects and extensions</td></tr>
+                                                <tr><td>Usage evidence</td><td>Frequency and last-use data</td></tr>
+                                                <tr><td>Code findings</td><td>ATC or migration results</td></tr>
+                                                <tr><td>Risk heatmap</td><td>Dashboard screenshot/export</td></tr>
+                                                <tr><td>Waiver log</td><td>Approval and expiry evidence</td></tr>
+                                                <tr><td>Backlog</td><td>Remediation work packages</td></tr>
+                                                <tr><td>Board pack</td><td>Approved decision summary</td></tr>
+                                                <tr><td>Refresh report</td><td>New/closed deviations</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Known Limitations And Remediation</h3>
+                                          <div class="detail-table-wrap">
+                                            <table class="detail-table">
+                                              <thead><tr><th>Limitation</th><th>Remediation</th></tr></thead>
+                                              <tbody>
+                                                <tr><td>Incomplete inventory</td><td>Start with priority systems first</td></tr>
+                                                <tr><td>No usage data</td><td>Use owner review and support signals</td></tr>
+                                                <tr><td>Unclear policy</td><td>Approve taxonomy before scoring</td></tr>
+                                                <tr><td>False classification</td><td>Architect review loop required</td></tr>
+                                                <tr><td>Missing API</td><td>Evaluate wrapper or side-by-side pattern</td></tr>
+                                                <tr><td>No owner</td><td>Hold decision until ownership is assigned</td></tr>
+                                                <tr><td>Sensitive code</td><td>Use metadata-only AI processing where required</td></tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h3>Reusable Deliverables</h3>
+                                          <ul>
+                                            <li>Clean-core governance overview</li>
+                                            <li>Artifact inventory template</li>
+                                            <li>Clean-core policy taxonomy</li>
+                                            <li>Canonical governance data model</li>
+                                            <li>Risk scoring model</li>
+                                            <li>Remediation decision matrix</li>
+                                            <li>Waiver workflow template</li>
+                                            <li>Architecture board pack template</li>
+                                            <li>Remediation backlog template</li>
+                                            <li>Cloud ALM backlog items, user stories, test scripts, security checklist, evidence checklist, and limitations guide</li>
+                                          </ul>
+                                        `
+                                    },
+                                    {
+                                        "title":  "SAP Evidence Base",
+                                        "html":  `
+                                          <h3>Reference Links</h3>
+                                          <ul>
+                                            <li><a href="https://help.sap.com/docs/abap-cloud/developer-guide-from-classic-abap-to-abap-cloud/clean-core-extensibility-and-abap-based-extensions" target="_blank" rel="noreferrer">SAP Clean Core Extensibility and ABAP-Based Extensions</a></li>
+                                            <li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/extensibility" target="_blank" rel="noreferrer">SAP Cloud ALM Extensibility and Clean Core Level Overview</a></li>
+                                            <li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/customer-objects" target="_blank" rel="noreferrer">SAP Cloud ALM Customer Objects Deep Dive</a></li>
+                                            <li><a href="https://help.sap.com/docs/ABAP_PLATFORM_NEW/9a281eac983f4f688d0deedc96b3c61c/f3b749efe0674d669fb1ecf9704fcfd3.html" target="_blank" rel="noreferrer">SAP Custom Code Migration App</a></li>
+                                            <li><a href="https://help.sap.com/docs/btp/btp-developers-guide/abap-cloud" target="_blank" rel="noreferrer">ABAP Cloud on SAP BTP</a></li>
+                                            <li><a href="https://help.sap.com/docs/abap-cloud/abap-cloud/public-released-apis" target="_blank" rel="noreferrer">ABAP Cloud Public Released APIs</a></li>
+                                            <li><a href="https://help.sap.com/docs/sap-btp-guidance-framework/extension-architecture-guide/what-is-extension-architecture-guide" target="_blank" rel="noreferrer">SAP BTP Extension Architecture Guide</a></li>
+                                            <li><a href="https://help.sap.com/docs/leanix/ea/clean-core-extensibility-for-sap-cloud-erp" target="_blank" rel="noreferrer">SAP LeanIX Clean Core Extensibility for SAP Cloud ERP</a></li>
+                                            <li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core generative AI hub</a></li>
+                                          </ul>
+                                        `
+                                    }
+                                ],
+        "cloudAlm":  {
+                         "tags":  [
+                                      "AI",
+                                      "Clean Core",
+                                      "SAP Cloud ALM",
+                                      "SAP BTP",
+                                      "Governance"
+                                  ],
+                         "businessProcess":  "Architecture Governance / Clean Core / Transformation",
+                         "workstream":  "Clean Core AI Governance",
+                         "requirement":  {
+                                             "externalId":  "REQ-CCG-001",
+                                             "title":  "Clean Core AI Governance Service",
+                                             "description":  "<p>Implement a customer-ready clean-core AI governance service for custom artifact inventory, policy classification, risk scoring, waiver control, architecture board decisions, and modernization backlog planning.</p><h2>Business Need</h2><p>Customers need an evidence-based view of clean-core deviation, usage, business criticality, support burden, and remediation priority so architecture decisions are traceable and modernization work can be sequenced.</p>",
+                                             "status":  "Not Started",
+                                             "priority":  "High",
+                                             "owner":  "",
+                                             "source":  "Internal",
+                                             "tags":  "AI; Clean Core; SAP Cloud ALM; SAP BTP; Governance",
+                                             "plannedRelease":  "",
+                                             "businessProcess":  "Architecture Governance / Clean Core / Transformation"
+                                         },
+                         "userStories":  [
+                                             {
+                                                 "externalId":  "US-CCG-001",
+                                                 "title":  "US-CCG-001 - Clean-Core Heatmap",
+                                                 "persona":  "an enterprise architect",
+                                                 "want":  "to see a clean-core heatmap",
+                                                 "soThat":  "I can target the biggest risks",
+                                                 "acceptanceCriteria":  [
+                                                                            "Heatmap shows deviations by domain and object type.",
+                                                                            "High-risk areas can be opened to artifact detail.",
+                                                                            "Score rationale is visible."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-002",
+                                                 "title":  "US-CCG-002 - Custom Inventory Review",
+                                                 "persona":  "an SAP platform owner",
+                                                 "want":  "to review custom inventory",
+                                                 "soThat":  "I can control upgrade exposure",
+                                                 "acceptanceCriteria":  [
+                                                                            "Custom objects, enhancements, and interfaces are loaded.",
+                                                                            "Inventory includes owner, usage, and finding fields where available.",
+                                                                            "Unreconciled items are flagged."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-003",
+                                                 "title":  "US-CCG-003 - Code Findings",
+                                                 "persona":  "a developer lead",
+                                                 "want":  "to see code findings",
+                                                 "soThat":  "I can plan remediation",
+                                                 "acceptanceCriteria":  [
+                                                                            "ATC, migration, policy, and support signals are visible.",
+                                                                            "Findings link to artifacts.",
+                                                                            "Remediation path is suggested."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-004",
+                                                 "title":  "US-CCG-004 - Waiver Approval",
+                                                 "persona":  "a design authority",
+                                                 "want":  "to approve waivers",
+                                                 "soThat":  "exceptions are governed",
+                                                 "acceptanceCriteria":  [
+                                                                            "Waiver request captures rationale, owner, expiry, and review date.",
+                                                                            "Approval is routed to named authority.",
+                                                                            "Decision history is logged."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-005",
+                                                 "title":  "US-CCG-005 - Roadmap Waves",
+                                                 "persona":  "a transformation lead",
+                                                 "want":  "to view roadmap waves",
+                                                 "soThat":  "modernization can be sequenced",
+                                                 "acceptanceCriteria":  [
+                                                                            "Backlog items are grouped by wave.",
+                                                                            "Grouping includes priority, dependency, effort band, and release window.",
+                                                                            "Wave view is exportable."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-006",
+                                                 "title":  "US-CCG-006 - Business Usage Confirmation",
+                                                 "persona":  "an application owner",
+                                                 "want":  "to confirm business usage",
+                                                 "soThat":  "wrong retirement decisions are avoided",
+                                                 "acceptanceCriteria":  [
+                                                                            "Usage evidence is visible.",
+                                                                            "Owner confirmation can be captured.",
+                                                                            "Retirement recommendations require review."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-007",
+                                                 "title":  "US-CCG-007 - Decision Evidence",
+                                                 "persona":  "an auditor",
+                                                 "want":  "to view decisions and evidence",
+                                                 "soThat":  "governance is traceable",
+                                                 "acceptanceCriteria":  [
+                                                                            "Scores, prompts, recommendations, waivers, and decisions are logged.",
+                                                                            "Evidence export is available.",
+                                                                            "Access is read-only for auditor role."
+                                                                        ]
+                                             },
+                                             {
+                                                 "externalId":  "US-CCG-008",
+                                                 "title":  "US-CCG-008 - Support-Linked Artifacts",
+                                                 "persona":  "an AMS lead",
+                                                 "want":  "to see support-linked artifacts",
+                                                 "soThat":  "recurring support load is reduced",
+                                                 "acceptanceCriteria":  [
+                                                                            "Incident-linked artifacts are visible.",
+                                                                            "Support-burden score is shown.",
+                                                                            "Recurring support items can become backlog candidates."
+                                                                        ]
+                                             }
+                                         ],
+                         "testCases":  [
+                                           {
+                                               "externalId":  "TS-CCG-001",
+                                               "testCaseName":  "TS-CCG-001 - Inventory Load",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Import artifact extract",
+                                               "actionTitle":  "Import artifact extract",
+                                               "instructions":  [
+                                                                    "Import the artifact extract.",
+                                                                    "Open the governance cockpit."
+                                                                ],
+                                               "expectedResult":  "Artifacts appear in cockpit."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-002",
+                                               "testCaseName":  "TS-CCG-002 - Classification",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Run policy classification",
+                                               "actionTitle":  "Run policy classification",
+                                               "instructions":  [
+                                                                    "Select imported artifacts.",
+                                                                    "Run clean-core policy classification."
+                                                                ],
+                                               "expectedResult":  "Pattern and deviation appear."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-003",
+                                               "testCaseName":  "TS-CCG-003 - Risk Score",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Score high-use artifact",
+                                               "actionTitle":  "Score high-use artifact",
+                                               "instructions":  [
+                                                                    "Select a high-use artifact with deviation signals.",
+                                                                    "Run risk scoring."
+                                                                ],
+                                               "expectedResult":  "High-risk band is assigned."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-004",
+                                               "testCaseName":  "TS-CCG-004 - Unused Object",
+                                               "priority":  "Medium",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Load no-usage object",
+                                               "actionTitle":  "Load no-usage object",
+                                               "instructions":  [
+                                                                    "Load an artifact with no recent usage.",
+                                                                    "Run classification and scoring."
+                                                                ],
+                                               "expectedResult":  "Retire candidate is shown."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-005",
+                                               "testCaseName":  "TS-CCG-005 - Waiver",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Submit waiver exception",
+                                               "actionTitle":  "Submit exception",
+                                               "instructions":  [
+                                                                    "Submit an exception for a high-risk artifact.",
+                                                                    "Complete approval fields."
+                                                                ],
+                                               "expectedResult":  "Approval and expiry are captured."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-006",
+                                               "testCaseName":  "TS-CCG-006 - Remediation",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Generate target path",
+                                               "actionTitle":  "Generate target path",
+                                               "instructions":  [
+                                                                    "Select an artifact requiring modernization.",
+                                                                    "Generate target path."
+                                                                ],
+                                               "expectedResult":  "Backlog item is created."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-007",
+                                               "testCaseName":  "TS-CCG-007 - Low Confidence",
+                                               "priority":  "Medium",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Classify ambiguous artifact",
+                                               "actionTitle":  "Classify ambiguous artifact",
+                                               "instructions":  [
+                                                                    "Select an ambiguous artifact.",
+                                                                    "Run classification."
+                                                                ],
+                                               "expectedResult":  "Architect review is required."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-008",
+                                               "testCaseName":  "TS-CCG-008 - Sensitive Metadata",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Validate restricted metadata access",
+                                               "actionTitle":  "Load restricted code info",
+                                               "instructions":  [
+                                                                    "Load restricted code metadata.",
+                                                                    "Review access with authorized and unauthorized roles."
+                                                                ],
+                                               "expectedResult":  "Access is controlled."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-009",
+                                               "testCaseName":  "TS-CCG-009 - Board Pack",
+                                               "priority":  "High",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Generate board summary",
+                                               "actionTitle":  "Generate summary",
+                                               "instructions":  [
+                                                                    "Generate the architecture board pack.",
+                                                                    "Review risks and decisions."
+                                                                ],
+                                               "expectedResult":  "Risks and decisions appear."
+                                           },
+                                           {
+                                               "externalId":  "TS-CCG-010",
+                                               "testCaseName":  "TS-CCG-010 - Refresh Cycle",
+                                               "priority":  "Medium",
+                                               "status":  "Prepared",
+                                               "activityTitle":  "Load new scan",
+                                               "actionTitle":  "Load new scan",
+                                               "instructions":  [
+                                                                    "Load a new scan extract.",
+                                                                    "Refresh governance trend view."
+                                                                ],
+                                               "expectedResult":  "Trend view updates."
+                                           }
+                                       ]
+                     },
+        "sources":  [
+                        {
+                            "label":  "SAP Clean Core Extensibility and ABAP-Based Extensions",
+                            "url":  "https://help.sap.com/docs/abap-cloud/developer-guide-from-classic-abap-to-abap-cloud/clean-core-extensibility-and-abap-based-extensions"
+                        },
+                        {
+                            "label":  "SAP Cloud ALM Extensibility and Clean Core Level Overview",
+                            "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/extensibility"
+                        },
+                        {
+                            "label":  "SAP Cloud ALM Customer Objects Deep Dive",
+                            "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/customer-objects"
+                        },
+                        {
+                            "label":  "SAP Custom Code Migration App",
+                            "url":  "https://help.sap.com/docs/ABAP_PLATFORM_NEW/9a281eac983f4f688d0deedc96b3c61c/f3b749efe0674d669fb1ecf9704fcfd3.html"
+                        },
+                        {
+                            "label":  "ABAP Cloud on SAP BTP",
+                            "url":  "https://help.sap.com/docs/btp/btp-developers-guide/abap-cloud"
+                        },
+                        {
+                            "label":  "ABAP Cloud Public Released APIs",
+                            "url":  "https://help.sap.com/docs/abap-cloud/abap-cloud/public-released-apis"
+                        },
+                        {
+                            "label":  "SAP BTP Extension Architecture Guide",
+                            "url":  "https://help.sap.com/docs/sap-btp-guidance-framework/extension-architecture-guide/what-is-extension-architecture-guide"
+                        },
+                        {
+                            "label":  "SAP LeanIX Clean Core Extensibility for SAP Cloud ERP",
+                            "url":  "https://help.sap.com/docs/leanix/ea/clean-core-extensibility-for-sap-cloud-erp"
+                        },
+                        {
+                            "label":  "SAP AI Core generative AI hub",
+                            "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
+                        }
+                    ],
+        "url":  "",
+        "linkLabel":  "Documentation repository pending",
+        "nextStep":  "Package the customer-ready Clean Core AI Governance Service offer: artifact inventory template, policy taxonomy, canonical governance model, risk scoring model, remediation decision matrix, waiver workflow, architecture board pack, modernization backlog, Cloud ALM backlog, user stories, test scripts, security controls, and evidence checklist."
     },
     {
         "id":  "checklist-acc-016-developer",
