@@ -104,6 +104,136 @@ function renderImplementationRoadmap(image) {
   `;
 }
 
+function shouldRenderGroupedOfferingLayout(item) {
+  return item.pattern === "AI" && Boolean(item.roadmapImage);
+}
+
+function findDetailSection(item, title) {
+  return (item.collapsibleSections || []).find((section) => section.title === title);
+}
+
+function withoutLeadingParagraph(html) {
+  const template = document.createElement("template");
+  template.innerHTML = String(html || "").trim();
+  const firstElement = template.content.firstElementChild;
+  if (firstElement?.tagName === "P") firstElement.remove();
+  return template.innerHTML;
+}
+
+function renderGroupedSubsection(section, item, options = {}) {
+  if (!section) return "";
+
+  const html = options.omitLeadingParagraph ? withoutLeadingParagraph(section.html) : section.html || "";
+  const exportButtons =
+    Array.isArray(section.exports) && section.exports.length ? renderSectionExportButtons(section, item) : "";
+
+  return `
+    <section class="detail-group-subsection">
+      <div class="detail-group-heading">
+        <h3>${detailEscapeHtml(options.title || section.title)}</h3>
+        ${exportButtons}
+      </div>
+      ${html ? `<div class="detail-rich">${html}</div>` : ""}
+    </section>
+  `;
+}
+
+function renderGroupedPanel(title, sections, item) {
+  const sectionMarkup = sections
+    .map((entry) => renderGroupedSubsection(entry.section, item, entry.options || {}))
+    .filter(Boolean)
+    .join("");
+
+  if (!sectionMarkup) return "";
+
+  return `
+    <article class="detail-panel detail-group-panel">
+      <h2>${detailEscapeHtml(title)}</h2>
+      <div class="detail-group-stack">${sectionMarkup}</div>
+    </article>
+  `;
+}
+
+function renderImplementationPanelMarkup() {
+  return `
+    <article class="detail-panel implementation-panel">
+      <h2>Implementation Plan</h2>
+      <section class="implementation-plan-section" aria-labelledby="implementationApproachHeading">
+        <h3 id="implementationApproachHeading">Detailed design and build approach</h3>
+        <ol id="implementationSteps"></ol>
+      </section>
+      <section class="implementation-roadmap-section" id="implementationRoadmapPanel" aria-labelledby="implementationRoadmapHeading" hidden>
+        <h3 id="implementationRoadmapHeading">Implementation Roadmap</h3>
+        <div id="implementationRoadmap"></div>
+      </section>
+    </article>
+  `;
+}
+
+function renderSourcePanelMarkup() {
+  return `
+    <aside class="detail-panel source-panel">
+      <h2>Sources And Next Steps</h2>
+      <div id="sourceList"></div>
+      <div class="detail-note">
+        <strong>Next asset step:</strong>
+        <span>When you share your own customer asset details, this same page can point to your GitHub source and show your implementation notes.</span>
+      </div>
+    </aside>
+  `;
+}
+
+function renderGroupedOfferingGrid(item) {
+  const designDimensions = findDetailSection(item, "Design Dimensions");
+  const solutionApplicability = findDetailSection(item, "Solution Provides And Applicability");
+  const readiness = findDetailSection(item, "Readiness Conditions");
+  const architecture = findDetailSection(item, "Architecture And Component Design");
+  const nonFunctional = findDetailSection(item, "Non-Functional Requirements");
+  const stack = findDetailSection(item, "Suggested Build Stack");
+  const cloudAlm = findDetailSection(item, "Cloud ALM Export Package");
+  const validation = findDetailSection(item, "Next Steps And Sources");
+
+  document.querySelector(".detail-grid").innerHTML = `
+    ${renderGroupedPanel(
+      "Solution Definition",
+      [
+        {
+          section: {
+            title: "Idea Brief",
+            html: `<p>${detailEscapeHtml(item.summary)}</p>`,
+          },
+        },
+        { section: designDimensions, options: { omitLeadingParagraph: true } },
+        { section: solutionApplicability },
+        { section: readiness },
+      ],
+      item,
+    )}
+    ${renderGroupedPanel("Architecture Definition", [{ section: architecture }], item)}
+    ${renderImplementationPanelMarkup()}
+    ${renderGroupedPanel(
+      "Controls And Stack",
+      [
+        { section: nonFunctional },
+        { section: stack },
+      ],
+      item,
+    )}
+    ${renderGroupedPanel(
+      "Validation",
+      [
+        { section: cloudAlm },
+        { section: validation },
+      ],
+      item,
+    )}
+    ${renderSourcePanelMarkup()}
+  `;
+
+  const cloudAlmPanel = document.querySelector(".detail-grid");
+  if (cloudAlmPanel) bindCloudAlmExportButtons(cloudAlmPanel, item);
+}
+
 function sourceLooksLikeCode(source) {
   return /source|github|repository/i.test(source.label || "");
 }
@@ -421,6 +551,22 @@ function renderDetailPage() {
   document.getElementById("detailSourceType").textContent = item.sourceType;
   document.getElementById("detailTitle").textContent = item.title;
   document.getElementById("detailSummary").textContent = item.summary;
+
+  if (shouldRenderGroupedOfferingLayout(item)) {
+    renderGroupedOfferingGrid(item);
+    document.getElementById("implementationSteps").innerHTML = item.implementation
+      .map(renderImplementationStep)
+      .join("");
+    renderImplementationRoadmap(item.roadmapImage);
+    renderSourceLinks(item);
+
+    document.querySelectorAll(".top-nav a").forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "accelerators.html") link.classList.add("active");
+    });
+    return;
+  }
+
   renderDetailContent("detailUseCase", item.useCase);
   renderOptionalDetailContent("detailWorkingExamplePanel", "detailWorkingExample", item.workingExample);
   renderDetailContent("detailWhenToUse", item.whenToUse);
