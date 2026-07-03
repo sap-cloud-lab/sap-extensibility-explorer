@@ -427,6 +427,10 @@ window.customerSampleItems = [
     <img src="assets/working-examples/ai-release-assurance/AI_Release_Assurance_for_SAP_Reference_Architecture.png" alt="AI Release Assurance for SAP reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI Release Assurance for SAP reference architecture from the updated design pack.</figcaption>
   </figure>
+  <figure>
+    <img src="assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI%20Release%20Assurance%20for%20SAP.png" alt="AI Release Assurance for SAP implementation roadmap" onerror="handleMissingExampleImage(this)" />
+    <figcaption>AI Release Assurance for SAP implementation roadmap from the updated design pack.</figcaption>
+  </figure>
 </div>
 <h3>Logical Component Design</h3>
 <div class="detail-table-wrap">
@@ -820,6 +824,10 @@ window.customerSampleItems = [
   <figure>
     <img src="assets/working-examples/ai-release-assurance/AI_Powered_AMS_Control_Tower_Reference_Architecture.png" alt="AI-Powered AMS Control Tower reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI-Powered AMS Control Tower reference architecture from the updated design pack.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI-Powered%20AMS%20Control%20Tower.png" alt="AI-Powered AMS Control Tower implementation roadmap" onerror="handleMissingExampleImage(this)" />
+    <figcaption>AI-Powered AMS Control Tower implementation roadmap from the updated design pack.</figcaption>
   </figure>
 </div>
 <h3>Logical Component Design</h3>
@@ -1215,6 +1223,10 @@ window.customerSampleItems = [
     <img src="assets/working-examples/ai-release-assurance/AI_Hypercare_Stabilization_Command_Center_Reference_Architecture.png" alt="AI Hypercare Stabilization Command Center reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI Hypercare Stabilization Command Center reference architecture from the updated design pack.</figcaption>
   </figure>
+  <figure>
+    <img src="assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI%20Hypercare%20Stabilization%20Command%20Center.png" alt="AI Hypercare Stabilization Command Center implementation roadmap" onerror="handleMissingExampleImage(this)" />
+    <figcaption>AI Hypercare Stabilization Command Center implementation roadmap from the updated design pack.</figcaption>
+  </figure>
 </div>
 <h3>Logical Component Design</h3>
 <div class="detail-table-wrap">
@@ -1609,6 +1621,10 @@ window.customerSampleItems = [
     <img src="assets/working-examples/ai-release-assurance/Clean_Core_AI_Governance_Service_Reference_Architecture.png" alt="Clean Core AI Governance Service reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>Clean Core AI Governance Service reference architecture from the updated design pack.</figcaption>
   </figure>
+  <figure>
+    <img src="assets/working-examples/ai-release-assurance/Implementation%20Roadmap_Clean%20Core%20AI%20Governance%20Service.png" alt="Clean Core AI Governance Service implementation roadmap" onerror="handleMissingExampleImage(this)" />
+    <figcaption>Clean Core AI Governance Service implementation roadmap from the updated design pack.</figcaption>
+  </figure>
 </div>
 <h3>Logical Component Design</h3>
 <div class="detail-table-wrap">
@@ -2002,6 +2018,10 @@ window.customerSampleItems = [
   <figure>
     <img src="assets/working-examples/ai-release-assurance/AI_Integration_Operations_Shield_Reference_Architecture.png" alt="AI Integration Operations Shield reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI Integration Operations Shield reference architecture from the updated design pack.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI%20Integration%20Operations%20Shield.png" alt="AI Integration Operations Shield implementation roadmap" onerror="handleMissingExampleImage(this)" />
+    <figcaption>AI Integration Operations Shield implementation roadmap from the updated design pack.</figcaption>
   </figure>
 </div>
 <h3>Logical Component Design</h3>
