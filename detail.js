@@ -182,6 +182,31 @@ function renderImplementationRoadmap(image) {
   `;
 }
 
+function renderExecutiveSummaryMarkup(item) {
+  const summaryLine = `<p>${detailEscapeHtml(item.summary)}</p>`;
+  if (!Array.isArray(item.executiveSummary) || !item.executiveSummary.length) return summaryLine;
+
+  const rows = item.executiveSummary
+    .map(
+      (entry) => `
+        <tr>
+          <th scope="row">${detailEscapeHtml(entry.label || "")}</th>
+          <td>${detailEscapeHtml(entry.text || "")}</td>
+        </tr>
+      `,
+    )
+    .join("");
+
+  return `
+    ${summaryLine}
+    <div class="detail-table-wrap">
+      <table class="detail-table">
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
 function shouldRenderGroupedOfferingLayout(item) {
   return item.pattern === "AI" && Boolean(item.roadmapImage);
 }
@@ -290,7 +315,7 @@ function renderGroupedOfferingGrid(item) {
         {
           section: {
             title: "Idea Brief",
-            html: `<p>${detailEscapeHtml(item.summary)}</p>`,
+            html: renderExecutiveSummaryMarkup(item),
           },
         },
         { section: businessProblem },
@@ -500,6 +525,7 @@ function findSampleDetail(params) {
     sourceType:
       sample.sourceType || (sample.status === "Historical scenario" ? "GitHub Drill-down" : "GitHub Repo"),
     summary: sample.summary || sample.function || sample.description,
+    executiveSummary: sample.executiveSummary || null,
     useCase: sample.useCase || sample.description,
     workingExample: sample.workingExample || null,
     roadmapImage: sample.roadmapImage || null,
@@ -539,6 +565,7 @@ function findAssetDetail(params) {
     laneKey: asset.laneKey,
     sourceType: asset.sourceType,
     summary: asset.summary,
+    executiveSummary: asset.executiveSummary || null,
     useCase: asset.useCase,
     workingExample: asset.workingExample || null,
     roadmapImage: asset.roadmapImage || null,

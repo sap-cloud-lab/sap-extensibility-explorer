@@ -324,21 +324,39 @@ window.customerSampleItems = [
         "tagLabel":  "AI",
         "description":  "SAP release and QA teams need risk-based regression scope, release confidence, better automation usage, and clearer QA/CAB decision support based on connected release, transport, defect, test, and process data.",
         "function":  "Deliver AI Release Assurance for SAP by connecting release, transport, defect, test, and process data; applying deterministic rules first; and using AI to rank, explain, and summarize release risk while keeping exclusions, low-confidence mappings, and release approval under human review.",
-        "summary":  "Help SAP release and QA teams prioritize regression testing using actual change impact, process criticality, historical defects, and test coverage.",
+        "summary":  "AI-assisted SAP release assurance: test what matters, reduce regression effort, and release with confidence.",
+        "executiveSummary":  [
+            {
+                "label":  "Purpose",
+                "text":  "Use AI to connect SAP changes, process criticality, historical defects, and test coverage into one release-risk view."
+            },
+            {
+                "label":  "Outcome",
+                "text":  "Help QA and release teams prioritize the right regression scope, reduce unnecessary testing, and support confident go/no-go decisions."
+            },
+            {
+                "label":  "How AI helps",
+                "text":  "AI classifies change impact, identifies similar historical defects, ranks relevant tests, highlights coverage gaps, and explains the release recommendation."
+            },
+            {
+                "label":  "Governance",
+                "text":  "AI remains assistive. Final test exclusions, high-risk decisions, and CAB recommendations stay under human review."
+            }
+        ],
         "useCase":  [
-                        {
-                            "text":  "Help SAP release and QA teams prioritize regression testing using actual change impact, process criticality, historical defects, and test coverage."
-                        },
-                        {
-                            "heading":  "Customer-ready outcome",
-                            "items":  [
-                                          "Risk-based regression scope.",
-                                          "Release confidence view.",
-                                          "Better automation usage.",
-                                          "Clearer QA and CAB decision support."
-                                          ]
-                        }
-                    ],
+            {
+                "text":  "AI-assisted SAP release assurance: test what matters, reduce regression effort, and release with confidence."
+            },
+            {
+                "heading":  "Executive Summary",
+                "items":  [
+                              "Purpose: Use AI to connect SAP changes, process criticality, historical defects, and test coverage into one release-risk view.",
+                              "Outcome: Help QA and release teams prioritize the right regression scope, reduce unnecessary testing, and support confident go/no-go decisions.",
+                              "How AI helps: AI classifies change impact, identifies similar historical defects, ranks relevant tests, highlights coverage gaps, and explains the release recommendation.",
+                              "Governance: AI remains assistive. Final test exclusions, high-risk decisions, and CAB recommendations stay under human review."
+                          ]
+            }
+        ],
         "workingExample":  [
                               {
                                   "html":  `
@@ -975,21 +993,39 @@ window.customerSampleItems = [
         "tagLabel":  "AI",
         "description":  "SAP support flow is slowed by fragmented ticket quality, inconsistent triage, and limited reuse of historical resolution knowledge.",
         "function":  "Deliver AI-Powered AMS Control Tower using this customer-ready approach: Connect ITSM tickets, SAP operations context, knowledge articles, runbooks, and historical resolutions into one AMS decision layer while keeping governance human-led where required.",
-        "summary":  "Use SAP-module-aware AI to triage, deduplicate, route, and enrich SAP support incidents.",
+        "summary":  "AI-powered SAP AMS Control Tower: reduce ticket noise, route incidents right the first time, and accelerate resolution.",
+        "executiveSummary":  [
+            {
+                "label":  "Purpose",
+                "text":  "Use SAP-aware AI to classify, deduplicate, enrich, and route SAP support incidents based on module, process, impact, SLA risk, and historical resolution patterns."
+            },
+            {
+                "label":  "Outcome",
+                "text":  "Reduce ticket bouncing, backlog aging, manual triage effort, and inconsistent support responses."
+            },
+            {
+                "label":  "How AI helps",
+                "text":  "AI identifies duplicate incidents, recommends resolver groups, retrieves similar past resolutions, drafts support notes, and highlights SLA-risk tickets."
+            },
+            {
+                "label":  "Governance",
+                "text":  "AI remains assistive. Low-confidence routing, major incidents, and customer-facing responses stay under human review."
+            }
+        ],
         "useCase":  [
-                        {
-                            "text":  "Use SAP-module-aware AI to triage, deduplicate, route, and enrich SAP support incidents."
-                        },
-                        {
-                            "heading":  "Customer-ready outcome",
-                            "items":  [
-                                          "Faster first response, fewer misroutes, reduced backlog aging, stronger knowledge reuse, and clearer service-manager visibility.",
-                                          "Connect ITSM tickets, SAP operations context, knowledge articles, runbooks, and historical resolutions into one AMS decision layer.",
-                                          "AI remains assistive. Resolver assignment, customer communication, major incidents, and knowledge publication stay under human review.",
-                                          "One or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources."
-                                      ]
-                        }
-                    ],
+            {
+                "text":  "AI-powered SAP AMS Control Tower: reduce ticket noise, route incidents right the first time, and accelerate resolution."
+            },
+            {
+                "heading":  "Executive Summary",
+                "items":  [
+                              "Purpose: Use SAP-aware AI to classify, deduplicate, enrich, and route SAP support incidents based on module, process, impact, SLA risk, and historical resolution patterns.",
+                              "Outcome: Reduce ticket bouncing, backlog aging, manual triage effort, and inconsistent support responses.",
+                              "How AI helps: AI identifies duplicate incidents, recommends resolver groups, retrieves similar past resolutions, drafts support notes, and highlights SLA-risk tickets.",
+                              "Governance: AI remains assistive. Low-confidence routing, major incidents, and customer-facing responses stay under human review."
+                          ]
+            }
+        ],
         "workingExample":  [
                                {
                                    "html":  "\n\u003cp\u003eThe customer starts with One or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eOne or two support towers with stable ticket history, resolver taxonomy, SLA rules, and approved knowledge sources.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI remains assistive. Resolver assignment, customer communication, major incidents, and knowledge publication stay under human review.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
@@ -1340,21 +1376,39 @@ window.customerSampleItems = [
         "tagLabel":  "AI",
         "description":  "Post-go-live teams struggle to convert scattered incidents, alerts, and meeting actions into a reliable stabilization plan.",
         "function":  "Deliver AI Hypercare Stabilization Command Center using this customer-ready approach: Connect incidents, alerts, meeting actions, process context, and ownership into a command-center operating view while keeping governance human-led where required.",
-        "summary":  "Use AI-assisted clustering and daily operating intelligence to stabilize SAP programs after go-live.",
+        "summary":  "AI-powered SAP hypercare: turn go-live noise into prioritized actions, root-cause themes, and faster stabilization.",
+        "executiveSummary":  [
+            {
+                "label":  "Purpose",
+                "text":  "Use AI to consolidate incidents, monitoring alerts, war-room notes, business feedback, and defect signals into one stabilization command center."
+            },
+            {
+                "label":  "Outcome",
+                "text":  "Reduce war-room noise, identify systemic issues earlier, focus teams on the highest-impact actions, and create a smoother transition to steady-state support."
+            },
+            {
+                "label":  "How AI helps",
+                "text":  "AI clusters related incidents, detects recurring themes, maps issues to impacted processes, summarizes daily status, and prioritizes stabilization actions."
+            },
+            {
+                "label":  "Governance",
+                "text":  "AI remains assistive. Executive reporting, severity changes, root-cause conclusions, and AMS handover decisions stay under human review."
+            }
+        ],
         "useCase":  [
-                        {
-                            "text":  "Use AI-assisted clustering and daily operating intelligence to stabilize SAP programs after go-live."
-                        },
-                        {
-                            "heading":  "Customer-ready outcome",
-                            "items":  [
-                                          "Faster issue triage, clearer systemic root causes, stronger sponsor reporting, and cleaner handover into AMS.",
-                                          "Connect incidents, alerts, meeting actions, process context, and ownership into a command-center operating view.",
-                                          "AI supports clustering, summaries, and action suggestions. Incident ownership, escalation, and exit decisions remain human-led.",
-                                          "One go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence."
-                                      ]
-                        }
-                    ],
+            {
+                "text":  "AI-powered SAP hypercare: turn go-live noise into prioritized actions, root-cause themes, and faster stabilization."
+            },
+            {
+                "heading":  "Executive Summary",
+                "items":  [
+                              "Purpose: Use AI to consolidate incidents, monitoring alerts, war-room notes, business feedback, and defect signals into one stabilization command center.",
+                              "Outcome: Reduce war-room noise, identify systemic issues earlier, focus teams on the highest-impact actions, and create a smoother transition to steady-state support.",
+                              "How AI helps: AI clusters related incidents, detects recurring themes, maps issues to impacted processes, summarizes daily status, and prioritizes stabilization actions.",
+                              "Governance: AI remains assistive. Executive reporting, severity changes, root-cause conclusions, and AMS handover decisions stay under human review."
+                          ]
+            }
+        ],
         "workingExample":  [
                                {
                                    "html":  "\n\u003cp\u003eThe customer starts with One go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence.. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eOne go-live wave, defined hypercare window, agreed process taxonomy, and daily command-center cadence.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI supports clustering, summaries, and action suggestions. Incident ownership, escalation, and exit decisions remain human-led.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
@@ -1705,21 +1759,39 @@ window.customerSampleItems = [
         "tagLabel":  "AI",
         "description":  "Customizations and extensions are difficult to assess, govern, and modernize without a consistent policy and evidence-based backlog.",
         "function":  "Deliver Clean Core AI Governance Service using this customer-ready approach: Inventory custom objects and extension patterns, classify them against policy, enrich with usage and business criticality, then recommend remediation paths while keeping governance human-led where required.",
-        "summary":  "Use AI-assisted governance to identify risky customizations and extensions, score clean-core deviations, and prioritize remediation.",
+        "summary":  "AI-assisted clean core governance: identify risky customizations, prioritize remediation, and keep SAP extensibility upgrade-ready.",
+        "executiveSummary":  [
+            {
+                "label":  "Purpose",
+                "text":  "Use AI to classify custom code, extensions, integrations, and deviation patterns against clean-core policy, usage, and business risk."
+            },
+            {
+                "label":  "Outcome",
+                "text":  "Create a fact-based remediation backlog, reduce upgrade friction, improve cloud readiness, and strengthen architecture governance."
+            },
+            {
+                "label":  "How AI helps",
+                "text":  "AI categorizes custom objects, identifies clean-core deviations, recommends remediation paths, flags unused or high-risk extensions, and summarizes architecture-board decisions."
+            },
+            {
+                "label":  "Governance",
+                "text":  "AI remains assistive. Remediation priorities, waivers, exceptions, and target-state design decisions stay with the architecture governance board."
+            }
+        ],
         "useCase":  [
-                        {
-                            "text":  "Use AI-assisted governance to identify risky customizations and extensions, score clean-core deviations, and prioritize remediation."
-                        },
-                        {
-                            "heading":  "Customer-ready outcome",
-                            "items":  [
-                                          "Clearer upgrade readiness, cleaner extension strategy, prioritized modernization backlog, and stronger architecture-board control.",
-                                          "Inventory custom objects and extension patterns, classify them against policy, enrich with usage and business criticality, then recommend remediation paths.",
-                                          "AI supports classification and recommendation. Architecture decisions, waivers, and remediation approvals remain board-owned.",
-                                          "One SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed."
-                                      ]
-                        }
-                    ],
+            {
+                "text":  "AI-assisted clean core governance: identify risky customizations, prioritize remediation, and keep SAP extensibility upgrade-ready."
+            },
+            {
+                "heading":  "Executive Summary",
+                "items":  [
+                              "Purpose: Use AI to classify custom code, extensions, integrations, and deviation patterns against clean-core policy, usage, and business risk.",
+                              "Outcome: Create a fact-based remediation backlog, reduce upgrade friction, improve cloud readiness, and strengthen architecture governance.",
+                              "How AI helps: AI categorizes custom objects, identifies clean-core deviations, recommends remediation paths, flags unused or high-risk extensions, and summarizes architecture-board decisions.",
+                              "Governance: AI remains assistive. Remediation priorities, waivers, exceptions, and target-state design decisions stay with the architecture governance board."
+                          ]
+            }
+        ],
         "workingExample":  [
                                {
                                    "html":  "\n\u003cp\u003eThe customer starts with One SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed.. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eOne SAP landscape or domain with custom object inventory, usage evidence, architecture ownership, and clean-core principles agreed.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI supports classification and recommendation. Architecture decisions, waivers, and remediation approvals remain board-owned.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
@@ -2070,21 +2142,39 @@ window.customerSampleItems = [
         "tagLabel":  "AI",
         "description":  "Integration operations teams lack a unified, business-aware view of failures, probable cause, runbooks, and recurring patterns.",
         "function":  "Deliver AI Integration Operations Shield using this customer-ready approach: Connect Integration Suite logs, Cloud ALM monitoring, ITSM incidents, interface catalog, runbooks, and dependency context into one operations shield while keeping governance human-led where required.",
-        "summary":  "Use AI-assisted operations intelligence to correlate SAP integration failures, dependencies, runbooks, and recurring patterns.",
+        "summary":  "AI-powered SAP integration operations: detect failures faster, explain probable causes, and guide recovery before business impact grows.",
+        "executiveSummary":  [
+            {
+                "label":  "Purpose",
+                "text":  "Use AI to correlate integration logs, error patterns, interface dependencies, incidents, and runbooks into one operations shield for critical SAP integrations."
+            },
+            {
+                "label":  "Outcome",
+                "text":  "Reduce MTTR, repeat incidents, manual troubleshooting effort, and business disruption across high-value interfaces."
+            },
+            {
+                "label":  "How AI helps",
+                "text":  "AI clusters integration errors, ranks probable causes, retrieves relevant runbooks, detects anomalies, identifies recurring issue patterns, and summarizes business impact."
+            },
+            {
+                "label":  "Governance",
+                "text":  "AI remains assistive. Automated recovery actions, sensitive payload handling, major incident decisions, and customer-facing updates stay under human review."
+            }
+        ],
         "useCase":  [
-                        {
-                            "text":  "Use AI-assisted operations intelligence to correlate SAP integration failures, dependencies, runbooks, and recurring patterns."
-                        },
-                        {
-                            "heading":  "Customer-ready outcome",
-                            "items":  [
-                                          "Lower MTTR, clearer probable cause, fewer repeat incidents, better resolver routing, and stronger integration service reliability.",
-                                          "Connect Integration Suite logs, Cloud ALM monitoring, ITSM incidents, interface catalog, runbooks, and dependency context into one operations shield.",
-                                          "AI proposes probable cause and recovery guidance. Production recovery actions, retries, and communication remain human-controlled unless explicitly approved.",
-                                          "Top business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history."
-                                      ]
-                        }
-                    ],
+            {
+                "text":  "AI-powered SAP integration operations: detect failures faster, explain probable causes, and guide recovery before business impact grows."
+            },
+            {
+                "heading":  "Executive Summary",
+                "items":  [
+                              "Purpose: Use AI to correlate integration logs, error patterns, interface dependencies, incidents, and runbooks into one operations shield for critical SAP integrations.",
+                              "Outcome: Reduce MTTR, repeat incidents, manual troubleshooting effort, and business disruption across high-value interfaces.",
+                              "How AI helps: AI clusters integration errors, ranks probable causes, retrieves relevant runbooks, detects anomalies, identifies recurring issue patterns, and summarizes business impact.",
+                              "Governance: AI remains assistive. Automated recovery actions, sensitive payload handling, major incident decisions, and customer-facing updates stay under human review."
+                          ]
+            }
+        ],
         "workingExample":  [
                                {
                                    "html":  "\n\u003cp\u003eThe customer starts with Top business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history.. The service connects approved evidence sources, applies deterministic rules first, and uses AI for assisted recommendations with human review.\u003c/p\u003e\n\u003cdiv class=\"detail-table-wrap\"\u003e\n  \u003ctable class=\"detail-table\"\u003e\n    \u003cthead\u003e\u003ctr\u003e\u003cth\u003eDelivery lens\u003c/th\u003e\u003cth\u003eCustomer-ready view\u003c/th\u003e\u003c/tr\u003e\u003c/thead\u003e\n    \u003ctbody\u003e\n      \u003ctr\u003e\u003ctd\u003eRecommended first scope\u003c/td\u003e\u003ctd\u003eTop business-critical interfaces with defined owners, SLAs, message-monitoring access, and runbook history.\u003c/td\u003e\u003c/tr\u003e\n      \u003ctr\u003e\u003ctd\u003eGovernance\u003c/td\u003e\u003ctd\u003eAI proposes probable cause and recovery guidance. Production recovery actions, retries, and communication remain human-controlled unless explicitly approved.\u003c/td\u003e\u003c/tr\u003e\n    \u003c/tbody\u003e\n  \u003c/table\u003e\n\u003c/div\u003e\n                                  "
