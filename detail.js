@@ -55,6 +55,84 @@ function handleMissingExampleImage(image) {
 
 window.handleMissingExampleImage = handleMissingExampleImage;
 
+let activeImagePreviewTrigger = null;
+
+function getImagePreviewCaption(image) {
+  return image.closest("figure")?.querySelector("figcaption")?.textContent.trim() || image.alt || "Image preview";
+}
+
+function openDetailImageLightbox(image) {
+  const lightbox = document.getElementById("detailImageLightbox");
+  const previewImage = document.getElementById("detailImageLightboxImage");
+  const caption = document.getElementById("detailImageLightboxTitle");
+  if (!lightbox || !previewImage || !caption) return;
+
+  const captionText = getImagePreviewCaption(image);
+  activeImagePreviewTrigger = image;
+  previewImage.src = image.currentSrc || image.src;
+  previewImage.alt = image.alt || captionText;
+  caption.textContent = captionText;
+  lightbox.hidden = false;
+  document.body.classList.add("image-lightbox-open");
+  lightbox.querySelector(".image-lightbox-close")?.focus();
+}
+
+function closeDetailImageLightbox() {
+  const lightbox = document.getElementById("detailImageLightbox");
+  const previewImage = document.getElementById("detailImageLightboxImage");
+  if (!lightbox || lightbox.hidden) return;
+
+  lightbox.hidden = true;
+  if (previewImage) previewImage.removeAttribute("src");
+  document.body.classList.remove("image-lightbox-open");
+  activeImagePreviewTrigger?.focus?.();
+  activeImagePreviewTrigger = null;
+}
+
+function enhanceDetailImagesForPreview() {
+  document.querySelectorAll(".detail-page img").forEach((image) => {
+    image.classList.add("previewable-image");
+    image.setAttribute("role", "button");
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("aria-label", `${getImagePreviewCaption(image)} - open larger preview`);
+  });
+}
+
+function bindDetailImageLightbox() {
+  const lightbox = document.getElementById("detailImageLightbox");
+  if (!lightbox) return;
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    const closeControl = event.target.closest("[data-image-lightbox-close]");
+    if (closeControl && lightbox.contains(closeControl)) {
+      closeDetailImageLightbox();
+      return;
+    }
+
+    const image = event.target.closest(".detail-page img");
+    if (!image || image.closest(".image-lightbox")) return;
+
+    event.preventDefault();
+    openDetailImageLightbox(image);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDetailImageLightbox();
+      return;
+    }
+
+    if ((event.key === "Enter" || event.key === " ") && event.target instanceof Element) {
+      const image = event.target.closest(".previewable-image");
+      if (!image) return;
+      event.preventDefault();
+      openDetailImageLightbox(image);
+    }
+  });
+}
+
 function renderDetailContent(elementId, content) {
   const target = document.getElementById(elementId);
   if (!target) return;
@@ -559,6 +637,7 @@ function renderDetailPage() {
       .join("");
     renderImplementationRoadmap(item.roadmapImage);
     renderSourceLinks(item);
+    enhanceDetailImagesForPreview();
 
     document.querySelectorAll(".top-nav a").forEach((link) => {
       link.classList.remove("active");
@@ -577,6 +656,7 @@ function renderDetailPage() {
   renderCollapsibleSections(item.collapsibleSections, item);
 
   renderSourceLinks(item);
+  enhanceDetailImagesForPreview();
 
   document.querySelectorAll(".top-nav a").forEach((link) => {
     link.classList.remove("active");
@@ -586,5 +666,6 @@ function renderDetailPage() {
 }
 
 if (document.body.dataset.page === "detail") {
+  bindDetailImageLightbox();
   renderDetailPage();
 }

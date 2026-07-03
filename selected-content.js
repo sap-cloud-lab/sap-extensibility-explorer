@@ -501,8 +501,6 @@ window.customerSampleItems = [
                     "html":  `
 <h3>Next Steps</h3>
 <ul><li>Confirm SAP Cloud ALM, Tricentis, Jira/ServiceNow, Git, and release-source access.</li><li>Validate the minimum viable mapping between changed objects, business processes, and test cases.</li><li>Agree mandatory-test rules and approval thresholds before AI recommendations are presented to release governance.</li><li>Prepare the first release candidate and baseline current regression scope, duration, defect leakage, and automation usage.</li></ul>
-<h3>Reference Links For Customer Validation</h3>
-<ul><li><a href="https://help.sap.com/docs/cloud-alm/apis/about" target="_blank" rel="noreferrer">SAP Cloud ALM API Guide</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/test-preparation" target="_blank" rel="noreferrer">SAP Cloud ALM Test Preparation</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/test-execution" target="_blank" rel="noreferrer">SAP Cloud ALM Test Execution</a></li><li><a href="https://help.sap.com/docs/cloud-alm/apis/test-management-analytics-api" target="_blank" rel="noreferrer">SAP Cloud ALM Test Execution Analytics API</a></li><li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core / generative AI hub</a></li></ul>
                     `
                 }
                             ],
@@ -894,8 +892,6 @@ window.customerSampleItems = [
                     "html":  `
 <h3>Next Steps</h3>
 <ul><li>Confirm ticket-source access, ticket fields, worklog availability, and closure-code reliability.</li><li>Validate the resolver group taxonomy and clarify ownership for cross-module issues.</li><li>Define which ticket categories can be auto-routed, which need human review, and which must always escalate.</li><li>Review PII, HR, payroll, security, and executive-impact tickets for stricter handling rules.</li></ul>
-<h3>Reference Links For Customer Validation</h3>
-<ul><li><a href="https://help.sap.com/docs/cloud-alm/apis/about" target="_blank" rel="noreferrer">SAP Cloud ALM API Guide</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/service-level-reporting" target="_blank" rel="noreferrer">SAP Cloud ALM Service Level Reporting</a></li><li><a href="https://help.sap.com/docs/build-process-automation/sap-build-process-automation/using-sap-build-process-automation" target="_blank" rel="noreferrer">SAP Build Process Automation</a></li><li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core / generative AI hub</a></li><li><a href="https://help.sap.com/docs/sap-ai-core/generative-ai/prompt-registry" target="_blank" rel="noreferrer">SAP AI Core Prompt Registry</a></li></ul>
                     `
                 }
                             ],
@@ -1287,8 +1283,6 @@ window.customerSampleItems = [
                     "html":  `
 <h3>Next Steps</h3>
 <ul><li>Confirm hypercare period, go-live wave scope, critical process list, and owner matrix.</li><li>Validate availability of incident, monitoring, notes, and feedback data sources.</li><li>Agree executive pack approval flow and stakeholder distribution list.</li><li>Define exit criteria, unresolved issue handover rules, and AMS onboarding format.</li></ul>
-<h3>Reference Links For Customer Validation</h3>
-<ul><li><a href="https://help.sap.com/docs/cloud-alm/apis/about" target="_blank" rel="noreferrer">SAP Cloud ALM API Guide</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/alert-event-management" target="_blank" rel="noreferrer">SAP Cloud ALM Monitoring and Alerting</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/service-level-reporting" target="_blank" rel="noreferrer">SAP Cloud ALM Service Level Reporting</a></li><li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core / generative AI hub</a></li><li><a href="https://help.sap.com/docs/build-process-automation/sap-build-process-automation/using-sap-build-process-automation" target="_blank" rel="noreferrer">SAP Build Process Automation</a></li></ul>
                     `
                 }
                             ],
@@ -1680,8 +1674,6 @@ window.customerSampleItems = [
                     "html":  `
 <h3>Next Steps</h3>
 <ul><li>Confirm scope: system, landscape, business domain, and transformation objective.</li><li>Validate availability of code inventory, transport history, usage metrics, and architecture standards.</li><li>Agree deviation scoring rules and waiver authority before presenting risk heatmaps.</li><li>Define output format for design authority decisions, modernization backlog, and owner accountability.</li></ul>
-<h3>Reference Links For Customer Validation</h3>
-<ul><li><a href="https://help.sap.com/docs/abap-cloud/developer-guide-from-classic-abap-to-abap-cloud/clean-core-extensibility-and-abap-based-extensions" target="_blank" rel="noreferrer">SAP Clean Core Extensibility and ABAP-Based Extensions</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/extensibility" target="_blank" rel="noreferrer">SAP Cloud ALM Extensibility / Clean Core Level</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/system-view" target="_blank" rel="noreferrer">SAP Cloud ALM System View</a></li><li><a href="https://help.sap.com/docs/cloud-alm/setup-administration/integrating-sap-leanix" target="_blank" rel="noreferrer">SAP LeanIX and SAP Cloud ALM Integration</a></li><li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core / generative AI hub</a></li></ul>
                     `
                 }
                             ],
@@ -2073,8 +2065,6 @@ window.customerSampleItems = [
                     "html":  `
 <h3>Next Steps</h3>
 <ul><li>Confirm critical interface list, process criticality, SLA tiers, source/target ownership, and escalation matrix.</li><li>Validate availability of message logs, error metadata, retry outcomes, and incident references.</li><li>Agree payload masking rules and automated action approval thresholds.</li><li>Define how recurring failure patterns become backlog items and how ownership is tracked.</li></ul>
-<h3>Reference Links For Customer Validation</h3>
-<ul><li><a href="https://help.sap.com/docs/integration-suite/sap-integration-suite/message-processing-logs" target="_blank" rel="noreferrer">SAP Integration Suite Message Processing Logs</a></li><li><a href="https://help.sap.com/docs/cloud-alm/apis/integration-monitoring-analytics-api" target="_blank" rel="noreferrer">SAP Cloud ALM Integration Monitoring Analytics API</a></li><li><a href="https://help.sap.com/docs/sap-integration-suite/advanced-event-mesh/what-is-sap-integration-suite-advanced-event-mesh" target="_blank" rel="noreferrer">SAP Integration Suite Advanced Event Mesh</a></li><li><a href="https://help.sap.com/docs/cloud-alm/applicationhelp/alert-event-management" target="_blank" rel="noreferrer">SAP Cloud ALM Alerting</a></li><li><a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5" target="_blank" rel="noreferrer">SAP AI Core / generative AI hub</a></li></ul>
                     `
                 }
                             ],
