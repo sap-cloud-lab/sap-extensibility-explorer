@@ -373,6 +373,41 @@ window.customerSampleItems = [
                                       ]
                         }
                     ],
+        "workingExample":  [
+                               {
+                                   "html":  `
+                                     <div class="working-example">
+                                       <p>The finance team needed a reporting pack that matched the monthly review process, but the standard SAP Review Booklet did not fully reflect its internal balance sheet, P&amp;L, variance, and drilldown structure.</p>
+                                       <p>Instead of building a custom app or relying on Excel, the team used the Review Booklet Designer inside Manage KPIs and Reports. They copied the SAP-delivered Review Booklet, adapted the layout, configured business pages, rows, columns, filters, variables, styles, and navigation, then published it as a Fiori reporting tile.</p>
+                                       <p>The result was a clean-core, key-user extensibility solution where finance users could open one guided booklet, apply common filters, review live SAP data, and drill into details during month-end reporting.</p>
+                                       <div class="working-example-gallery" aria-label="Review Booklet working example screenshots">
+                                         <figure>
+                                           <img src="assets/working-examples/review-booklet/01-specialized-group-financial-statements.png" alt="Specialized Group Financial Statements Review Booklet with common filters and mirror report tabs." onerror="handleMissingExampleImage(this)" />
+                                           <figcaption>Review Booklet opened as a guided Fiori reporting tile with shared filters.</figcaption>
+                                         </figure>
+                                         <figure>
+                                           <img src="assets/working-examples/review-booklet/02-review-pages-overview.png" alt="Review Booklet pages showing overview, profit and loss by time, margin waterfall, and profit center waterfall views." onerror="handleMissingExampleImage(this)" />
+                                           <figcaption>Business pages arranged for overview, P&amp;L, variance, and drilldown review.</figcaption>
+                                         </figure>
+                                         <figure>
+                                           <img src="assets/working-examples/review-booklet/03-chart-and-layout-options.png" alt="Review Booklet examples with chart type selection, assets and liabilities layout, and separate rows and columns." onerror="handleMissingExampleImage(this)" />
+                                           <figcaption>Layout options for tables, charts, row sets, column sets, and split reporting views.</figcaption>
+                                         </figure>
+                                       </div>
+                                       <h3>How it was implemented in simple steps</h3>
+                                       <ol class="working-example-steps">
+                                         <li>Confirmed the reporting gap: the standard booklet layout did not match business review needs.</li>
+                                         <li>Selected Review Booklet Designer as the standard SAP in-app extensibility option.</li>
+                                         <li>Copied the SAP-delivered Group Financial Statements Review Booklet.</li>
+                                         <li>Configured custom business pages for Balance Sheet, P&amp;L, Variance Review, and Drilldown.</li>
+                                         <li>Assigned analytical queries, row sets, column sets, filters, variables, semantic styles, and navigation targets.</li>
+                                         <li>Tested the booklet with real reporting periods, authorizations, filters, and reconciled totals.</li>
+                                         <li>Published the final version as a Fiori tile for business users.</li>
+                                       </ol>
+                                     </div>
+                                   `
+                               }
+                           ],
         "whenToUse":  [
                           {
                               "text":  "Use this when finance, procurement, sales, operations, or management reporting teams need a custom analytical reporting layout inside SAP Fiori."

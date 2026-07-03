@@ -26,6 +26,7 @@ For each accelerator, keep the core context together:
 - `title`
 - `summary`
 - `useCase`
+- `workingExample`
 - `whenToUse`
 - `implementation`
 - `collapsibleSections`
@@ -59,9 +60,13 @@ Avoid duplicate download sections. Put export controls directly inside the relev
 
 When giving the user a status update or final answer for this project, include the current local site URL.
 
+Make the site URL clickable in Markdown and use the working `file:///` URL only. Do not provide `http://127.0.0.1:5500/...` unless the user explicitly starts and confirms a local static server. When referencing upload folders or local repo locations, make those folder/file paths clickable too.
+
 Current Review Booklet detail URL:
 
 `file:///C:/Users/f821895/OneDrive%20-%20Fortescue%20Metals%20Group/Documents/GitHub/sap-extensibility-explorer/detail.html?lane=inapp&id=custom-layout-for-review-booklets-using-manage-kpi-and-reports-app&from=accelerators`
+
+If a browser link cannot be opened from Codex, provide the working URL in a copyable code block in the response. Do not add copy URL controls to the portal unless the user explicitly asks for an in-app control.
 
 ## Git Rule
 

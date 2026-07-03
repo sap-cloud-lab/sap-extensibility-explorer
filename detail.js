@@ -30,6 +30,7 @@ function sampleMatchesDetailId(sample, sampleId) {
 
 function renderDetailBlock(block) {
   if (typeof block === "string") return `<p>${detailEscapeHtml(block)}</p>`;
+  if (block.html) return block.html;
 
   const heading = block.heading ? `<h3>${detailEscapeHtml(block.heading)}</h3>` : "";
   const text = block.text ? `<p>${detailEscapeHtml(block.text)}</p>` : "";
@@ -40,6 +41,16 @@ function renderDetailBlock(block) {
   return `${heading}${text}${items}`;
 }
 
+function handleMissingExampleImage(image) {
+  const gallery = image.closest(".working-example-gallery");
+  const figure = image.closest("figure");
+
+  if (figure) figure.remove();
+  if (gallery && !gallery.querySelector("figure")) gallery.hidden = true;
+}
+
+window.handleMissingExampleImage = handleMissingExampleImage;
+
 function renderDetailContent(elementId, content) {
   const target = document.getElementById(elementId);
   if (!target) return;
@@ -47,6 +58,15 @@ function renderDetailContent(elementId, content) {
   target.innerHTML = Array.isArray(content)
     ? content.map(renderDetailBlock).join("")
     : `<p>${detailEscapeHtml(content || "")}</p>`;
+}
+
+function renderOptionalDetailContent(panelId, elementId, content) {
+  const panel = document.getElementById(panelId);
+  if (!panel) return;
+
+  const hasContent = Array.isArray(content) ? content.length > 0 : Boolean(content);
+  panel.hidden = !hasContent;
+  if (hasContent) renderDetailContent(elementId, content);
 }
 
 function renderImplementationStep(step) {
@@ -93,7 +113,8 @@ function renderExcelIcon() {
 }
 
 function renderSectionExportButtons(section, item) {
-  if (!window.cloudAlmExport || !Array.isArray(section.exports) || !section.exports.length) return "";
+  const emptyExportSlot = `<div class="accordion-export-bar accordion-export-bar-empty" aria-hidden="true"></div>`;
+  if (!window.cloudAlmExport || !Array.isArray(section.exports) || !section.exports.length) return emptyExportSlot;
 
   const exportOptions = new Map(
     window.cloudAlmExport.getExportOptions(item).map((option) => [option.kind, option]),
@@ -118,7 +139,7 @@ function renderSectionExportButtons(section, item) {
     )
     .join("");
 
-  return buttons ? `<div class="accordion-export-bar">${buttons}</div>` : "";
+  return buttons ? `<div class="accordion-export-bar">${buttons}</div>` : emptyExportSlot;
 }
 
 function bindCloudAlmExportButtons(container, item) {
@@ -148,8 +169,8 @@ function renderCollapsibleSections(sections, item) {
     <div class="detail-accordion-list">
       ${sections
         .map(
-          (section, index) => `
-            <details class="detail-accordion" ${index === 0 ? "open" : ""}>
+          (section) => `
+            <details class="detail-accordion">
               <summary>
                 <span>${detailEscapeHtml(section.title)}</span>
                 ${renderSectionExportButtons(section, item)}
@@ -222,6 +243,7 @@ function findSampleDetail(params) {
       sample.sourceType || (sample.status === "Historical scenario" ? "GitHub Drill-down" : "GitHub Repo"),
     summary: sample.summary || sample.function || sample.description,
     useCase: sample.useCase || sample.description,
+    workingExample: sample.workingExample || null,
     whenToUse:
       sample.whenToUse ||
       (laneKey === "inapp"
@@ -259,6 +281,7 @@ function findAssetDetail(params) {
     sourceType: asset.sourceType,
     summary: asset.summary,
     useCase: asset.useCase,
+    workingExample: asset.workingExample || null,
     whenToUse: asset.whenToUse,
     implementation: asset.implementation,
     collapsibleSections: asset.collapsibleSections || [],
@@ -372,6 +395,7 @@ function renderDetailPage() {
   document.getElementById("detailTitle").textContent = item.title;
   document.getElementById("detailSummary").textContent = item.summary;
   renderDetailContent("detailUseCase", item.useCase);
+  renderOptionalDetailContent("detailWorkingExamplePanel", "detailWorkingExample", item.workingExample);
   renderDetailContent("detailWhenToUse", item.whenToUse);
   document.getElementById("implementationSteps").innerHTML = item.implementation
     .map(renderImplementationStep)
