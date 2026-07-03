@@ -232,7 +232,10 @@ function renderGroupedPanel(title, sections, item) {
   `;
 }
 
-function renderImplementationPanelMarkup() {
+function renderImplementationPanelMarkup(item) {
+  const roadmapDetail = findDetailSection(item, "Implementation Roadmap Detail");
+  const dataFoundation = findDetailSection(item, "Data Foundation Required");
+
   return `
     <article class="detail-panel implementation-panel">
       <h2>Implementation Plan</h2>
@@ -244,6 +247,8 @@ function renderImplementationPanelMarkup() {
         <h3 id="implementationRoadmapHeading">Implementation Roadmap</h3>
         <div id="implementationRoadmap"></div>
       </section>
+      ${renderGroupedSubsection(roadmapDetail, item)}
+      ${renderGroupedSubsection(dataFoundation, item)}
     </article>
   `;
 }
@@ -262,13 +267,20 @@ function renderSourcePanelMarkup() {
 }
 
 function renderGroupedOfferingGrid(item) {
+  const businessProblem = findDetailSection(item, "Business Problem");
+  const solutionOverview = findDetailSection(item, "Solution Overview");
   const designDimensions = findDetailSection(item, "Design Dimensions");
   const solutionApplicability = findDetailSection(item, "Solution Provides And Applicability");
   const readiness = findDetailSection(item, "Readiness Conditions");
   const architecture = findDetailSection(item, "Architecture And Component Design");
+  const sapCapabilityAlignment = findDetailSection(item, "SAP Capability Alignment");
+  const aiCapabilityDesign = findDetailSection(item, "AI Capability Design");
+  const governanceModel = findDetailSection(item, "Governance And Human Review Model");
   const nonFunctional = findDetailSection(item, "Non-Functional Requirements");
   const stack = findDetailSection(item, "Suggested Build Stack");
+  const dataIntegrationDetail = findDetailSection(item, "Data And Integration Detail");
   const cloudAlm = findDetailSection(item, "Cloud ALM Export Package");
+  const customerReadiness = findDetailSection(item, "Customer Readiness Checks");
   const validation = findDetailSection(item, "Next Steps And Sources");
 
   document.querySelector(".detail-grid").innerHTML = `
@@ -281,19 +293,31 @@ function renderGroupedOfferingGrid(item) {
             html: `<p>${detailEscapeHtml(item.summary)}</p>`,
           },
         },
+        { section: businessProblem },
+        { section: solutionOverview },
         { section: designDimensions, options: { omitLeadingParagraph: true } },
         { section: solutionApplicability },
         { section: readiness },
       ],
       item,
     )}
-    ${renderGroupedPanel("Architecture Definition", [{ section: architecture }], item)}
-    ${renderImplementationPanelMarkup()}
+    ${renderGroupedPanel(
+      "Architecture Definition",
+      [
+        { section: architecture },
+        { section: sapCapabilityAlignment },
+        { section: aiCapabilityDesign },
+        { section: governanceModel },
+      ],
+      item,
+    )}
+    ${renderImplementationPanelMarkup(item)}
     ${renderGroupedPanel(
       "Controls And Stack",
       [
         { section: nonFunctional },
         { section: stack },
+        { section: dataIntegrationDetail },
       ],
       item,
     )}
@@ -301,6 +325,7 @@ function renderGroupedOfferingGrid(item) {
       "Validation",
       [
         { section: cloudAlm },
+        { section: customerReadiness },
         { section: validation },
       ],
       item,

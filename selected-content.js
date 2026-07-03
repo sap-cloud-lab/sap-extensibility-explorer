@@ -322,34 +322,33 @@ window.customerSampleItems = [
         "pattern":  "AI",
         "category":  "AI",
         "tagLabel":  "AI",
-        "description":  "Broad SAP regression cycles continue because change impact, process criticality, test assets, and defect history are not connected in one decision view.",
-        "function":  "Deliver AI Release Assurance for SAP on SAP Cloud ALM, SAP Test Automation by Tricentis, SAP BTP, SAP AI Foundation / generative AI hub, optional Jira, ServiceNow, Git, and SAP Signavio context. AI capabilities: Impact analysis, classification, test prioritization, defect-risk prediction, summarization, recommendation generation.",
-        "summary":  "An AI-assisted release assurance service that analyzes changes, historical defects, critical business processes, and test assets to prioritize the smallest viable regression scope while improving release confidence.",
+        "description":  "SAP release and QA teams need risk-based regression scope, release confidence, better automation usage, and clearer QA/CAB decision support based on connected release, transport, defect, test, and process data.",
+        "function":  "Deliver AI Release Assurance for SAP by connecting release, transport, defect, test, and process data; applying deterministic rules first; and using AI to rank, explain, and summarize release risk while keeping exclusions, low-confidence mappings, and release approval under human review.",
+        "summary":  "Help SAP release and QA teams prioritize regression testing using actual change impact, process criticality, historical defects, and test coverage.",
         "useCase":  [
                         {
-                            "text":  "An AI-assisted release assurance service that analyzes changes, historical defects, critical business processes, and test assets to prioritize the smallest viable regression scope while improving release confidence."
+                            "text":  "Help SAP release and QA teams prioritize regression testing using actual change impact, process criticality, historical defects, and test coverage."
                         },
                         {
-                            "heading":  "Solution Provides",
+                            "heading":  "Customer-ready outcome",
                             "items":  [
-                                          "A release-risk view that connects transports, change records, business processes, defects, and test assets.",
-                                          "A recommended regression scope split into mandatory, recommended, optional, and excluded-with-rationale tests.",
-                                          "Automation coverage visibility so available automated regression assets are used before manual effort is assigned.",
-                                          "A release confidence view for QA leads, application owners, release managers, and CAB stakeholders.",
-                                          "An audit-ready rationale showing why each high-risk process or test was included, excluded, or escalated."
+                                          "Risk-based regression scope.",
+                                          "Release confidence view.",
+                                          "Better automation usage.",
+                                          "Clearer QA and CAB decision support."
                                           ]
                         }
                     ],
         "workingExample":  [
                               {
                                   "html":  `
-<p>The updated design pack positions this as a customer-ready service offering with a practical MVP path and a productized expansion path.</p>
+<p>The customer starts with one SAP domain, one release train, and representative history for changes, tests, and defects. The service connects release evidence, applies rules for mandatory and high-risk tests, then uses AI to rank candidate tests and explain residual risk.</p>
 <div class="detail-table-wrap">
   <table class="detail-table">
-    <thead><tr><th>Delivery lens</th><th>Design-pack view</th></tr></thead>
+    <thead><tr><th>Delivery lens</th><th>Customer-ready view</th></tr></thead>
     <tbody>
-      <tr><td>MVP target</td><td>Focused on one SAP domain, a representative change history window, and risk-based regression prioritization for one release train.</td></tr>
-      <tr><td>Productized version</td><td>Reusable connectors, benchmark library, release scorecards, and multi-landscape release analytics.</td></tr>
+      <tr><td>Recommended first scope</td><td>One SAP domain, one release train, and a representative history of changes, tests, and defects.</td></tr>
+      <tr><td>Governance</td><td>AI remains assistive. Test exclusions, low-confidence mappings, residual risk, and release approval stay under human review.</td></tr>
     </tbody>
   </table>
 </div>
@@ -357,66 +356,94 @@ window.customerSampleItems = [
                               }
                           ],
         "whenToUse":  [
-                         "Release, change, defect, and test execution data can be connected from SAP Cloud ALM, SAP Test Automation by Tricentis, Jira, ServiceNow, Git, or equivalent sources.",
-                         "The customer runs recurring SAP releases where regression effort and release confidence are active governance topics.",
-                         "Business process criticality is known or can be confirmed with process owners during solution setup.",
-                         "The customer wants defensible scope optimization, not blind regression reduction."
+                         "Release scope, transport, defect, test, and process-criticality data can be connected from approved sources.",
+                         "Regression cycles are broad, copied from prior releases, or not shaped by current change risk.",
+                         "Technical changes are not consistently translated into business-process impact.",
+                         "QA, release owners, or CAB need a defensible residual-risk view before go/no-go decisions."
                          ],
         "implementation":  [
-                              "Stand up the BTP application shell, secure destinations, and integration connector pattern.",
-                              "Create a canonical model linking releases, transports, changed objects, processes, test cases, defects, incidents, and approvals.",
-                              "Implement deterministic object-to-process and process-to-test rules before AI scoring is activated.",
-                              "Configure scoring logic using historical change, defect, incident, criticality, and coverage patterns.",
-                              "Build dashboard views for release risk, recommended scope, automation coverage, residual risk, and approval status.",
-                              "Run the first controlled release cycle, capture overrides, compare recommendation quality, and tune scoring thresholds."
+                              "Confirm pilot scope, release train, users, and decision owners.",
+                              "Assess release, test, defect, transport, and process data maturity.",
+                              "Define the canonical entity model.",
+                              "Stand up SAP BTP application shell.",
+                              "Configure SAP Cloud ALM, test, defect, and DevOps connectors.",
+                              "Implement deterministic rules first.",
+                              "Add AI-assisted ranking and recommendation explanation.",
+                              "Build release dashboard and QA workbench.",
+                              "Validate against a historical release.",
+                              "Run live pilot with human review."
                               ],
         "roadmapImage":  {
                              "src":  "assets/working-examples/ai-release-assurance/Implementation%20Roadmap_AI%20Release%20Assurance%20for%20SAP.png",
                              "alt":  "AI Release Assurance for SAP implementation roadmap",
-                             "caption":  "AI Release Assurance for SAP implementation roadmap from the updated design pack."
+                             "caption":  "AI Release Assurance for SAP implementation roadmap from the customer-ready solution design pack."
                          },
         "collapsibleSections":  [
                 {
-                    "title":  "Design Dimensions",
+                    "title":  "Business Problem",
                     "html":  `
-<p>An AI-assisted release assurance service that analyzes changes, historical defects, critical business processes, and test assets to prioritize the smallest viable regression scope while improving release confidence.</p>
 <div class="detail-table-wrap">
   <table class="detail-table">
-    <thead><tr><th>Design dimension</th><th>Solution detail</th></tr></thead>
+    <thead><tr><th>Problem area</th><th>Current situation</th><th>Business impact</th></tr></thead>
     <tbody>
-      <tr><td>Benefits</td><td>Cuts regression effort; improves release quality; supports transparent risk-based release decisions; raises automation asset utilization.</td></tr>
-      <tr><td>Target customers</td><td>CIOs, QA directors, release managers, application owners, S/4HANA program leads, AMS release governance teams.</td></tr>
-      <tr><td>Problem solved</td><td>Broad SAP regression cycles continue because change impact, process criticality, test assets, and defect history are not connected in one decision view.</td></tr>
-      <tr><td>Required SAP / technology tools</td><td>SAP Cloud ALM, SAP Test Automation by Tricentis, SAP BTP, SAP AI Foundation / generative AI hub, optional Jira, ServiceNow, Git, and SAP Signavio context.</td></tr>
-      <tr><td>Data required</td><td>Transport and change records, defect history, test catalog, execution history, process criticality, release calendar, production incidents, solution documentation.</td></tr>
-      <tr><td>AI capability used</td><td>Impact analysis, classification, test prioritization, defect-risk prediction, summarization, recommendation generation.</td></tr>
-      <tr><td>MVP target</td><td>Focused on one SAP domain, a representative change history window, and risk-based regression prioritization for one release train.</td></tr>
-      <tr><td>Productized version</td><td>Reusable connectors, benchmark library, release scorecards, and multi-landscape release analytics.</td></tr>
+      <tr><td>Fragmented release evidence</td><td>Release scope, transports, tests, defects, and process criticality sit across separate tools or spreadsheets.</td><td>Slow impact assessment and inconsistent release decisions.</td></tr>
+      <tr><td>Broad regression cycles</td><td>Regression packs are often copied from prior releases instead of being shaped by current change risk.</td><td>Longer test cycles and avoidable QA effort.</td></tr>
+      <tr><td>Weak change-to-process traceability</td><td>Technical changes are not always connected to the business process they may affect.</td><td>High-risk process impact can be missed.</td></tr>
+      <tr><td>Automation not impact-led</td><td>Automated tests may exist, but selection is not always driven by release impact.</td><td>Lower automation value and repeated manual effort.</td></tr>
+      <tr><td>Unclear residual risk</td><td>Untested areas and accepted risks are not always visible to QA, release owners, or CAB.</td><td>Go/no-go decisions are harder to defend.</td></tr>
     </tbody>
   </table>
 </div>
                     `
                 },
                 {
-                    "title":  "Solution Provides And Applicability",
+                    "title":  "Solution Overview",
                     "html":  `
-<h3>Solution Provides</h3>
-<ul><li>A release-risk view that connects transports, change records, business processes, defects, and test assets.</li><li>A recommended regression scope split into mandatory, recommended, optional, and excluded-with-rationale tests.</li><li>Automation coverage visibility so available automated regression assets are used before manual effort is assigned.</li><li>A release confidence view for QA leads, application owners, release managers, and CAB stakeholders.</li><li>An audit-ready rationale showing why each high-risk process or test was included, excluded, or escalated.</li></ul>
-<h3>Applicability</h3>
-<ul><li>Release, change, defect, and test execution data can be connected from SAP Cloud ALM, SAP Test Automation by Tricentis, Jira, ServiceNow, Git, or equivalent sources.</li><li>The customer runs recurring SAP releases where regression effort and release confidence are active governance topics.</li><li>Business process criticality is known or can be confirmed with process owners during solution setup.</li><li>The customer wants defensible scope optimization, not blind regression reduction.</li></ul>
+<h3>What We Are Providing</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Solution component</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Risk &amp; Impact Engine</td><td>Central engine that links changes to process impact, test coverage, historical issues, and release risk.</td></tr>
+      <tr><td>Rules layer</td><td>Protects mandatory testing and creates an explainable baseline before AI recommendations are used.</td></tr>
+      <tr><td>AI-assisted layer</td><td>Classifies ambiguous changes, ranks candidate tests, finds similar past issues, and drafts release rationale.</td></tr>
+      <tr><td>Human review layer</td><td>Routes exclusions, low-confidence mappings, and residual-risk acceptance to accountable owners.</td></tr>
+      <tr><td>Release decision view</td><td>Provides release dashboard, recommended regression scope, coverage gaps, and CAB/QA summary.</td></tr>
+    </tbody>
+  </table>
+</div>
+<h3>What The Solution Delivers</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Deliverable</th><th>Customer value</th></tr></thead>
+    <tbody>
+      <tr><td>Release risk view</td><td>One view of release-level, change-level, and process-level risk.</td></tr>
+      <tr><td>Prioritized regression scope</td><td>Tests grouped as must-test, should-test, optional, or excluded with rationale.</td></tr>
+      <tr><td>Impacted process view</td><td>Changed objects linked to business processes, interfaces, roles, and test coverage.</td></tr>
+      <tr><td>Coverage visibility</td><td>Manual and automated coverage shown against impacted processes and critical changes.</td></tr>
+      <tr><td>Residual risk explanation</td><td>Untested high-risk areas, reasons, and required approvals are visible.</td></tr>
+      <tr><td>CAB / QA recommendation pack</td><td>Business-readable release summary for governance and go/no-go discussion.</td></tr>
+    </tbody>
+  </table>
+</div>
                     `
                 },
                 {
-                    "title":  "Readiness Conditions",
+                    "title":  "Design Dimensions",
                     "html":  `
+<p>Customer-facing solution dimensions from the AI Release Assurance solution design pack.</p>
 <div class="detail-table-wrap">
   <table class="detail-table">
-    <thead><tr><th>Readiness condition observed</th><th>Recommended action before activation</th></tr></thead>
+    <thead><tr><th>Design dimension</th><th>Solution detail</th></tr></thead>
     <tbody>
-      <tr><td>No reliable test catalog or meaningful execution history exists.</td><td>Establish a minimum test inventory, execution baseline, and test-to-process mapping before activating scope optimization.</td></tr>
-      <tr><td>Transport or change records are not traceable to business scope.</td><td>Create a canonical change-to-object and object-to-process mapping layer as the first remediation action.</td></tr>
-      <tr><td>Defect history is unclassified.</td><td>Normalize defect categories, severity, resolver group, process, and component labels before using defect-risk signals.</td></tr>
-      <tr><td>Mandatory regulatory testing is fixed.</td><td>Keep mandatory tests rule-driven; use AI to explain, sequence, and supplement rather than remove mandatory coverage.</td></tr>
+      <tr><td>Benefits</td><td>Reduce unnecessary regression effort; improve release confidence; increase automation usage; support transparent QA/CAB decisions.</td></tr>
+      <tr><td>Target customers</td><td>CIO; QA Director; Release Manager; Application Owner; S/4HANA Program Lead; AMS Release Governance Lead.</td></tr>
+      <tr><td>Problem solved</td><td>Regression scope is broad because change, test, defect, and process-risk data are not connected in one decision view.</td></tr>
+      <tr><td>SAP / technology tools</td><td>SAP Cloud ALM; SAP BTP; SAP AI Core / generative AI hub; SAP Test Automation by Tricentis; optional Jira, ServiceNow, Git, CI/CD, and Signavio.</td></tr>
+      <tr><td>Data required</td><td>Release scope; transports; change records; test catalog; test execution history; defect history; process criticality; production incidents; automation coverage.</td></tr>
+      <tr><td>AI capability used</td><td>Change classification; impact mapping; test ranking; defect-risk scoring; release summary generation; recommendation explanation.</td></tr>
+      <tr><td>Initial deployment focus</td><td>One SAP domain, one release train, and usable history for changes, tests, and defects.</td></tr>
+      <tr><td>Target operating model</td><td>Reusable release assurance layer with scoring templates, dashboards, governance workflow, and release-learning feedback loop.</td></tr>
     </tbody>
   </table>
 </div>
@@ -426,24 +453,152 @@ window.customerSampleItems = [
                     "title":  "Architecture And Component Design",
                     "html":  `
 <h3>Architecture Summary</h3>
-<ul><li>Ingest transports and changes from ALM, DevOps, and release-management tools.</li><li>Map change objects to processes, interfaces, roles, and test cases.</li><li>Run blended rules and AI scoring to derive release risk and optimal regression scope.</li><li>Push prioritized test scope and release recommendations into QA and release-governance workflow.</li></ul>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Flow step</th><th>What happens</th></tr></thead>
+    <tbody>
+      <tr><td>1. Ingest</td><td>Collect release scope, transports, changes, tests, defects, incidents, and process criticality from approved sources.</td></tr>
+      <tr><td>2. Connect</td><td>Map changes and transports to SAP objects, processes, interfaces, roles, and candidate tests.</td></tr>
+      <tr><td>3. Score</td><td>Apply mandatory rules first, then AI-assisted ranking for risk, relevance, and similarity.</td></tr>
+      <tr><td>4. Recommend</td><td>Produce risk-based regression scope with rationale, confidence, and residual-risk view.</td></tr>
+      <tr><td>5. Govern</td><td>Route exclusions, low-confidence mappings, and release summaries through human review.</td></tr>
+    </tbody>
+  </table>
+</div>
 <div class="working-example-gallery" aria-label="AI Release Assurance for SAP reference architecture">
   <figure>
     <img src="assets/working-examples/ai-release-assurance/AI_Release_Assurance_for_SAP.png" alt="AI Release Assurance for SAP reference architecture" onerror="handleMissingExampleImage(this)" />
-    <figcaption>AI Release Assurance for SAP reference architecture from the updated design pack.</figcaption>
+    <figcaption>AI Release Assurance for SAP reference architecture from the customer-ready solution design pack.</figcaption>
   </figure>
+</div>
+<h3>Reference Architecture Alignment</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Architecture area</th><th>Content to align with the customer-generated image</th></tr></thead>
+    <tbody>
+      <tr><td>Source / Inputs</td><td>Transport / Change Requests; Historical Defects &amp; Test Results; Critical Business Process Catalog.</td></tr>
+      <tr><td>AI &amp; Orchestration</td><td>Risk &amp; Impact Engine using SAP BTP app services, AI models, deterministic rules, and governance workflow.</td></tr>
+      <tr><td>Outputs / Actions</td><td>Prioritized Regression Scope; Release Risk Dashboard; CAB / QA Recommendations.</td></tr>
+      <tr><td>Platform / tool context</td><td>SAP Cloud ALM; SAP Test Automation by Tricentis; Jira / ServiceNow / Git / CI-CD as applicable.</td></tr>
+    </tbody>
+  </table>
 </div>
 <h3>Logical Component Design</h3>
 <div class="detail-table-wrap">
   <table class="detail-table">
-    <thead><tr><th>Layer</th><th>Key design decisions</th></tr></thead>
+    <thead><tr><th>Layer</th><th>Purpose</th><th>Key components</th></tr></thead>
     <tbody>
-      <tr><td>Experience layer</td><td>Release dashboard, QA workbench, CAB memo generator, exception workflow.</td></tr>
-      <tr><td>Application layer</td><td>Change ingestion service, process mapping engine, risk scoring engine, regression selector, approval workflow.</td></tr>
-      <tr><td>AI layer</td><td>Similarity models for defect/test mapping, LLM for release rationale and executive summaries, prompt orchestration, confidence scoring.</td></tr>
-      <tr><td>Data layer</td><td>Test repository, defect history mart, transport metadata store, process catalog, model feature store.</td></tr>
-      <tr><td>Integration layer</td><td>Cloud ALM, Tricentis, Jira/ServiceNow, CI/CD, optional Signavio/API connectors.</td></tr>
-      <tr><td>Security &amp; governance</td><td>Role-based access, prompt logging, human approval gate, model monitoring, audit trail.</td></tr>
+      <tr><td>Experience Layer</td><td>Decision view for release, QA, and CAB stakeholders.</td><td>Release risk dashboard; QA workbench; impacted-process view; CAB summary; exception review.</td></tr>
+      <tr><td>Application Layer</td><td>Orchestrates release assurance logic and workflow.</td><td>Change ingestion; release-scope service; process mapping; risk scoring; regression selector.</td></tr>
+      <tr><td>AI Layer</td><td>Supports classification, ranking, similarity, and explanation.</td><td>Change classifier; similar-defect matching; test relevance ranking; release summary; confidence scoring.</td></tr>
+      <tr><td>Data Layer</td><td>Maintains connected release evidence and recommendation history.</td><td>Release store; transport metadata; process catalog; test repository mirror; defect history mart.</td></tr>
+      <tr><td>Integration Layer</td><td>Connects SAP and non-SAP source systems.</td><td>SAP Cloud ALM; Tricentis; Jira / ServiceNow / Git; CI/CD tools; optional Signavio.</td></tr>
+      <tr><td>Governance Layer</td><td>Controls trust, access, approvals, and auditability.</td><td>RBAC; sensitive-field masking; approval workflow; prompt/model logging; audit trail.</td></tr>
+    </tbody>
+  </table>
+</div>
+                    `
+                },
+                {
+                    "title":  "SAP Capability Alignment",
+                    "html":  `
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>SAP capability</th><th>Role in solution</th><th>Customer validation needed</th><th>Official validation source</th></tr></thead>
+    <tbody>
+      <tr><td>SAP Cloud ALM</td><td>Lifecycle context for release scope, requirements, features, tests, defects, and deployment evidence.</td><td>Confirm tenant, scope, API access, object usage, test maturity, and deployment/transport integration.</td><td>SAP Cloud ALM APIs; Test Preparation; Test Execution.</td></tr>
+      <tr><td>SAP Test Automation by Tricentis</td><td>Automated test asset and execution source for automation-aware regression recommendations.</td><td>Confirm integration, asset quality, process mapping, execution history, and ownership.</td><td>SAP Cloud ALM Tricentis setup.</td></tr>
+      <tr><td>SAP BTP / CAP</td><td>Application foundation for APIs, orchestration, persistence, destination management, and extensibility.</td><td>Confirm BTP entitlements, runtime, identity model, network path, and persistence strategy.</td><td>SAP BTP CAP guidance.</td></tr>
+      <tr><td>SAP AI Core / generative AI hub</td><td>Governed AI runtime for classification, summarization, ranking support, and recommendation explanation.</td><td>Confirm model availability, residency, logging policy, evaluation process, and approved AI-use patterns.</td><td>SAP AI Core / generative AI hub; Prompt Registry.</td></tr>
+      <tr><td>SAP Build Process Automation</td><td>Optional workflow layer for approvals, exceptions, and human-in-the-loop review.</td><td>Confirm whether approvals belong in SAP Build, SAP Cloud ALM, or customer ITSM.</td><td>SAP Build Process Automation approval guidance.</td></tr>
+      <tr><td>SAP Signavio</td><td>Optional process map and criticality enrichment for business-process context.</td><td>Confirm availability, process IDs, API access, and ability to link process context to tests and changes.</td><td>SAP Signavio and Cloud ALM integration guidance.</td></tr>
+    </tbody>
+  </table>
+</div>
+                    `
+                },
+                {
+                    "title":  "AI Capability Design",
+                    "html":  `
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>AI capability</th><th>Recommended use</th><th>Guardrail</th></tr></thead>
+    <tbody>
+      <tr><td>Change classification</td><td>Classify change into module, process, interface, role, report, or data area.</td><td>Show confidence and mapping source.</td></tr>
+      <tr><td>Similarity matching</td><td>Find prior defects, incidents, and tests similar to the current change.</td><td>Display matched evidence; avoid silent recommendations.</td></tr>
+      <tr><td>Test relevance ranking</td><td>Rank candidate tests into must-test, should-test, optional, or excluded categories.</td><td>Require approval for high-risk exclusions.</td></tr>
+      <tr><td>Defect-risk scoring</td><td>Use criticality, history, coverage, complexity, and recurrence to raise or lower risk.</td><td>Keep mandatory and compliance-driven tests deterministic.</td></tr>
+      <tr><td>Release summarization</td><td>Generate QA/CAB summary and residual-risk narrative.</td><td>Human review before circulation.</td></tr>
+      <tr><td>Recommendation explanation</td><td>Explain why each test is included or excluded.</td><td>Reason, evidence, confidence, and override path must be visible.</td></tr>
+    </tbody>
+  </table>
+</div>
+<h3>Key Design Decisions</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Decision</th><th>Design guidance</th></tr></thead>
+    <tbody>
+      <tr><td>Risk optimizer, not test minimizer</td><td>Recommend the smallest justified risk-based scope, not the smallest possible test set.</td></tr>
+      <tr><td>Rules first, AI second</td><td>Use rules for mandatory and high-risk tests; use AI for enrichment, ranking, and explanation.</td></tr>
+      <tr><td>Business-process orientation</td><td>Translate technical changes into business impact for QA, process owners, and CAB.</td></tr>
+      <tr><td>Human approval gate</td><td>Route exclusions, low-confidence mappings, and residual-risk acceptance to accountable owners.</td></tr>
+      <tr><td>Automation-aware selection</td><td>Prefer relevant automated coverage, but do not assume automation alone is enough.</td></tr>
+      <tr><td>Residual-risk transparency</td><td>Always show untested high-risk areas and the reason they remain open.</td></tr>
+    </tbody>
+  </table>
+</div>
+                    `
+                },
+                {
+                    "title":  "Governance And Human Review Model",
+                    "html":  `
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Governance point</th><th>Recommended owner</th><th>Control</th></tr></thead>
+    <tbody>
+      <tr><td>Recommendation review</td><td>QA Lead</td><td>Reviews proposed regression scope before execution.</td></tr>
+      <tr><td>Residual risk</td><td>Release Manager</td><td>Owns residual risk and CAB escalation.</td></tr>
+      <tr><td>Business-process impact</td><td>Process Owner</td><td>Validates impact to critical business processes.</td></tr>
+      <tr><td>Technical mapping</td><td>Application Owner</td><td>Validates object, interface, and role mappings.</td></tr>
+      <tr><td>AI controls</td><td>AI / Platform Owner</td><td>Manages prompt versions, model versions, thresholds, and evaluation.</td></tr>
+      <tr><td>Override control</td><td>QA Lead + Release Manager</td><td>Removing high-risk or mandatory tests requires reason and approval.</td></tr>
+      <tr><td>CAB communication</td><td>Release Manager</td><td>AI-generated summary is reviewed before circulation.</td></tr>
+    </tbody>
+  </table>
+</div>
+                    `
+                },
+                {
+                    "title":  "Implementation Roadmap Detail",
+                    "html":  `
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Stage</th><th>Focus</th><th>Output</th></tr></thead>
+    <tbody>
+      <tr><td>1. Discovery and Data Baseline</td><td>Confirm scope, release train, stakeholders, data sources, and current regression process.</td><td>Pilot scope and data-readiness view.</td></tr>
+      <tr><td>2. Foundation Build</td><td>Create BTP shell, canonical model, access controls, and connectors.</td><td>Working release-data foundation.</td></tr>
+      <tr><td>3. Rules and AI Configuration</td><td>Configure mapping rules, risk scoring, AI ranking, and explanation logic.</td><td>Explainable recommendation engine.</td></tr>
+      <tr><td>4. Pilot Release Assurance</td><td>Run the solution on one release with QA and release-owner review.</td><td>Validated regression recommendation.</td></tr>
+      <tr><td>5. Service Maturity</td><td>Expand domains, refine scoring, and improve reusable templates.</td><td>Repeatable release-assurance model.</td></tr>
+    </tbody>
+  </table>
+</div>
+<p><strong>Validation principle:</strong> Use historical release data first to calibrate scoring and recommendation logic before relying on the solution in a live release window.</p>
+                    `
+                },
+                {
+                    "title":  "Data Foundation Required",
+                    "html":  `
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Data area</th><th>Why it matters</th></tr></thead>
+    <tbody>
+      <tr><td>Release and change scope</td><td>Defines what is moving into production.</td></tr>
+      <tr><td>Transport / object data</td><td>Identifies impacted SAP components and technical objects.</td></tr>
+      <tr><td>Test catalog and execution history</td><td>Shows available coverage, prior outcomes, and execution trend.</td></tr>
+      <tr><td>Defect and incident history</td><td>Highlights recurring risk areas and escaped defects.</td></tr>
+      <tr><td>Business process criticality</td><td>Prioritizes testing based on business impact.</td></tr>
+      <tr><td>Automation coverage</td><td>Identifies where automated regression can be used safely.</td></tr>
     </tbody>
   </table>
 </div>
@@ -454,14 +609,16 @@ window.customerSampleItems = [
                     "html":  `
 <div class="detail-table-wrap">
   <table class="detail-table">
-    <thead><tr><th>Requirement</th><th>Customer-ready control</th></tr></thead>
+    <thead><tr><th>Non-functional area</th><th>Requirement</th></tr></thead>
     <tbody>
-      <tr><td>Security</td><td>Role-based access control, least-privilege access, and masking for sensitive operational data.</td></tr>
-      <tr><td>Auditability</td><td>Recommendation, prompt, override, approval, and user-action logging for governed decisions.</td></tr>
-      <tr><td>Performance</td><td>Near-real-time ingestion for operational use cases; scheduled refresh is acceptable for governance analytics.</td></tr>
-      <tr><td>Resilience</td><td>Retry logic, queue-based integration, monitoring for connector failures, and fallback paths when AI services are unavailable.</td></tr>
-      <tr><td>Model governance</td><td>Human-review thresholds, prompt templates, model version control, and periodic accuracy review.</td></tr>
-      <tr><td>Extensibility</td><td>Modular connectors for SAP and non-SAP ALM, ITSM, CI/CD, observability, and collaboration platforms.</td></tr>
+      <tr><td>Security</td><td>RBAC; least privilege; secure destinations; masking of sensitive fields.</td></tr>
+      <tr><td>Auditability</td><td>Log recommendation, score drivers, prompt version, model version, override, approver, and timestamp.</td></tr>
+      <tr><td>Performance</td><td>Near-real-time refresh during active release windows; batch analytics outside release windows.</td></tr>
+      <tr><td>Resilience</td><td>Retry handling; connector monitoring; queue-based ingestion; graceful fallback if AI service is unavailable.</td></tr>
+      <tr><td>Model governance</td><td>Thresholds; prompt templates; version control; human-review rules; periodic evaluation.</td></tr>
+      <tr><td>Privacy</td><td>Mask incident notes, user identifiers, payload-like text, and confidential defect details before AI processing.</td></tr>
+      <tr><td>Explainability</td><td>Every recommendation shows reason, evidence, confidence, and override path.</td></tr>
+      <tr><td>Extensibility</td><td>Modular connectors for SAP Cloud ALM, Tricentis, Jira, ServiceNow, Git, CI/CD, and Signavio.</td></tr>
     </tbody>
   </table>
 </div>
@@ -472,14 +629,16 @@ window.customerSampleItems = [
                     "html":  `
 <div class="detail-table-wrap">
   <table class="detail-table">
-    <thead><tr><th>Domain</th><th>Preferred choice</th><th>Notes</th></tr></thead>
+    <thead><tr><th>Domain</th><th>Preferred choice</th><th>Role in solution</th></tr></thead>
     <tbody>
-      <tr><td>App/orchestration</td><td>SAP BTP (CAP / Build Code / Build Process Automation)</td><td>Core APIs, workflows, orchestration, and extension services.</td></tr>
-      <tr><td>AI runtime</td><td>SAP AI Foundation / generative AI hub</td><td>Governed model access, prompt management, and AI lifecycle control.</td></tr>
-      <tr><td>SAP process context</td><td>SAP Cloud ALM / relevant SAP line-of-business apps</td><td>Keep SAP-native process and lifecycle context where available.</td></tr>
-      <tr><td>Analytics</td><td>SAP HANA Cloud / Datasphere or BTP persistence</td><td>Operational mart, scorecards, trend views, and audit-friendly reporting.</td></tr>
-      <tr><td>Experience</td><td>Fiori-style web UI / Joule integration where justified</td><td>Use Joule as an assisted experience, not as the only operating surface.</td></tr>
-      <tr><td>ITSM/Ops integration</td><td>ServiceNow / Jira / monitoring tools / Integration Suite</td><td>Integrate into the customer ecosystem rather than replacing it.</td></tr>
+      <tr><td>App / orchestration</td><td>SAP BTP with CAP</td><td>APIs, orchestration, persistence, and extensibility.</td></tr>
+      <tr><td>AI runtime</td><td>SAP AI Core / generative AI hub</td><td>Governed model access, prompt lifecycle, and AI orchestration.</td></tr>
+      <tr><td>SAP lifecycle context</td><td>SAP Cloud ALM</td><td>Preferred source where release, test, and defect context exists.</td></tr>
+      <tr><td>Test automation</td><td>SAP Test Automation by Tricentis</td><td>Automation coverage and execution evidence.</td></tr>
+      <tr><td>Workflow</td><td>SAP Build Process Automation or existing ITSM</td><td>Approval and exception-routing layer.</td></tr>
+      <tr><td>Data / persistence</td><td>SAP HANA Cloud or BTP persistence</td><td>Start simple; scale if analytics needs expand.</td></tr>
+      <tr><td>Experience</td><td>Fiori-style web UI; optional Joule interaction</td><td>Dashboard is primary; Joule can support Q&amp;A or summaries.</td></tr>
+      <tr><td>External integration</td><td>Jira, ServiceNow, Git, CI/CD</td><td>Retain the customer toolchain; do not force replacement.</td></tr>
     </tbody>
   </table>
 </div>
@@ -493,14 +652,83 @@ window.customerSampleItems = [
                                     "test-cases"
                                 ],
                     "html":  `
-<p>Use these exports to seed the implementation backlog, user stories, and validation scripts for this offering.</p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Export</th><th>Purpose</th></tr></thead><tbody><tr><td>Requirement</td><td>Creates the parent Cloud ALM requirement for the service offering.</td></tr><tr><td>User stories</td><td>Creates delivery-ready stories based on the updated design pack capabilities.</td></tr><tr><td>Test cases</td><td>Creates validation scripts aligned to the build approach and controls.</td></tr></tbody></table></div>
+<p>Use these exports to seed the implementation backlog, user stories, and validation scripts for this offering.</p><div class="detail-table-wrap"><table class="detail-table"><thead><tr><th>Export</th><th>Purpose</th></tr></thead><tbody><tr><td>Requirement</td><td>Creates the parent Cloud ALM requirement for the service offering.</td></tr><tr><td>User stories</td><td>Creates delivery-ready stories based on customer-ready deliverables.</td></tr><tr><td>Test cases</td><td>Creates validation scripts aligned to the ten-step implementation plan.</td></tr></tbody></table></div>
+                    `
+                },
+                {
+                    "title":  "Customer Readiness Checks",
+                    "html":  `
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Readiness area</th><th>Validation check</th><th>Action if gap exists</th></tr></thead>
+    <tbody>
+      <tr><td>Cloud ALM scope and API access</td><td>Tenant, entitlements, API credentials, and object coverage confirmed.</td><td>Resolve access and API authorizations before build.</td></tr>
+      <tr><td>Release/change discipline</td><td>Release IDs, change IDs, and transport references can be linked.</td><td>Standardize IDs and ownership in the first pilot scope.</td></tr>
+      <tr><td>Test inventory</td><td>Test ownership, process mapping, and recent execution history exist.</td><td>Clean up or create the minimum viable test catalog.</td></tr>
+      <tr><td>Defect history quality</td><td>Severity, module, process, and root-cause classification are usable.</td><td>Normalize historical defects for the pilot domain.</td></tr>
+      <tr><td>Business-process criticality</td><td>Critical processes and business owners are confirmed.</td><td>Create a lightweight criticality matrix.</td></tr>
+      <tr><td>Automation coverage</td><td>Automated tests are identifiable and linked to process or feature scope.</td><td>Map automation assets to impacted processes.</td></tr>
+      <tr><td>Data protection</td><td>Masking rules for user data, defect text, and incident notes are agreed.</td><td>Define masking before AI processing.</td></tr>
+      <tr><td>Decision governance</td><td>Approvers for exclusions, residual risk, and CAB publication are known.</td><td>Confirm human-review path before live pilot.</td></tr>
+    </tbody>
+  </table>
+</div>
+                    `
+                },
+                {
+                    "title":  "Data And Integration Detail",
+                    "html":  `
+<h3>Core Data Objects</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Core data object</th><th>Minimum fields</th></tr></thead>
+    <tbody>
+      <tr><td>Release</td><td>Release ID; release train; date; owner; deployment window; scope status.</td></tr>
+      <tr><td>Change / feature</td><td>Change ID; title; source system; owner; status; linked transport.</td></tr>
+      <tr><td>Transport</td><td>Transport ID; object list; source/target system; import status; package/component.</td></tr>
+      <tr><td>Changed object</td><td>Object name; type; component; module; changed date; owner.</td></tr>
+      <tr><td>Business process</td><td>Process ID; process name; owner; criticality; compliance flag.</td></tr>
+      <tr><td>Test case</td><td>Test ID; title; manual/automated flag; mapped process; priority; owner.</td></tr>
+      <tr><td>Test execution</td><td>Test ID; cycle; execution date; pass/fail; duration; defect link.</td></tr>
+      <tr><td>Defect / incident</td><td>ID; severity; module; process; root cause; release link; business impact.</td></tr>
+      <tr><td>Recommendation</td><td>Risk score; included tests; excluded tests; confidence; reason; approver.</td></tr>
+    </tbody>
+  </table>
+</div>
+<h3>Required Join Keys</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Join</th><th>Why required</th></tr></thead>
+    <tbody>
+      <tr><td>Release ID - change / feature</td><td>Establish release scope.</td></tr>
+      <tr><td>Change ID - transport</td><td>Tie functional scope to technical movement.</td></tr>
+      <tr><td>Transport - changed object</td><td>Identify impacted SAP objects.</td></tr>
+      <tr><td>Changed object - business process</td><td>Translate technical change into business impact.</td></tr>
+      <tr><td>Business process - test case</td><td>Identify candidate regression coverage.</td></tr>
+      <tr><td>Test case - execution history</td><td>Use recent outcome, duration, and defect history for ranking.</td></tr>
+      <tr><td>Defect / incident - process / release</td><td>Raise risk where escaped issues cluster.</td></tr>
+    </tbody>
+  </table>
+</div>
                     `
                 },
                 {
                     "title":  "Next Steps And Sources",
                     "html":  `
-<h3>Next Steps</h3>
-<ul><li>Confirm SAP Cloud ALM, Tricentis, Jira/ServiceNow, Git, and release-source access.</li><li>Validate the minimum viable mapping between changed objects, business processes, and test cases.</li><li>Agree mandatory-test rules and approval thresholds before AI recommendations are presented to release governance.</li><li>Prepare the first release candidate and baseline current regression scope, duration, defect leakage, and automation usage.</li></ul>
+<h3>Recommended Next Steps</h3>
+<div class="detail-table-wrap">
+  <table class="detail-table">
+    <thead><tr><th>Step</th><th>Action</th><th>Output</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Select one SAP domain and one release train.</td><td>Pilot scope agreed.</td></tr>
+      <tr><td>2</td><td>Run a short data-readiness and traceability assessment.</td><td>Known gaps and remediation actions.</td></tr>
+      <tr><td>3</td><td>Extract a representative sample of releases, transports, tests, and defects.</td><td>Baseline data pack.</td></tr>
+      <tr><td>4</td><td>Define mandatory-test rules and process-criticality model.</td><td>Explainable rules baseline.</td></tr>
+      <tr><td>5</td><td>Validate recommendations against a completed historical release.</td><td>Calibrated scoring and trust baseline.</td></tr>
+      <tr><td>6</td><td>Launch a governed live pilot with QA and release-owner review.</td><td>Measured pilot outcome and scale decision.</td></tr>
+    </tbody>
+  </table>
+</div>
                     `
                 }
                             ],
@@ -516,7 +744,7 @@ window.customerSampleItems = [
                          "requirement":  {
                                              "externalId":  "REQ-REL-001",
                                              "title":  "AI Release Assurance for SAP",
-                                             "description":  "<p>An AI-assisted release assurance service that analyzes changes, historical defects, critical business processes, and test assets to prioritize the smallest viable regression scope while improving release confidence.</p><h2>Problem Solved</h2><p>Broad SAP regression cycles continue because change impact, process criticality, test assets, and defect history are not connected in one decision view.</p><h2>Data Required</h2><p>Transport and change records, defect history, test catalog, execution history, process criticality, release calendar, production incidents, solution documentation.</p>",
+                                             "description":  "<p>Deliver AI Release Assurance for SAP by connecting release, transport, defect, test, and process data; applying deterministic rules first; and using AI to rank, explain, and summarize release risk while keeping exclusions, low-confidence mappings, and release approval under human review.</p><h2>Problem Solved</h2><p>SAP regression cycles are often broad because release evidence, technical change impact, business-process criticality, test assets, automation coverage, and defect history are not connected in one defensible decision view.</p><h2>Data Required</h2><p>Release scope, change and transport records, changed object metadata, process criticality, test catalog, automation coverage, execution history, defect and incident history, recommendation rationale, and approval status.</p>",
                                              "status":  "Not Started",
                                              "priority":  "High",
                                              "owner":  "",
@@ -594,9 +822,9 @@ window.customerSampleItems = [
                                 "priority":  "High",
                                 "status":  "Prepared",
                                 "activityTitle":  "Validate AI Release Assurance for SAP",
-                                "actionTitle":  "Stand up the BTP application shell, secure destinations, and integration connector pattern",
+                                "actionTitle":  "Confirm pilot scope, release train, users, and decision owners",
                                 "instructions":  [
-                                                     "Stand up the BTP application shell, secure destinations, and integration connector pattern.",
+                                                     "Confirm pilot scope, release train, users, and decision owners.",
                                                      "Capture implementation evidence and note deviations."
                                                  ],
                                 "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
@@ -607,9 +835,9 @@ window.customerSampleItems = [
                                 "priority":  "High",
                                 "status":  "Prepared",
                                 "activityTitle":  "Validate AI Release Assurance for SAP",
-                                "actionTitle":  "Create a canonical model linking releases, transports, changed objects, processes, test cases, defects, incidents, and approvals",
+                                "actionTitle":  "Assess release, test, defect, transport, and process data maturity",
                                 "instructions":  [
-                                                     "Create a canonical model linking releases, transports, changed objects, processes, test cases, defects, incidents, and approvals.",
+                                                     "Assess release, test, defect, transport, and process data maturity.",
                                                      "Capture implementation evidence and note deviations."
                                                  ],
                                 "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
@@ -620,9 +848,9 @@ window.customerSampleItems = [
                                 "priority":  "High",
                                 "status":  "Prepared",
                                 "activityTitle":  "Validate AI Release Assurance for SAP",
-                                "actionTitle":  "Implement deterministic object-to-process and process-to-test rules before AI scoring is activated",
+                                "actionTitle":  "Define the canonical entity model",
                                 "instructions":  [
-                                                     "Implement deterministic object-to-process and process-to-test rules before AI scoring is activated.",
+                                                     "Define the canonical entity model.",
                                                      "Capture implementation evidence and note deviations."
                                                  ],
                                 "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
@@ -633,9 +861,9 @@ window.customerSampleItems = [
                                 "priority":  "High",
                                 "status":  "Prepared",
                                 "activityTitle":  "Validate AI Release Assurance for SAP",
-                                "actionTitle":  "Configure scoring logic using historical change, defect, incident, criticality, and coverage patterns",
+                                "actionTitle":  "Stand up SAP BTP application shell",
                                 "instructions":  [
-                                                     "Configure scoring logic using historical change, defect, incident, criticality, and coverage patterns.",
+                                                     "Stand up SAP BTP application shell.",
                                                      "Capture implementation evidence and note deviations."
                                                  ],
                                 "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
@@ -646,9 +874,9 @@ window.customerSampleItems = [
                                 "priority":  "High",
                                 "status":  "Prepared",
                                 "activityTitle":  "Validate AI Release Assurance for SAP",
-                                "actionTitle":  "Build dashboard views for release risk, recommended scope, automation coverage, residual risk, and approval status",
+                                "actionTitle":  "Configure SAP Cloud ALM, test, defect, and DevOps connectors",
                                 "instructions":  [
-                                                     "Build dashboard views for release risk, recommended scope, automation coverage, residual risk, and approval status.",
+                                                     "Configure SAP Cloud ALM, test, defect, and DevOps connectors.",
                                                      "Capture implementation evidence and note deviations."
                                                  ],
                                 "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
@@ -659,9 +887,61 @@ window.customerSampleItems = [
                                 "priority":  "High",
                                 "status":  "Prepared",
                                 "activityTitle":  "Validate AI Release Assurance for SAP",
-                                "actionTitle":  "Run the first controlled release cycle, capture overrides, compare recommendation quality, and tune scoring thresholds",
+                                "actionTitle":  "Implement deterministic rules first",
                                 "instructions":  [
-                                                     "Run the first controlled release cycle, capture overrides, compare recommendation quality, and tune scoring thresholds.",
+                                                     "Implement deterministic rules first.",
+                                                     "Capture implementation evidence and note deviations."
+                                                 ],
+                                "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
+                            },
+                            {
+                                "externalId":  "TC-REL-007",
+                                "testCaseName":  "TC-REL-007 - Validate Build Step 7",
+                                "priority":  "High",
+                                "status":  "Prepared",
+                                "activityTitle":  "Validate AI Release Assurance for SAP",
+                                "actionTitle":  "Add AI-assisted ranking and recommendation explanation",
+                                "instructions":  [
+                                                     "Add AI-assisted ranking and recommendation explanation.",
+                                                     "Capture implementation evidence and note deviations."
+                                                 ],
+                                "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
+                            },
+                            {
+                                "externalId":  "TC-REL-008",
+                                "testCaseName":  "TC-REL-008 - Validate Build Step 8",
+                                "priority":  "High",
+                                "status":  "Prepared",
+                                "activityTitle":  "Validate AI Release Assurance for SAP",
+                                "actionTitle":  "Build release dashboard and QA workbench",
+                                "instructions":  [
+                                                     "Build release dashboard and QA workbench.",
+                                                     "Capture implementation evidence and note deviations."
+                                                 ],
+                                "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
+                            },
+                            {
+                                "externalId":  "TC-REL-009",
+                                "testCaseName":  "TC-REL-009 - Validate Build Step 9",
+                                "priority":  "High",
+                                "status":  "Prepared",
+                                "activityTitle":  "Validate AI Release Assurance for SAP",
+                                "actionTitle":  "Validate against a historical release",
+                                "instructions":  [
+                                                     "Validate against a historical release.",
+                                                     "Capture implementation evidence and note deviations."
+                                                 ],
+                                "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
+                            },
+                            {
+                                "externalId":  "TC-REL-010",
+                                "testCaseName":  "TC-REL-010 - Validate Build Step 10",
+                                "priority":  "High",
+                                "status":  "Prepared",
+                                "activityTitle":  "Validate AI Release Assurance for SAP",
+                                "actionTitle":  "Run live pilot with human review",
+                                "instructions":  [
+                                                     "Run live pilot with human review.",
                                                      "Capture implementation evidence and note deviations."
                                                  ],
                                 "expectedResult":  "The build step is completed for AI Release Assurance for SAP with traceable evidence."
@@ -670,34 +950,14 @@ window.customerSampleItems = [
                      },
         "sources":  [
                     {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
-                        "note":  "AI Release Assurance for SAP design pack from the updated Downloads design pack.",
+                        "label":  "Internal source document: AI_Release_Assurance_for_SAP_Customer_Ready_Solution_Design_v2_No_Images.md",
+                        "note":  "Customer-ready AI Release Assurance for SAP solution design pack extracted from the attached zip.",
                         "url":  ""
-                    },
-                    {
-                        "label":  "SAP Cloud ALM API Guide",
-                        "url":  "https://help.sap.com/docs/cloud-alm/apis/about"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Test Preparation",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/test-preparation"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Test Execution",
-                        "url":  "https://help.sap.com/docs/cloud-alm/applicationhelp/test-execution"
-                    },
-                    {
-                        "label":  "SAP Cloud ALM Test Execution Analytics API",
-                        "url":  "https://help.sap.com/docs/cloud-alm/apis/test-management-analytics-api"
-                    },
-                    {
-                        "label":  "SAP AI Core / generative AI hub",
-                        "url":  "https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core-7db524ee75e74bf8b50c167951fe34a5"
                     }
                     ],
         "url":  "",
         "linkLabel":  "Documentation repository pending",
-        "nextStep":  "Confirm SAP Cloud ALM, Tricentis, Jira/ServiceNow, Git, and release-source access. Validate the minimum viable mapping between changed objects, business processes, and test cases. Agree mandatory-test rules and approval thresholds before AI recommendations are presented to release governance. Prepare the first release candidate and baseline current regression scope, duration, defect leakage, and automation usage."
+        "nextStep":  "Select one SAP domain and one release train, run a short data-readiness assessment, extract representative release evidence, define mandatory-test rules and process criticality, validate recommendations against a historical release, then launch a governed live pilot with QA and release-owner review."
     },
     {
         "id":  "ai-powered-ams-control-tower",
