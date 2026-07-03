@@ -429,7 +429,7 @@ window.customerSampleItems = [
 <ul><li>Ingest transports and changes from ALM, DevOps, and release-management tools.</li><li>Map change objects to processes, interfaces, roles, and test cases.</li><li>Run blended rules and AI scoring to derive release risk and optimal regression scope.</li><li>Push prioritized test scope and release recommendations into QA and release-governance workflow.</li></ul>
 <div class="working-example-gallery" aria-label="AI Release Assurance for SAP reference architecture">
   <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Release_Assurance_for_SAP_Reference_Architecture.png" alt="AI Release Assurance for SAP reference architecture" onerror="handleMissingExampleImage(this)" />
+    <img src="assets/working-examples/ai-release-assurance/AI_Release_Assurance_for_SAP.png" alt="AI Release Assurance for SAP reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI Release Assurance for SAP reference architecture from the updated design pack.</figcaption>
   </figure>
 </div>
@@ -447,12 +447,6 @@ window.customerSampleItems = [
     </tbody>
   </table>
 </div>
-                    `
-                },
-                {
-                    "title":  "Detailed Design Build Approach",
-                    "html":  `
-<ol><li>Stand up the BTP application shell, secure destinations, and integration connector pattern.</li><li>Create a canonical model linking releases, transports, changed objects, processes, test cases, defects, incidents, and approvals.</li><li>Implement deterministic object-to-process and process-to-test rules before AI scoring is activated.</li><li>Configure scoring logic using historical change, defect, incident, criticality, and coverage patterns.</li><li>Build dashboard views for release risk, recommended scope, automation coverage, residual risk, and approval status.</li><li>Run the first controlled release cycle, capture overrides, compare recommendation quality, and tune scoring thresholds.</li></ol>
                     `
                 },
                 {
@@ -678,7 +672,7 @@ window.customerSampleItems = [
                      },
         "sources":  [
                     {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack.md",
+                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
                         "note":  "AI Release Assurance for SAP design pack from the updated Downloads design pack.",
                         "url":  ""
                     },
@@ -828,7 +822,7 @@ window.customerSampleItems = [
 <ul><li>Capture incidents from ITSM channels and normalize ticket payloads.</li><li>Classify module, process, urgency, and probable resolver team.</li><li>Retrieve similar historical resolutions and draft structured responses.</li><li>Route tickets through workflow with confidence thresholds and human review.</li></ul>
 <div class="working-example-gallery" aria-label="AI-Powered AMS Control Tower reference architecture">
   <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Powered_AMS_Control_Tower_Reference_Architecture.png" alt="AI-Powered AMS Control Tower reference architecture" onerror="handleMissingExampleImage(this)" />
+    <img src="assets/working-examples/ai-release-assurance/AI_Powered_AMS_Control_Tower.png" alt="AI-Powered AMS Control Tower reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI-Powered AMS Control Tower reference architecture from the updated design pack.</figcaption>
   </figure>
 </div>
@@ -846,12 +840,6 @@ window.customerSampleItems = [
     </tbody>
   </table>
 </div>
-                    `
-                },
-                {
-                    "title":  "Detailed Design Build Approach",
-                    "html":  `
-<ol><li>Define AMS service taxonomy and canonical ticket schema aligned to SAP modules, processes, towers, priorities, and SLAs.</li><li>Build ticket ingestion and enrichment connectors from ITSM, email/chat intake, monitoring alerts, KB sources, and SAP landscape inventory.</li><li>Configure classifiers and duplicate detection using resolved tickets and known resolver-group outcomes.</li><li>Implement routing rules and human-in-the-loop review for low-confidence or high-risk recommendations.</li><li>Enable recommended resolution drafts, missing-information prompts, and service manager reporting.</li><li>Measure and tune using misroute rate, first-response quality, backlog aging, duplicate clusters, and SLA-risk prediction accuracy.</li></ol>
                     `
                 },
                 {
@@ -1077,7 +1065,7 @@ window.customerSampleItems = [
                      },
         "sources":  [
                     {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack.md",
+                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
                         "note":  "AI-Powered AMS Control Tower design pack from the updated Downloads design pack.",
                         "url":  ""
                     },
@@ -1227,7 +1215,7 @@ window.customerSampleItems = [
 <ul><li>Ingest incidents and operating signals every hour or day depending on hypercare criticality.</li><li>Cluster issues by process, role, root-cause theme, and severity.</li><li>Generate daily stabilization packs with trends, blockers, and suggested actions.</li><li>Track exit criteria and handover backlog into AMS.</li></ul>
 <div class="working-example-gallery" aria-label="AI Hypercare Stabilization Command Center reference architecture">
   <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Hypercare_Stabilization_Command_Center_Reference_Architecture.png" alt="AI Hypercare Stabilization Command Center reference architecture" onerror="handleMissingExampleImage(this)" />
+    <img src="assets/working-examples/ai-release-assurance/AI_Hypercare_Stabilization_Command_Center.png" alt="AI Hypercare Stabilization Command Center reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI Hypercare Stabilization Command Center reference architecture from the updated design pack.</figcaption>
   </figure>
 </div>
@@ -1245,12 +1233,6 @@ window.customerSampleItems = [
     </tbody>
   </table>
 </div>
-                    `
-                },
-                {
-                    "title":  "Detailed Design Build Approach",
-                    "html":  `
-<ol><li>Create a common hypercare taxonomy covering training, master data, configuration, integration, security, performance, and defect causes.</li><li>Integrate incident, alert, log, collaboration-note, and user-feedback feeds into a BTP-based stabilization mart.</li><li>Implement clustering and theme extraction logic with daily dashboard refresh and manual correction controls.</li><li>Define stabilization KPIs such as volume burn-down, repeat incident rate, critical-process impact, and owner accountability.</li><li>Generate structured daily packs for war-room and sponsor consumption with human review before distribution.</li><li>Close hypercare with an AI-assisted transition report and prioritized AMS backlog.</li></ol>
                     `
                 },
                 {
@@ -1476,7 +1458,7 @@ window.customerSampleItems = [
                      },
         "sources":  [
                     {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack.md",
+                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
                         "note":  "AI Hypercare Stabilization Command Center design pack from the updated Downloads design pack.",
                         "url":  ""
                     },
@@ -1626,7 +1608,7 @@ window.customerSampleItems = [
 <ul><li>Inventory custom objects and extension patterns from the SAP estate.</li><li>Classify each artifact against clean-core policy and usage criticality.</li><li>Generate remediation options such as retire, redesign on BTP, convert to side-by-side extension, or retain with waiver.</li><li>Feed outcomes into architecture board and modernization roadmap.</li></ul>
 <div class="working-example-gallery" aria-label="Clean Core AI Governance Service reference architecture">
   <figure>
-    <img src="assets/working-examples/ai-release-assurance/Clean_Core_AI_Governance_Service_Reference_Architecture.png" alt="Clean Core AI Governance Service reference architecture" onerror="handleMissingExampleImage(this)" />
+    <img src="assets/working-examples/ai-release-assurance/Clean_Core_AI_Governance_Service.png" alt="Clean Core AI Governance Service reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>Clean Core AI Governance Service reference architecture from the updated design pack.</figcaption>
   </figure>
 </div>
@@ -1644,12 +1626,6 @@ window.customerSampleItems = [
     </tbody>
   </table>
 </div>
-                    `
-                },
-                {
-                    "title":  "Detailed Design Build Approach",
-                    "html":  `
-<ol><li>Define clean-core policy taxonomy based on target architecture principles and allowed extensibility patterns.</li><li>Build collectors or importers for custom code, enhancements, transports, usage data, and architecture metadata.</li><li>Configure deterministic rules and AI classification to score artifacts by policy deviation, business criticality, usage, and support burden.</li><li>Develop remediation workflow with suggested target pattern, ownership, waiver path, and effort band.</li><li>Produce architecture board packs and remediation roadmaps by risk band, value, dependency, and release window.</li><li>Run periodic review cycles to refresh inventory, re-score artifacts, close waivers, and track modernization progress.</li></ol>
                     `
                 },
                 {
@@ -1875,7 +1851,7 @@ window.customerSampleItems = [
                      },
         "sources":  [
                     {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack.md",
+                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
                         "note":  "Clean Core AI Governance Service design pack from the updated Downloads design pack.",
                         "url":  ""
                     },
@@ -2025,7 +2001,7 @@ window.customerSampleItems = [
 <ul><li>Collect integration failures and operational metadata from Integration Suite and surrounding tools.</li><li>Normalize error classes and enrich with interface, dependency, and business-process context.</li><li>Generate probable cause, recovery steps, and best resolver group recommendation.</li><li>Track recurring failure patterns and feed structural fixes into the engineering backlog.</li></ul>
 <div class="working-example-gallery" aria-label="AI Integration Operations Shield reference architecture">
   <figure>
-    <img src="assets/working-examples/ai-release-assurance/AI_Integration_Operations_Shield_Reference_Architecture.png" alt="AI Integration Operations Shield reference architecture" onerror="handleMissingExampleImage(this)" />
+    <img src="assets/working-examples/ai-release-assurance/AI_Integration_Operations_Shield.png" alt="AI Integration Operations Shield reference architecture" onerror="handleMissingExampleImage(this)" />
     <figcaption>AI Integration Operations Shield reference architecture from the updated design pack.</figcaption>
   </figure>
 </div>
@@ -2043,12 +2019,6 @@ window.customerSampleItems = [
     </tbody>
   </table>
 </div>
-                    `
-                },
-                {
-                    "title":  "Detailed Design Build Approach",
-                    "html":  `
-<ol><li>Define canonical interface and error ontology aligned to operations teams, business processes, and support groups.</li><li>Build log ingestion, masking, and enrichment pipeline on BTP.</li><li>Configure retrieval over runbooks and past incidents for likely fixes and recovery steps.</li><li>Implement cockpit for interface health, probable cause, critical flow impact, owner assignment, and action tracking.</li><li>Enable recurring-pattern reporting and engineering backlog generation.</li><li>Start with the top business-critical interfaces, then scale to the wider estate once taxonomy and runbooks are stable.</li></ol>
                     `
                 },
                 {
@@ -2274,7 +2244,7 @@ window.customerSampleItems = [
                      },
         "sources":  [
                     {
-                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack.md",
+                        "label":  "Internal source document: Top_5_AI_Powered_SAP_Service_Offerings_Codex_Ready_Design_Pack_v2.md",
                         "note":  "AI Integration Operations Shield design pack from the updated Downloads design pack.",
                         "url":  ""
                     },
