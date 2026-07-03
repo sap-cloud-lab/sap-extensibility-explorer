@@ -2726,8 +2726,14 @@ body[data-page="detail"] .detail-page {
   display: block;
 }
 
+.source-link > span {
+  min-width: 0;
+}
+
 .source-link strong {
   color: #173a63;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .source-link span small {
@@ -2736,6 +2742,7 @@ body[data-page="detail"] .detail-page {
   font-size: 12px;
   font-weight: 650;
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .source-placeholder {
