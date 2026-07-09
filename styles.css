@@ -2173,7 +2173,7 @@ body[data-page="samples"] .back-link {
 
 .library-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -2213,6 +2213,18 @@ body[data-page="samples"] .back-link {
   border-color: #d5d1ff;
   background: #f2f0ff;
   color: #5b4bd6;
+}
+
+.skills-library-card {
+  background:
+    linear-gradient(135deg, rgba(22, 130, 93, 0.13), transparent 42%),
+    #ffffff;
+}
+
+.skills-library-card .library-icon {
+  border-color: #bbe9d7;
+  background: #ecfbf5;
+  color: var(--green);
 }
 
 .library-icon {
@@ -2385,6 +2397,164 @@ body[data-page="detail"] .detail-page {
 
 .asset-browser.filters-collapsed .asset-grid {
   grid-template-columns: repeat(4, minmax(220px, 1fr));
+}
+
+.skills-page {
+  width: min(1320px, calc(100% - 72px));
+  margin: 0 auto;
+}
+
+.skills-hero .scenario-hero-inner {
+  align-items: center;
+}
+
+.skills-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+  margin: 0 0 58px;
+}
+
+.skills-guide,
+.skill-card {
+  border: 1px solid rgba(205, 222, 237, 0.95);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 42px rgba(22, 42, 70, 0.08);
+}
+
+.skills-guide {
+  position: sticky;
+  top: 96px;
+  padding: 24px;
+}
+
+.skills-guide h2 {
+  margin-bottom: 10px;
+  color: #12273f;
+  font-size: 22px;
+}
+
+.skills-guide p {
+  margin-bottom: 18px;
+  color: #5a6d7f;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.skills-guide dl,
+.skill-facts {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+}
+
+.skills-guide dl div,
+.skill-facts div {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid #d7e7f3;
+  border-radius: 14px;
+  background: #f7fbff;
+}
+
+.skills-guide dt,
+.skill-facts dt {
+  color: #12273f;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.skills-guide dd,
+.skill-facts dd {
+  margin: 0;
+  color: #53677b;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.skills-results {
+  display: grid;
+  gap: 18px;
+}
+
+.skill-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.skill-card {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  min-height: 380px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 4px;
+  background: linear-gradient(90deg, var(--green), var(--sap-sky));
+}
+
+.skill-card-header {
+  display: grid;
+  gap: 8px;
+}
+
+.skill-type {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--green-soft);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.skill-card h3 {
+  margin: 0;
+  color: #12273f;
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.skill-card p {
+  margin: 0;
+  color: #53677b;
+  font-size: 15px;
+  line-height: 1.48;
+}
+
+.prompt-sample {
+  padding: 14px;
+  border: 1px solid #c8e0f2;
+  border-radius: 14px;
+  background: #f7fbff;
+}
+
+.prompt-sample code {
+  color: #17324d;
+  font-family: Consolas, "Segoe UI Mono", monospace;
+  font-size: 13px;
+  white-space: normal;
+}
+
+.skill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-self: end;
 }
 
 .detail-hero {
@@ -3466,6 +3636,11 @@ body[data-page="detail"] .detail-page {
     grid-template-columns: repeat(2, minmax(240px, 1fr));
   }
 
+  .library-grid,
+  .skill-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .asset-browser.filters-collapsed .asset-grid {
     grid-template-columns: repeat(3, minmax(220px, 1fr));
   }
@@ -3480,7 +3655,8 @@ body[data-page="detail"] .detail-page {
   main.samples-page,
   .scenario-hero,
   .assets-page,
-  .detail-page {
+  .detail-page,
+  .skills-page {
     width: min(100% - 28px, 1120px);
   }
 
@@ -3497,6 +3673,14 @@ body[data-page="detail"] .detail-page {
     grid-template-columns: 1fr;
   }
 
+  .skills-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-guide {
+    position: static;
+  }
+
   .filter-rail {
     position: static;
   }
@@ -3504,6 +3688,7 @@ body[data-page="detail"] .detail-page {
   .choice-grid,
   .scenario-browser .sample-grid,
   .asset-grid,
+  .skill-card-grid,
   .library-grid {
     grid-template-columns: 1fr;
   }

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Skills - Extensibility Explorer</title>
+    <link rel="stylesheet" href="styles.css?v=20260709-skills" />
+  </head>
+  <body data-page="skills">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Extensibility Explorer home">
+        <span class="sap-logo" aria-label="SAP">SAP</span>
+      </a>
+      <a class="brand-title" href="index.html">Extensibility Explorer</a>
+      <nav class="top-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="assets.html">Assets</a>
+        <a href="accelerators.html">Accelerators</a>
+        <a href="ai-accelerators.html" data-ai-nav>AI Accelerators</a>
+        <a class="active" href="skills.html">Skills</a>
+      </nav>
+    </header>
+
+    <section class="scenario-hero skills-hero" aria-label="Skills introduction">
+      <div class="scenario-hero-inner">
+        <div class="scenario-hero-copy">
+          <p class="eyebrow">Skills</p>
+          <h1>Reusable Codex Skills</h1>
+          <p>Codified workflows for repeatable SAP delivery tasks, configuration updates, and governed automation patterns.</p>
+          <p class="lane-note">Each skill keeps customer-specific values as inputs so the reusable logic stays portable across systems.</p>
+        </div>
+        <div class="asset-stat-panel" aria-label="Skill coverage">
+          <span>Parameterized</span>
+          <span>Verified</span>
+          <span>Reusable</span>
+        </div>
+      </div>
+    </section>
+
+    <main class="skills-page">
+      <a class="back-link" href="index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5" /><path d="m12 19-7-7 7-7" /></svg>
+        Back to choices
+      </a>
+
+      <section class="skills-layout" aria-label="Skill library">
+        <aside class="skills-guide">
+          <h2>Skill Pattern</h2>
+          <p>Use a skill when a task has repeatable steps, variable inputs, and a validation routine that should not be rediscovered each time.</p>
+          <dl>
+            <div>
+              <dt>Inputs</dt>
+              <dd>URL, transport, filters, and screenshot/table rows stay variable.</dd>
+            </div>
+            <div>
+              <dt>Run</dt>
+              <dd>Codex follows the workflow and uses browser automation where appropriate.</dd>
+            </div>
+            <div>
+              <dt>Verify</dt>
+              <dd>The skill checks saved values, not just whether a row exists.</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="skills-results">
+          <div class="section-title">
+            <h2>Available Skills</h2>
+            <p>Source-safe skill definitions that can be copied into a local Codex skills folder.</p>
+          </div>
+
+          <div class="skill-card-grid">
+            <article class="skill-card">
+              <div class="skill-card-header">
+                <span class="skill-type">SAP Config</span>
+                <h3>SAP Asset Valview Bulk Config</h3>
+              </div>
+              <p>Bulk maintain asset-class valuation-view settings in SAP S/4HANA Cloud Public Edition SSCUI <strong>FAA_ACL_VALV</strong>.</p>
+              <dl class="skill-facts">
+                <div>
+                  <dt>Best for</dt>
+                  <dd>Adding or correcting valuation-view rows across asset classes such as all classes starting with Z.</dd>
+                </div>
+                <div>
+                  <dt>Variable inputs</dt>
+                  <dd>Customer URL, transport, asset-class filter, and screenshot/table rows.</dd>
+                </div>
+                <div>
+                  <dt>Safety check</dt>
+                  <dd>Verifies actual field values including depreciation key after save.</dd>
+                </div>
+              </dl>
+              <div class="prompt-sample" aria-label="Example prompt">
+                <code>Use $sap-asset-valview-bulk-config with this customer URL, transport, asset filter, and screenshot.</code>
+              </div>
+              <div class="skill-actions">
+                <a class="primary-action" href="skills/sap-asset-valview-bulk-config/SKILL.md">Open skill</a>
+                <a class="secondary-action" href="skills/sap-asset-valview-bulk-config/references/field-mapping.md">Field mapping</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Skills are reusable workflow definitions. Keep customer data, transports, and credentials outside the public repository.</span>
+    </footer>
+  </body>
+</html>
