@@ -3011,24 +3011,35 @@ body[data-page="detail"] .detail-page {
 .detail-table-wrap {
   overflow-x: auto;
   border: 1px solid #dbe9f5;
-  border-radius: 14px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(22, 42, 70, 0.04);
+}
+
+.detail-table-wrap--component-matrix {
+  width: min(100%, 1040px);
+}
+
+.detail-table-wrap[data-column-count="3"]:not(.detail-table-wrap--component-matrix) {
+  width: min(100%, 1180px);
 }
 
 .detail-table {
   width: 100%;
-  min-width: 760px;
+  min-width: 680px;
   border-collapse: collapse;
+  table-layout: fixed;
   background: #ffffff;
 }
 
 .detail-table th,
 .detail-table td {
-  padding: 11px 12px;
+  padding: 9px 11px;
   border-bottom: 1px solid #e3edf7;
   text-align: left;
   vertical-align: top;
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.32;
 }
 
 .detail-table th {
@@ -3037,8 +3048,54 @@ body[data-page="detail"] .detail-page {
   font-weight: 900;
 }
 
+.detail-table tbody tr:nth-child(even) td {
+  background: #fbfdff;
+}
+
+.detail-table td:first-child {
+  color: #153b60;
+  font-weight: 760;
+}
+
 .detail-table tr:last-child td {
   border-bottom: 0;
+}
+
+.detail-table--component-matrix {
+  min-width: 760px;
+}
+
+.detail-table--component-matrix th:nth-child(1),
+.detail-table--component-matrix td:nth-child(1) {
+  width: 17%;
+}
+
+.detail-table--component-matrix th:nth-child(2),
+.detail-table--component-matrix td:nth-child(2) {
+  width: 47%;
+}
+
+.detail-table--component-matrix th:nth-child(3),
+.detail-table--component-matrix td:nth-child(3) {
+  width: 36%;
+}
+
+.detail-table[data-column-count="3"]:not(.detail-table--component-matrix) th:nth-child(1),
+.detail-table[data-column-count="3"]:not(.detail-table--component-matrix) td:nth-child(1) {
+  width: 24%;
+}
+
+.detail-table[data-column-count="3"]:not(.detail-table--component-matrix) th:nth-child(2),
+.detail-table[data-column-count="3"]:not(.detail-table--component-matrix) td:nth-child(2),
+.detail-table[data-column-count="3"]:not(.detail-table--component-matrix) th:nth-child(3),
+.detail-table[data-column-count="3"]:not(.detail-table--component-matrix) td:nth-child(3) {
+  width: 38%;
+}
+
+.detail-table--component-matrix th,
+.detail-table--component-matrix td {
+  padding: 8px 10px;
+  line-height: 1.28;
 }
 
 .detail-code {

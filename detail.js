@@ -98,6 +98,26 @@ function enhanceDetailImagesForPreview() {
   });
 }
 
+function enhanceDetailTables() {
+  document.querySelectorAll(".detail-table").forEach((table) => {
+    const headerCells = Array.from(table.querySelectorAll("thead th"));
+    const headers = headerCells.map((cell) => cell.textContent.trim().toLowerCase());
+    const firstRow = table.querySelector("tr");
+    const columnCount = headerCells.length || firstRow?.children.length || 0;
+    const wrap = table.closest(".detail-table-wrap");
+
+    if (columnCount) {
+      table.dataset.columnCount = String(columnCount);
+      if (wrap) wrap.dataset.columnCount = String(columnCount);
+    }
+
+    if (headers.includes("layer") && headers.includes("key components")) {
+      table.classList.add("detail-table--component-matrix");
+      wrap?.classList.add("detail-table-wrap--component-matrix");
+    }
+  });
+}
+
 function bindDetailImageLightbox() {
   const lightbox = document.getElementById("detailImageLightbox");
   if (!lightbox) return;
@@ -701,6 +721,7 @@ function renderDetailPage() {
       .join("");
     renderImplementationRoadmap(item.roadmapImage);
     renderSourceLinks(item);
+    enhanceDetailTables();
     enhanceDetailImagesForPreview();
 
     document.querySelectorAll(".top-nav a").forEach((link) => {
@@ -746,6 +767,7 @@ function renderDetailPage() {
   }
 
   renderSourceLinks(item);
+  enhanceDetailTables();
   enhanceDetailImagesForPreview();
 
   document.querySelectorAll(".top-nav a").forEach((link) => {
