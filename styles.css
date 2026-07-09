@@ -2832,6 +2832,11 @@ body[data-page="detail"] .detail-page {
   gap: 12px;
 }
 
+.detail-page .working-example-gallery:not(.implementation-roadmap-gallery) {
+  grid-template-columns: minmax(0, min(100%, 520px));
+  justify-content: center;
+}
+
 .working-example-gallery figure {
   display: grid;
   gap: 8px;
