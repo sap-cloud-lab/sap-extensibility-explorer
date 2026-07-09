@@ -1476,7 +1476,7 @@ body[data-page="samples"] {
 .site-header,
 body[data-page="samples"] .site-header {
   min-height: 72px;
-  padding: 12px max(28px, calc((100vw - 1500px) / 2));
+  padding: 12px clamp(24px, 2.4vw, 44px);
   background: rgba(255, 255, 255, 0.86);
   border-top: 3px solid var(--sap-sky);
   border-bottom: 1px solid rgba(183, 206, 227, 0.72);
@@ -1497,6 +1497,7 @@ body[data-page="samples"] .brand-title {
   color: var(--text);
   font-size: 19px;
   font-weight: 780;
+  text-align: left;
 }
 
 .sap-logo,
