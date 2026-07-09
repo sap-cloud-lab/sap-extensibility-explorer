@@ -16,6 +16,7 @@
         <a href="index.html">Home</a>
         <a href="assets.html">Assets</a>
         <a href="accelerators.html">Accelerators</a>
+        <a href="ai-accelerators.html" data-ai-nav>AI Accelerators</a>
       </nav>
     </header>
 
@@ -40,17 +41,29 @@
       <section class="detail-grid" aria-label="Implementation details">
         <article class="detail-panel">
           <h2>What This Helps With</h2>
-          <p id="detailUseCase"></p>
+          <div class="detail-rich" id="detailUseCase"></div>
+        </article>
+
+        <article class="detail-panel" id="detailWorkingExamplePanel" hidden>
+          <h2>Working Example</h2>
+          <div class="detail-rich" id="detailWorkingExample"></div>
         </article>
 
         <article class="detail-panel">
           <h2>When To Choose It</h2>
-          <p id="detailWhenToUse"></p>
+          <div class="detail-rich" id="detailWhenToUse"></div>
         </article>
 
         <article class="detail-panel implementation-panel">
-          <h2>Implementation Draft</h2>
-          <ol id="implementationSteps"></ol>
+          <h2>Implementation Plan</h2>
+          <section class="implementation-plan-section" aria-labelledby="implementationApproachHeading">
+            <h3 id="implementationApproachHeading">Detailed design and build approach</h3>
+            <ol id="implementationSteps"></ol>
+          </section>
+          <section class="implementation-roadmap-section" id="implementationRoadmapPanel" aria-labelledby="implementationRoadmapHeading" hidden>
+            <h3 id="implementationRoadmapHeading">Implementation Roadmap</h3>
+            <div id="implementationRoadmap"></div>
+          </section>
         </article>
 
         <article class="detail-panel technical-panel" id="technicalPanel" hidden>
@@ -61,6 +74,8 @@
             <pre><code id="technicalCode"></code></pre>
           </div>
         </article>
+
+        <article class="detail-panel collapsible-panel" id="detailCollapsiblePanel" hidden></article>
 
         <aside class="detail-panel source-panel">
           <h2>Sources And Next Steps</h2>
@@ -73,6 +88,19 @@
       </section>
     </main>
 
+    <div class="image-lightbox" id="detailImageLightbox" role="dialog" aria-modal="true" aria-labelledby="detailImageLightboxTitle" hidden>
+      <div class="image-lightbox-backdrop" data-image-lightbox-close></div>
+      <div class="image-lightbox-dialog">
+        <button class="image-lightbox-close" type="button" data-image-lightbox-close aria-label="Close image preview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+        </button>
+        <figure>
+          <img id="detailImageLightboxImage" alt="" />
+          <figcaption id="detailImageLightboxTitle"></figcaption>
+        </figure>
+      </div>
+    </div>
+
     <footer class="footer">
       <span>Implementation text is a working draft based on the selected sample or public SAP reference.</span>
       <a href="assets.html">Assets</a>
@@ -80,6 +108,7 @@
 
     <script src="assets-data.js"></script>
     <script src="selected-content.js"></script>
+    <script src="cloud-alm-export.js"></script>
     <script src="app.js"></script>
     <script src="detail.js"></script>
   </body>

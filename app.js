@@ -463,11 +463,26 @@ function setActiveLinks(laneKey) {
   });
 }
 
+function setTopNavForAcceleratorLibrary() {
+  document.querySelectorAll(".top-nav a").forEach((link) => {
+    if (acceleratorLibraryState.aiOnly) {
+      link.classList.toggle("active", link.hasAttribute("data-ai-nav"));
+      return;
+    }
+
+    link.classList.toggle("active", link.getAttribute("href") === "accelerators.html");
+  });
+}
+
 const filterState = {
   query: "",
   statuses: new Set(),
   patterns: new Set(),
   lanes: new Set(),
+};
+
+const acceleratorLibraryState = {
+  aiOnly: false,
 };
 
 function escapeHtml(value) {
@@ -563,12 +578,16 @@ function getLaneTagText(laneKey) {
   return laneTagLabels[laneKey] || laneKey;
 }
 
+function getSampleTagText(sample, laneKey) {
+  return sample.tagLabel || getLaneTagText(laneKey);
+}
+
 function renderSampleCard(sample, laneKey, options = {}) {
   const isSapCard = sample.source !== "Customer";
   const from = options.from || "";
   return `
     <a class="sample-card scenario-card card-link" href="${escapeHtml(getSampleDetailUrl(laneKey, sample, from))}" aria-label="View implementation guide for ${escapeHtml(sample.title)}">
-      <span class="card-lane-tag" data-lane="${escapeHtml(laneKey)}">${escapeHtml(getLaneTagText(laneKey))}</span>
+      <span class="card-lane-tag" data-lane="${escapeHtml(laneKey)}">${escapeHtml(getSampleTagText(sample, laneKey))}</span>
       <span class="favorite-button" aria-hidden="true">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2 7.5 14 3 9.6l6.2-.9L12 3Z" />
@@ -649,12 +668,16 @@ function bindSampleControls(lane, laneKey) {
 }
 
 function getAllAcceleratorSamples() {
-  return Object.entries(lanes).flatMap(([laneKey, lane]) =>
+  const samples = Object.entries(lanes).flatMap(([laneKey, lane]) =>
     lane.samples.map((sample) => ({
       ...sample,
       laneKey,
       laneLabel: lane.label,
     })),
+  );
+
+  return samples.filter((sample) =>
+    acceleratorLibraryState.aiOnly ? sample.pattern === "AI" : sample.pattern !== "AI",
   );
 }
 
@@ -668,7 +691,7 @@ function acceleratorMatches(sample) {
     sample.function,
     sample.sourceType,
     sample.laneLabel,
-    getLaneTagText(sample.laneKey),
+    getSampleTagText(sample, sample.laneKey),
   ]
     .filter(Boolean)
     .join(" ")
@@ -760,19 +783,24 @@ function renderSourceGroupedCards(samples, options = {}) {
 function renderAcceleratorLibraryCards() {
   const samples = getAllAcceleratorSamples();
   const filteredSamples = samples.filter(acceleratorMatches);
+  const noun = acceleratorLibraryState.aiOnly ? "AI accelerators" : "accelerators";
   const countText =
     filteredSamples.length === samples.length
-      ? `${samples.length} accelerators`
-      : `${filteredSamples.length} of ${samples.length} accelerators`;
+      ? `${samples.length} ${noun}`
+      : `${filteredSamples.length} of ${samples.length} ${noun}`;
 
   document.getElementById("sampleCount").textContent = countText;
-  document.getElementById("sampleSectionTitle").textContent = "All Accelerators";
+  document.getElementById("sampleSectionTitle").textContent = acceleratorLibraryState.aiOnly
+    ? "AI Accelerators"
+    : "All Accelerators";
   const emptyState = document.getElementById("emptyState");
-  emptyState.textContent = "No matching accelerators found.";
+  emptyState.textContent = acceleratorLibraryState.aiOnly
+    ? "No matching AI accelerators found."
+    : "No matching accelerators found.";
   emptyState.hidden = filteredSamples.length > 0;
 
   renderSourceGroupedCards(filteredSamples, {
-    from: "accelerators",
+    from: acceleratorLibraryState.aiOnly ? "ai-accelerators" : "accelerators",
     laneKeyForCard: (sample) => sample.laneKey,
   });
 }
@@ -823,7 +851,32 @@ function bindAcceleratorLibraryControls() {
   bindSourceSectionToggles();
 }
 
-function renderAcceleratorLibraryPage() {
+function applyAcceleratorUrlFilters() {
+  const params = new URLSearchParams(window.location.search);
+  filterState.query = params.get("search") || params.get("q") || "";
+
+  const urlFilterMap = [
+    ["status", filterState.statuses],
+    ["pattern", filterState.patterns],
+    ["lane", filterState.lanes],
+  ];
+
+  urlFilterMap.forEach(([key, targetSet]) => {
+    params.getAll(key).forEach((rawValue) => {
+      rawValue
+        .split(",")
+        .map((value) => value.trim())
+        .filter(Boolean)
+        .forEach((value) => targetSet.add(value));
+    });
+  });
+
+  const searchInput = document.getElementById("sampleSearch");
+  if (searchInput) searchInput.value = filterState.query;
+}
+
+function renderAcceleratorLibraryPage(options = {}) {
+  acceleratorLibraryState.aiOnly = Boolean(options.aiOnly);
   filterState.query = "";
   filterState.statuses.clear();
   filterState.patterns.clear();
@@ -831,8 +884,10 @@ function renderAcceleratorLibraryPage() {
 
   const samples = getAllAcceleratorSamples();
   renderAcceleratorLibraryFilterOptions(samples);
+  applyAcceleratorUrlFilters();
   renderFilterStates();
   renderAcceleratorLibraryCards();
+  setTopNavForAcceleratorLibrary();
   bindAcceleratorLibraryControls();
 }
 
@@ -865,4 +920,8 @@ if (document.body.dataset.page === "samples") {
 
 if (document.body.dataset.page === "accelerator-library") {
   renderAcceleratorLibraryPage();
+}
+
+if (document.body.dataset.page === "ai-accelerator-library") {
+  renderAcceleratorLibraryPage({ aiOnly: true });
 }

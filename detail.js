@@ -15,6 +15,460 @@ function detailSlugify(value) {
     .replace(/^-+|-+$/g, "");
 }
 
+function detailIdsForSample(sample) {
+  return [
+    sample.id,
+    sample.slug,
+    detailSlugify(sample.title),
+    ...(sample.detailAliases || []),
+  ].filter(Boolean);
+}
+
+function sampleMatchesDetailId(sample, sampleId) {
+  return detailIdsForSample(sample).includes(sampleId);
+}
+
+function renderDetailBlock(block) {
+  if (typeof block === "string") return `<p>${detailEscapeHtml(block)}</p>`;
+  if (block.html) return block.html;
+
+  const heading = block.heading ? `<h3>${detailEscapeHtml(block.heading)}</h3>` : "";
+  const text = block.text ? `<p>${detailEscapeHtml(block.text)}</p>` : "";
+  const items = Array.isArray(block.items)
+    ? `<ul>${block.items.map((item) => `<li>${detailEscapeHtml(item)}</li>`).join("")}</ul>`
+    : "";
+
+  return `${heading}${text}${items}`;
+}
+
+function handleMissingExampleImage(image) {
+  const gallery = image.closest(".working-example-gallery");
+  const figure = image.closest("figure");
+  const roadmapPanel = image.closest(".implementation-roadmap-section");
+
+  if (figure) figure.remove();
+  if (gallery && !gallery.querySelector("figure")) {
+    gallery.hidden = true;
+    if (roadmapPanel) roadmapPanel.hidden = true;
+  }
+}
+
+window.handleMissingExampleImage = handleMissingExampleImage;
+
+let activeImagePreviewTrigger = null;
+
+function getImagePreviewCaption(image) {
+  return image.closest("figure")?.querySelector("figcaption")?.textContent.trim() || image.alt || "Image preview";
+}
+
+function openDetailImageLightbox(image) {
+  const lightbox = document.getElementById("detailImageLightbox");
+  const previewImage = document.getElementById("detailImageLightboxImage");
+  const caption = document.getElementById("detailImageLightboxTitle");
+  if (!lightbox || !previewImage || !caption) return;
+
+  const captionText = getImagePreviewCaption(image);
+  activeImagePreviewTrigger = image;
+  previewImage.src = image.currentSrc || image.src;
+  previewImage.alt = image.alt || captionText;
+  caption.textContent = captionText;
+  lightbox.hidden = false;
+  document.body.classList.add("image-lightbox-open");
+  lightbox.querySelector(".image-lightbox-close")?.focus();
+}
+
+function closeDetailImageLightbox() {
+  const lightbox = document.getElementById("detailImageLightbox");
+  const previewImage = document.getElementById("detailImageLightboxImage");
+  if (!lightbox || lightbox.hidden) return;
+
+  lightbox.hidden = true;
+  if (previewImage) previewImage.removeAttribute("src");
+  document.body.classList.remove("image-lightbox-open");
+  activeImagePreviewTrigger?.focus?.();
+  activeImagePreviewTrigger = null;
+}
+
+function enhanceDetailImagesForPreview() {
+  document.querySelectorAll(".detail-page img").forEach((image) => {
+    image.classList.add("previewable-image");
+    image.setAttribute("role", "button");
+    image.setAttribute("tabindex", "0");
+    image.setAttribute("aria-label", `${getImagePreviewCaption(image)} - open larger preview`);
+  });
+}
+
+function bindDetailImageLightbox() {
+  const lightbox = document.getElementById("detailImageLightbox");
+  if (!lightbox) return;
+
+  document.addEventListener("click", (event) => {
+    if (!(event.target instanceof Element)) return;
+
+    const closeControl = event.target.closest("[data-image-lightbox-close]");
+    if (closeControl && lightbox.contains(closeControl)) {
+      closeDetailImageLightbox();
+      return;
+    }
+
+    const image = event.target.closest(".detail-page img");
+    if (!image || image.closest(".image-lightbox")) return;
+
+    event.preventDefault();
+    openDetailImageLightbox(image);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeDetailImageLightbox();
+      return;
+    }
+
+    if ((event.key === "Enter" || event.key === " ") && event.target instanceof Element) {
+      const image = event.target.closest(".previewable-image");
+      if (!image) return;
+      event.preventDefault();
+      openDetailImageLightbox(image);
+    }
+  });
+}
+
+function renderDetailContent(elementId, content) {
+  const target = document.getElementById(elementId);
+  if (!target) return;
+
+  target.innerHTML = Array.isArray(content)
+    ? content.map(renderDetailBlock).join("")
+    : `<p>${detailEscapeHtml(content || "")}</p>`;
+}
+
+function renderOptionalDetailContent(panelId, elementId, content) {
+  const panel = document.getElementById(panelId);
+  if (!panel) return;
+
+  const hasContent = Array.isArray(content) ? content.length > 0 : Boolean(content);
+  panel.hidden = !hasContent;
+  if (hasContent) renderDetailContent(elementId, content);
+}
+
+function renderImplementationStep(step) {
+  if (typeof step === "string") return `<li><span>${detailEscapeHtml(step)}</span></li>`;
+
+  const substeps = Array.isArray(step.items)
+    ? `<ul>${step.items.map((item) => `<li>${detailEscapeHtml(item)}</li>`).join("")}</ul>`
+    : "";
+
+  return `<li><span>${detailEscapeHtml(step.text || "")}</span>${substeps}</li>`;
+}
+
+function renderImplementationRoadmap(image) {
+  const panel = document.getElementById("implementationRoadmapPanel");
+  const target = document.getElementById("implementationRoadmap");
+  if (!panel || !target) return;
+
+  panel.hidden = !image;
+  if (!image) {
+    target.innerHTML = "";
+    return;
+  }
+
+  target.innerHTML = `
+    <div class="working-example-gallery implementation-roadmap-gallery" aria-label="${detailEscapeHtml(image.ariaLabel || image.alt || "Implementation roadmap")}">
+      <figure>
+        <img src="${detailEscapeHtml(image.src)}" alt="${detailEscapeHtml(image.alt || "Implementation roadmap")}" onerror="handleMissingExampleImage(this)" />
+        ${image.caption ? `<figcaption>${detailEscapeHtml(image.caption)}</figcaption>` : ""}
+      </figure>
+    </div>
+  `;
+}
+
+function renderExecutiveSummaryMarkup(item) {
+  const summaryLine = `<p>${detailEscapeHtml(item.summary)}</p>`;
+  if (!Array.isArray(item.executiveSummary) || !item.executiveSummary.length) return summaryLine;
+
+  const rows = item.executiveSummary
+    .map(
+      (entry) => `
+        <tr>
+          <th scope="row">${detailEscapeHtml(entry.label || "")}</th>
+          <td>${detailEscapeHtml(entry.text || "")}</td>
+        </tr>
+      `,
+    )
+    .join("");
+
+  return `
+    ${summaryLine}
+    <div class="detail-table-wrap">
+      <table class="detail-table">
+        <tbody>${rows}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function shouldRenderGroupedOfferingLayout(item) {
+  return item.pattern === "AI" && Boolean(item.roadmapImage);
+}
+
+function findDetailSection(item, title) {
+  return (item.collapsibleSections || []).find((section) => section.title === title);
+}
+
+function withoutLeadingParagraph(html) {
+  const template = document.createElement("template");
+  template.innerHTML = String(html || "").trim();
+  const firstElement = template.content.firstElementChild;
+  if (firstElement?.tagName === "P") firstElement.remove();
+  return template.innerHTML;
+}
+
+function renderGroupedSubsection(section, item, options = {}) {
+  if (!section) return "";
+
+  const html = options.omitLeadingParagraph ? withoutLeadingParagraph(section.html) : section.html || "";
+  const exportButtons =
+    Array.isArray(section.exports) && section.exports.length ? renderSectionExportButtons(section, item) : "";
+
+  return `
+    <section class="detail-group-subsection">
+      <div class="detail-group-heading">
+        <h3>${detailEscapeHtml(options.title || section.title)}</h3>
+        ${exportButtons}
+      </div>
+      ${html ? `<div class="detail-rich">${html}</div>` : ""}
+    </section>
+  `;
+}
+
+function renderGroupedPanel(title, sections, item) {
+  const sectionMarkup = sections
+    .map((entry) => renderGroupedSubsection(entry.section, item, entry.options || {}))
+    .filter(Boolean)
+    .join("");
+
+  if (!sectionMarkup) return "";
+
+  return `
+    <article class="detail-panel detail-group-panel">
+      <h2>${detailEscapeHtml(title)}</h2>
+      <div class="detail-group-stack">${sectionMarkup}</div>
+    </article>
+  `;
+}
+
+function renderImplementationPanelMarkup(item) {
+  const roadmapDetail = findDetailSection(item, "Implementation Roadmap Detail");
+  const dataFoundation = findDetailSection(item, "Data Foundation Required");
+
+  return `
+    <article class="detail-panel implementation-panel">
+      <h2>Implementation Plan</h2>
+      <section class="implementation-plan-section" aria-labelledby="implementationApproachHeading">
+        <h3 id="implementationApproachHeading">Detailed design and build approach</h3>
+        <ol id="implementationSteps"></ol>
+      </section>
+      <section class="implementation-roadmap-section" id="implementationRoadmapPanel" aria-labelledby="implementationRoadmapHeading" hidden>
+        <h3 id="implementationRoadmapHeading">Implementation Roadmap</h3>
+        <div id="implementationRoadmap"></div>
+      </section>
+      ${renderGroupedSubsection(roadmapDetail, item)}
+      ${renderGroupedSubsection(dataFoundation, item)}
+    </article>
+  `;
+}
+
+function renderSourcePanelMarkup() {
+  return `
+    <aside class="detail-panel source-panel">
+      <h2>Sources And Next Steps</h2>
+      <div id="sourceList"></div>
+      <div class="detail-note">
+        <strong>Next asset step:</strong>
+        <span>When you share your own customer asset details, this same page can point to your GitHub source and show your implementation notes.</span>
+      </div>
+    </aside>
+  `;
+}
+
+function renderGroupedOfferingGrid(item) {
+  const businessProblem = findDetailSection(item, "Business Problem");
+  const solutionOverview = findDetailSection(item, "Solution Overview");
+  const designDimensions = findDetailSection(item, "Design Dimensions");
+  const solutionApplicability = findDetailSection(item, "Solution Provides And Applicability");
+  const readiness = findDetailSection(item, "Readiness Conditions");
+  const architecture = findDetailSection(item, "Architecture And Component Design");
+  const sapCapabilityAlignment = findDetailSection(item, "SAP Capability Alignment");
+  const aiCapabilityDesign = findDetailSection(item, "AI Capability Design");
+  const governanceModel = findDetailSection(item, "Governance And Human Review Model");
+  const nonFunctional = findDetailSection(item, "Non-Functional Requirements");
+  const stack = findDetailSection(item, "Suggested Build Stack");
+  const dataIntegrationDetail = findDetailSection(item, "Data And Integration Detail");
+  const cloudAlm = findDetailSection(item, "Cloud ALM Export Package");
+  const customerReadiness = findDetailSection(item, "Customer Readiness Checks");
+  const validation = findDetailSection(item, "Next Steps And Sources");
+
+  document.querySelector(".detail-grid").innerHTML = `
+    ${renderGroupedPanel(
+      "Solution Definition",
+      [
+        {
+          section: {
+            title: "Idea Brief",
+            html: renderExecutiveSummaryMarkup(item),
+          },
+        },
+        { section: businessProblem },
+        { section: solutionOverview },
+        { section: designDimensions, options: { omitLeadingParagraph: true } },
+        { section: solutionApplicability },
+        { section: readiness },
+      ],
+      item,
+    )}
+    ${renderGroupedPanel(
+      "Architecture Definition",
+      [
+        { section: architecture },
+        { section: sapCapabilityAlignment },
+        { section: aiCapabilityDesign },
+        { section: governanceModel },
+      ],
+      item,
+    )}
+    ${renderImplementationPanelMarkup(item)}
+    ${renderGroupedPanel(
+      "Controls And Stack",
+      [
+        { section: nonFunctional },
+        { section: stack },
+        { section: dataIntegrationDetail },
+      ],
+      item,
+    )}
+    ${renderGroupedPanel(
+      "Validation",
+      [
+        { section: cloudAlm },
+        { section: customerReadiness },
+        { section: validation },
+      ],
+      item,
+    )}
+    ${renderSourcePanelMarkup()}
+  `;
+
+  const cloudAlmPanel = document.querySelector(".detail-grid");
+  if (cloudAlmPanel) bindCloudAlmExportButtons(cloudAlmPanel, item);
+}
+
+function sourceLooksLikeCode(source) {
+  return /source|github|repository/i.test(source.label || "");
+}
+
+function renderPrimaryAction(source, label, className) {
+  return source.url
+    ? `
+        <a class="${className}" href="${detailEscapeHtml(source.url)}" target="_blank" rel="noreferrer">
+          ${detailEscapeHtml(label)}
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 17 17 7" />
+            <path d="M8 7h9v9" />
+          </svg>
+        </a>
+      `
+    : `
+        <span class="${className} disabled-action">
+          ${detailEscapeHtml(label)}
+        </span>
+      `;
+}
+
+function renderExcelIcon() {
+  return `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 3h9l5 5v13H5z" />
+      <path d="M14 3v5h5" />
+      <path d="m8.5 11 4 6" />
+      <path d="m12.5 11-4 6" />
+    </svg>
+  `;
+}
+
+function renderSectionExportButtons(section, item) {
+  const emptyExportSlot = `<div class="accordion-export-bar accordion-export-bar-empty" aria-hidden="true"></div>`;
+  if (!window.cloudAlmExport || !Array.isArray(section.exports) || !section.exports.length) return emptyExportSlot;
+
+  const exportOptions = new Map(
+    window.cloudAlmExport.getExportOptions(item).map((option) => [option.kind, option]),
+  );
+  const buttons = section.exports
+    .map((kind) => exportOptions.get(kind))
+    .filter(Boolean)
+    .map(
+      (download) => `
+        <button
+          class="excel-download-button"
+          type="button"
+          data-cloud-alm-export="${detailEscapeHtml(download.kind)}"
+          title="${detailEscapeHtml(`${download.label} - ${download.filename}`)}"
+          aria-label="${detailEscapeHtml(`${download.label} - ${download.filename}`)}"
+        >
+          ${renderExcelIcon()}
+          <span class="excel-download-badge" aria-hidden="true">${detailEscapeHtml(download.shortLabel || download.kind)}</span>
+          <span class="sr-only">${detailEscapeHtml(download.label)}</span>
+        </button>
+      `,
+    )
+    .join("");
+
+  return buttons ? `<div class="accordion-export-bar">${buttons}</div>` : emptyExportSlot;
+}
+
+function bindCloudAlmExportButtons(container, item) {
+  container.querySelectorAll("[data-cloud-alm-export]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const kind = button.getAttribute("data-cloud-alm-export");
+      window.cloudAlmExport.downloadExport(item, kind);
+    });
+  });
+}
+
+function renderCollapsibleSections(sections, item) {
+  const panel = document.getElementById("detailCollapsiblePanel");
+  if (!panel) return;
+
+  if (!Array.isArray(sections) || !sections.length) {
+    panel.hidden = true;
+    panel.innerHTML = "";
+    return;
+  }
+
+  panel.hidden = false;
+  panel.innerHTML = `
+    <h2>Accelerator Pack</h2>
+    <div class="detail-accordion-list">
+      ${sections
+        .map(
+          (section) => `
+            <details class="detail-accordion">
+              <summary>
+                <span>${detailEscapeHtml(section.title)}</span>
+                ${renderSectionExportButtons(section, item)}
+                <svg class="accordion-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+              </summary>
+              <div class="detail-accordion-body">${section.html || ""}</div>
+            </details>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+  bindCloudAlmExportButtons(panel, item);
+}
+
 function inferInAppTool(sample) {
   const text = `${sample.title} ${sample.description} ${sample.pattern}`.toLowerCase();
   if (text.includes("email")) return "Maintain Email Templates and the relevant output management configuration";
@@ -60,18 +514,21 @@ function findSampleDetail(params) {
   const lane = lanes[laneKey];
   if (!lane) return null;
 
-  const sample = lane.samples.find((candidate) => candidate.id === sampleId || detailSlugify(candidate.title) === sampleId);
+  const sample = lane.samples.find((candidate) => sampleMatchesDetailId(candidate, sampleId));
   if (!sample) return null;
 
   return {
     kind: "sample",
     title: sample.title,
-    lane: lane.label,
+    lane: sample.tagLabel || lane.label,
     laneKey,
     sourceType:
       sample.sourceType || (sample.status === "Historical scenario" ? "GitHub Drill-down" : "GitHub Repo"),
     summary: sample.summary || sample.function || sample.description,
+    executiveSummary: sample.executiveSummary || null,
     useCase: sample.useCase || sample.description,
+    workingExample: sample.workingExample || null,
+    roadmapImage: sample.roadmapImage || null,
     whenToUse:
       sample.whenToUse ||
       (laneKey === "inapp"
@@ -81,14 +538,29 @@ function findSampleDetail(params) {
           : "Choose this when the solution should run separately on SAP BTP or another side runtime while consuming S/4HANA Cloud APIs or events."),
     implementation: sample.implementation || sampleImplementation(laneKey, sample),
     technicalNotes: sample.technicalNotes || null,
+    collapsibleSections: sample.collapsibleSections || [],
+    cloudAlm: sample.cloudAlm || null,
+    pattern: sample.pattern,
+    status: sample.status,
     sources: sample.sources || [
       {
         label: sample.linkLabel || "Open GitHub source",
         url: sample.url,
       },
     ],
-    backUrl: from === "accelerators" ? "accelerators.html" : `samples.html?lane=${encodeURIComponent(laneKey)}`,
-    backLabel: from === "accelerators" ? "Back to accelerators" : `Back to ${lane.label} samples`,
+    nextStep: sample.nextStep,
+    backUrl:
+      from === "ai-accelerators"
+        ? "ai-accelerators.html"
+        : from === "accelerators"
+          ? "accelerators.html"
+          : `samples.html?lane=${encodeURIComponent(laneKey)}`,
+    backLabel:
+      from === "ai-accelerators"
+        ? "Back to AI accelerators"
+        : from === "accelerators"
+          ? "Back to accelerators"
+          : `Back to ${lane.label} samples`,
   };
 }
 
@@ -104,11 +576,19 @@ function findAssetDetail(params) {
     laneKey: asset.laneKey,
     sourceType: asset.sourceType,
     summary: asset.summary,
+    executiveSummary: asset.executiveSummary || null,
     useCase: asset.useCase,
+    workingExample: asset.workingExample || null,
+    roadmapImage: asset.roadmapImage || null,
     whenToUse: asset.whenToUse,
     implementation: asset.implementation,
     technicalNotes: asset.technicalNotes || null,
+    collapsibleSections: asset.collapsibleSections || [],
+    cloudAlm: asset.cloudAlm || null,
+    pattern: asset.pattern,
+    status: asset.status,
     sources: asset.sources,
+    nextStep: asset.nextStep,
     backUrl: "assets.html",
     backLabel: "Back to assets",
   };
@@ -124,11 +604,18 @@ function renderSourceLinks(item) {
   const sourceList = document.getElementById("sourceList");
   sourceList.innerHTML = item.sources
     .map(
-      (source) =>
-        source.url
+      (source) => {
+        const sourceContent = `
+              <span>
+                <strong>${detailEscapeHtml(source.label)}</strong>
+                ${source.note ? `<small>${detailEscapeHtml(source.note)}</small>` : ""}
+              </span>
+            `;
+
+        return source.url
           ? `
             <a class="source-link" href="${detailEscapeHtml(source.url)}" target="_blank" rel="noreferrer">
-              <span>${detailEscapeHtml(source.label)}</span>
+              ${sourceContent}
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7 17 17 7" />
                 <path d="M8 7h9v9" />
@@ -137,34 +624,43 @@ function renderSourceLinks(item) {
           `
           : `
             <div class="source-link source-placeholder">
-              <span>${detailEscapeHtml(source.label)}</span>
-              <small>To be linked later</small>
+              ${sourceContent}
+              ${source.note ? "" : "<small>To be linked later</small>"}
             </div>
-          `,
+          `;
+      },
     )
     .join("");
 
-  const linkedSources = item.sources.filter((source) => source.url);
-  document.getElementById("detailPrimaryActions").innerHTML = linkedSources.length
-    ? linkedSources
-        .slice(0, 2)
-    .map(
-      (source, index) => `
-        <a class="${index === 0 ? "primary-action" : "secondary-action"}" href="${detailEscapeHtml(source.url)}" target="_blank" rel="noreferrer">
-          ${index === 0 ? "Open source" : "Open reference"}
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 17 17 7" />
-            <path d="M8 7h9v9" />
-          </svg>
-        </a>
-      `,
-    )
-        .join("")
+  const sourceAction = item.sources.find(sourceLooksLikeCode);
+  const referenceAction = item.sources.find((source) => source.url && source !== sourceAction);
+  const fallbackSource = item.sources.find((source) => source.url);
+  const primaryActions = [];
+
+  if (sourceAction) {
+    primaryActions.push(
+      renderPrimaryAction(sourceAction, sourceAction.url ? "Open source" : "Source pending", sourceAction.url ? "primary-action" : "secondary-action"),
+    );
+  } else if (fallbackSource) {
+    primaryActions.push(renderPrimaryAction(fallbackSource, "Open source", "primary-action"));
+  }
+
+  if (referenceAction) {
+    primaryActions.push(
+      renderPrimaryAction(referenceAction, referenceAction.actionLabel || "Open reference", sourceAction?.url ? "secondary-action" : "primary-action"),
+    );
+  }
+
+  document.getElementById("detailPrimaryActions").innerHTML = primaryActions.length
+    ? primaryActions.join("")
     : `
         <span class="secondary-action disabled-action">
           Source code pending
         </span>
       `;
+
+  const detailNote = document.querySelector(".detail-note span");
+  if (detailNote && item.nextStep) detailNote.textContent = item.nextStep;
 }
 
 function renderDetailPage() {
@@ -197,11 +693,35 @@ function renderDetailPage() {
   document.getElementById("detailSourceType").textContent = item.sourceType;
   document.getElementById("detailTitle").textContent = item.title;
   document.getElementById("detailSummary").textContent = item.summary;
-  document.getElementById("detailUseCase").textContent = item.useCase;
-  document.getElementById("detailWhenToUse").textContent = item.whenToUse;
+
+  if (shouldRenderGroupedOfferingLayout(item)) {
+    renderGroupedOfferingGrid(item);
+    document.getElementById("implementationSteps").innerHTML = item.implementation
+      .map(renderImplementationStep)
+      .join("");
+    renderImplementationRoadmap(item.roadmapImage);
+    renderSourceLinks(item);
+    enhanceDetailImagesForPreview();
+
+    document.querySelectorAll(".top-nav a").forEach((link) => {
+      link.classList.remove("active");
+      if (item.pattern === "AI") {
+        if (link.hasAttribute("data-ai-nav")) link.classList.add("active");
+      } else if (link.getAttribute("href") === "accelerators.html") {
+        link.classList.add("active");
+      }
+    });
+    return;
+  }
+
+  renderDetailContent("detailUseCase", item.useCase);
+  renderOptionalDetailContent("detailWorkingExamplePanel", "detailWorkingExample", item.workingExample);
+  renderDetailContent("detailWhenToUse", item.whenToUse);
   document.getElementById("implementationSteps").innerHTML = item.implementation
-    .map((step) => `<li>${detailEscapeHtml(step)}</li>`)
+    .map(renderImplementationStep)
     .join("");
+  renderImplementationRoadmap(item.roadmapImage);
+  renderCollapsibleSections(item.collapsibleSections, item);
 
   const technicalPanel = document.getElementById("technicalPanel");
   const technicalNotes = item.technicalNotes;
@@ -226,14 +746,19 @@ function renderDetailPage() {
   }
 
   renderSourceLinks(item);
+  enhanceDetailImagesForPreview();
 
   document.querySelectorAll(".top-nav a").forEach((link) => {
     link.classList.remove("active");
     if (item.kind === "asset" && link.getAttribute("href") === "assets.html") link.classList.add("active");
-    if (item.kind === "sample" && link.getAttribute("href") === "accelerators.html") link.classList.add("active");
+    if (item.kind === "sample" && item.pattern === "AI" && link.hasAttribute("data-ai-nav")) link.classList.add("active");
+    if (item.kind === "sample" && item.pattern !== "AI" && link.getAttribute("href") === "accelerators.html") {
+      link.classList.add("active");
+    }
   });
 }
 
 if (document.body.dataset.page === "detail") {
+  bindDetailImageLightbox();
   renderDetailPage();
 }
