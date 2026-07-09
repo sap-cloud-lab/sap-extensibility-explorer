@@ -3882,6 +3882,273 @@ ENDIF.`
         "linkLabel":  "Open implementation notes"
     },
     {
+        "id":  "customer-pr-budget-period-validation-inapp",
+        "laneKey":  "inapp",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "PR Budget Period Validation for Public Sector",
+        "status":  "Customer accelerator",
+        "pattern":  "Procurement Control",
+        "description":  "Purchase requisition create/change validation that blocks public-sector PR account assignments when Budget Period is earlier than the current fiscal year.",
+        "function":  "Uses Custom Logic in the PR check BAdI to enforce CFA's July-to-June fiscal-year Budget Period rule for PR account assignments.",
+        "summary":  "An in-app public-sector procurement control for customers using Fund, Grant, Functional Area, and Budget Period on purchase requisitions.",
+        "useCase":  "Use this when a public-sector customer must stop PR create or change where Budget Period is earlier than the current fiscal year.",
+        "whenToUse":  "Choose this when Budget Period is available in the purchase requisition account assignment table and the requirement is a hard validation at check/save time.",
+        "implementation":  [
+                               "Confirm the customer's fiscal-year rule. For CFA, July to June means 5 July 2026 belongs to FY2027.",
+                               "Implement the PR check in Custom Logic using BAdI MM_PUR_S4_PR_CHECK.",
+                               "Confirm PURCHASEREQACCASSGNMT_TABLE is available in the BAdI parameter list.",
+                               "Confirm BUDGETPERIOD is available in PURCHASEREQACCASSGNMT_TABLE together with public-sector account assignment fields such as Grant and Functional Area.",
+                               "Derive the current fiscal year from the system date at check/save time, not from delivery date.",
+                               "Loop through PR account assignment rows, skip deleted rows and blank Budget Period values, then compare Budget Period with the calculated fiscal year.",
+                               "Move Budget Period into a string and condense it before numeric validation because the field is exposed as fixed-length character text.",
+                               "Raise a short error message such as CFA PR item 00010: BP 2026 < FY 2027 so it remains readable in the SAP message list.",
+                               "Test both PR create and PR change; in the CFA tenant this BAdI triggered for both paths."
+                           ],
+        "technicalNotes":  {
+                               "title":  "BAdI And Runtime Notes",
+                               "bullets":  [
+                                               "BAdI used: MM_PUR_S4_PR_CHECK.",
+                                               "Validated table: PURCHASEREQACCASSGNMT_TABLE.",
+                                               "Validated Budget Period field: BUDGETPERIOD.",
+                                               "Additional account assignment fields visible in the tenant include Grant, Functional Area, WBS Element, Project Network, Cost Center, Profit Center, and Fund-related fields.",
+                                               "PR create test blocked Budget Period 2026 during FY2027.",
+                                               "PR change test blocked Budget Period 2026 during FY2027.",
+                                               "Message was shortened after the first test because the longer text was cut off in the SAP message popup.",
+                                               "Budget Period is moved to a string and condensed before numeric validation to avoid fixed-length trailing-blank false invalid errors.",
+                                               "SAP standard budget consumption date validation can still appear separately and is not suppressed by this enhancement."
+                                           ],
+                               "codeTitle":  "PR Budget Period validation",
+                               "code":  `************************************************************************
+* Business Requirement:
+* CFA is a public-sector customer and uses Budget Period on Purchase
+* Requisition account assignment.
+*
+* During PR create/change/check, the Budget Period must not be earlier
+* than the current CFA fiscal year.
+*
+* CFA fiscal year runs from July to June.
+* Example: July 2026 belongs to FY2027.
+*
+* Therefore, if a PR is created or changed in FY2027:
+* - Budget Period 2026 must be blocked with a hard error.
+* - Budget Period 2027 or later must be allowed.
+************************************************************************
+
+DATA: ls_message LIKE LINE OF messages.
+DATA: lv_budgetperiod_text TYPE string.
+
+DATA(lv_today) = cl_abap_context_info=>get_system_date( ).
+DATA(lv_current_fy) = CONV i( lv_today(4) ).
+
+* CFA fiscal year: July to June.
+IF lv_today+4(2) >= '07'.
+  lv_current_fy = lv_current_fy + 1.
+ENDIF.
+
+LOOP AT purchasereqaccassgnmt_table INTO DATA(ls_pr_account).
+
+  IF ls_pr_account-isdeleted = 'X'
+     OR ls_pr_account-budgetperiod IS INITIAL.
+    CONTINUE.
+  ENDIF.
+
+  CLEAR lv_budgetperiod_text.
+  lv_budgetperiod_text = ls_pr_account-budgetperiod.
+  CONDENSE lv_budgetperiod_text NO-GAPS.
+
+  IF lv_budgetperiod_text CN '0123456789'.
+
+    CLEAR ls_message.
+    ls_message-messagetype = 'E'.
+    ls_message-messageid = '00'.
+    ls_message-messagenumber = '001'.
+    ls_message-messagevariable1 =
+      |CFA PR item { ls_pr_account-purchaserequisitionitem }: BP invalid|.
+
+    APPEND ls_message TO messages.
+    CONTINUE.
+
+  ENDIF.
+
+  IF CONV i( lv_budgetperiod_text ) < lv_current_fy.
+
+    CLEAR ls_message.
+    ls_message-messagetype = 'E'.
+    ls_message-messageid = '00'.
+    ls_message-messagenumber = '001'.
+    ls_message-messagevariable1 =
+      |CFA PR item { ls_pr_account-purchaserequisitionitem }: BP { lv_budgetperiod_text } < FY { lv_current_fy }|.
+
+    APPEND ls_message TO messages.
+
+  ENDIF.
+
+ENDLOOP.`
+                           },
+        "sources":  [
+                        {
+                            "label":  "Customer implementation notes: PR Budget Period validation",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/pr-budget-period-validation.md"
+                        },
+                        {
+                            "label":  "SAP Help: Purchase Requisition extensibility",
+                            "url":  "https://help.sap.com/docs/SAP_S4HANA_CLOUD"
+                        }
+                    ],
+        "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/pr-budget-period-validation.md",
+        "linkLabel":  "Open implementation notes"
+    },
+    {
+        "id":  "customer-po-budget-period-validation-inapp",
+        "laneKey":  "inapp",
+        "source":  "Customer",
+        "sourceType":  "Customer Accelerator",
+        "title":  "PO Budget Period Validation for Public Sector",
+        "status":  "Customer accelerator",
+        "pattern":  "Procurement Control",
+        "description":  "Line-aware PO change validation that blocks public-sector purchase orders when Budget Period is earlier than the current fiscal year.",
+        "function":  "Uses Custom Logic in the purchase order final-check BAdI to enforce a public-sector Budget Period rule without blocking unrelated historical PO lines.",
+        "summary":  "A reusable in-app procurement control for customers using Fund, Grant, Functional Area, and Budget Period on PO account assignments.",
+        "useCase":  "Use this when a public-sector customer must stop users changing or progressing open PO items with a prior-year Budget Period, while allowing unrelated delivered, invoiced, or unchanged historical items to remain on the same PO.",
+        "whenToUse":  "Choose this when Budget Period is available in the PO account assignment context and the requirement is a hard save-time validation rather than a defaulting, substitution, or reporting-only control.",
+        "implementation":  [
+                               "Confirm the customer fiscal-year rule, for example CFA July to June where 5 July 2026 belongs to FY2027.",
+                               "Confirm whether the validation basis is system save/change date, document date, delivery date, posting date, or a company-code fiscal-year variant. For the CFA example, use system save date, not document or delivery date.",
+                               "Confirm the business object split: implement PO and PR separately because they use different extensibility contexts.",
+                               "For PO change, implement Custom Logic using BAdI BD_MMPUR_FINAL_CHECK_PO and keep the rule line-aware.",
+                               "Read current PO item data from PURCHASEORDERITEMS and current account assignment data from PURCHASEORDERACCOUNTING.",
+                               "Skip PO items that are completely delivered or finally invoiced, and skip deleted account assignment rows.",
+                               "Determine whether the PO item is relevant by comparing current item data with PURCHASEORDERITEMS_DB.",
+                               "For account-assignment-only changes, compare the current Budget Period with the saved value from released CDS view I_PurOrdAccountAssignmentAPI01.",
+                               "Raise an error only for relevant active account assignments where Budget Period is less than the derived current fiscal year.",
+                               "Prefix the message with a customer-specific marker such as CFA custom check: so support teams can distinguish it from SAP standard budget consumption date messages.",
+                               "Treat PO create as a separate design item if the chosen BAdI fires during create but does not expose account assignment rows at create save time."
+                           ],
+        "technicalNotes":  {
+                               "title":  "Reusable Implementation Notes",
+                               "bullets":  [
+                                               "Primary BAdI for the completed PO change pattern: BD_MMPUR_FINAL_CHECK_PO.",
+                                               "Example implementation object: YY1_BD_MMPUR_FINAL_CHECK_PO.",
+                                               "Primary account assignment table in the BAdI: PURCHASEORDERACCOUNTING, including BUDGETPERIOD and ISDELETED.",
+                                               "Primary item table in the BAdI: PURCHASEORDERITEMS, including ISCOMPLETELYDELIVERED and ISFINALLYINVOICED.",
+                                               "PO item ISDELETED is not available in this context; deletion handling is done at account assignment level.",
+                                               "PURCHASEORDERACCOUNTING is a table and must be looped into a work area before reading BUDGETPERIOD.",
+                                               "PURCHASEORDERACCOUNTING_DB is not exposed in this BAdI; use I_PurOrdAccountAssignmentAPI01 when saved account assignment comparison is needed.",
+                                               "The custom error blocks the full PO save, but the check is deliberately scoped to the relevant PO item/account assignment.",
+                                               "SAP standard message Budget period 2026 is not valid for the consumption date 07/05/2026 can still appear separately and should not be suppressed by this enhancement.",
+                                               "For another customer, parameterise fiscal-year derivation, company-code scope, document types, message text, and whether initial Budget Period should be skipped or blocked."
+                                           ],
+                               "codeTitle":  "PO change Budget Period validation template",
+                               "code":  `DATA: ls_message LIKE LINE OF messages.
+DATA: lv_db_budgetperiod TYPE c LENGTH 10.
+
+* Change-only logic. PO create should be designed separately if account rows
+* are not available during create in this BAdI.
+IF purchaseorder_db-purchaseorder IS INITIAL.
+  RETURN.
+ENDIF.
+
+DATA(lv_today) = cl_abap_context_info=>get_system_date( ).
+DATA(lv_current_fy) = CONV i( lv_today(4) ).
+
+* Example: July to June fiscal year. Replace this with customer-specific
+* fiscal-year derivation when required.
+IF lv_today+4(2) >= '07'.
+  lv_current_fy = lv_current_fy + 1.
+ENDIF.
+
+LOOP AT purchaseorderitems INTO DATA(ls_po_item).
+
+  DATA(lv_item_relevant) = ''.
+
+  IF ls_po_item-iscompletelydelivered = 'X'
+     OR ls_po_item-isfinallyinvoiced = 'X'.
+    CONTINUE.
+  ENDIF.
+
+  READ TABLE purchaseorderitems_db INTO DATA(ls_po_item_db)
+    WITH KEY purchaseorderitem = ls_po_item-purchaseorderitem.
+
+  IF sy-subrc <> 0.
+    lv_item_relevant = 'X'.
+  ELSEIF ls_po_item <> ls_po_item_db.
+    lv_item_relevant = 'X'.
+  ENDIF.
+
+  IF lv_item_relevant IS INITIAL.
+
+    LOOP AT purchaseorderaccounting INTO DATA(ls_acc_check)
+      WHERE purchaseorderitem = ls_po_item-purchaseorderitem.
+
+      IF ls_acc_check-isdeleted = 'X'.
+        CONTINUE.
+      ENDIF.
+
+      CLEAR lv_db_budgetperiod.
+
+      SELECT SINGLE FROM i_purordaccountassignmentapi01
+        FIELDS budgetperiod
+        WHERE purchaseorder = @ls_acc_check-purchaseorder
+          AND purchaseorderitem = @ls_acc_check-purchaseorderitem
+          AND accountassignmentnumber = @ls_acc_check-accountassignmentnumber
+        INTO @lv_db_budgetperiod.
+
+      IF sy-subrc <> 0
+         OR ls_acc_check-budgetperiod <> lv_db_budgetperiod.
+        lv_item_relevant = 'X'.
+        EXIT.
+      ENDIF.
+
+    ENDLOOP.
+
+  ENDIF.
+
+  IF lv_item_relevant IS INITIAL.
+    CONTINUE.
+  ENDIF.
+
+  LOOP AT purchaseorderaccounting INTO DATA(ls_po_accounting)
+    WHERE purchaseorderitem = ls_po_item-purchaseorderitem.
+
+    IF ls_po_accounting-isdeleted = 'X'
+       OR ls_po_accounting-budgetperiod IS INITIAL.
+      CONTINUE.
+    ENDIF.
+
+    IF CONV i( ls_po_accounting-budgetperiod ) < lv_current_fy.
+
+      CLEAR ls_message.
+      ls_message-messagetype = 'E'.
+      ls_message-messagevariable1 =
+        |CFA custom check: PO item { ls_po_accounting-purchaseorderitem } Budget Period { ls_po_accounting-budgetperiod } < FY { lv_current_fy }|.
+
+      APPEND ls_message TO messages.
+
+    ENDIF.
+
+  ENDLOOP.
+
+ENDLOOP.`
+                           },
+        "sources":  [
+                        {
+                            "label":  "Customer implementation notes: PO Budget Period validation",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/main/docs/customer-accelerators/po-budget-period-validation.md"
+                        },
+                        {
+                            "label":  "Reusable public-cloud accelerator playbook",
+                            "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/content-updates/docs/customer-accelerators/reusable-public-cloud-accelerator-playbook.md"
+                        },
+                        {
+                            "label":  "SAP Business Accelerator Hub: I_PurOrdAccountAssignmentAPI01",
+                            "url":  "https://api.sap.com/cdsviews/I_PurOrdAccountAssignmentAPI01"
+                        }
+                    ],
+        "url":  "https://github.com/sap-cloud-lab/sap-extensibility-explorer/blob/main/docs/customer-accelerators/po-budget-period-validation.md",
+        "linkLabel":  "Open implementation notes"
+    },
+    {
         "id":  "customer-ip19-maintenance-report-inapp",
         "laneKey":  "inapp",
         "source":  "Customer",
