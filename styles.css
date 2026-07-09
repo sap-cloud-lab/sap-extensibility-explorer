@@ -2041,6 +2041,7 @@ body[data-page="samples"] .back-link {
 }
 
 .hover-detail {
+  display: none !important;
   border-radius: 14px;
   background: #f5faff;
 }

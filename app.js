@@ -596,9 +596,6 @@ function renderSampleCard(sample, laneKey, options = {}) {
       ${isSapCard ? `<span class="card-origin-tag">SAP</span>` : ""}
       <h3>${escapeHtml(sample.title)}</h3>
       <p class="sample-description">${escapeHtml(sample.description)}</p>
-      <div class="hover-detail">
-        <strong>What it does:</strong> ${escapeHtml(sample.function || sample.description)}
-      </div>
       <div class="meta-row">
         <span class="pill" data-status="${escapeHtml(sample.status)}">${escapeHtml(sample.status)}</span>
         <span class="pill">${escapeHtml(sample.pattern)}</span>
